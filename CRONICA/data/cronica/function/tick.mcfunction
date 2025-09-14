@@ -11,7 +11,7 @@ execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/status/
 execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:stage/gimmick/tick
 execute if entity @a[tag=TAG.cronica.GAMING] run schedule function cronica:stage/gimmick/tick 2t
 
-## 検知
+## 検知 //
 
 # 使用検知
 execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/status/check/use
