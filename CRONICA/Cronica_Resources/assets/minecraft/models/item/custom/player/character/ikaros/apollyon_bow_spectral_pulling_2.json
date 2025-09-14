@@ -1,0 +1,6 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "minecraft:item/custom/player/character/ikaros/apollyon_bow_spectral_pulling_2"
+  }
+}

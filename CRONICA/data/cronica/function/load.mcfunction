@@ -2,6 +2,16 @@
 
 # ゲームルール
 function cronica:system/gamerule
+
+# ADVANCEMENT初期化
+# execute as @a run function cronica:system/options/advancements/reset
+
+# チーム設置
+# execute unless entity @a run function cronica:system/options/team/delete
+# function cronica:system/options/team/setup
+
+# スコア設置
+# execute unless entity @a run function cronica:system/options/scoreboard/delete
 function cronica:system/scoreboard/world_score_setup
 
 # リロード完了

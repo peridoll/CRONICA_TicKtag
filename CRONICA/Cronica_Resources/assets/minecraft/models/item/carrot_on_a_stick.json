@@ -1,0 +1,18 @@
+{
+  "parent": "item/handheld_rod", 
+  "textures": 
+  {
+    "layer0": "item/carrot_on_a_stick"
+  },
+  "overrides": 
+  [
+    {"predicate":{"custom_model_data":101},"model":"item/custom/player/character/amalias/sunrise_blade"},
+
+    {"predicate":{"custom_model_data":801},"model":"item/custom/player/character/steve/sword_of_material"},
+    {"predicate":{"custom_model_data":802},"model":"item/custom/player/character/steve/sunstone_sword"},
+    {"predicate":{"custom_model_data":803},"model":"item/custom/player/character/steve/amethyst_sword"},
+    {"predicate":{"custom_model_data":901},"model":"item/custom/player/character/steve/sword_of_material_brave"},
+    {"predicate":{"custom_model_data":902},"model":"item/custom/player/character/steve/sunstone_sword_brave"},
+    {"predicate":{"custom_model_data":903},"model":"item/custom/player/character/steve/amethyst_sword_brave"}
+  ]
+}
