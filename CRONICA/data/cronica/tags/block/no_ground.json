@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:air",
+    "minecraft:water",
+    "minecraft:tall_grass",
+    "minecraft:cobweb"
+  ]
+}

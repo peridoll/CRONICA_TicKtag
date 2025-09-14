@@ -1,0 +1,28 @@
+// ステージ設定用のconfigファイル
+{
+  "lobby": {
+    "potion": {
+      "enter": {
+        "x": -1,
+        "y": -58,
+        "z": 16,
+        "rotationX": 180,
+        "rotationY": 0
+      }
+    }
+  },
+  "practice_area": {
+    "potion": {
+      "enter": {
+        "x": -128,
+        "y": -59,
+        "z": 0,
+        "rotationX": 0,
+        "rotationY": 0
+      }
+    }
+  }
+}
+/*
+  CONFIG: を持つmcfunctionの中から対応するコードをコンフィグを使用して書き換えてください
+*/
