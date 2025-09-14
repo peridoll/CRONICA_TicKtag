@@ -29,7 +29,7 @@ execute if entity @a[tag=TAG.cronica.GAMING] run schedule function cronica:playe
 
 #//////////////////////////////////////////////////////////////////////////////////////////////////
 ## SYSTEM
-
+#anko tabetai
 # 腹減り無し
 effect give @a saturation infinite 1 true
 # 矢の撤去
