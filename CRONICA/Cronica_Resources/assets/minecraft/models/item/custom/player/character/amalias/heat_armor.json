@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": 
-  {
-    "layer0": "minecraft:item/custom/player/character/amalias/heat_armor"
-  }
-}

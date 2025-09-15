@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": 
-  {
-    "layer0": "minecraft:item/custom/player/other_skill/blast_burn/blast_burn_used"
-  }
-}
