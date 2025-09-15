@@ -18,8 +18,8 @@
                 },
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:custom_data": {
-                  "SkillName": "FlyingFeather",
-                  "SkillCategory": "SelectSkill"
+                  "ItemCategory": "SelectSkill",
+                  "ItemName": "FlyingFeather"
                 },
                 "minecraft:custom_name": {
                   "text": "飛翔ノ翼",
