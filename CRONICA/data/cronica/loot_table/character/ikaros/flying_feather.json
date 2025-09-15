@@ -1,0 +1,51 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/ikaros/flying_feather",
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "default"
+                  ]
+                },
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:custom_data": {
+                  "SkillName": "FlyingFeather",
+                  "SkillCategory": "SelectSkill"
+                },
+                "minecraft:custom_name": {
+                  "text": "飛翔ノ翼",
+                  "color": "#ffa500",
+                  "bold": true
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "風をまとい大空に飛び上がる",
+                    "color": "#ffffff"
+                  },
+                  {
+                    "text": "その後少しの間風に乗る",
+                    "color": "#ffffff"
+                  },
+                  "====================",
+                  {
+                    "text": "CT : 10s",
+                    "color": "#00ff00"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
