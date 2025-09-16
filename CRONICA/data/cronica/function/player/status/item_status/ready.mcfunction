@@ -1,0 +1,40 @@
+# ホットバー
+$execute if entity @s[nbt={Inventory:[{Slot:0b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s hotbar.0 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:1b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s hotbar.1 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:2b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s hotbar.2 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:3b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s hotbar.3 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:4b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s hotbar.4 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:5b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s hotbar.5 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:6b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s hotbar.6 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:7b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s hotbar.7 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:8b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s hotbar.8 cronica:common/status/ready
+# オフハンド
+$execute if entity @s[nbt={Inventory:[{Slot:-106b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s weapon.offhand cronica:common/status/ready
+# インベントリ
+$execute if entity @s[nbt={Inventory:[{Slot:9b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.0 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:10b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.1 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:11b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.2 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:12b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.3 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:13b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.4 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:14b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.5 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:15b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.6 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:16b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.7 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:17b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.8 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:18b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.9 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:19b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.10 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:20b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.11 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:21b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.12 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:22b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.13 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:23b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.14 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:24b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.15 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:25b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.16 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:26b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.17 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:27b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.18 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:28b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.19 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:29b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.20 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:30b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.21 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:31b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.22 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:32b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.23 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:33b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.24 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:34b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.25 cronica:common/status/ready
+$execute if entity @s[nbt={Inventory:[{Slot:35b,components:{"minecraft:custom_data":{"ItemID": $(ItemID)}}}]}] run item modify entity @s inventory.26 cronica:common/status/ready
