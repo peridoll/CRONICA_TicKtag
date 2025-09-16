@@ -7,4 +7,4 @@ scoreboard players add @a[tag=TAG.cronica.GAMING] SCORE.cronica.STATUS.ItemUsing
 scoreboard players set @a[tag=TAG.cronica.GAMING] SCORE.cronica.STATUS.ItemUsed 1
 
 # Advancement解除
-advancement revoke @s only cronica:using_item
+advancement revoke @s only cronica:player/using_item

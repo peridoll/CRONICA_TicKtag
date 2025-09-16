@@ -1,0 +1,457 @@
+{
+  "pack.mcmeta": "このファイル群をデータパックとして認識させるためのメタデータ",
+  "data": { // データパック本体
+    "cronica": { // CRONICA本体
+      "advancement": { // 実績の管理 主に行動検知に使用する TODO: 実際に実績としても使うか検討
+        "player" : {
+          "using_item.json": "アイテム使用時(ダイヤの馬鎧)"
+        }
+      },
+      "config": { // データパックとしては関係ない Copilotを使用して一部のデータを直接修正するための設定ファイル
+        "game_config.jsonc": "ゲーム",
+        "character_config.jsonc": "キャラクター、武器、スキル、アイテム",
+        "stage_config.jsonc": "ステージ",
+        "system_config.jsonc": "システム、その他"
+      },
+      "function": { // 関数群 データパック本体
+        "game": { // ゲーム関連
+          "rules": {
+            "skirmish": { // スカーミッシュ ステージ上でフリーで対戦ができる
+              "setup.mcfunction": null
+            },
+            "practice": { // 練習モード 練習用ステージで訓練ができる
+              "setup.mcfunction": null
+            },
+            "free_for_all": { // フリーフォーオール 1vs1vs1vs1のバトルロイヤル
+              "setup.mcfunction": null
+            },
+            "team_deathmatch": { // チームデスマッチ 2人ずつのチーム戦
+              "setup.mcfunction": null
+            }
+          },
+          "start.mcfunction": null,
+          "end.mcfunction": null
+        },
+        "player": { // プレイヤー関連 なんだかんだで一番闇深い
+          "character": { // キャラクター関連
+            "random_select.mcfunction": null,
+            "list": {
+              "brave": { // ブレイブ
+                "select.mcfunction": null,
+                "unique": {
+                  "material_sword": { // マテリアソード
+                    "get.mcfunction": null
+                  },
+                  "charge_shot": { // チャージショット
+                    "get.mcfunction": null
+                  },
+                  "battle_standby": { // 戦いの準備
+                    "get.mcfunction": null
+                  },
+                  "ultima_strike": { // 大地斬り
+                    "get.mcfunction": null
+                  }
+                },
+                "select": {
+                  "spinning_slash": { // 剣技：回転切り
+                    "get.mcfunction": null
+                  },
+                  "fairy_bottle": { // 妖精入りの瓶
+                    "get.mcfunction": null
+                  },
+                  "hook_shot": { // フックショット
+                    "get.mcfunction": null
+                  }
+                }
+              },
+              "ikaros": { // イカロス
+                "select.mcfunction": null,
+                "unique": {
+                  "apollon_bow": { // 太陽神ノ弓
+                    "get.mcfunction": null
+                  },
+                  "apollon_bow_spectrum": { // 太陽神ノ弓：黄昏
+                    "get.mcfunction": null
+                  },
+                  "apollon_arrow": { // 太陽神ノ矢
+                    "get.mcfunction": null
+                  },
+                  "begin_twilight": { // 逢魔ノ訪レ
+                    "get.mcfunction": null
+                  },
+                  "shotdown_flare": { // 撃墜ノ陽炎
+                    "get.mcfunction": null
+                  }
+                },
+                "select": {
+                  "flying_feather": { // 飛翔ノ翼
+                    "get.mcfunction": null,
+                    "library": {
+                      "config.mcfunction": null,
+                      "run.mcfunction": null,
+                      "main.mcfunction": null,
+                      "finish.mcfunction": null,
+                      "reset.mcfunction": null,
+                      "flaping.mcfunction": null,
+                      "stop_ceiling.mcfunction": null,
+                      "stop_stun.mcfunction": null,
+                      "ct_main.mcfunction": null,
+                      "ct_progress.mcfunction": null,
+                      "ct_finish.mcfunction": null,
+                      "ct_reset.mcfunction": null
+                    }
+                  },
+                  "judgement_stone": { // 裁キノ礫
+                    "get.mcfunction": null
+                  },
+                  "blazing_shield": { // 焔熱ノ障壁
+                    "get.mcfunction": null
+                  }
+                }
+              },
+              "dryad": { // ドライアド
+                "select.mcfunction": null
+              },
+              "ariel": { // エリアル
+                "select.mcfunction": null
+              },
+              "tesra": { // テスラ
+                "select.mcfunction": null
+              },
+              "assassin": { // アサシン
+                "select.mcfunction": null
+              },
+              "twins": { // ツインズ
+                "select.mcfunction": null
+              }
+            }
+          },
+          "item": { // アイテム関連
+            "healing_potion": { // ポーション
+              "get.mcfunction": null,
+              "library": {
+                "run.mcfunction": null
+              }
+            },
+            "smoke_salmon": { // 煙幕鮭
+              "get.mcfunction": null,
+              "library": {
+                "run.mcfunction": null
+              }
+            },
+            "flag_grenade": { // 手投げ爆弾
+              "get.mcfunction": null,
+              "library": {
+                "run.mcfunction": null
+              }
+            },
+            "extra_booster": { // 究極活性剤
+              "get.mcfunction": null,
+              "library": {
+                "run.mcfunction": null
+              }
+            }
+          },
+          "status": { // プレイヤーやアイテムの状態管理
+            "basic_effect.mcfunction": null,
+            "check": { // 行動検知
+              "boot": {
+                "using": {
+                  "category": {
+                    "weapon.mcfunction": null,
+                    "weapon_skill.mcfunction": null,
+                    "passive_skill.mcfunction": null,
+                    "extra_skill.mcfunction": null,
+                    "select_skill.mcfunction": null,
+                    "item.mcfunction": null
+                  },
+                  "main.mcfunction": null,
+                  "finish.mcfunction": null
+                },
+                "sneak.mcfunction": null,
+                "sprint.mcfunction": null
+              },
+              "main.mcfunction": null
+            },
+            "item_display": { // アイテムの見た目や説明欄を変更する
+              "status": {
+                "ready.mcfunction": null,
+                "charging.mcfunction": null,
+                "used.mcfunction": null,
+                "jamming.mcfunction": null
+              },
+              "model": {
+                "default.mcfunction": null,
+                "used.mcfunction": null,
+                "ban.mcfunction": null,
+                "gauge": {
+                  "gauge_0.mcfunction": null,
+                  "gauge_1.mcfunction": null,
+                  "gauge_2.mcfunction": null,
+                  "gauge_3.mcfunction": null,
+                  "gauge_4.mcfunction": null,
+                  "gauge_5.mcfunction": null,
+                  "gauge_6.mcfunction": null,
+                  "gauge_7.mcfunction": null,
+                  "gauge_8.mcfunction": null,
+                  "gauge_9.mcfunction": null
+                }
+              }
+            }
+          },
+          "inventory": { // プレイヤーのインベントリ関連
+            "get_template": { // インベントリテンプレートを取得する
+              "lobby.mcfunction": null, // ロビー用
+              "free_battle.mcfunction": null, // スカーミッシュ,練習用
+              "match_battle.mcfunction": null // 試合用
+            },
+            "remember_slot": { // 自身のアイテムの起き方を記憶する
+              "save.mcfunction": null,
+              "load.mcfunction": null
+            }
+          }
+        },
+        "stage": { // ステージ関連
+          "list": { // ステージ一覧
+            "lobby": { // ロビー
+              "teleport": {
+                "enter.mcfunction": null
+              },
+              "position": {
+              }
+            },
+            "practice_area": { // 練習場
+              "teleport": {
+                "enter.mcfunction": null
+              },
+              "position": {
+              }
+            },
+            "whale_garden": { // 鯨皇街
+              "teleport": {
+                "center.mcfunction": null
+              },
+              "position": {
+                "respawn_marker": null,
+                "shop_marker": null,
+                "care_package_marker": null
+              }
+            },
+            "crono_town": { // クロノタウン
+              "teleport": {
+                "center.mcfunction": null
+              },
+              "position": {
+                "respawn_marker": null,
+                "shop_marker": null,
+                "care_package_marker": null
+              }
+            },
+            "kingscross_station": { // キングスクロス駅
+              "teleport": {
+                "center.mcfunction": null
+              },
+              "position": {
+                "respawn_marker": null,
+                "shop_marker": null,
+                "care_package_marker": null
+              }
+            },
+            "tempus_city": { // テンパスシティ
+              "teleport": {
+                "center.mcfunction": null
+              },
+              "position": {
+                "respawn_marker": null,
+                "shop_marker": null,
+                "care_package_marker": null
+              }
+            }
+          },
+          "gimmick": { // ステージ上のギミック関連
+            "wall_climb": { // 柵乗り越え
+              "config.mcfunction": null,
+              "charge.mcfunction": null,
+              "main.mcfunction": null,
+              "progress.mcfunction": null,
+              "complete.mcfunction": null,
+              "reset.mcfunction": null
+            },
+            "panel": { // 踏んだら起動するパネル
+              "jump": { // ジャンプパネル : lime
+                "run.mcfunction": null,
+                "main.mcfunction": null,
+                "finish.mcfunction": null
+              },
+              "dash": { // ダッシュパネル : orange
+                "run.mcfunction": null,
+                "main.mcfunction": null,
+                "finish.mcfunction": null
+              },
+              "heal": { // 回復パネル : pink
+                "run.mcfunction": null,
+                "main.mcfunction": null,
+                "finish.mcfunction": null
+              }
+            },
+            "main.mcfunction": null
+          },
+          "teleport": { // クイックテレポート その場に行くだけでなくステータスなども変更する
+            "main_lobby.mcfunction": null,
+            "practice_area.mcfunction": null
+          }
+        },
+        "system": { // システム関連
+          "gamerule_set.mcfunction": "ゲームルール 起動時実行でゲームルールを設定する(あまり意味はないが、新規ワールドに乗り換えたときに便利)",
+          "join_server.mcfunction": "サーバー参加時実行 入ったときに実行",
+          "menu": { // メニュー管理 TODO: もう大きすぎて外に出してもいいくらい
+            "open.mcfunction": null
+          },
+          "advancements": { // 実績関連 主に行動検知に使用する
+            "using_item.mcfunction": "アイテム使用時(ダイヤの馬鎧)"
+          },
+          "scoreboard": { // スコアを一括で管理する際などに使用する
+          },
+          "tag": { // タグを一括で管理する際などに使用する
+          },
+          "test": {
+            "kikitst": {
+              "anko.mcfunction": null
+            }
+          }
+        },
+        "tick.mcfunction": "常時実行",
+        "load.mcfunction": "起動時実行"
+      },
+      "item_modifier": { // アイテムの状態を変更するためのパス itemコマンドで呼び出して使用する
+        "character": { // キャラクター関連 武器やスキルに追加の説明欄を追加したりなど
+          "brave": {
+            "material_sword": {},
+            "ultima_strike": {},
+            "spinning_slash": {
+              "append_connect_lore.json": null
+            },
+            "fairy_bottle": {
+              "append_connect_lore.json": null
+            },
+            "hook_shot": {
+              "append_connect_lore.json": null
+            }
+          },
+          "ikaros": {
+            "apollon_bow": {},
+            "apollon_arrow": {},
+            "shotdown_flare": {},
+            "flying_feather": {
+              "append_connect_lore.json": null
+            },
+            "judgement_stone": {
+              "append_connect_lore.json": null
+            },
+            "blazing_shield": {
+              "append_connect_lore.json": null
+            }
+          },
+          "dryad": {
+          },
+          "ariel": {
+          },
+          "tesra": {
+          },
+          "assassin": {
+          },
+          "twins": {
+          }
+        },
+        "common": { // 共通
+          "status": { // アイテムの内部情報の書き換え
+            "ready.json": null, // 使用可能状態
+            "charging.json": null, // チャージ中状態
+            "used.json": null, // 一度きり発動などの使用済み状態
+            "jamming.json": null // 使用不可状態
+          },
+          "model": { // アイテムの見た目の書き換え
+            "default.json": null, // デフォルト状態
+            "used.json": null, // 使用済み状態、チャージ中状態
+            "ban.json": null, // 使用不可、禁止状態
+            "gauge": { // ゲージ表示
+              "gauge_0.json": null,
+              "gauge_1.json": null,
+              "gauge_2.json": null,
+              "gauge_3.json": null,
+              "gauge_4.json": null,
+              "gauge_5.json": null,
+              "gauge_6.json": null,
+              "gauge_7.json": null,
+              "gauge_8.json": null,
+              "gauge_9.json": null
+            }
+          }
+        }
+      },
+      "loot_table": { // アイテム自体の情報
+        "character": { // キャラクター関連 武器やスキル
+          "brave": { // ブレイブ
+            "material_sword.json": "マテリアソード",
+            "ultima_strike.json": "大地斬り",
+            "spinning_slash.json": "剣技：回転切り",
+            "fairy_bottle.json": "妖精入りの瓶",
+            "hook_shot.json": "フックショット"
+          },
+          "ikaros": { // イカロス
+            "apollon_bow.json": "太陽神ノ弓",
+            "apollon_bow_spectrum.json": "太陽神ノ弓：黄昏",
+            "apollon_arrow.json": "太陽神ノ矢",
+            "begin_twilight.json": "逢魔ノ訪レ",
+            "shotdown_flare.json": "撃墜ノ陽炎",
+            "flying_feather.json": "飛翔ノ翼",
+            "judgement_stone.json": "裁キノ礫",
+            "blazing_shield.json": "焔熱ノ障壁"
+          },
+          "dryad": {
+          },
+          "ariel": {
+          },
+          "tesra": {
+          },
+          "assassin": {
+          },
+          "twins": {
+          }
+        },
+        "item": { // 特殊アイテム
+        }
+      },
+      "predicate": { // 行動検知その２ Advancementとの違いはこっちは断続的に検知できる
+        "sneak.json": "スニーク検知",
+        "sprint.json": "ダッシュ検知"
+      },
+      "tags": { // 特定の要素をまとめて管理する 主にブロックのまとめなど
+        "block": {
+          "fence.json": "フェンスまとめ 乗り越え判定用",
+          "no_collision_light.json": "光がとおれるブロックまとめ 光線判定用",
+          "no_collision.json": "衝突判定のないブロックまとめ 移動スキルや投射物判定用",
+          "water.json": "水ブロックまとめ 水判定用",
+          "no_ground.json": "地面判定ではないブロックまとめ 地面判定用"
+        },
+        "entity": {
+        }
+      }
+    },
+    "lib": { // 開発に使用しているライブラリ
+      "loot_table": {
+        "teleport.json": "視線の先テレポート", // by Chuzume
+        "switch_gamemode.json": "ゲームモード切替(ライブラリだが、CRONICA用に調整済み)" // by Chuzume
+      }
+    },
+    "minecraft": { // 常時実行や起動時実行などの関数を動作させる
+      "tags": {
+        "function": {
+          "tick.json": null, // 常時実行
+          "load.json": null // 起動時実行
+        }
+      }
+    }
+  },
+  "structure.json": "このファイル、構造を簡略化して管理できるようにする目的"
+}

@@ -1,6 +1,12 @@
 
 # 使用検知
-advancement revoke @s only cronica:using_item
+advancement revoke @s only cronica:player/using_item
+
+
+
+
+
+
 
 # ## 攻撃を与える
 # advancement revoke @s only cronica:battle/offence/kill

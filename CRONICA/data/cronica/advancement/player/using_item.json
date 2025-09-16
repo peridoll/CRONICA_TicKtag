@@ -14,6 +14,6 @@
     }
   },
   "rewards": {
-    "function": "cronica:player/status/check/using_item"
+    "function": "cronica:system/advancements/using_item"
   }
 }
