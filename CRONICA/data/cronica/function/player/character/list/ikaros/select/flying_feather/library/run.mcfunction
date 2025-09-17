@@ -31,10 +31,10 @@ playsound minecraft:item.trident.riptide_3 player @a ~ ~ ~ 2 1
 
 # スコア管理
 # << コンフィグロード：コンフィグファイルから設定値をロード >>
-function cronica:player/character/list/ikaros/skill/select/flying_feather/library/config
+function cronica:player/character/list/ikaros/select/flying_feather/library/config
 # << アイテム管理 >>
 scoreboard objectives add SCORE.cronica.MODE.FlyingFeather dummy
-scoreboard players set @s SCORE.cronica.MODE.FlyingFeather -1
+scoreboard players set @s SCORE.cronica.MODE.FlyingFeather 0
 # << 効果時間 >>
 scoreboard objectives add SCORE.cronica.TIMER.FlyingFeather.ActivateTime dummy
 scoreboard players set @s SCORE.cronica.TIMER.FlyingFeather.ActivateTime 0
@@ -51,5 +51,5 @@ scoreboard players operation @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack
 
 # ループ処理
 # << 1tickごとにメイン処理を実行 >>
-schedule function cronica:player/character/list/ikaros/skill/select/flying_feather/library/main 1t
-schedule function cronica:player/character/list/ikaros/skill/select/flying_feather/library/ct_main 1t
+schedule function cronica:player/character/list/ikaros/select/flying_feather/library/main 1t
+schedule function cronica:player/character/list/ikaros/select/flying_feather/library/ct_main 1t

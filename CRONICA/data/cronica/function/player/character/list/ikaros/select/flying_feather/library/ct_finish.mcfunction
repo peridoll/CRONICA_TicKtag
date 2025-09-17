@@ -7,4 +7,4 @@ function cronica:player/status/item_display/status/ready {ItemID: "FlyingFeather
 playsound minecraft:entity.arrow.hit_player player @s ~ ~ ~ 0.5 2
 
 # リセット
-function cronica:player/character/list/ikaros/skill/select/flying_feather/library/ct_reset
+function cronica:player/character/list/ikaros/select/flying_feather/library/ct_reset

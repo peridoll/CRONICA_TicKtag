@@ -3,7 +3,7 @@
 # アイテム確保
 # << 移動中などの場合、アイテムが消失する可能性があるため、予めインベントリに確保しておく >>
 # execute unless entity @s[nbt={Inventory:[{Slot:0b,components:{"minecraft:custom_data":{"ItemID": "FlyingFeather"}}}]}] run clear @s diamond_horse_armor
-# execute unless entity @s[nbt={Inventory:[{Slot:0b,components:{"minecraft:custom_data":{"ItemID": "FlyingFeather"}}}]}] run function cronica:player/character/list/ikaros/skill/select/flying_feather/get
+# execute unless entity @s[nbt={Inventory:[{Slot:0b,components:{"minecraft:custom_data":{"ItemID": "FlyingFeather"}}}]}] run function cronica:player/character/list/ikaros/select/flying_feather/get
 
 # 状態スコア更新
 scoreboard players add @s SCORE.cronica.MODE.FlyingFeather 1
