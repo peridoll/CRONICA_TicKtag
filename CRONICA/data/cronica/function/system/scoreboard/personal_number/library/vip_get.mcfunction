@@ -4,3 +4,5 @@
 execute if entity @s[name="toto_tox2"] run scoreboard players set @s SCORE.cronica.PersonalNumber 8888
 # No16
 execute if entity @s[name="No16_noimu"] run scoreboard players set @s SCORE.cronica.PersonalNumber 1684
+# @KiKi
+execute if entity @s[name="KiKi1224clover"] run scoreboard players set @s SCORE.cronica.PersonalNumber 1224

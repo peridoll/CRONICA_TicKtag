@@ -11,7 +11,7 @@ tag @s[gamemode=creative] add TAG.cronica.SKILL.FlyingFeather.RunCreative
 execute as @s[tag=TAG.cronica.SKILL.FlyingFeather.RunCreative] run gamemode adventure @s
 
 # エフェクト
-effect give @s minecraft:levitation 1 30 true
+effect give @s minecraft:levitation 1 25 true
 effect give @s minecraft:slow_falling infinite 0 true
 
 # ゲームモード
