@@ -34,6 +34,8 @@ execute if data storage cronica:context ItemID{Value:"FlyingFeather"} if data st
 
 #//////////////////////////////////////////////////////////////////////////////////////////////////
 
-## Twins
+## Sleet
 
+# AquaJet
+# execute if data storage cronica:context ItemID{Value:"AquaJet"} if data storage cronica:context ItemStatus{Value:"ready"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run function cronica:player/character/list/sleet/skill/select/aqua_jet/library/run
 #//////////////////////////////////////////////////////////////////////////////////////////////////

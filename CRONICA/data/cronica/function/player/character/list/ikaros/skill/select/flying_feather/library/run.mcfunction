@@ -1,8 +1,8 @@
 ## 実行処理
 
 # アイテム置き換え
-function cronica:player/status/item_model/used {ItemID: "FlyingFeather"}
-function cronica:player/status/item_status/charging {ItemID: "FlyingFeather"}
+function cronica:player/status/item_display/model/used {ItemID: "FlyingFeather"}
+function cronica:player/status/item_display/status/charging {ItemID: "FlyingFeather"}
 
 ## 処理本体
 
@@ -32,7 +32,7 @@ playsound minecraft:item.trident.riptide_3 player @a ~ ~ ~ 2 1
 function cronica:player/character/list/ikaros/skill/select/flying_feather/library/config
 #[アイテム管理]
 scoreboard objectives add SCORE.cronica.MODE.FlyingFeather dummy
-scoreboard players set @s SCORE.cronica.MODE.FlyingFeather 0
+scoreboard players set @s SCORE.cronica.MODE.FlyingFeather -1
 #[効果時間]
 scoreboard objectives add SCORE.cronica.TIMER.FlyingFeather.ActivateTime dummy
 scoreboard players set @s SCORE.cronica.TIMER.FlyingFeather.ActivateTime 0
@@ -43,7 +43,7 @@ scoreboard objectives add SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal dummy
 scoreboard objectives add SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack dummy
 scoreboard objectives add SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack.Goal dummy
 scoreboard players operation @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal = #CONFIG.cronica.SKILL.FlyingFeather.CoolTime SCORE.cronica.CONFIG
-scoreboard players set @s[tag= TAG.cronica.CT_ZERO] SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal 10
+scoreboard players set @s[tag=TAG.cronica.CT_ZERO] SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal 10
 scoreboard players operation @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack.Goal = @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal
 scoreboard players operation @s SCORE.cronica.TIMER.player_skill.FlyingFeather.CoolTime.Stack.Goal /= #10 SCORE.cronica.CONFIG
 

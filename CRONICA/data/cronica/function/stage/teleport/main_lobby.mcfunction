@@ -34,7 +34,7 @@ clear @s
 function cronica:player/inventory/get_template/lobby
 
 # スキル
-#function cronica:player/status/reset
+function cronica:player/status/reset
 
 ## テレポート
 
@@ -59,10 +59,10 @@ title @s title [{"text":" "}]
 title @s subtitle [{"text":"-","color":"gray","bold":false},{"text":"Main Lobby","color":"gold","bold":false},{"text":"-","color":"gray","bold":false}]
 
 # サーバー参加時
-execute as @s[tag=TAG.cronica.SYSTEM.JoinServer.Joinworld] run title @s title [{"text":"<<","color":"gray","bold":false},{"text":" CRONICA ","color":"green","bold":true},{"text":">>","color":"gray","bold":false}]
-execute as @s[tag=TAG.cronica.SYSTEM.JoinServer.Joinworld] run title @s subtitle [{"text":"Presented By TicK-tag"}]
-execute as @s[tag=TAG.cronica.SYSTEM.JoinServer.Joinworld] run tag @s remove TAG.cronica.SYSTEM.JoinServer.Joinworld
+execute as @s[tag=TAG.cronica.SYSTEM.JoinServer.JoinWorld] run title @s title [{"text":"<<","color":"gray","bold":false},{"text":" CRONICA ","color":"green","bold":true},{"text":">>","color":"gray","bold":false}]
+execute as @s[tag=TAG.cronica.SYSTEM.JoinServer.JoinWorld] run title @s subtitle [{"text":"Presented By TicK-tag"}]
+execute as @s[tag=TAG.cronica.SYSTEM.JoinServer.JoinWorld] run tag @s remove TAG.cronica.SYSTEM.JoinServer.JoinWorld
 
 ## データ管理
 # スコアリセット
-# function cronica:system/scoreboard/reconstruction
+function cronica:system/scoreboard/reconstruction

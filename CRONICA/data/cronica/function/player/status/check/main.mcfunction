@@ -1,6 +1,7 @@
-
 ## 使用検知
-execute as @a[tag=TAG.cronica.GAMING] run function cronica:player/status/check/boot/using/main
+execute as @a[tag=TAG.cronica.GAMING] as @s[tag=!TAG.cronica.STATUS.ItemUsing] run function cronica:player/status/check/boot/using/main
+execute as @a[tag=TAG.cronica.GAMING] as @s[tag=!TAG.cronica.STATUS.ItemUsing] run schedule function cronica:player/status/check/boot/using/main 2t
+execute as @a[tag=TAG.cronica.GAMING] run tag @s remove TAG.cronica.STATUS.ItemUsing
 
 # ニンジン付きの棒
 # execute unless entity @a[nbt={Inventory:[{id:"minecraft:carrot_on_a_stick"}]}] unless entity @a[scores={SCORE.cronica.ACTIVATE.carrot_on_a_stick=1..}] run scoreboard objectives remove SCORE.cronica.ACTIVATE.carrot_on_a_stick

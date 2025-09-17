@@ -19,12 +19,12 @@
 execute as @a[gamemode=survival] run function cronica:system/join_server
 
 ## 身体強化
-execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/status/basic_effect
-#execute unless entity @a[tag=!TAG.cronica.GAMING] run kill @e[tag=TAG.cronica.VILLAGER.GameController]
+execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/status/effect
 
 # ステージ管理
-execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:stage/gimmick/tick
-execute if entity @a[tag=TAG.cronica.GAMING] run schedule function cronica:stage/gimmick/tick 2t
+#execute unless entity @a[tag=!TAG.cronica.GAMING] run kill @e[tag=TAG.cronica.VILLAGER.GameController]
+execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:stage/gimmick/main
+execute if entity @a[tag=TAG.cronica.GAMING] run schedule function cronica:stage/gimmick/main 2t
 
 #//////////////////////////////////////////////////////////////////////////////////////////////////
 ## 検知
