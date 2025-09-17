@@ -1,5 +1,5 @@
 # エフェクト
-execute as @s run effect clear @s minecraft:levitation
+effect clear @s minecraft:levitation
 
 # スコア管理
-execute as @s run scoreboard players set @s SCORE.cronica.TIMER.player_skill.FlyingFeather.ActivateTime 19
+scoreboard players set @s SCORE.cronica.TIMER.player_skill.FlyingFeather.ActivateTime 19

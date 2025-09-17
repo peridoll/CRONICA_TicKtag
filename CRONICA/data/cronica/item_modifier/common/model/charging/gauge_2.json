@@ -1,0 +1,11 @@
+[
+  {
+    "function": "minecraft:set_custom_model_data",
+    "strings": {
+      "values": [
+        "charging_gauge_2"
+      ],
+      "mode": "insert"
+    }
+  }
+]
