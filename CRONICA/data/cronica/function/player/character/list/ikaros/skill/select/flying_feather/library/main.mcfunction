@@ -5,7 +5,7 @@ scoreboard players add @e[scores={SCORE.cronica.TIMER.FlyingFeather.ActivateTime
 effect clear @a[scores={SCORE.cronica.TIMER.FlyingFeather.ActivateTime=10}] minecraft:levitation
 
 # 装飾
-#[羽ばたき]
+# << 羽ばたき >>
 execute as @a[scores={SCORE.cronica.TIMER.FlyingFeather.ActivateTime=20}] at @s run function cronica:player/character/list/ikaros/skill/select/flying_feather/library/flaping
 execute as @a[scores={SCORE.cronica.TIMER.FlyingFeather.ActivateTime=25}] at @s run function cronica:player/character/list/ikaros/skill/select/flying_feather/library/flaping
 execute as @a[scores={SCORE.cronica.TIMER.FlyingFeather.ActivateTime=30}] at @s run function cronica:player/character/list/ikaros/skill/select/flying_feather/library/flaping
