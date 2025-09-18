@@ -10,11 +10,9 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_model": "cronica:character/ikaros/flying_feather",
+                "minecraft:item_model": "cronica:character/ikaros/select/flying_feather",
                 "minecraft:custom_model_data": {
-                  "strings": [
-                    "default"
-                  ]
+                  "strings": ["default"]
                 },
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:max_stack_size": 1,

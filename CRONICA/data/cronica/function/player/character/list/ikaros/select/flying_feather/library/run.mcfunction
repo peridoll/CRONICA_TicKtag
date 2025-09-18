@@ -30,8 +30,12 @@ playsound minecraft:item.trident.riptide_3 player @a ~ ~ ~ 2 1
 ## 後続用処理
 
 # スコア管理
+
 # << コンフィグロード：コンフィグファイルから設定値をロード >>
-function cronica:player/character/list/ikaros/select/flying_feather/library/config
+# クールタイム
+# CONFIG: character_config:ikaros:flying_feather:cool_time [scoreboard players set #CONFIG.cronica.SKILL.FlyingFeather.CoolTime SCORE.cronica.CONFIG {cool_time}}]
+scoreboard players set #CONFIG.cronica.SKILL.FlyingFeather.CoolTime SCORE.cronica.CONFIG 240
+
 # << アイテム管理 >>
 scoreboard objectives add SCORE.cronica.MODE.FlyingFeather dummy
 scoreboard players set @s SCORE.cronica.MODE.FlyingFeather 0
@@ -45,9 +49,9 @@ scoreboard objectives add SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal dummy
 scoreboard objectives add SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack dummy
 scoreboard objectives add SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack.Goal dummy
 scoreboard players operation @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal = #CONFIG.cronica.SKILL.FlyingFeather.CoolTime SCORE.cronica.CONFIG
-scoreboard players set @s[tag=TAG.cronica.CT_ZERO] SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal 10
+scoreboard players set @s[tag=TAG.cronica.CT_ZERO] SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal 20
 scoreboard players operation @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack.Goal = @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Goal
-scoreboard players operation @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack.Goal /= #10 SCORE.cronica.CONFIG
+scoreboard players operation @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack.Goal /= #20 SCORE.cronica.CONFIG
 
 # ループ処理
 # << 1tickごとにメイン処理を実行 >>

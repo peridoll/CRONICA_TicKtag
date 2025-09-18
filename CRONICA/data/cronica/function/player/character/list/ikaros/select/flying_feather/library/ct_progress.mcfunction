@@ -20,6 +20,16 @@ execute if score @s SCORE.cronica.MODE.FlyingFeather matches 6 run function cron
 execute if score @s SCORE.cronica.MODE.FlyingFeather matches 7 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 7}
 execute if score @s SCORE.cronica.MODE.FlyingFeather matches 8 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 8}
 execute if score @s SCORE.cronica.MODE.FlyingFeather matches 9 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 9}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 10 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 10}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 11 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 11}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 12 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 12}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 13 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 13}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 14 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 14}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 15 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 15}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 16 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 16}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 17 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 17}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 18 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 18}
+execute if score @s SCORE.cronica.MODE.FlyingFeather matches 19 run function cronica:player/status/item_display/model/charging {ItemID: "FlyingFeather", Gauge: 19}
 
 # スコア管理
 scoreboard players reset @s SCORE.cronica.TIMER.FlyingFeather.CoolTime.Stack

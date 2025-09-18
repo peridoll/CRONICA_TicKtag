@@ -3,7 +3,7 @@
     "function": "minecraft:set_custom_model_data",
     "strings": {
       "values": [
-        "charging_gauge_3"
+        "charging_10"
       ],
       "mode": "insert"
     }
