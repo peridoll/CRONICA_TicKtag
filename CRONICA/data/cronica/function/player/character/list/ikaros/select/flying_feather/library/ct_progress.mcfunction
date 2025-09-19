@@ -2,8 +2,13 @@
 
 # アイテム確保
 # << 移動中などの場合、アイテムが消失する可能性があるため、予めインベントリに確保しておく >>
-# execute unless entity @s[nbt={Inventory:[{Slot:0b,components:{"minecraft:custom_data":{"ItemID": "FlyingFeather"}}}]}] run clear @s diamond_horse_armor
-# execute unless entity @s[nbt={Inventory:[{Slot:0b,components:{"minecraft:custom_data":{"ItemID": "FlyingFeather"}}}]}] run function cronica:player/character/list/ikaros/select/flying_feather/get
+execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"ready"}]
+execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"ban"}]
+execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"used"}]
+execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"charging"}]
+execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run function cronica:player/character/list/ikaros/select/flying_feather/get
+
+# TODO: 帰ってきたアイテムは状態が"ready"のものなので、使用後の状態に置き換え
 
 # 状態スコア更新
 scoreboard players add @s SCORE.cronica.MODE.FlyingFeather 1

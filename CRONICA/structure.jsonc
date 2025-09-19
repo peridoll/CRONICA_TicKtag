@@ -121,7 +121,10 @@
               "assassin": { // アサシン
                 "select.mcfunction": null
               },
-              "twins": { // ツインズ
+              "sleet": { // スリート
+                "select.mcfunction": null
+              },
+              "yinyang": { // インニャン
                 "select.mcfunction": null
               }
             }
@@ -185,16 +188,16 @@
                 "used.mcfunction": null,
                 "ban.mcfunction": null,
                 "gauge": {
-                  "gauge_0.mcfunction": null,
-                  "gauge_1.mcfunction": null,
-                  "gauge_2.mcfunction": null,
-                  "gauge_3.mcfunction": null,
-                  "gauge_4.mcfunction": null,
-                  "gauge_5.mcfunction": null,
-                  "gauge_6.mcfunction": null,
-                  "gauge_7.mcfunction": null,
-                  "gauge_8.mcfunction": null,
-                  "gauge_9.mcfunction": null
+                  "charge_0.mcfunction": null,
+                  "charge_1.mcfunction": null,
+                  "charge_2.mcfunction": null,
+                  "charge_3.mcfunction": null,
+                  "charge_4.mcfunction": null,
+                  "charge_5.mcfunction": null,
+                  "charge_6.mcfunction": null,
+                  "charge_7.mcfunction": null,
+                  "charge_8.mcfunction": null,
+                  "charge_9.mcfunction": null
                 }
               }
             }
@@ -326,8 +329,7 @@
       "item_modifier": { // アイテムの状態を変更するためのパス itemコマンドで呼び出して使用する
         "character": { // キャラクター関連 武器やスキルに追加の説明欄を追加したりなど
           "brave": {
-            "material_sword": {},
-            "ultima_strike": {},
+            "select": {
             "spinning_slash": {
               "append_connect_lore.json": null
             },
@@ -336,12 +338,16 @@
             },
             "hook_shot": {
               "append_connect_lore.json": null
+              }
+            },
+            "unique": {
+              "material_sword": {},
+              "charge_shot": {},
+              "tri_impact": {}
             }
           },
           "ikaros": {
-            "apollon_bow": {},
-            "apollon_arrow": {},
-            "shotdown_flare": {},
+            "select": {
             "flying_feather": {
               "append_connect_lore.json": null
             },
@@ -352,16 +358,20 @@
               "append_connect_lore.json": null
             }
           },
-          "dryad": {
+            "unique": {
+              "apollon_bow": {},
+              "apollon_bow_twilight": {},
+              "apollon_arrow": {},
+              "begin_twilight": {},
+              "shotdown_flare": {}
+            }
           },
-          "ariel": {
-          },
-          "tesra": {
-          },
-          "assassin": {
-          },
-          "twins": {
-          }
+          "dryad": {},
+          "ariel": {},
+          "tesra": {},
+          "assassin": {},
+          "sleet": {},
+          "yinyang" : {}
         },
         "common": { // 共通
           "status": { // アイテムの内部情報の書き換え
@@ -375,38 +385,57 @@
             "used.json": null, // 使用済み状態、チャージ中状態
             "ban.json": null, // 使用不可、禁止状態
             "gauge": { // ゲージ表示
-              "gauge_0.json": null,
-              "gauge_1.json": null,
-              "gauge_2.json": null,
-              "gauge_3.json": null,
-              "gauge_4.json": null,
-              "gauge_5.json": null,
-              "gauge_6.json": null,
-              "gauge_7.json": null,
-              "gauge_8.json": null,
-              "gauge_9.json": null
+              "charging_0.json": null,
+              "charging_1.json": null,
+              "charging_2.json": null,
+              "charging_3.json": null,
+              "charging_4.json": null,
+              "charging_5.json": null,
+              "charging_6.json": null,
+              "charging_7.json": null,
+              "charging_8.json": null,
+              "charging_9.json": null,
+              "charging_10.json": null,
+              "charging_11.json": null,
+              "charging_12.json": null,
+              "charging_13.json": null,
+              "charging_14.json": null,
+              "charging_15.json": null,
+              "charging_16.json": null,
+              "charging_17.json": null,
+              "charging_18.json": null,
+              "charging_19.json": null
             }
           }
         }
       },
       "loot_table": { // アイテム自体の情報
         "character": { // キャラクター関連 武器やスキル
-          "brave": { // ブレイブ
-            "material_sword.json": "マテリアソード",
-            "ultima_strike.json": "大地斬り",
-            "spinning_slash.json": "剣技：回転切り",
-            "fairy_bottle.json": "妖精入りの瓶",
-            "hook_shot.json": "フックショット"
+          "brave": {// ブレイブ
+            "select": {
+              "spinning_slash.json": "剣技：回転切り",
+              "fairy_bottle.json": "妖精入りの瓶",
+              "hook_shot.json": "フックショット"
+            },
+            "unique": {
+              "material_sword.json": "マテリアソード",
+              "charge_shot.json": "チャージショット",
+              "tri_impact.json": "トライインパクト"
+            }
           },
           "ikaros": { // イカロス
-            "apollon_bow.json": "太陽神ノ弓",
-            "apollon_bow_spectrum.json": "太陽神ノ弓：黄昏",
-            "apollon_arrow.json": "太陽神ノ矢",
-            "begin_twilight.json": "逢魔ノ訪レ",
-            "shotdown_flare.json": "撃墜ノ陽炎",
-            "flying_feather.json": "飛翔ノ翼",
-            "judgement_stone.json": "裁キノ礫",
-            "blazing_shield.json": "焔熱ノ障壁"
+            "select": {
+              "blazing_shield.json": "焔熱ノ障壁",
+              "flying_feather.json": "飛翔ノ翼",
+              "judgement_stone.json": "裁キノ礫"
+            },
+            "unique": {
+              "apollon_arrow.json": "太陽神ノ矢",
+              "apollon_bow.json": "太陽神ノ弓",
+              "apollon_bow_twilight.json": "太陽神ノ弓：黄昏",
+              "begin_twilight.json": "逢魔ノ訪レ",
+              "shotdown_flare.json": "撃墜ノ陽炎"
+            }
           },
           "dryad": {
           },
@@ -416,7 +445,9 @@
           },
           "assassin": {
           },
-          "twins": {
+          "sleet": {
+          },
+          "yinyang": {
           }
         },
         "item": { // 特殊アイテム
