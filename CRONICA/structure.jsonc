@@ -101,7 +101,7 @@
                       "ct_reset.mcfunction": null
                     }
                   },
-                  "judgement_stone": { // 裁キノ礫
+                  "judgment_stone": { // 裁キノ礫
                     "get.mcfunction": null
                   },
                   "blazing_shield": { // 焔熱ノ障壁
@@ -351,7 +351,7 @@
             "flying_feather": {
               "append_connect_lore.json": null
             },
-            "judgement_stone": {
+            "judgment_stone": {
               "append_connect_lore.json": null
             },
             "blazing_shield": {
@@ -427,7 +427,7 @@
             "select": {
               "blazing_shield.json": "焔熱ノ障壁",
               "flying_feather.json": "飛翔ノ翼",
-              "judgement_stone.json": "裁キノ礫"
+              "judgment_stone.json": "裁キノ礫"
             },
             "unique": {
               "apollon_arrow.json": "太陽神ノ矢",

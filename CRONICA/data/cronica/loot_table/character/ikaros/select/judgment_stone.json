@@ -10,7 +10,7 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_model": "cronica:character/ikaros/select/blazing_shield",
+                "minecraft:item_model": "cronica:character/ikaros/select/judgment_stone",
                 "minecraft:custom_model_data": {
                   "strings": ["default"]
                 },
@@ -24,26 +24,26 @@
                 },
                 "minecraft:custom_data": {
                   "ItemCategory": "SelectSkill",
-                  "ItemID": "BlazingShield",
+                  "ItemID": "judgmentStone",
                   "ItemStatus": "ready"
                 },
                 "minecraft:custom_name": {
-                  "text": "炎熱ノ護盾",
+                  "text": "裁キノ礫",
                   "color": "#ffa500",
                   "bold": true
                 },
                 "minecraft:lore": [
                   {
-                    "text": "正面に炎の盾を展開する",
+                    "text": "正面に星のかけらを降らせる",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "炎の盾は、敵の遠距離攻撃を一定時間防ぐ",
+                    "text": "チャージ時間に応じて弾数が増える",
                     "color": "#ffffff"
                   },
                   "====================",
                   {
-                    "text": "CT : 22s",
+                    "text": "CT : 16s",
                     "color": "#00ff00"
                   }
                 ]

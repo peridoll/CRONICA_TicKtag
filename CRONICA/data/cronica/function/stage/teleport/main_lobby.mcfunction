@@ -34,7 +34,7 @@ clear @s
 function cronica:player/inventory/get_template/lobby
 
 # スキル
-function cronica:player/status/reset
+function cronica:player/status/reset/skill
 
 ## テレポート
 
