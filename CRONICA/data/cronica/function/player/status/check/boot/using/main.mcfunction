@@ -10,7 +10,7 @@ data modify storage cronica:context ItemID.Mainhand set from entity @s SelectedI
 data modify storage cronica:context ItemID.Value set from storage cronica:context ItemID.Offhand
 data modify storage cronica:context ItemID.Value set from storage cronica:context ItemID.Mainhand
 
-# ItemID取得
+# ItemStatus取得
 data modify storage cronica:context ItemStatus.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemStatus
 data modify storage cronica:context ItemStatus.Mainhand set from entity @s SelectedItem.components."minecraft:custom_data".ItemStatus
 data modify storage cronica:context ItemStatus.Value set from storage cronica:context ItemStatus.Offhand
@@ -21,7 +21,7 @@ execute if score @s[scores={SCORE.cronica.STATUS.ItemUsing=1..}] SCORE.cronica.S
 scoreboard players set @s SCORE.cronica.STATUS.ItemUsed 0
 #//////////////////////////////////////////////////////////////////////////////////////////////////
 # MainWeapon
-# execute if data storage cronica:context ItemCategory{Value:"MainWeapon"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1.. run function cronica:player/status/check/boot/using/category/main_weapon
+execute if data storage cronica:context ItemCategory{Value:"MainWeapon"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1.. run function cronica:player/status/check/boot/using/category/main_weapon
 # SubWeapon
 # execute if data storage cronica:context ItemCategory{Value:"SubWeapon"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1.. run function cronica:player/status/check/boot/using/category/sub_weapon
 # Ammo
