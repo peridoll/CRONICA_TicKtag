@@ -4,8 +4,8 @@ scoreboard players add @a[scores={SCORE.cronica.TIMER.GimmickWallClimb.Charge=0.
 
 # チェック
 execute as @a[scores={SCORE.cronica.TIMER.GimmickWallClimb.Charge=0..}] at @s unless block ~ ~ ~ #cronica:fence run function cronica:stage/gimmick/wall_climb/library/reset
-execute as @a[scores={SCORE.cronica.TIMER.GimmickWallClimb.Charge=0..},tag=!TAG.cronica.SNEAKING] run function cronica:stage/gimmick/wall_climb/library/reset
-execute as @a[scores={SCORE.cronica.TIMER.GimmickWallClimb.Charge=0..}] run tag @s remove TAG.cronica.SNEAKING
+execute as @a[scores={SCORE.cronica.TIMER.GimmickWallClimb.Charge=0..},tag=!TAG.cronica.STATUS.Sneaking] run function cronica:stage/gimmick/wall_climb/library/reset
+execute as @a[scores={SCORE.cronica.TIMER.GimmickWallClimb.Charge=0..}] run tag @s remove TAG.cronica.STATUS.Sneaking
 
 # スタック進行
 execute as @a[scores={SCORE.cronica.TIMER.GimmickWallClimb.Charge=0..}] if score @s SCORE.cronica.TIMER.GimmickWallClimb.Charge.Stack >= @s SCORE.cronica.TIMER.GimmickWallClimb.Charge.Stack.Goal at @s run function cronica:stage/gimmick/wall_climb/library/progress
