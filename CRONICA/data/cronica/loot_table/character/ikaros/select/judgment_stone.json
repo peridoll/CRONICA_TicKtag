@@ -24,7 +24,7 @@
                 },
                 "minecraft:custom_data": {
                   "ItemCategory": "SelectSkill",
-                  "ItemID": "judgmentStone",
+                  "ItemID": "JudgmentStone",
                   "ItemStatus": "ready"
                 },
                 "minecraft:custom_name": {

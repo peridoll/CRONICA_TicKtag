@@ -13,9 +13,9 @@
 # FlyingFeather
 execute if data storage cronica:context ItemID{Value:"FlyingFeather"} if data storage cronica:context ItemStatus{Value:"ready"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run function cronica:player/character/list/ikaros/select/flying_feather/library/run
 # JudgmentStone
-# execute if data storage cronica:context ItemID{Value:"JudgmentStone"} if data storage cronica:context ItemStatus{Value:"ready"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run function cronica:player/character/list/ikaros/select/judgment_stone/library/run
+execute if data storage cronica:context ItemID{Value:"JudgmentStone"} if data storage cronica:context ItemStatus{Value:"ready"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run function cronica:player/character/list/ikaros/select/judgment_stone/library/run
 # BlazingShield
-# execute if data storage cronica:context ItemID{Value:"BlazingShield"} if data storage cronica:context ItemStatus{Value:"ready"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run function cronica:player/character/list/ikaros/select/blazing_shield/library/run
+execute if data storage cronica:context ItemID{Value:"BlazingShield"} if data storage cronica:context ItemStatus{Value:"ready"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run function cronica:player/character/list/ikaros/select/blazing_shield/library/run
 #//////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## Dryad
