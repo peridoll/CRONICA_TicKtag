@@ -1,7 +1,9 @@
-# タグリセット
-tag @s remove TAG.cronica.CHARACTER.ApollonBow.Charging
-# スコアリセット
-scoreboard players reset @s SCORE.cronica.WEAPON.ApollonBow.charging
-scoreboard players set @s SCORE.cronica.WEAPON.ApollonBow.charged 0
-execute unless entity @a[scores={SCORE.cronica.WEAPON.ApollonBow.charging=0..}] run scoreboard objectives remove SCORE.cronica.WEAPON.ApollonBow.charging
-execute unless entity @a[scores={SCORE.cronica.WEAPON.ApollonBow.charging=0..}] run scoreboard objectives remove SCORE.cronica.WEAPON.ApollonBow.charged
+# =================================================================================================
+
+##【 実行処理 】
+# リロード中断時の処理を行う
+
+#【 スコアリセット 】
+# 各種リロード用のスコアをリセットする
+function cronica:player/character/list/ikaros/unique/apollon_bow/library/charge/reset
+# =================================================================================================

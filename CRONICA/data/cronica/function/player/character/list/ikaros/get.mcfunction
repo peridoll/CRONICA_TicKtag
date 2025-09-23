@@ -1,9 +1,8 @@
 # Reset
-function cronica:player/status/reset/item
+execute if predicate cronica:sneak run function cronica:player/status/reset/item
 
 # Unique
 function cronica:player/character/list/ikaros/unique/apollon_bow/get
-function cronica:player/character/list/ikaros/unique/apollon_arrow/get
 function cronica:player/character/list/ikaros/unique/begin_twilight/get
 function cronica:player/character/list/ikaros/unique/shutdown_flare/get
 # Select

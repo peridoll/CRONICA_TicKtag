@@ -1,15 +1,34 @@
-# スコア管理
-scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.charging dummy
-scoreboard players add @s SCORE.cronica.WEAPON.ApollonBow.charging 1
-scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.charged dummy
-scoreboard players set @s SCORE.cronica.WEAPON.ApollonBow.charged 1
+# =================================================================================================
 
-# タグ管理
-tag @s add TAG.cronica.CHARACTER.ApollonBow.Charging
+##【 共通処理 】
+# スニーク実行系共通の処理を行う
 
-# キャンセル
-execute as @a[scores={SCORE.cronica.WEAPON.ApollonBow.charged=0}] run function cronica:player/character/list/ikaros/unique/apollon_bow/library/charge/cancel
-scoreboard players set @s SCORE.cronica.WEAPON.ApollonBow.charged 0
+#【 キャンセル 】
+# 各種条件に合わない場合は実行を中断する
+execute as @a[scores={SCORE.cronica.WEAPON.ApollonBow.Charging=0..},tag=!TAG.cronica.STATUS.ItemUsing] run function cronica:player/character/list/ikaros/unique/apollon_bow/library/charge/cancel
+# 条件に合わない場合は、そもそもこの関数が呼ばれていないので、キャンセル用に自信を呼び出す予約をする
+execute if entity @a[scores={SCORE.cronica.WEAPON.ApollonBow.Charging=0..}] run schedule function cronica:player/character/list/ikaros/unique/apollon_bow/library/charge/main 2t
 
-# ループ
-execute if entity @a[scores={SCORE.cronica.WEAPON.ApollonBow.charging=0..}] run schedule function cronica:player/character/list/ikaros/unique/apollon_bow/library/charge/main 2t
+#【 スコア管理 】
+# 実行用のスコアを管理し、増加させる
+scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.Charging dummy
+scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.Charged dummy
+scoreboard players add @s SCORE.cronica.WEAPON.ApollonBow.Charging 1
+scoreboard players set @s SCORE.cronica.WEAPON.ApollonBow.Charged 1
+
+#【 タグ管理 】
+# 実行中管理のためのタグを削除する
+tag @a[scores={SCORE.cronica.WEAPON.ApollonBow.Charging=0..}] remove TAG.cronica.STATUS.ItemUsing
+# =================================================================================================
+
+##【 実行管理 】
+# 実行中断や完了などの呼び出しを行う
+
+#【 キャンセル 】
+# 各種条件に合わない場合は実行を中断する
+execute as @a[scores={SCORE.cronica.WEAPON.ApollonBow.Charging=0..}] unless data storage cronica:context ItemID{Mainhand:"ApollonBow"} unless data storage cronica:context ItemID{Offhand:"ApollonBow"} run function cronica:player/character/list/ikaros/unique/apollon_bow/library/charge/cancel
+
+#【 完了処理 】
+# チャージが完了したら武器が進化する
+execute if score @s SCORE.cronica.WEAPON.ApollonBow.Charging >= #CONFIG.cronica.WEAPON.ApollonBow.ChargeTwilightTime SCORE.cronica.CONFIG run function cronica:player/character/list/ikaros/unique/apollon_bow/library/charge/finish
+# =================================================================================================
