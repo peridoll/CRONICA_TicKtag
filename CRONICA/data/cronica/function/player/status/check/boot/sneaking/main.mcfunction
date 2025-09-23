@@ -20,10 +20,9 @@ data modify storage cronica:context ItemStatus.Value set from storage cronica:co
 execute if score @s[scores={SCORE.cronica.STATUS.Sneaking=1..}] SCORE.cronica.STATUS.Sneaked matches 0 run function cronica:player/status/check/boot/sneaking/finish
 scoreboard players set @s SCORE.cronica.STATUS.Sneaked 0
 #//////////////////////////////////////////////////////////////////////////////////////////////////
-
-# Ikaros
-execute as @s[tag=TAG.cronica.SNEAKING] if data storage cronica:context ItemID{Value:"ApollonBow"} run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload_check
-
+# Ikaros:ApollonBow
+execute as @s[tag=TAG.cronica.STATUS.Sneaking] if data storage cronica:context ItemID{Mainhand:"ApollonBow"} run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/check
+execute as @s[tag=TAG.cronica.STATUS.Sneaking] if data storage cronica:context ItemID{Offhand:"ApollonBow"} run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/check
 #//////////////////////////////////////////////////////////////////////////////////////////////////
 # データリセット
 data remove storage cronica:context ItemCategory

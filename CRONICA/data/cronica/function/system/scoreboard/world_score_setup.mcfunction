@@ -1,5 +1,6 @@
 # スコア用意
 scoreboard objectives add SCORE.cronica.CONFIG dummy
+function cronica:player/character/list/ikaros/config
 
 # 定数用意
 scoreboard players set #10 SCORE.cronica.CONFIG 10

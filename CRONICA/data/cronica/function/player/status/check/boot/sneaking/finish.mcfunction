@@ -6,7 +6,7 @@ execute if data storage cronica:context ItemID{Value:"ApollonBow"} run function 
 #//////////////////////////////////////////////////////////////////////////////////////////////////
 
 # タグリセット
-tag @s remove TAG.cronica.SNEAKING
+tag @s remove TAG.cronica.STATUS.Sneaking
 # スコアリセット
 scoreboard players reset @s SCORE.cronica.STATUS.Sneaking
 scoreboard players set @s SCORE.cronica.STATUS.Sneaked 0

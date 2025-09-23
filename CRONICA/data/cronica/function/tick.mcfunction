@@ -31,7 +31,7 @@ execute if entity @a[tag=TAG.cronica.GAMING] run schedule function cronica:stage
 
 # 使用検知
 execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/status/check/main
-execute if entity @a[tag=TAG.cronica.GAMING] run schedule function cronica:player/status/check/main 2t
+# execute if entity @a[tag=TAG.cronica.GAMING] run schedule function cronica:player/status/check/main 2t
 
 # デス検知
 # execute if entity @a[tag=TAG.cronica.GAMING] run scoreboard objectives add SCORE.cronica.STATUS.Death deathCount

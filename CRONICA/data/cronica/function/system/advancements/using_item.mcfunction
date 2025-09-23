@@ -8,7 +8,6 @@ scoreboard players set @s[tag=TAG.cronica.GAMING] SCORE.cronica.STATUS.ItemUsed 
 
 # 関数実施
 execute as @s[tag=TAG.cronica.GAMING] run function cronica:player/status/check/boot/using/main
-tag @s add TAG.cronica.STATUS.ItemUsing
 
 # Advancement解除
 advancement revoke @s only cronica:player/using_item
