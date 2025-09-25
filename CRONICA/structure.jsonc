@@ -1,17 +1,633 @@
 {
-  "pack.mcmeta": "このファイル群をデータパックとして認識させるためのメタデータ",
+  "pack.mcmeta": null, // このファイル群をデータパックとして認識させるためのメタデータ
   "data": { // データパック本体
     "cronica": { // CRONICA本体
-      "advancement": { // 実績の管理 主に行動検知に使用する TODO: 実際に実績としても使うか検討
+      "advancement": { // 実績の管理 主に行動検知に使用する //TODO: 実際に実績としても使うか検討
         "player" : {
-          "using_item.json": "アイテム使用時(ダイヤの馬鎧)"
+          "using_item.json": null // アイテム使用時(ダイヤの馬鎧)
         }
       },
       "config": { // データパックとしては関係ない Copilotを使用して一部のデータを直接修正するための設定ファイル
-        "game_config.jsonc": "ゲーム",
-        "character_config.jsonc": "キャラクター、武器、スキル、アイテム",
-        "stage_config.jsonc": "ステージ",
-        "system_config.jsonc": "システム、その他"
+        "game_config.jsonc": {
+          "practice": {},
+          "skirmish": {},
+          "free_for_all": {},
+          "team_deathmatch": {}
+        },
+        "character_config.jsonc": {
+          "brave": {
+            "unique": {
+              "material_sword": {
+                "category": "MainWeapon",
+                "id": "MaterialSword",
+                "status": {
+                  "attack": 6,
+                  "speed": 1.4
+                },
+                "cosmetic": {
+                  "name": "マテリアソード",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "charge_shot": {
+                "category": "WeaponSkill",
+                "id": "ChargeShot",
+                "status": {
+                  "cool_time": 0
+                },
+                "cosmetic": {
+                  "name": "チャージショット",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "battle_standby": {
+                "category": "UniqueSkill",
+                "id": "BattleStandby",
+                "status": {
+                  "cool_time": 0
+                },
+                "cosmetic": {
+                  "name": "戦いの準備",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "tri_impact": {
+                "category": "ExtraSkill",
+                "id": "TriImpact",
+                "status": {
+                  "cool_time": 300
+                },
+                "cosmetic": {
+                  "name": "トライインパクト",
+                  "lore": [
+                    ""
+                  ]
+                }
+              }
+            },
+            "select": {
+              "spinning_slash": {
+                "category": "SelectSkill",
+                "id": "SpinningSlash",
+                "status": {
+                  "cool_time": 240
+                },
+                "cosmetic": {
+                  "name": "剣技:回転斬り",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "fairy_bottle": {
+                "category": "SelectSkill",
+                "id": "FairyBottle",
+                "status": {
+                  "cool_time": 120
+                },
+                "cosmetic": {
+                  "name": "妖精入りの瓶",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "hook_shot": {
+                "category": "SelectSkill",
+                "id": "HookShot",
+                "status": {
+                  "cool_time": 180
+                },
+                "cosmetic": {
+                  "name": "フックショット",
+                  "lore": [
+                    ""
+                  ]
+                }
+              }
+            },
+            "cosmetic": {
+              "name": "不屈の勇者 ブレイブ",
+              "difficulty": "★☆☆☆☆",
+              "tactics": "防衛 / 生存",
+              "connect": [
+                "剣技:回転斬り",
+                "妖精入りの瓶",
+                "フックショット"
+              ],
+              "description": [
+                "全体的にバランスが良くクセのない戦闘が持ち味！",
+                "補給物資を取得することで恩恵を得るので、どんどん物資を回収していこう！",
+                "物資を集めたら準備完了！勇気をだしていざバトル！"
+              ],
+              "comment": [
+                "ステージ構成や相手のスキルセットに左右されないポテンシャルが持ち味だが、逆に言えばどの環境でもやることが同じ",
+                "ゲームを始めたばかりのユーザーにとりあえずで使用させる近距離キャラクターとして作成",
+                "補給物資を回収しまくるコンセプトのため、対戦相手が物資回収を頻繁に行うかどうかで暴れやすさが変わる",
+                "潤沢な物資と補給物資の改修頻度からEXスキルを高頻度で使用する立ち回りが有効",
+                "とにかく生存能力が高いので、しぶとく稼働時間を延ばしてアドをとっていくことが大事"
+              ]
+            }
+          },
+          "ikaros": {
+            "unique": {
+              "apollon_bow": {
+                "category": "MainWeapon",
+                "id": "ApollonBow",
+                "status": {
+                  "attack": 5,
+                  "speed": 1.2
+                },
+                "cosmetic": {
+                  "name": "太陽神ノ弓",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "apollon_bow_twilight": {
+                "category": "MainWeapon",
+                "id": "ApollonBowTwilight",
+                "status": {
+                  "attack": 7,
+                  "speed": 1.0
+                },
+                "cosmetic": {
+                  "name": "太陽神ノ弓：黄昏",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "apollon_arrow": {
+                "category": "WeaponSkill",
+                "id": "ApollonArrow",
+                "status": {
+                  "cool_time": 0
+                },
+                "cosmetic": {
+                  "name": "太陽神ノ矢",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "begin_twilight": {
+                "category": "UniqueSkill",
+                "id": "BeginTwilight",
+                "status": {
+                  "cool_time": 0
+                },
+                "cosmetic": {
+                  "name": "逢魔ノ訪レ",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "shotdown_flare": {
+                "category": "ExtraSkill",
+                "id": "ShotdownFlare",
+                "status": {
+                  "cool_time": 300
+                },
+                "cosmetic": {
+                  "name": "撃墜ノ陽炎",
+                  "lore": [
+                    ""
+                  ]
+                }
+              }
+            },
+            "select": {
+              "flying_feather": {
+                "category": "SelectSkill",
+                "id": "FlyingFeather",
+                "status": {
+                  "cool_time": 240
+                },
+                "cosmetic": {
+                  "name": "飛翔ノ翼",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "judgment_stone": {
+                "category": "SelectSkill",
+                "id": "JudgmentStone",
+                "status": {
+                  "cool_time": 180
+                },
+                "cosmetic": {
+                  "name": "裁キノ礫",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "blazing_shield": {
+                "category": "SelectSkill",
+                "id": "BlazingShield",
+                "status": {
+                  "cool_time": 120
+                },
+                "cosmetic": {
+                  "name": "焔熱ノ護盾",
+                  "lore": [
+                    ""
+                  ]
+                }
+              }
+            },
+            "cosmetic": {
+              "name": "天空の狩人 イカロス",
+              "difficulty": "★★★☆☆",
+              "tactics": "攻撃 / 機動",
+              "connect": [
+                "焔熱ノ護盾",
+                "飛翔ノ翼",
+                "裁キノ礫"
+              ],
+              "description": [
+                "空中戦を得意とする高機動キャラクター！",
+                "空中での立ち回りが強力で、地上にいる相手を翻弄できるぞ！",
+                "空中にいる時間が長いほど強力になるので、積極的に飛び回ろう！"
+              ],
+              "comment": [
+                "空中戦を得意とする高機動キャラクター",
+                "空中にいる時間が長いほど強力になるため、積極的に飛び回る立ち回りが求められる",
+                "地上にいる相手を翻弄できるが、地上戦は苦手なため注意が必要",
+                "スキルのクールタイムが比較的短いため、連続して使用することで相手を圧倒できる"
+              ]
+            }
+          },
+          "dryad": {
+            "cosmetic": {
+              "name": "森の守護者 ドライアド",
+              "difficulty": "★★☆☆☆",
+              "tactics": "支援 / 妨害",
+              "connect": [
+                "",
+                "",
+                ""
+              ],
+              "description": [
+                "味方を支援し、敵を妨害することに長けたキャラクター！",
+                "自然の力を借りて戦うため、環境を活かした立ち回りが重要！",
+                "味方と連携して戦うことで真価を発揮するぞ！"
+              ],
+              "comment": [
+                "味方を支援し、敵を妨害することに長けたキャラクター",
+                "自然の力を借りて戦うため、環境を活かした立ち回りが重要",
+                "味方と連携して戦うことで真価を発揮する",
+                "スキルの効果範囲が広いため、集団戦で特に有効"
+              ]
+            }
+          },
+          "ariel": {
+            "cosmetic": {
+              "name": "海の歌姫 エリアル",
+              "difficulty": "★★★☆☆",
+              "tactics": "攻撃 / 妨害",
+              "connect": [
+                "",
+                "",
+                ""
+              ],
+              "description": [
+                "水を操ることに長けたキャラクター！",
+                "遠距離からの攻撃が得意で、敵を翻弄することができるぞ！",
+                "水中ではさらに強力になるため、水辺のステージで真価を発揮する！"
+              ],
+              "comment": [
+                "水を操ることに長けたキャラクター",
+                "遠距離からの攻撃が得意で、敵を翻弄することができる",
+                "水中ではさらに強力になるため、水辺のステージで真価を発揮する",
+                "スキルのクールタイムが比較的短いため、連続して使用することで相手を圧倒できる"
+              ]
+            }
+          },
+          "tesra": {
+            "cosmetic": {
+              "name": "雷鳴の魔導士 テスラ",
+              "difficulty": "★★★★☆",
+              "tactics": "攻撃 / 制圧",
+              "connect": [
+                "",
+                "",
+                ""
+              ],
+              "description": [
+                "雷を操ることに長けたキャラクター！",
+                "広範囲にわたる攻撃が得意で、敵を一掃することができるぞ！",
+                "攻撃範囲が広いため、集団戦で特に有効！"
+              ],
+              "comment": [
+                "雷を操ることに長けたキャラクター",
+                "広範囲にわたる攻撃が得意で、敵を一掃することができる",
+                "攻撃範囲が広いため、集団戦で特に有効",
+                "スキルのクールタイムが比較的長いため、使用タイミングが重要"
+              ]
+            }
+          },
+          "assassin": {
+            "unique": {
+              "shadow_dagger": {
+                "category": "MainWeapon",
+                "id": "ShadowDagger",
+                "status": {
+                  "attack": 4,
+                  "speed": 1.6
+                },
+                "cosmetic": {
+                  "name": "暗影刀:シャドウダガー",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "shadow_blade": {
+                "category": "WeaponSkill",
+                "id": "ShadowBlade",
+                "status": {
+                  "cool_time": 0
+                },
+                "cosmetic": {
+                  "name": "暗影斬:シャドウブレード",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "shadow_arts": {
+                "category": "UniqueSkill",
+                "id": "ShadowArts",
+                "status": {
+                  "cool_time": 0
+                },
+                "cosmetic": {
+                  "name": "暗影秘儀:シャドウアーツ",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "shadow_dance": {
+                "category": "ExtraSkill",
+                "id": "ShadowDance",
+                "status": {
+                  "cool_time": 300
+                },
+                "cosmetic": {
+                  "name": "暗影乱舞:シャドウダンス",
+                  "lore": [
+                    ""
+                  ]
+                }
+              }
+            },
+            "select":{
+              "shadow_step": {
+                "category": "SelectSkill",
+                "id": "ShadowStep",
+                "status": {
+                  "cool_time": 180
+                },
+                "cosmetic": {
+                  "name": "影踏:シャドウステップ",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "shadow_armor": {
+                "category": "SelectSkill",
+                "id": "ShadowArmor",
+                "status": {
+                  "cool_time": 120
+                },
+                "cosmetic": {
+                  "name": "影纏:シャドウアーマー",
+                  "lore": [
+                    ""
+                  ]
+                }
+              },
+              "shadow_bind": {
+                "category": "SelectSkill",
+                "id": "ShadowBind",
+                "status": {
+                  "cool_time": 240
+                },
+                "cosmetic": {
+                  "name": "影縛:シャドウバインド",
+                  "lore": [
+                    ""
+                  ]
+                }
+              }
+            },
+            "cosmetic": {
+              "name": "影の暗殺者 アサシン",
+              "difficulty": "★★★★★",
+              "tactics": "奇襲 / 機動",
+              "connect": [
+                "影踏:シャドウステップ",
+                "影纏:シャドウアーマー",
+                "影縛:シャドウバインド"
+              ],
+              "description": [
+                "高い機動力と奇襲能力を持つキャラクター！",
+                "素早い動きで敵を翻弄し、一撃で仕留めることができるぞ！",
+                "ステルス能力を活かして、敵の背後から攻撃しよう！"
+              ],
+              "comment": [
+                "高い機動力と奇襲能力を持つキャラクター",
+                "素早い動きで敵を翻弄し、一撃で仕留めることができる",
+                "ステルス能力を活かして、敵の背後から攻撃しよう",
+                "操作難易度が高いため、上級者向けのキャラクター"
+              ]
+            }
+          },
+          "sleet": {
+            "cosmetic": {
+              "name": "氷結の狙撃手 スリート",
+              "difficulty": "★★★☆☆",
+              "tactics": "遠距離 / 制圧",
+              "connect": [
+                "フロストバイト",
+                "アイスシールド",
+                "グレイシャルランス"
+              ],
+              "description": [
+                "氷を操ることに長けたキャラクター！",
+                "遠距離からの精密な攻撃が得意で、敵を凍結させることができるぞ！",
+                "氷の壁を作り出して防御することも可能！"
+              ],
+              "comment": [
+                "氷を操ることに長けたキャラクター",
+                "遠距離からの精密な攻撃が得意で、敵を凍結させることができる",
+                "氷の壁を作り出して防御することも可能",
+                "スキルのクールタイムが比較的長いため、使用タイミングが重要"
+              ]
+            }
+          },
+          "yinyang": {
+            "cosmetic": {
+              "name": "陰陽の術士 インニャン",
+              "difficulty": "★★★★☆",
+              "tactics": "バランス / 多様",
+              "connect": [
+                "陰陽の波動",
+                "チャクラシールド",
+                "五行の陣"
+              ],
+              "description": [
+                "陰と陽の力を操ることに長けたキャラクター！",
+                "バランスの取れた能力で、様々な状況に対応できるぞ！",
+                "多様なスキルを駆使して、戦況を有利に進めよう！"
+              ],
+              "comment": [
+                "陰と陽の力を操ることに長けたキャラクター",
+                "バランスの取れた能力で、様々な状況に対応できる",
+                "多様なスキルを駆使して、戦況を有利に進めよう",
+                "操作難易度が高いため、上級者向けのキャラクター"
+              ]
+            }
+          },
+          "taitan": {
+            "cosmetic": {
+              "name": "大地の巨人 タイタン",
+              "difficulty": "★★☆☆☆",
+              "tactics": "防御 / 制圧",
+              "connect": [
+                "アースクエイク",
+                "ストーンスキン",
+                "ランドスライド"
+              ],
+              "description": [
+                "大地の力を操ることに長けたキャラクター！",
+                "高い防御力と制圧力を持ち、敵の攻撃を受け止めることができるぞ！",
+                "地面を揺らして敵を転倒させることも可能！"
+              ],
+              "comment": [
+                "大地の力を操ることに長けたキャラクター",
+                "高い防御力と制圧力を持ち、敵の攻撃を受け止めることができる",
+                "地面を揺らして敵を転倒させることも可能",
+                "操作難易度が低いため、初心者向けのキャラクター"
+              ]
+            }
+          }
+        },
+        "stage_config.jsonc": {
+          "lobby": {
+            "positions": {
+              "enter": {
+                "x": -1,
+                "y": -58,
+                "z": 16,
+                "rotationX": 180,
+                "rotationY": 0
+              },
+              "menu_markers": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0,
+                  "rotationX": 0,
+                  "rotationY": 0
+                }
+              ]
+            }
+          },
+          "practice_area": {
+            "positions": {
+              "enter": {
+                "x": -128,
+                "y": -59,
+                "z": 0,
+                "rotationX": 0,
+                "rotationY": 0
+              },
+              "menu_markers": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0,
+                  "rotationX": 0,
+                  "rotationY": 0
+                }
+              ]
+            }
+          },
+          "whale_garden": {
+            "positions": {
+              "center": {
+                "x": 0,
+                "y": 100,
+                "z": 0,
+                "rotationX": 0,
+                "rotationY": 0
+              },
+              "shop_markers": [
+                {
+                  "x": 10,
+                  "y": 100,
+                  "z": 10,
+                  "rotationX": 0,
+                  "rotationY": 0
+                },
+                {
+                  "x": 10,
+                  "y": 100,
+                  "z": 10,
+                  "rotationX": 0,
+                  "rotationY": 0
+                }
+              ],
+              "respawn_markers": [
+                {
+                  "x": -10,
+                  "y": 100,
+                  "z": -10,
+                  "rotationX": 0,
+                  "rotationY": 0
+                },
+                {
+                  "x": -10,
+                  "y": 100,
+                  "z": -10,
+                  "rotationX": 0,
+                  "rotationY": 0
+                }
+              ],
+              "care_package_markers": [
+                {
+                  "x": 0,
+                  "y": 100,
+                  "z": 20,
+                  "rotationX": 0,
+                  "rotationY": 0
+                },
+                {
+                  "x": 0,
+                  "y": 100,
+                  "z": -20,
+                  "rotationX": 0,
+                  "rotationY": 0
+                }
+              ]
+            }
+          }
+        },
+        "system_config.jsonc": {}
       },
       "function": { // 関数群 データパック本体
         "game": { // ゲーム関連
@@ -188,16 +804,16 @@
                 "used.mcfunction": null,
                 "ban.mcfunction": null,
                 "gauge": {
-                  "charge_0.mcfunction": null,
-                  "charge_1.mcfunction": null,
-                  "charge_2.mcfunction": null,
-                  "charge_3.mcfunction": null,
-                  "charge_4.mcfunction": null,
-                  "charge_5.mcfunction": null,
-                  "charge_6.mcfunction": null,
-                  "charge_7.mcfunction": null,
-                  "charge_8.mcfunction": null,
-                  "charge_9.mcfunction": null
+                  "gauge_0.mcfunction": null,
+                  "gauge_1.mcfunction": null,
+                  "gauge_2.mcfunction": null,
+                  "gauge_3.mcfunction": null,
+                  "gauge_4.mcfunction": null,
+                  "gauge_5.mcfunction": null,
+                  "gauge_6.mcfunction": null,
+                  "gauge_7.mcfunction": null,
+                  "gauge_8.mcfunction": null,
+                  "gauge_9.mcfunction": null
                 }
               }
             }

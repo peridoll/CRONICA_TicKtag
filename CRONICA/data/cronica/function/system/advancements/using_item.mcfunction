@@ -17,7 +17,7 @@ tag @s add TAG.cronica.STATUS.ItemUsing
 
 #【 アイテム実行管理用関数呼び出し 】
 # 一拍の遅延がかかってしまうので、ここで呼び出す
-execute as @s[tag=TAG.cronica.GAMING] run function cronica:player/status/check/item_using/main
+execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run function cronica:player/status/check/item_using/main
 
 #【 Advancement解除 】
 # 実績は一度取得すると解除できないため、使用中は常に解除する

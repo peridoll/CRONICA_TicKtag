@@ -1,6 +1,7 @@
 # =================================================================================================
 ## Ikaros:ApollonBow
-execute if data storage cronica:context ItemID{Value:"ApollonBow"} run function cronica:player/character/list/ikaros/unique/apollon_bow/library/shoot
+execute if score @s SCORE.cronica.WEAPON.ApollonBow.Shooting matches 1.. if data storage cronica:context ItemID{Offhand:"ApollonBow"} run function cronica:player/character/list/ikaros/unique/apollon_bow/library/shoot
+execute if score @s SCORE.cronica.WEAPON.ApollonBow.Shooting matches 1.. if data storage cronica:context ItemID{Mainhand:"ApollonBow"} run function cronica:player/character/list/ikaros/unique/apollon_bow/library/shoot
 # =================================================================================================
 
 ##【 実行終了時処理 】

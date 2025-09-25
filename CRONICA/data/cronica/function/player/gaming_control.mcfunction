@@ -17,7 +17,7 @@ effect give @a[tag=TAG.cronica.GAMING] minecraft:health_boost infinite 4 true
 # アイテムの使用やスニーク状態など、特定の行動を検知する
 
 #【 使用検知 】
-# アイテムの使用を検知する(今回は主にダイヤの馬鎧)
+# アイテムの使用を検知する
 execute as @a[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.STATUS.ItemUsing matches 2.. run function cronica:player/status/check/item_using/main
 
 #【 スニーク判定 】
