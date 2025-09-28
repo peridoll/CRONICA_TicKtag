@@ -32,7 +32,7 @@ execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/gaming_
 #【 ステージ管理 】
 # ステージギミックや、ショップなどの管理をここから行う
 execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:stage/gimmick/main
-execute if entity @a[tag=TAG.cronica.GAMING] run schedule function cronica:stage/gimmick/main 2t
+# execute if entity @a[tag=TAG.cronica.GAMING] run schedule function cronica:stage/gimmick/main 2t
 # =================================================================================================
 
 ## 今後各関数に割り振りたいが、とりあえずここにまとめる

@@ -31,5 +31,5 @@ execute unless data storage cronica:context ItemID{Mainhand:"ApollonBow"} unless
 
 #【 完了処理 】
 # チャージが完了したら武器が進化する
-execute if score @s SCORE.cronica.WEAPON.ApollonBow.Charging >= #CONFIG.cronica.WEAPON.ApollonBow.ChargeTwilightTime SCORE.cronica.CONFIG run function cronica:player/character/list/ikaros/unique/apollon_bow/library/charge/finish
+# execute if score @s SCORE.cronica.WEAPON.ApollonBow.Charging >= #CONFIG.cronica.WEAPON.ApollonBow.ChargeTwilightTime SCORE.cronica.CONFIG run function cronica:player/character/list/ikaros/unique/apollon_bow/library/charge/finish
 # =================================================================================================

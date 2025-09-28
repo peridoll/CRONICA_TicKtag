@@ -34,7 +34,6 @@ scoreboard players set @s SCORE.cronica.STATUS.ItemUsed 0
 
 #【 カテゴリ別処理 】
 # 各種処理へ分岐する
-# スニークでの処理の場合右手に持っているものがスニークの要求がないものの可能性もあるため、両方を確認する
 execute as @s[tag=TAG.cronica.STATUS.ItemUsing] run function cronica:player/status/check/item_using/category/data_get_main
 execute as @s[tag=TAG.cronica.STATUS.ItemUsing] run function cronica:player/status/check/item_using/category/data_get_off
 # =================================================================================================

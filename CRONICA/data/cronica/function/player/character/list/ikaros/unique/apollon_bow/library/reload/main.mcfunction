@@ -12,19 +12,19 @@ execute if entity @a[scores={SCORE.cronica.WEAPON.ApollonBow.Reloading=0..}] run
 
 #【 スコア管理 】
 # 実行用のスコアを管理し、増加させる
-scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.Reloading dummy
-scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.Reloaded dummy
-scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.ReloadStack dummy
+execute as @s run scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.Reloading dummy
+execute as @s run scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.Reloaded dummy
+execute as @s run scoreboard objectives add SCORE.cronica.WEAPON.ApollonBow.ReloadStack dummy
 scoreboard players add @s SCORE.cronica.WEAPON.ApollonBow.Reloading 1
 scoreboard players set @s SCORE.cronica.WEAPON.ApollonBow.Reloaded 1
 
 #【 エフェクト付与 】
 # スニーク実行中は移動ができなくなる
-effect give @s[scores={SCORE.cronica.WEAPON.ApollonBow.Reloading=0..}] slowness infinite 5 true
+effect give @s slowness infinite 5 true
 
 #【 タグ管理 】
 # 実行中管理のためのタグを削除する
-tag @a[scores={SCORE.cronica.WEAPON.ApollonBow.Reloading=0..}] remove TAG.cronica.STATUS.Sneaking
+tag @s remove TAG.cronica.STATUS.Sneaking
 # =================================================================================================
 
 ##【 実行管理 】
@@ -32,14 +32,14 @@ tag @a[scores={SCORE.cronica.WEAPON.ApollonBow.Reloading=0..}] remove TAG.cronic
 
 #【 キャンセル 】
 # 各種条件に合わない場合は実行を中断する
-execute as @a[scores={SCORE.cronica.WEAPON.ApollonBow.Reloading=0..},tag=TAG.cronica.STATUS.ItemUsing] run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/cancel
-execute as @a[scores={SCORE.cronica.WEAPON.ApollonBow.Reloading=0..}] unless data storage cronica:context ItemID{Mainhand:"ApollonBow"} unless data storage cronica:context ItemID{Offhand:"ApollonBow"} run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/cancel
+execute as @s[tag=TAG.cronica.STATUS.ItemUsing] run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/cancel
+execute as @s unless data storage cronica:context ItemID{Mainhand:"ApollonBow"} unless data storage cronica:context ItemID{Offhand:"ApollonBow"} run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/cancel
 
 #【 スタック処理 】
 # 一定割合ごとにスタックを増加させて画面に表示する
-execute as @a[scores={SCORE.cronica.WEAPON.ApollonBow.Reloading=0..}] if score @s SCORE.cronica.WEAPON.ApollonBow.Reloading >= #CONFIG.cronica.WEAPON.ApollonBow.ReloadStackTime SCORE.cronica.CONFIG run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/stack
+execute as @s if score @s SCORE.cronica.WEAPON.ApollonBow.Reloading >= #CONFIG.cronica.WEAPON.ApollonBow.ReloadStackTime SCORE.cronica.CONFIG run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/stack
 
 #【 完了処理 】
 # スタック数が最大になったらリロードを完了する
-execute as @a[scores={SCORE.cronica.WEAPON.ApollonBow.ReloadStack=10..}] run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/finish
+execute as @s[scores={SCORE.cronica.WEAPON.ApollonBow.ReloadStack=10..}] run function cronica:player/character/list/ikaros/unique/apollon_bow/library/reload/complete
 # =================================================================================================

@@ -3,7 +3,7 @@
     "function": "minecraft:set_custom_model_data",
     "strings": {
       "values": [
-        "default"
+        "ammo_0"
       ],
       "mode": "insert"
     }
@@ -11,5 +11,9 @@
   {
     "function": "minecraft:set_count",
     "count": 1
+  },
+  {
+    "function": "minecraft:set_item",
+    "item": "minecraft:stick"
   }
 ]
