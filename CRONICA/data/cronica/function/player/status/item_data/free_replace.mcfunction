@@ -2,6 +2,11 @@
 #【 各種置き換え 】
 # アイテムの状態に応じてモデルを置き換える
 
+# オフハンド
+data modify storage cronica:context ItemID.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
+$execute if data storage cronica:context ItemID{Offhand:"$(ItemID)"} run item modify entity @s weapon.offhand cronica:$(Address)/$(Model)
+data remove storage cronica:context ItemID
+
 # ホットバー
 $execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}},Slot:0b}]}] run item modify entity @s hotbar.0 cronica:$(Address)/$(Model)
 $execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}},Slot:1b}]}] run item modify entity @s hotbar.1 cronica:$(Address)/$(Model)
@@ -12,8 +17,7 @@ $execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"Ite
 $execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}},Slot:6b}]}] run item modify entity @s hotbar.6 cronica:$(Address)/$(Model)
 $execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}},Slot:7b}]}] run item modify entity @s hotbar.7 cronica:$(Address)/$(Model)
 $execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}},Slot:8b}]}] run item modify entity @s hotbar.8 cronica:$(Address)/$(Model)
-# オフハンド
-$execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}},Slot:99b}]}] run item modify entity @s weapon.offhand cronica:$(Address)/$(Model)
+
 # インベントリ
 $execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}},Slot:9b}]}] run item modify entity @s inventory.0 cronica:$(Address)/$(Model)
 $execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}},Slot:10b}]}] run item modify entity @s inventory.1 cronica:$(Address)/$(Model)
