@@ -23,10 +23,8 @@
                   "animation": "none"
                 },
                 "minecraft:custom_data": {
-                  "MasterID": "ikaros",
-                  "ItemCategory": "skill",
-                  "SkillType": "select",
-                  "ItemID": "flying_feather",
+                  "ItemCategory": "SelectSkill",
+                  "ItemID": "FlyingFeather",
                   "ItemStatus": "ready"
                 },
                 "minecraft:custom_name": {

@@ -1,1104 +1,284 @@
 {
-  "pack.mcmeta": null, // このファイル群をデータパックとして認識させるためのメタデータ
-  "data": { // データパック本体
-    "cronica": { // CRONICA本体
-      "advancement": { // 実績の管理 主に行動検知に使用する //TODO: 実際に実績としても使うか検討
-        "player" : {
-          "using_item.json": null // アイテム使用時(ダイヤの馬鎧)
-        }
-      },
-      "config": { // データパックとしては関係ない Copilotを使用して一部のデータを直接修正するための設定ファイル
-        "game_config.jsonc": {
-          "practice": {},
-          "skirmish": {},
-          "free_for_all": {},
-          "team_deathmatch": {}
-        },
-        "character_config.jsonc": {
-          "brave": {
-            "unique": {
-              "material_sword": {
-                "category": "MainWeapon",
-                "id": "MaterialSword",
-                "status": {
-                  "attack": 6,
-                  "speed": 1.4
-                },
-                "cosmetic": {
-                  "name": "マテリアソード",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "charge_shot": {
-                "category": "WeaponSkill",
-                "id": "ChargeShot",
-                "status": {
-                  "cool_time": 0
-                },
-                "cosmetic": {
-                  "name": "チャージショット",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "battle_standby": {
-                "category": "UniqueSkill",
-                "id": "BattleStandby",
-                "status": {
-                  "cool_time": 0
-                },
-                "cosmetic": {
-                  "name": "戦いの準備",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "tri_impact": {
-                "category": "ExtraSkill",
-                "id": "TriImpact",
-                "status": {
-                  "cool_time": 300
-                },
-                "cosmetic": {
-                  "name": "トライインパクト",
-                  "lore": [
-                    ""
-                  ]
-                }
-              }
+  "data": {
+    "cronica": {
+      "function": {
+        "player": {
+          "character": {
+            "brave": {   // 勇者
             },
-            "select": {
-              "spinning_slash": {
-                "category": "SelectSkill",
-                "id": "SpinningSlash",
-                "status": {
-                  "cool_time": 240
-                },
-                "cosmetic": {
-                  "name": "剣技:回転斬り",
-                  "lore": [
-                    ""
+            "ikaros": {  // 大翼
+              "unique": {
+                "apollon_bow": {
+                  "get": [
                   ]
                 }
               },
-              "fairy_bottle": {
-                "category": "SelectSkill",
-                "id": "FairyBottle",
-                "status": {
-                  "cool_time": 120
-                },
-                "cosmetic": {
-                  "name": "妖精入りの瓶",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "hook_shot": {
-                "category": "SelectSkill",
-                "id": "HookShot",
-                "status": {
-                  "cool_time": 180
-                },
-                "cosmetic": {
-                  "name": "フックショット",
-                  "lore": [
-                    ""
-                  ]
-                }
-              }
-            },
-            "cosmetic": {
-              "name": "不屈の勇者 ブレイブ",
-              "difficulty": "★☆☆☆☆",
-              "tactics": "防衛 / 生存",
-              "connect": [
-                "剣技:回転斬り",
-                "妖精入りの瓶",
-                "フックショット"
-              ],
-              "description": [
-                "全体的にバランスが良くクセのない戦闘が持ち味！",
-                "補給物資を取得することで恩恵を得るので、どんどん物資を回収していこう！",
-                "物資を集めたら準備完了！勇気をだしていざバトル！"
-              ],
-              "comment": [
-                "ステージ構成や相手のスキルセットに左右されないポテンシャルが持ち味だが、逆に言えばどの環境でもやることが同じ",
-                "ゲームを始めたばかりのユーザーにとりあえずで使用させる近距離キャラクターとして作成",
-                "補給物資を回収しまくるコンセプトのため、対戦相手が物資回収を頻繁に行うかどうかで暴れやすさが変わる",
-                "潤沢な物資と補給物資の改修頻度からEXスキルを高頻度で使用する立ち回りが有効",
-                "とにかく生存能力が高いので、しぶとく稼働時間を延ばしてアドをとっていくことが大事"
-              ]
-            }
-          },
-          "ikaros": {
-            "unique": {
-              "apollon_bow": {
-                "category": "MainWeapon",
-                "id": "ApollonBow",
-                "status": {
-                  "attack": 5,
-                  "speed": 1.2
-                },
-                "cosmetic": {
-                  "name": "太陽神ノ弓",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "apollon_bow_twilight": {
-                "category": "MainWeapon",
-                "id": "ApollonBowTwilight",
-                "status": {
-                  "attack": 7,
-                  "speed": 1.0
-                },
-                "cosmetic": {
-                  "name": "太陽神ノ弓：黄昏",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "apollon_arrow": {
-                "category": "WeaponSkill",
-                "id": "ApollonArrow",
-                "status": {
-                  "cool_time": 0
-                },
-                "cosmetic": {
-                  "name": "太陽神ノ矢",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "begin_twilight": {
-                "category": "UniqueSkill",
-                "id": "BeginTwilight",
-                "status": {
-                  "cool_time": 0
-                },
-                "cosmetic": {
-                  "name": "逢魔ノ訪レ",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "shotdown_flare": {
-                "category": "ExtraSkill",
-                "id": "ShotdownFlare",
-                "status": {
-                  "cool_time": 300
-                },
-                "cosmetic": {
-                  "name": "撃墜ノ陽炎",
-                  "lore": [
-                    ""
-                  ]
-                }
-              }
-            },
-            "select": {
-              "flying_feather": {
-                "category": "SelectSkill",
-                "id": "FlyingFeather",
-                "status": {
-                  "cool_time": 240
-                },
-                "cosmetic": {
-                  "name": "飛翔ノ翼",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "judgment_stone": {
-                "category": "SelectSkill",
-                "id": "JudgmentStone",
-                "status": {
-                  "cool_time": 180
-                },
-                "cosmetic": {
-                  "name": "裁キノ礫",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "blazing_shield": {
-                "category": "SelectSkill",
-                "id": "BlazingShield",
-                "status": {
-                  "cool_time": 120
-                },
-                "cosmetic": {
-                  "name": "焔熱ノ護盾",
-                  "lore": [
-                    ""
-                  ]
-                }
-              }
-            },
-            "cosmetic": {
-              "name": "天空の狩人 イカロス",
-              "difficulty": "★★★☆☆",
-              "tactics": "攻撃 / 機動",
-              "connect": [
-                "焔熱ノ護盾",
-                "飛翔ノ翼",
-                "裁キノ礫"
-              ],
-              "description": [
-                "空中戦を得意とする高機動キャラクター！",
-                "空中での立ち回りが強力で、地上にいる相手を翻弄できるぞ！",
-                "空中にいる時間が長いほど強力になるので、積極的に飛び回ろう！"
-              ],
-              "comment": [
-                "空中戦を得意とする高機動キャラクター",
-                "空中にいる時間が長いほど強力になるため、積極的に飛び回る立ち回りが求められる",
-                "地上にいる相手を翻弄できるが、地上戦は苦手なため注意が必要",
-                "スキルのクールタイムが比較的短いため、連続して使用することで相手を圧倒できる"
-              ]
-            }
-          },
-          "dryad": {
-            "cosmetic": {
-              "name": "森の守護者 ドライアド",
-              "difficulty": "★★☆☆☆",
-              "tactics": "支援 / 妨害",
-              "connect": [
-                "",
-                "",
-                ""
-              ],
-              "description": [
-                "味方を支援し、敵を妨害することに長けたキャラクター！",
-                "自然の力を借りて戦うため、環境を活かした立ち回りが重要！",
-                "味方と連携して戦うことで真価を発揮するぞ！"
-              ],
-              "comment": [
-                "味方を支援し、敵を妨害することに長けたキャラクター",
-                "自然の力を借りて戦うため、環境を活かした立ち回りが重要",
-                "味方と連携して戦うことで真価を発揮する",
-                "スキルの効果範囲が広いため、集団戦で特に有効"
-              ]
-            }
-          },
-          "ariel": {
-            "cosmetic": {
-              "name": "海の歌姫 エリアル",
-              "difficulty": "★★★☆☆",
-              "tactics": "攻撃 / 妨害",
-              "connect": [
-                "",
-                "",
-                ""
-              ],
-              "description": [
-                "水を操ることに長けたキャラクター！",
-                "遠距離からの攻撃が得意で、敵を翻弄することができるぞ！",
-                "水中ではさらに強力になるため、水辺のステージで真価を発揮する！"
-              ],
-              "comment": [
-                "水を操ることに長けたキャラクター",
-                "遠距離からの攻撃が得意で、敵を翻弄することができる",
-                "水中ではさらに強力になるため、水辺のステージで真価を発揮する",
-                "スキルのクールタイムが比較的短いため、連続して使用することで相手を圧倒できる"
-              ]
-            }
-          },
-          "tesra": {
-            "cosmetic": {
-              "name": "雷鳴の魔導士 テスラ",
-              "difficulty": "★★★★☆",
-              "tactics": "攻撃 / 制圧",
-              "connect": [
-                "",
-                "",
-                ""
-              ],
-              "description": [
-                "雷を操ることに長けたキャラクター！",
-                "広範囲にわたる攻撃が得意で、敵を一掃することができるぞ！",
-                "攻撃範囲が広いため、集団戦で特に有効！"
-              ],
-              "comment": [
-                "雷を操ることに長けたキャラクター",
-                "広範囲にわたる攻撃が得意で、敵を一掃することができる",
-                "攻撃範囲が広いため、集団戦で特に有効",
-                "スキルのクールタイムが比較的長いため、使用タイミングが重要"
-              ]
-            }
-          },
-          "assassin": {
-            "unique": {
-              "shadow_dagger": {
-                "category": "MainWeapon",
-                "id": "ShadowDagger",
-                "status": {
-                  "attack": 4,
-                  "speed": 1.6
-                },
-                "cosmetic": {
-                  "name": "暗影刀:シャドウダガー",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "shadow_blade": {
-                "category": "WeaponSkill",
-                "id": "ShadowBlade",
-                "status": {
-                  "cool_time": 0
-                },
-                "cosmetic": {
-                  "name": "暗影斬:シャドウブレード",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "shadow_arts": {
-                "category": "UniqueSkill",
-                "id": "ShadowArts",
-                "status": {
-                  "cool_time": 0
-                },
-                "cosmetic": {
-                  "name": "暗影秘儀:シャドウアーツ",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "shadow_dance": {
-                "category": "ExtraSkill",
-                "id": "ShadowDance",
-                "status": {
-                  "cool_time": 300
-                },
-                "cosmetic": {
-                  "name": "暗影乱舞:シャドウダンス",
-                  "lore": [
-                    ""
-                  ]
-                }
-              }
-            },
-            "select":{
-              "shadow_step": {
-                "category": "SelectSkill",
-                "id": "ShadowStep",
-                "status": {
-                  "cool_time": 180
-                },
-                "cosmetic": {
-                  "name": "影踏:シャドウステップ",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "shadow_armor": {
-                "category": "SelectSkill",
-                "id": "ShadowArmor",
-                "status": {
-                  "cool_time": 120
-                },
-                "cosmetic": {
-                  "name": "影纏:シャドウアーマー",
-                  "lore": [
-                    ""
-                  ]
-                }
-              },
-              "shadow_bind": {
-                "category": "SelectSkill",
-                "id": "ShadowBind",
-                "status": {
-                  "cool_time": 240
-                },
-                "cosmetic": {
-                  "name": "影縛:シャドウバインド",
-                  "lore": [
-                    ""
-                  ]
-                }
-              }
-            },
-            "cosmetic": {
-              "name": "影の暗殺者 アサシン",
-              "difficulty": "★★★★★",
-              "tactics": "奇襲 / 機動",
-              "connect": [
-                "影踏:シャドウステップ",
-                "影纏:シャドウアーマー",
-                "影縛:シャドウバインド"
-              ],
-              "description": [
-                "高い機動力と奇襲能力を持つキャラクター！",
-                "素早い動きで敵を翻弄し、一撃で仕留めることができるぞ！",
-                "ステルス能力を活かして、敵の背後から攻撃しよう！"
-              ],
-              "comment": [
-                "高い機動力と奇襲能力を持つキャラクター",
-                "素早い動きで敵を翻弄し、一撃で仕留めることができる",
-                "ステルス能力を活かして、敵の背後から攻撃しよう",
-                "操作難易度が高いため、上級者向けのキャラクター"
-              ]
-            }
-          },
-          "sleet": {
-            "cosmetic": {
-              "name": "氷結の狙撃手 スリート",
-              "difficulty": "★★★☆☆",
-              "tactics": "遠距離 / 制圧",
-              "connect": [
-                "フロストバイト",
-                "アイスシールド",
-                "グレイシャルランス"
-              ],
-              "description": [
-                "氷を操ることに長けたキャラクター！",
-                "遠距離からの精密な攻撃が得意で、敵を凍結させることができるぞ！",
-                "氷の壁を作り出して防御することも可能！"
-              ],
-              "comment": [
-                "氷を操ることに長けたキャラクター",
-                "遠距離からの精密な攻撃が得意で、敵を凍結させることができる",
-                "氷の壁を作り出して防御することも可能",
-                "スキルのクールタイムが比較的長いため、使用タイミングが重要"
-              ]
-            }
-          },
-          "yinyang": {
-            "cosmetic": {
-              "name": "陰陽の術士 インニャン",
-              "difficulty": "★★★★☆",
-              "tactics": "バランス / 多様",
-              "connect": [
-                "陰陽の波動",
-                "チャクラシールド",
-                "五行の陣"
-              ],
-              "description": [
-                "陰と陽の力を操ることに長けたキャラクター！",
-                "バランスの取れた能力で、様々な状況に対応できるぞ！",
-                "多様なスキルを駆使して、戦況を有利に進めよう！"
-              ],
-              "comment": [
-                "陰と陽の力を操ることに長けたキャラクター",
-                "バランスの取れた能力で、様々な状況に対応できる",
-                "多様なスキルを駆使して、戦況を有利に進めよう",
-                "操作難易度が高いため、上級者向けのキャラクター"
-              ]
-            }
-          },
-          "taitan": {
-            "cosmetic": {
-              "name": "大地の巨人 タイタン",
-              "difficulty": "★★☆☆☆",
-              "tactics": "防御 / 制圧",
-              "connect": [
-                "アースクエイク",
-                "ストーンスキン",
-                "ランドスライド"
-              ],
-              "description": [
-                "大地の力を操ることに長けたキャラクター！",
-                "高い防御力と制圧力を持ち、敵の攻撃を受け止めることができるぞ！",
-                "地面を揺らして敵を転倒させることも可能！"
-              ],
-              "comment": [
-                "大地の力を操ることに長けたキャラクター",
-                "高い防御力と制圧力を持ち、敵の攻撃を受け止めることができる",
-                "地面を揺らして敵を転倒させることも可能",
-                "操作難易度が低いため、初心者向けのキャラクター"
-              ]
-            }
-          }
-        },
-        "stage_config.jsonc": {
-          "lobby": {
-            "positions": {
-              "enter": {
-                "x": -1,
-                "y": -58,
-                "z": 16,
-                "rotationX": 180,
-                "rotationY": 0
-              },
-              "menu_markers": [
-                {
-                  "x": 0,
-                  "y": 0,
-                  "z": 0,
-                  "rotationX": 0,
-                  "rotationY": 0
-                }
-              ]
-            }
-          },
-          "practice_area": {
-            "positions": {
-              "enter": {
-                "x": -128,
-                "y": -59,
-                "z": 0,
-                "rotationX": 0,
-                "rotationY": 0
-              },
-              "menu_markers": [
-                {
-                  "x": 0,
-                  "y": 0,
-                  "z": 0,
-                  "rotationX": 0,
-                  "rotationY": 0
-                }
-              ]
-            }
-          },
-          "whale_garden": {
-            "positions": {
-              "center": {
-                "x": 0,
-                "y": 100,
-                "z": 0,
-                "rotationX": 0,
-                "rotationY": 0
-              },
-              "shop_markers": [
-                {
-                  "x": 10,
-                  "y": 100,
-                  "z": 10,
-                  "rotationX": 0,
-                  "rotationY": 0
-                },
-                {
-                  "x": 10,
-                  "y": 100,
-                  "z": 10,
-                  "rotationX": 0,
-                  "rotationY": 0
-                }
-              ],
-              "respawn_markers": [
-                {
-                  "x": -10,
-                  "y": 100,
-                  "z": -10,
-                  "rotationX": 0,
-                  "rotationY": 0
-                },
-                {
-                  "x": -10,
-                  "y": 100,
-                  "z": -10,
-                  "rotationX": 0,
-                  "rotationY": 0
-                }
-              ],
-              "care_package_markers": [
-                {
-                  "x": 0,
-                  "y": 100,
-                  "z": 20,
-                  "rotationX": 0,
-                  "rotationY": 0
-                },
-                {
-                  "x": 0,
-                  "y": 100,
-                  "z": -20,
-                  "rotationX": 0,
-                  "rotationY": 0
-                }
-              ]
-            }
-          }
-        },
-        "system_config.jsonc": {}
-      },
-      "function": { // 関数群 データパック本体
-        "game": { // ゲーム関連
-          "rules": {
-            "skirmish": { // スカーミッシュ ステージ上でフリーで対戦ができる
-              "setup.mcfunction": null
-            },
-            "practice": { // 練習モード 練習用ステージで訓練ができる
-              "setup.mcfunction": null
-            },
-            "free_for_all": { // フリーフォーオール 1vs1vs1vs1のバトルロイヤル
-              "setup.mcfunction": null
-            },
-            "team_deathmatch": { // チームデスマッチ 2人ずつのチーム戦
-              "setup.mcfunction": null
-            }
-          },
-          "start.mcfunction": null,
-          "end.mcfunction": null
-        },
-        "player": { // プレイヤー関連 なんだかんだで一番闇深い
-          "character": { // キャラクター関連
-            "random_select.mcfunction": null,
-            "list": {
-              "brave": { // ブレイブ
-                "select.mcfunction": null,
-                "unique": {
-                  "material_sword": { // マテリアソード
-                    "get.mcfunction": null
-                  },
-                  "charge_shot": { // チャージショット
-                    "get.mcfunction": null
-                  },
-                  "battle_standby": { // 戦いの準備
-                    "get.mcfunction": null
-                  },
-                  "ultima_strike": { // 大地斬り
-                    "get.mcfunction": null
-                  }
-                },
-                "select": {
-                  "spinning_slash": { // 剣技：回転切り
-                    "get.mcfunction": null
-                  },
-                  "fairy_bottle": { // 妖精入りの瓶
-                    "get.mcfunction": null
-                  },
-                  "hook_shot": { // フックショット
-                    "get.mcfunction": null
-                  }
-                }
-              },
-              "ikaros": { // イカロス
-                "select.mcfunction": null,
-                "unique": {
-                  "apollon_bow": { // 太陽神ノ弓
-                    "get.mcfunction": null
-                  },
-                  "apollon_bow_spectrum": { // 太陽神ノ弓：黄昏
-                    "get.mcfunction": null
-                  },
-                  "apollon_arrow": { // 太陽神ノ矢
-                    "get.mcfunction": null
-                  },
-                  "begin_twilight": { // 逢魔ノ訪レ
-                    "get.mcfunction": null
-                  },
-                  "shotdown_flare": { // 撃墜ノ陽炎
-                    "get.mcfunction": null
-                  }
-                },
-                "select": {
-                  "flying_feather": { // 飛翔ノ翼
-                    "get.mcfunction": null,
-                    "library": {
-                      "config.mcfunction": null,
-                      "run.mcfunction": null,
-                      "main.mcfunction": null,
-                      "finish.mcfunction": null,
-                      "reset.mcfunction": null,
-                      "flaping.mcfunction": null,
-                      "stop_ceiling.mcfunction": null,
-                      "stop_stun.mcfunction": null,
-                      "ct_main.mcfunction": null,
-                      "ct_progress.mcfunction": null,
-                      "ct_finish.mcfunction": null,
-                      "ct_reset.mcfunction": null
+              "select": {
+                "flying_feather": { // 飛翔ノ翼
+                  "get.mcfunction": [
+                  ],
+                  "run.mcfunction": [
+                  ],
+                  "library": {
+                    "main": [
+                    ],
+                    "flaping": [
+                    ],
+                    "stop_ceiling": [
+                    ],
+                    "stop_stun": [
+                    ],
+                    "finish": [
+                    ],
+                    "reset": [
+                    ],
+                    "ct": {
+                      "main": [
+                      ],
+                      "progress": [
+                      ],
+                      "finish": [
+                      ],
+                      "reset": [
+                      ]
                     }
-                  },
-                  "judgment_stone": { // 裁キノ礫
-                    "get.mcfunction": null
-                  },
-                  "blazing_shield": { // 焔熱ノ障壁
-                    "get.mcfunction": null
                   }
                 }
-              },
-              "dryad": { // ドライアド
-                "select.mcfunction": null
-              },
-              "ariel": { // エリアル
-                "select.mcfunction": null
-              },
-              "tesra": { // テスラ
-                "select.mcfunction": null
-              },
-              "assassin": { // アサシン
-                "select.mcfunction": null
-              },
-              "sleet": { // スリート
-                "select.mcfunction": null
-              },
-              "yinyang": { // インニャン
-                "select.mcfunction": null
               }
+            },
+            "dryad": {   // 蠱惑
+            },
+            "ariel": {   // 暴風
+            },
+            "tesla": {   // 電磁
+            },
+            "steam": {   // 蒸気
+            },
+            "sleet": {   // 降霙
+            },
+            "dragon": {  // 龍鬼
+            },
+            "yinyang": { // 陰陽
+            },
+            "taitan": {  // 軍略
+            },
+            "amarias": { // 陽光
+            },
+            "livia": {   // 月影
+            },
+            "shadow": {  // 暗影
+            },
+            "trion": {   // 近界
+            },
+            "vanet": {   // 監視
             }
           },
-          "item": { // アイテム関連
-            "healing_potion": { // ポーション
-              "get.mcfunction": null,
-              "library": {
-                "run.mcfunction": null
-              }
-            },
-            "smoke_salmon": { // 煙幕鮭
-              "get.mcfunction": null,
-              "library": {
-                "run.mcfunction": null
-              }
-            },
-            "flag_grenade": { // 手投げ爆弾
-              "get.mcfunction": null,
-              "library": {
-                "run.mcfunction": null
-              }
-            },
-            "extra_booster": { // 究極活性剤
-              "get.mcfunction": null,
-              "library": {
-                "run.mcfunction": null
-              }
-            }
-          },
-          "status": { // プレイヤーやアイテムの状態管理
-            "basic_effect.mcfunction": null,
-            "check": { // 行動検知
-              "boot": {
-                "using": {
-                  "category": {
-                    "weapon.mcfunction": null,
-                    "weapon_skill.mcfunction": null,
-                    "passive_skill.mcfunction": null,
-                    "extra_skill.mcfunction": null,
-                    "select_skill.mcfunction": null,
-                    "item.mcfunction": null
-                  },
-                  "main.mcfunction": null,
-                  "finish.mcfunction": null
+          "status": {
+            "detection": {
+              "advancements": {
+                "using_item": {
+                  "reception.mcfunction": [
+                    // # =================================================================================================
+                    //
+                    // ##【 アイテム使用検知 】
+                    // # プレイヤーがアイテム実行中であることを管理する
+                    //
+                    // #【 スコア管理 】
+                    // # ItemUsing : アイテムが実行中である限り上昇し続ける
+                    // # ItemUsed  : 終了検知用
+                    // execute as @s[tag=TAG.cronica.GAMING] run scoreboard objectives add SCORE.cronica.DETECT.ItemUsing dummy
+                    // execute as @s[tag=TAG.cronica.GAMING] run scoreboard players add @s SCORE.cronica.DETECT.ItemUsing 1
+                    //
+                    // #【 タグ管理 】
+                    // # このタグが付いている限り、アイテム使用中であると判定される
+                    // execute as @s[tag=TAG.cronica.DETECT.ItemUsed] run tag @s remove TAG.cronica.DETECT.ItemUsed
+                    // # このタグが付いている限り、アイテム使用中であると判定される
+                    // execute as @s[tag=TAG.cronica.GAMING] run tag @s add TAG.cronica.DETECT.ItemUsing
+                    //
+                    // #【 アイテム実行管理用関数呼び出し 】
+                    // # 一拍の遅延がかかってしまうので、ここで呼び出すことでラグをなくす
+                    // execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:system/detection/advancements/using_item/boot
+                    //
+                    // #【 Advancement解除 】
+                    // # 実績は一度取得すると再度取得できないため、使用後は常に解除する
+                    // advancement revoke @s only cronica:player/using_item
+                    // # =================================================================================================
+                  ],
+                  "boot.mcfunction": [
+                    // # =================================================================================================
+                    //
+                    // ##【 データ取得 】
+                    // # 所持しているアイテムやスキルの情報を取得する
+                    //
+                    // #【 ItemCategory取得 】
+                    // # 所持しているアイテムやスキルのカテゴリを取得する
+                    // # MainWeapon, SubWeapon, UniqueSkill, ExtraSkill, SelectSkill など
+                    // data modify storage cronica:context ItemCategory.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemCategory
+                    // data modify storage cronica:context ItemCategory.Mainhand set from entity @s SelectedItem.components."minecraft:custom_data".ItemCategory
+                    //
+                    // #【 ItemID取得 】
+                    // # 所持しているアイテムやスキルのIDを取得する
+                    // # FlyingFeather, SearchEye, BlastBurn など
+                    // data modify storage cronica:context ItemID.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
+                    // data modify storage cronica:context ItemID.Mainhand set from entity @s SelectedItem.components."minecraft:custom_data".ItemID
+                    //
+                    // #【 ItemMode取得 】
+                    // # 所持しているアイテムやスキルのモードを取得する
+                    // # default, ice, fire など
+                    // data modify storage cronica:context ItemMode.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemMode
+                    // data modify storage cronica:context ItemMode.Mainhand set from entity @s SelectedItem.components."minecraft:custom_data".ItemMode
+                    //
+                    // #【 ItemStatus取得 】
+                    // # 所持しているアイテムやスキルのステータスを取得する
+                    // # ready, charging, ban など
+                    // data modify storage cronica:context ItemStatus.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemStatus
+                    // data modify storage cronica:context ItemStatus.Mainhand set from entity @s SelectedItem.components."minecraft:custom_data".ItemStatus
+                    // # =================================================================================================
+                    //
+                    // # 使用終了検知
+                    // execute if score @s[scores={SCORE.cronica.STATUS.ItemUsing=1..}] SCORE.cronica.STATUS.ItemUsed matches 0 run function cronica:player/status/check/item_using/finish
+                    // scoreboard players set @s SCORE.cronica.STATUS.ItemUsed 0
+                    //
+                    // #【 カテゴリ別処理 】
+                    // # 各種処理へ分岐する
+                    // execute as @s[tag=TAG.cronica.STATUS.ItemUsing] run function cronica:player/status/check/item_using/category/data_get_main
+                    // execute as @s[tag=TAG.cronica.STATUS.ItemUsing] run function cronica:player/status/check/item_using/category/data_get_off
+                    // # =================================================================================================
+                    //
+                    // ##【 データリセット 】
+                    // # 各種取得済みデータを初期化
+                    // data remove storage cronica:context ItemCategory
+                    // data remove storage cronica:context ItemID
+                    // data remove storage cronica:context ItemStatus
+                    // data remove storage cronica:context ItemMode
+                    // # =================================================================================================
+                  ]
                 },
-                "sneak.mcfunction": null,
-                "sprint.mcfunction": null
+                "reset.mcfunction": [
+                ]
               },
-              "main.mcfunction": null
+              "tick.mcfunction": [
+              ]
             },
-            "item_display": { // アイテムの見た目や説明欄を変更する
-              "status": {
-                "ready.mcfunction": null,
-                "charging.mcfunction": null,
-                "used.mcfunction": null,
-                "jamming.mcfunction": null
+            "inventory": {
+              "data": {
+                "save.mcfunction": [
+                ]
               },
-              "model": {
-                "default.mcfunction": null,
-                "used.mcfunction": null,
-                "ban.mcfunction": null,
-                "gauge": {
-                  "gauge_0.mcfunction": null,
-                  "gauge_1.mcfunction": null,
-                  "gauge_2.mcfunction": null,
-                  "gauge_3.mcfunction": null,
-                  "gauge_4.mcfunction": null,
-                  "gauge_5.mcfunction": null,
-                  "gauge_6.mcfunction": null,
-                  "gauge_7.mcfunction": null,
-                  "gauge_8.mcfunction": null,
-                  "gauge_9.mcfunction": null
-                }
+              "kit": {
+                "lobby_set.mcfunction": [
+                ],
+                "free_battle_set.mcfunction": [
+                ],
+                "match_battle_set.mcfunction": [
+                ]
               }
-            }
-          },
-          "inventory": { // プレイヤーのインベントリ関連
-            "get_template": { // インベントリテンプレートを取得する
-              "lobby.mcfunction": null, // ロビー用
-              "free_battle.mcfunction": null, // スカーミッシュ,練習用
-              "match_battle.mcfunction": null // 試合用
-            },
-            "remember_slot": { // 自身のアイテムの起き方を記憶する
-              "save.mcfunction": null,
-              "load.mcfunction": null
             }
           }
         },
-        "stage": { // ステージ関連
-          "list": { // ステージ一覧
-            "lobby": { // ロビー
-              "teleport": {
-                "enter.mcfunction": null
-              },
-              "position": {
-              }
-            },
-            "practice_area": { // 練習場
-              "teleport": {
-                "enter.mcfunction": null
-              },
-              "position": {
-              }
-            },
-            "whale_garden": { // 鯨皇街
-              "teleport": {
-                "center.mcfunction": null
-              },
-              "position": {
-                "respawn_marker": null,
-                "shop_marker": null,
-                "care_package_marker": null
-              }
-            },
-            "crono_town": { // クロノタウン
-              "teleport": {
-                "center.mcfunction": null
-              },
-              "position": {
-                "respawn_marker": null,
-                "shop_marker": null,
-                "care_package_marker": null
-              }
-            },
-            "kingscross_station": { // キングスクロス駅
-              "teleport": {
-                "center.mcfunction": null
-              },
-              "position": {
-                "respawn_marker": null,
-                "shop_marker": null,
-                "care_package_marker": null
-              }
-            },
-            "tempus_city": { // テンパスシティ
-              "teleport": {
-                "center.mcfunction": null
-              },
-              "position": {
-                "respawn_marker": null,
-                "shop_marker": null,
-                "care_package_marker": null
+        "system": {
+          "preparation": {
+            "join_server.mcfunction": [
+            ],
+            "scoreboard": {
+              "personal_number": {
+                "registration.mcfunction": [
+                ],
+                "vip_registration.mcfunction": [
+                ]
               }
             }
           },
-          "gimmick": { // ステージ上のギミック関連
-            "wall_climb": { // 柵乗り越え
-              "config.mcfunction": null,
-              "charge.mcfunction": null,
-              "main.mcfunction": null,
-              "progress.mcfunction": null,
-              "complete.mcfunction": null,
-              "reset.mcfunction": null
-            },
-            "panel": { // 踏んだら起動するパネル
-              "jump": { // ジャンプパネル : lime
-                "run.mcfunction": null,
-                "main.mcfunction": null,
-                "finish.mcfunction": null
-              },
-              "dash": { // ダッシュパネル : orange
-                "run.mcfunction": null,
-                "main.mcfunction": null,
-                "finish.mcfunction": null
-              },
-              "heal": { // 回復パネル : pink
-                "run.mcfunction": null,
-                "main.mcfunction": null,
-                "finish.mcfunction": null
-              }
-            },
-            "main.mcfunction": null
-          },
-          "teleport": { // クイックテレポート その場に行くだけでなくステータスなども変更する
-            "main_lobby.mcfunction": null,
-            "practice_area.mcfunction": null
-          }
-        },
-        "system": { // システム関連
-          "gamerule_set.mcfunction": "ゲームルール 起動時実行でゲームルールを設定する(あまり意味はないが、新規ワールドに乗り換えたときに便利)",
-          "join_server.mcfunction": "サーバー参加時実行 入ったときに実行",
-          "menu": { // メニュー管理 TODO: もう大きすぎて外に出してもいいくらい
-            "open.mcfunction": null
-          },
-          "advancements": { // 実績関連 主に行動検知に使用する
-            "using_item.mcfunction": "アイテム使用時(ダイヤの馬鎧)"
-          },
-          "scoreboard": { // スコアを一括で管理する際などに使用する
-          },
-          "tag": { // タグを一括で管理する際などに使用する
-          },
-          "test": {
-            "kikitst": {
-              "anko.mcfunction": null
-            }
-          }
-        },
-        "tick.mcfunction": "常時実行",
-        "load.mcfunction": "起動時実行"
-      },
-      "item_modifier": { // アイテムの状態を変更するためのパス itemコマンドで呼び出して使用する
-        "character": { // キャラクター関連 武器やスキルに追加の説明欄を追加したりなど
-          "brave": {
-            "select": {
-            "spinning_slash": {
-              "append_connect_lore.json": null
-            },
-            "fairy_bottle": {
-              "append_connect_lore.json": null
-            },
-            "hook_shot": {
-              "append_connect_lore.json": null
-              }
-            },
-            "unique": {
-              "material_sword": {},
-              "charge_shot": {},
-              "tri_impact": {}
-            }
-          },
-          "ikaros": {
-            "select": {
-            "flying_feather": {
-              "append_connect_lore.json": null
-            },
-            "judgment_stone": {
-              "append_connect_lore.json": null
-            },
-            "blazing_shield": {
-              "append_connect_lore.json": null
-            }
-          },
-            "unique": {
-              "apollon_bow": {},
-              "apollon_bow_twilight": {},
-              "apollon_arrow": {},
-              "begin_twilight": {},
-              "shotdown_flare": {}
-            }
-          },
-          "dryad": {},
-          "ariel": {},
-          "tesra": {},
-          "assassin": {},
-          "sleet": {},
-          "yinyang" : {}
-        },
-        "common": { // 共通
-          "status": { // アイテムの内部情報の書き換え
-            "ready.json": null, // 使用可能状態
-            "charging.json": null, // チャージ中状態
-            "used.json": null, // 一度きり発動などの使用済み状態
-            "jamming.json": null // 使用不可状態
-          },
-          "model": { // アイテムの見た目の書き換え
-            "default.json": null, // デフォルト状態
-            "used.json": null, // 使用済み状態、チャージ中状態
-            "ban.json": null, // 使用不可、禁止状態
-            "gauge": { // ゲージ表示
-              "charging_0.json": null,
-              "charging_1.json": null,
-              "charging_2.json": null,
-              "charging_3.json": null,
-              "charging_4.json": null,
-              "charging_5.json": null,
-              "charging_6.json": null,
-              "charging_7.json": null,
-              "charging_8.json": null,
-              "charging_9.json": null,
-              "charging_10.json": null,
-              "charging_11.json": null,
-              "charging_12.json": null,
-              "charging_13.json": null,
-              "charging_14.json": null,
-              "charging_15.json": null,
-              "charging_16.json": null,
-              "charging_17.json": null,
-              "charging_18.json": null,
-              "charging_19.json": null
-            }
-          }
+          "load.mcfunction": [
+          ],
+          "tick.mcfunction": [
+          ]
         }
       },
-      "loot_table": { // アイテム自体の情報
-        "character": { // キャラクター関連 武器やスキル
-          "brave": {// ブレイブ
-            "select": {
-              "spinning_slash.json": "剣技：回転切り",
-              "fairy_bottle.json": "妖精入りの瓶",
-              "hook_shot.json": "フックショット"
-            },
-            "unique": {
-              "material_sword.json": "マテリアソード",
-              "charge_shot.json": "チャージショット",
-              "tri_impact.json": "トライインパクト"
-            }
-          },
-          "ikaros": { // イカロス
-            "select": {
-              "blazing_shield.json": "焔熱ノ障壁",
-              "flying_feather.json": "飛翔ノ翼",
-              "judgment_stone.json": "裁キノ礫"
-            },
-            "unique": {
-              "apollon_arrow.json": "太陽神ノ矢",
-              "apollon_bow.json": "太陽神ノ弓",
-              "apollon_bow_twilight.json": "太陽神ノ弓：黄昏",
-              "begin_twilight.json": "逢魔ノ訪レ",
-              "shotdown_flare.json": "撃墜ノ陽炎"
-            }
-          },
-          "dryad": {
-          },
-          "ariel": {
-          },
-          "tesra": {
-          },
-          "assassin": {
-          },
-          "sleet": {
-          },
-          "yinyang": {
-          }
-        },
-        "item": { // 特殊アイテム
-        }
-      },
-      "predicate": { // 行動検知その２ Advancementとの違いはこっちは断続的に検知できる
-        "sneak.json": "スニーク検知",
-        "sprint.json": "ダッシュ検知"
-      },
-      "tags": { // 特定の要素をまとめて管理する 主にブロックのまとめなど
-        "block": {
-          "fence.json": "フェンスまとめ 乗り越え判定用",
-          "no_collision_light.json": "光がとおれるブロックまとめ 光線判定用",
-          "no_collision.json": "衝突判定のないブロックまとめ 移動スキルや投射物判定用",
-          "water.json": "水ブロックまとめ 水判定用",
-          "no_ground.json": "地面判定ではないブロックまとめ 地面判定用"
-        },
-        "entity": {
-        }
-      }
-    },
-    "lib": { // 開発に使用しているライブラリ
       "loot_table": {
-        "teleport.json": "視線の先テレポート", // by Chuzume
-        "switch_gamemode.json": "ゲームモード切替(ライブラリだが、CRONICA用に調整済み)" // by Chuzume
+        "character": {
+        }
+      },
+      "item_modifier": {
+        "character": {
+        }
+      },
+      "advancement": {
+        "using_item.json": {
+          "criteria": {
+            "requirement": {
+              "trigger": "minecraft:using_item",
+              "conditions": {
+                "player": [
+                  {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {}
+                  }
+                ]
+              }
+            }
+          },
+          "rewards": {
+            "function": "cronica:system/detection/advancements/using_item/reception"
+          }
+        }
+      },
+      "predicate": {
+        "is_on_ground.json": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:player",
+            "flags": {
+              "is_on_ground": true
+            }
+          }
+        },
+        "is_sneaking.json": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:player",
+            "flags": {
+              "is_sneaking": true
+            }
+          }
+        },
+        "is_sprinting.json": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:player",
+            "flags": {
+              "is_sprinting": true
+            }
+          }
+        }
       }
     },
-    "minecraft": { // 常時実行や起動時実行などの関数を動作させる
+    "minecraft": {
       "tags": {
-        "function": {
-          "tick.json": null, // 常時実行
-          "load.json": null // 起動時実行
+        "functions": {
+          "load": {
+            "values": [
+              "cronica:system/load"
+            ]
+          },
+          "tick": {
+            "values": [
+              "cronica:system/tick"
+            ]
+          }
         }
       }
     }
   },
-  "structure.json": "このファイル、構造を簡略化して管理できるようにする目的"
+  "pack.mcmeta": {
+    "pack":{
+        "pack_format":57,
+        "description":"ver 0.10.2 [by TicK-tag]"
+    }
+  },
+  "structure.jsonc": null
 }
