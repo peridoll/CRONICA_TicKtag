@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "attack": {
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "rewards": {
+    "function": "cronica:player/status/detection/advancements/change_inventory/run"
+  }
+}
