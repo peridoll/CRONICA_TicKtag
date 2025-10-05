@@ -623,13 +623,13 @@
                 // # =================================================================================================
               ],
               "ct": {
-                "main":[
+                "main.mcfunction":[
                 ],
-                "progress":[
+                "progress.mcfunction":[
                 ],
-                "finish":[
+                "finish.mcfunction":[
                 ],
-                "reset":[
+                "reset.mcfunction":[
                 ]
               }
             },
