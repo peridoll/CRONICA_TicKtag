@@ -1,8 +1,5 @@
 # =================================================================================================
 
-# UUID取得
-function cronica:system/common/storage/get_uuid
-
-# Inventoryデータ保存
-function cronica:player/status/inventory/data/save_lib with storage cronica:temp/uuid
+# 特定能力発動
+$function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/boot/item_used with storage cronica:personal/$(UUID)/player/inventory/data Activate
 # =================================================================================================

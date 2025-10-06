@@ -1,8 +1,5 @@
 # =================================================================================================
 
-# UUID取得
-function cronica:system/common/storage/get_uuid
-
-# Inventoryデータ保存
-function cronica:player/status/inventory/data/save_lib with storage cronica:temp/uuid
+# 指定関数実行
+$function cronica:$(temp_address) with storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate
 # =================================================================================================

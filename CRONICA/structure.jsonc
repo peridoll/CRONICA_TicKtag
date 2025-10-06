@@ -1,1281 +1,1541 @@
 {
-  "data": {
-    "cronica": {
-      "function": {
-        "game": {
-          "rule": {
-            "practice": {
+  "function": {
+    "game": {
+      "rule": {
+        "practice": {
+        },
+        "skirmish": {
+        },
+        "free_for_all": {
+        },
+        "team_deathmatch": {
+        }
+      },
+      "common": {
+        "start.mcfunction": [
+        ],
+        "end.mcfunction": [
+        ],
+        "reset.mcfunction": [
+        ]
+      }
+    },
+    "player": {
+      "character": {
+        "brave":   { // 勇者
+          "unique": {
+            "master_sword":   { // 英雄の剣
             },
-            "skirmish": {
+            "battle_standby": { // 戦いの準備
             },
-            "free_for_all": {
-            },
-            "team_deathmatch": {
+            "tri_strike":     { // 三連斬り
             }
           },
-          "common": {
-            "start.mcfunction": [
-            ],
-            "end.mcfunction": [
-            ],
-            "reset.mcfunction": [
-            ]
+          "select": {
+            "spinning_slash": { // 剣技：回転斬り
+            },
+            "fairy_bottle":   { // 妖精入りの瓶
+            },
+            "hook_shot":      { // フックショット
+            }
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "ikaros":  { // 大翼
+          "unique": {
+            "apollon_bow":     { // 太陽神ノ弓
+              "get.mcfunction": [
+              ]
+            },
+            "begin_twilight":  { // 逢魔ノ刻
+            },
+            "shutdown_flare" : { // 撃墜ノ陽炎
+            }
+          },
+          "select": {
+            "flying_feather":  { // 飛翔ノ翼
+              "get.mcfunction": [
+                // # =================================================================================================
+
+                // # アイテム入手
+                // data modify storage cronica:context ItemID.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
+                // execute as @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "flying_feather"}}}]}] run tag @s add TAG.cronica.SKILL.FlyingFeather.Has
+                // execute if data storage cronica:context ItemID.Offhand{Value: "FlyingFeather"} run tag @s add TAG.cronica.SKILL.FlyingFeather.Has
+                // execute as @s[tag=!TAG.cronica.SKILL.FlyingFeather.Has] run loot give @s loot cronica:character/ikaros/select/flying_feather
+                // tag @s remove TAG.cronica.SKILL.FlyingFeather.Has
+                // data remove storage cronica:context ItemID
+                // # =================================================================================================
+              ],
+              "boot": {
+                "item_using.mcfunction": [
+                  // # =================================================================================================
+
+                  // # アイテム発動確認
+                  // execute if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:player/character/ikaros/select/flying_feather/library/run
+                  // # =================================================================================================
+                ]
+              },
+              "library": {
+                "run.mcfunction": [
+                  // # =================================================================================================
+
+                  // # 共通処理
+                  // # function cronica:player/status/skill_library/run_common {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
+
+                  // # ゲームモード
+                  // tag @s[gamemode=creative] add TAG.cronica.SKILL.flying_feather.RunCreative
+                  // gamemode adventure @s[tag=TAG.cronica.SKILL.flying_feather.RunCreative]
+
+                  // # エフェクト
+                  // effect give @s minecraft:levitation 1 25 true
+                  // effect give @s minecraft:slow_falling infinite 0 true
+
+                  // # ゲームモード
+                  // gamemode creative @s[tag=TAG.cronica.SKILL.flying_feather.RunCreative]
+                  // tag @s[tag=TAG.cronica.SKILL.flying_feather.RunCreative] remove TAG.cronica.SKILL.flying_feather.RunCreative
+
+                  // # 装飾
+                  // particle minecraft:cloud ~ ~ ~ 0.2 0.2 0.2 0.1 50 force
+                  // playsound minecraft:entity.ender_dragon.flap player @a ~ ~ ~ 2 1
+                  // playsound minecraft:item.trident.riptide_3 player @a ~ ~ ~ 2 1
+                  // # =================================================================================================
+                ],
+                "main": [
+                  // # =================================================================================================
+
+                  // # タイマー増加
+                  // scoreboard players add @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..}] SCORE.cronica.TIMER.flying_feather.ActivateTime 1
+
+                  // # エフェクト管理
+                  // effect clear @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=10}] minecraft:levitation
+
+                  // # 中断
+                  // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..19}] at @s unless block ~ ~2.1 ~ #cronica:no_collision run function cronica:player/character/ikaros/select/flying_feather/library/stop_ceiling
+                  // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..},tag=TAG.cronica.STUNNING] run function cronica:player/character/ikaros/select/flying_feather/library/stop_stun
+
+                  // # 装飾
+                  // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=20}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/flaping
+                  // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=25}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/flaping
+                  // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=30}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/flaping
+
+                  // # 実行終了
+                  // execute as @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=30..}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/finish
+
+                  // # ループ処理
+                  // execute if entity @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..}] run schedule function cronica:player/character/ikaros/select/flying_feather/library/main 1t
+                  // # =================================================================================================
+                ],
+                "flaping": [
+                  // # =================================================================================================
+                ],
+                "stop_ceiling": [
+                  // # =================================================================================================
+                ],
+                "stop_stun": [
+                  // # =================================================================================================
+                ],
+                "finish": [
+                  // # =================================================================================================
+                ],
+                "reset": [
+                  // # =================================================================================================
+                ]
+              }
+            },
+            "judgment_stone": { // 裁キノ礫
+              "get.mcfunction": [
+              ],
+              "run.mcfunction": [
+              ],
+              "library": {
+                "main": [
+                ],
+                "finish": [
+                ],
+                "reset": [
+                ],
+                "boot": {
+                  "using_item.mcfunction": [
+                  ]
+                }
+              }
+            },
+            "blazing_shield":  { // 焔熱ノ護盾
+              "get.mcfunction": [
+              ],
+              "run.mcfunction": [
+              ],
+              "library": {
+                "main": [
+                ],
+                "finish": [
+                ],
+                "reset": [
+                ]
+              }
+            }
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "dryad":   { // 蠱惑
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "ariel":   { // 暴風
+          "unique": {
+            "jack_rabbit": { // ジャックラビット
+            },
+            "quick_step":  { // 疾風：ハヤテ
+            }
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "tesla":   { // 電磁
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "steam":   { // 蒸気
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "sleet":   { // 降霙
+          "unique": {
+            "brizard_lance": {
+            },
+            "wave_lance": {
+            },
+            "thermal_conversion": {
+            }
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "yinyang": { // 陰陽
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "taitan":  { // 軍略
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "amarias": { // 陽光
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "livia":   { // 月影
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "shadow":  { // 暗影
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "trion":   { // 近界
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        },
+        "vanet":   { // 監視
+          "unique": {
+          },
+          "select": {
+          },
+          "config.mcfunction": [
+          ],
+          "get.mcfunction": [
+          ],
+          "select.mcfunction": [
+          ],
+          "reset.mcfunction": [
+          ],
+          "dev.mcfunction": [
+          ]
+        }
+      },
+      "other": {
+        "field_item": {
+          "neptune_trident": {
+          },
+          "back_pack": {
           }
         },
-        "player": {
-          "character": {
-            "brave":   { // 勇者
-              "unique": {
-                "master_sword":   { // 英雄の剣
-                },
-                "battle_standby": { // 戦いの準備
-                },
-                "tri_strike":     { // 三連斬り
-                }
-              },
-              "select": {
-                "spinning_slash": { // 剣技：回転斬り
-                },
-                "fairy_bottle":   { // 妖精入りの瓶
-                },
-                "hook_shot":      { // フックショット
-                }
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
+        "shop": {
+          "shop_item": {
+            "healing_potion": {
             },
-            "ikaros":  { // 大翼
-              "unique": {
-                "apollon_bow":     { // 太陽神ノ弓
-                  "get.mcfunction": [
-                  ]
-                },
-                "begin_twilight":  { // 逢魔ノ刻
-                },
-                "shutdown_flare" : { // 撃墜ノ陽炎
-                }
-              },
-              "select": {
-                "flying_feather":  { // 飛翔ノ翼
-                  "get.mcfunction": [
-                    // # =================================================================================================
-
-                    // # アイテム入手
-                    // data modify storage cronica:context ItemID.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
-                    // execute as @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "flying_feather"}}}]}] run tag @s add TAG.cronica.SKILL.FlyingFeather.Has
-                    // execute if data storage cronica:context ItemID.Offhand{Value: "FlyingFeather"} run tag @s add TAG.cronica.SKILL.FlyingFeather.Has
-                    // execute as @s[tag=!TAG.cronica.SKILL.FlyingFeather.Has] run loot give @s loot cronica:character/ikaros/select/flying_feather
-                    // tag @s remove TAG.cronica.SKILL.FlyingFeather.Has
-                    // data remove storage cronica:context ItemID
-                    // # =================================================================================================
-                  ],
-                  "run.mcfunction": [
-                    // # =================================================================================================
-
-                    // # 共通処理
-                    // function cronica:player/status/skill_library/run_common {MasterName: "ikaros", MasterType: "select", ItemID: "flying_feather"}
-
-                    // # ゲームモード
-                    // tag @s[gamemode=creative] add TAG.cronica.SKILL.flying_feather.RunCreative
-                    // gamemode adventure @s[tag=TAG.cronica.SKILL.flying_feather.RunCreative]
-
-                    // # エフェクト
-                    // effect give @s minecraft:levitation 1 25 true
-                    // effect give @s minecraft:slow_falling infinite 0 true
-
-                    // # ゲームモード
-                    // gamemode creative @s[tag=TAG.cronica.SKILL.flying_feather.RunCreative]
-                    // tag @s[tag=TAG.cronica.SKILL.flying_feather.RunCreative] remove TAG.cronica.SKILL.flying_feather.RunCreative
-
-                    // # 装飾
-                    // particle minecraft:cloud ~ ~ ~ 0.2 0.2 0.2 0.1 50 force
-                    // playsound minecraft:entity.ender_dragon.flap player @a ~ ~ ~ 2 1
-                    // playsound minecraft:item.trident.riptide_3 player @a ~ ~ ~ 2 1
-                    // # =================================================================================================
-                  ],
-                  "library": {
-                    "main": [
-                      // # =================================================================================================
-
-                      // # タイマー増加
-                      // scoreboard players add @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..}] SCORE.cronica.TIMER.flying_feather.ActivateTime 1
-
-                      // # エフェクト管理
-                      // effect clear @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=10}] minecraft:levitation
-
-                      // # 中断
-                      // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..19}] at @s unless block ~ ~2.1 ~ #cronica:no_collision run function cronica:player/character/ikaros/select/flying_feather/library/stop_ceiling
-                      // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..},tag=TAG.cronica.STUNNING] run function cronica:player/character/ikaros/select/flying_feather/library/stop_stun
-
-                      // # 装飾
-                      // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=20}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/flaping
-                      // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=25}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/flaping
-                      // execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=30}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/flaping
-
-                      // # 実行終了
-                      // execute as @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=30..}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/finish
-
-                      // # ループ処理
-                      // execute if entity @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..}] run schedule function cronica:player/character/ikaros/select/flying_feather/library/main 1t
-                      // # =================================================================================================
-                    ],
-                    "flaping": [
-                      // # =================================================================================================
-                    ],
-                    "stop_ceiling": [
-                      // # =================================================================================================
-                    ],
-                    "stop_stun": [
-                      // # =================================================================================================
-                    ],
-                    "finish": [
-                      // # =================================================================================================
-                    ],
-                    "reset": [
-                      // # =================================================================================================
-                    ],
-                    "boot": {
-                      "using_item.mcfunction": [
-                      ]
-                    }
-                  }
-                },
-                "judgment_stone": { // 裁キノ礫
-                  "get.mcfunction": [
-                  ],
-                  "run.mcfunction": [
-                  ],
-                  "library": {
-                    "main": [
-                    ],
-                    "finish": [
-                    ],
-                    "reset": [
-                    ],
-                    "boot": {
-                      "using_item.mcfunction": [
-                      ]
-                    }
-                  }
-                },
-                "blazing_shield":  { // 焔熱ノ護盾
-                  "get.mcfunction": [
-                  ],
-                  "run.mcfunction": [
-                  ],
-                  "library": {
-                    "main": [
-                    ],
-                    "finish": [
-                    ],
-                    "reset": [
-                    ]
-                  }
-                }
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
+            "smoke_salmon": {
             },
-            "dryad":   { // 蠱惑
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
+            "extra_booster": {
             },
-            "ariel":   { // 暴風
-              "unique": {
-                "jack_rabbit": { // ジャックラビット
-                },
-                "quick_step":  { // 疾風：ハヤテ
-                }
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "tesla":   { // 電磁
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "steam":   { // 蒸気
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "sleet":   { // 降霙
-              "unique": {
-                "brizard_lance": {
-                },
-                "wave_lance": {
-                },
-                "thermal_conversion": {
-                }
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "yinyang": { // 陰陽
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "taitan":  { // 軍略
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "amarias": { // 陽光
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "livia":   { // 月影
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "shadow":  { // 暗影
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "trion":   { // 近界
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
-            },
-            "vanet":   { // 監視
-              "unique": {
-              },
-              "select": {
-              },
-              "config.mcfunction": [
-              ],
-              "get.mcfunction": [
-              ],
-              "select.mcfunction": [
-              ],
-              "reset.mcfunction": [
-              ],
-              "dev.mcfunction": [
-              ]
+            "flag_grenade": {
             }
           },
-          "other": {
-            "field_item": {
-              "neptune_trident": {
-              },
-              "back_pack": {
-              }
+          "shop_weapon": {
+            "toy_sword": {
             },
-            "shop": {
-              "shop_item": {
-                "healing_potion": {
-                },
-                "smoke_salmon": {
-                },
-                "extra_booster": {
-                },
-                "flag_grenade": {
-                }
-              },
-              "shop_weapon": {
-                "toy_sword": {
-                },
-                "toy_bow": {
-                },
-                "toy_crossbow": {
-                },
-                "toy_spire": {
-                },
-                "toy_shield": {
-                },
-                "arrow_bundle": {
-                },
-                "ammo_bundle": {
-                }
-              }
+            "toy_bow": {
+            },
+            "toy_crossbow": {
+            },
+            "toy_spire": {
+            },
+            "toy_shield": {
+            },
+            "arrow_bundle": {
+            },
+            "ammo_bundle": {
             }
-          },
-          "status": {
-            "detection": {
-              "advancements": {
-                "using_item": {
-                  "run.mcfunction": [
-                    // # =================================================================================================
-
-                    // # スコア管理
-                    // execute as @s[tag=TAG.cronica.GAMING] run scoreboard objectives add SCORE.cronica.DETECT.ItemUsing dummy
-                    // execute as @s[tag=TAG.cronica.GAMING] run scoreboard players add @s SCORE.cronica.DETECT.ItemUsing 1
-
-                    // # タグ管理
-                    // execute as @s[tag=TAG.cronica.DETECT.ItemUsed] run tag @s remove TAG.cronica.DETECT.ItemUsed
-                    // execute as @s[tag=TAG.cronica.GAMING] run tag @s add TAG.cronica.DETECT.ItemUsing
-
-                    // # アイテム使用検知関数実行
-                    // execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:player/status/inventory/data/save
-                    // execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:player/status/detection/advancements/using_item/main with storage cronica:player/inventory/data Value
-
-                    // # 実績解除
-                    // advancement revoke @s only cronica:using_item
-                    // # =================================================================================================
-                  ],
-                  "main.mcfunction": [
-                    // # =================================================================================================
-
-                    // # 使用終了検知
-                    // execute as @s[tag=TAG.cronica.DETECT.ItemUsed,scores={SCORE.cronica.STATUS.ItemUsing=1..}] run function cronica:player/status/detection/advancements/using_item/finish with storage cronica:player/inventory/data Value
-                    // tag @s add TAG.cronica.DETECT.ItemUsed
-
-                    // # 後続呼び出し
-                    // $function cronica:player/character/$(MasterName)/$(MasterType)/$(ItemID)/library/using_item
-                    // # =================================================================================================
-                  ],
-                  "finish.mcfunction": [
-                    // # =================================================================================================
-
-                    // # タグ管理
-                    // tag @s remove TAG.cronica.DETECT.ItemUsing
-                    // tag @s remove TAG.cronica.DETECT.ItemUsed
-
-                    // # スコア管理
-                    // scoreboard players reset @s SCORE.cronica.DETECT.ItemUsing
-                    // execute unless entity @a[scores={SCORE.cronica.DETECT.ItemUsing=0..}] run scoreboard objectives remove SCORE.cronica.DETECT.ItemUsing
-                    // # =================================================================================================
-                  ]
-                },
-                "change_inventory": {
-                },
-                "reset.mcfunction": [
-                  // # =================================================================================================
-
-                  // # アイテム使用検知
-                  // advancement revoke @s only cronica:using_item
-                  // # =================================================================================================
-                ]
-              },
-              "predicate": {
-                "is_on_ground": {
-                  "main.mcfunction": [
-                  ],
-                  "finish.mcfunction": [
-                  ],
-                  "reset.mcfunction": [
-                  ]
-                },
-                "is_sneaking": {
-                  "main.mcfunction": [
-                  ],
-                  "finish.mcfunction": [
-                  ],
-                  "reset.mcfunction": [
-                  ]
-                },
-                "is_sprinting": {
-                  "main.mcfunction": [
-                  ],
-                  "finish.mcfunction": [
-                  ],
-                  "reset.mcfunction": [
-                  ]
-                }
-              },
-              "boot": {
-              },
-              "tick.mcfunction": [
+          }
+        }
+      },
+      "status": {
+        "detection": {
+          "advancements": {
+            "using_item": {
+              "run.mcfunction": [
                 // # =================================================================================================
 
-                // # アイテム使用検知
-                // execute as @a[scores={SCORE.cronica.DETECT.ItemUsing=2..}] run function cronica:player/status/detection/advancements/using_item/main with storage cronica:player/inventory/data Value
-                // # =================================================================================================
-              ]
-            },
-            "inventory": {
-              "data": {
-                "save.mcfunction": [
-                  // # =================================================================================================
+                // # スコア管理
+                // execute as @s[tag=TAG.cronica.GAMING] run scoreboard objectives add SCORE.cronica.DETECT.ItemUsing dummy
+                // execute as @s[tag=TAG.cronica.GAMING] run scoreboard players add @s SCORE.cronica.DETECT.ItemUsing 1
 
-                  // # Reset data
-                  // data remove storage cronica:player/inventory/data Value
-                  // data remove storage cronica:player/inventory/data Mainhand
-                  // data remove storage cronica:player/inventory/data Offhand
+                // # タグ管理
+                // execute as @s[tag=TAG.cronica.DETECT.ItemUsed] run tag @s remove TAG.cronica.DETECT.ItemUsed
+                // execute as @s[tag=TAG.cronica.GAMING] run tag @s add TAG.cronica.DETECT.ItemUsing
 
-                  // # Offhand
-                  // data modify storage cronica:player/inventory/data Offhand.MasterName set from entity @s equipment.offhand.components."minecraft:custom_data".MasterName
-                  // data modify storage cronica:player/inventory/data Offhand.MasterType set from entity @s equipment.offhand.components."minecraft:custom_data".MasterType
-                  // data modify storage cronica:player/inventory/data Offhand.ItemCategory set from entity @s equipment.offhand.components."minecraft:custom_data".ItemCategory
-                  // data modify storage cronica:player/inventory/data Offhand.ItemID set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
-                  // data modify storage cronica:player/inventory/data Offhand.ItemMode set from entity @s equipment.offhand.components."minecraft:custom_data".ItemMode
-                  // data modify storage cronica:player/inventory/data Offhand.ItemStatus set from entity @s equipment.offhand.components."minecraft:custom_data".ItemStatus
-                  // execute if data storage cronica:player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.MasterName set from storage cronica:player/inventory/data Offhand.MasterName
-                  // execute if data storage cronica:player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.MasterType set from storage cronica:player/inventory/data Offhand.MasterType
-                  // execute if data storage cronica:player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.ItemCategory set from storage cronica:player/inventory/data Offhand.ItemCategory
-                  // execute if data storage cronica:player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.ItemID set from storage cronica:player/inventory/data Offhand.ItemID
-                  // execute if data storage cronica:player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.ItemMode set from storage cronica:player/inventory/data Offhand.ItemMode
-                  // execute if data storage cronica:player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.ItemStatus set from storage cronica:player/inventory/data Offhand.ItemStatus
-                  // execute if data storage cronica:player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.Hand set value "Offhand"
+                // # アイテム使用検知関数実行
+                // execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:player/status/detection/advancements/using_item/main
 
-                  // # Mainhand
-                  // data modify storage cronica:player/inventory/data Mainhand.MasterName set from entity @s SelectedItem.components."minecraft:custom_data".MasterName
-                  // data modify storage cronica:player/inventory/data Mainhand.MasterType set from entity @s SelectedItem.components."minecraft:custom_data".MasterType
-                  // data modify storage cronica:player/inventory/data Mainhand.ItemCategory set from entity @s SelectedItem.components."minecraft:custom_data".ItemCategory
-                  // data modify storage cronica:player/inventory/data Mainhand.ItemID set from entity @s SelectedItem.components."minecraft:custom_data".ItemID
-                  // data modify storage cronica:player/inventory/data Mainhand.ItemMode set from entity @s SelectedItem.components."minecraft:custom_data".ItemMode
-                  // data modify storage cronica:player/inventory/data Mainhand.ItemStatus set from entity @s SelectedItem.components."minecraft:custom_data".ItemStatus
-                  // execute if data storage cronica:player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.MasterName set from storage cronica:player/inventory/data Mainhand.MasterName
-                  // execute if data storage cronica:player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.MasterType set from storage cronica:player/inventory/data Mainhand.MasterType
-                  // execute if data storage cronica:player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.ItemCategory set from storage cronica:player/inventory/data Mainhand.ItemCategory
-                  // execute if data storage cronica:player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.ItemID set from storage cronica:player/inventory/data Mainhand.ItemID
-                  // execute if data storage cronica:player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.ItemMode set from storage cronica:player/inventory/data Mainhand.ItemMode
-                  // execute if data storage cronica:player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.ItemStatus set from storage cronica:player/inventory/data Mainhand.ItemStatus
-                  // execute if data storage cronica:player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:player/inventory/data Value.Hand set value "Mainhand"
-                  // # =================================================================================================
-                ]
-              },
-              "kit": {
-                "lobby_set.mcfunction": [
-                ],
-                "free_battle_set.mcfunction": [
-                ],
-                "match_battle_set.mcfunction": [
-                ]
-              },
-              "model": {
-                "runed.mcfunction": [
-                ]
-              }
-            },
-            "skill_library": {
-              "run_common.mcfunction": [
-                // # =================================================================================================
-
-                // ## アイテム置き換え
-                // function cronica:player/status/inventory/model/runed {MasterName: "$(MasterName)", MasterType: "$(MasterType)", ItemID: "$(ItemID)"}
-
-                // ## コンフィグ読み込み
-                // $function cronica:player/character/$(MasterName)/$(MasterType)/$(ItemID)/config
-
-                // ## スコア管理
-
-                // # アイテムモード
-                // $scoreboard objectives add SCORE.cronica.MODE.$(ItemID) dummy
-                // $scoreboard players set @s SCORE.cronica.MODE.$(ItemID) 0
-
-                // # 実行時間
-                // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).ActivateTime dummy
-                // $scoreboard players set @s SCORE.cronica.TIMER.$(ItemID).ActivateTime 0
-
-                // # クールタイム
-                // #[実行値作成]
-                // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).CoolTime dummy
-                // $scoreboard players set @s SCORE.cronica.TIMER.$(ItemID).CoolTime 0
-                // #[目標値作成]
-                // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal dummy
-                // #[目標値設定取得]
-                // $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal = #CONFIG.cronica.SKILL.$(ItemID).CoolTime SCORE.cronica.CONFIG
-                // #[目標値短縮]
-                // $scoreboard players set @s[tag=TAG.cronica.CT_ZERO] SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal 20
-                // #[積算値作成]
-                // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack dummy
-                // $scoreboard players set @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack 0
-                // #[積算目標値作成]
-                // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Goal dummy
-                // $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Goal = @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal
-                // $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Goal /= #20 SCORE.cronica.CONFIG
-
-                // ## 後続発火
-                // $schedule function cronica:player/character/$(MasterName)/$(MasterType)/$(ItemID)/library/main 1t
-                // $schedule function cronica:player/status/skill_library/ct/main 1t {MasterName: "$(MasterName)", MasterType: "$(MasterType)", ItemID: "$(ItemID)"}
+                // # 実績解除
+                // advancement revoke @s only cronica:using_item
                 // # =================================================================================================
               ],
-              "ct": {
-                "main.mcfunction":[
-                ],
-                "progress.mcfunction":[
-                ],
-                "finish.mcfunction":[
-                ],
-                "reset.mcfunction":[
-                ]
-              }
-            },
-            "effect": {
-              "basic": {
-                "speed": {
-                  "no_sprint": {
-                  }
-                },
-                "jump_boost": {
-                  "no_jump": {
-                  }
-                },
-                "common": {
-                  "main.mcfunction": [
-                    // # =================================================================================================
-
-                    // # スコア作成
-                    // $scoreboard objectives add SCORE.cronica.STATUS.$(effect) dummy
-                    // $scoreboard players add @s SCORE.cronica.STATUS.$(effect) 0
-
-                    // # エフェクト管理:通常時
-                    // $execute if score @s SCORE.cronica.STATUS.$(effect) matches 0 unless score @s SCORE.cronica.STATUS.$(effect) matches $(base_value) run scoreboard objectives add SCORE.cronica.TIMER.$(effect).base dummy
-                    // $execute if score @s SCORE.cronica.STATUS.$(effect) matches 0 unless score @s SCORE.cronica.STATUS.$(effect) matches $(base_value) run scoreboard players operation @s SCORE.cronica.TIMER.$(effect).base = @s SCORE.cronica.STATUS.$(effect)
-                    // $execute if score @s SCORE.cronica.STATUS.$(effect) matches 0 unless score @s SCORE.cronica.STATUS.$(effect) matches $(base_value) run scoreboard players add @s SCORE.cronica.TIMER.$(effect).base -1
-                    // $data modify storage cronica:temp $(effect).ID
-                    // $execute store result storage cronica:temp $(effect).Value int 1 run scoreboard players get @s SCORE.cronica.TIMER.$(effect).base
-
-                    // $execute if score @s SCORE.cronica.STATUS.$(effect) matches 0 unless score @s SCORE.cronica.STATUS.$(effect) matches $(base_value) run effect give @s minecraft:$(effect) infinite $(base_value) true
-
-                    // # エフェクト管理:増減時
-                    // $execute unless score @s SCORE.cronica.STATUS.$(effect) matches 0 run function cronica:player/status/effect/basic/calc {effect: $(effect), base_value: $(base_value), rev_effect: $(rev_effect)}
-
-                    // # スコア撤去
-                    // $execute unless entity @s[scores={SCORE.cronica.STATUS.$(effect)=..-1}] unless entity @s[scores={SCORE.cronica.STATUS.$(effect)=1..}] run scoreboard objectives remove SCORE.cronica.STATUS.$(effect)
-                    // # =================================================================================================
-                  ],
-                  "calc.mcfunction": [
-                    // # =================================================================================================
-
-                    // # エフェクト管理
-                    // effect clear @s minecraft:$(effect)
-                    // effect clear @s minecraft:$(rev_effect)
-
-                    // # スコア管理
-                    // scoreboard objectives add SCORE.cronica.STATUS.$(effect)_new dummy
-                    // scoreboard players operation @s SCORE.cronica.STATUS.$(effect)_new = @s SCORE.cronica.STATUS.$(effect)
-
-                    // execute if score @s SCORE.cronica.STATUS.$(effect) matches -1.. run scoreboard players add @s SCORE.cronica.STATUS.$(effect)_new 1
-
-                    // execute if score @s SCORE.cronica.STATUS.$(effect) matches ..-3 run scoreboard players operation @s SCORE.cronica.STATUS.$(effect)_new *= #1 SCORE.cronica.CONFIG
-                    // execute if score @s SCORE.cronica.STATUS.$(effect) matches ..-3 run scoreboard players remove @s SCORE.cronica.STATUS.$(effect)_new 3
-
-                    // execute store result storage cronica:temp $(effect).Value int 1 run scoreboard players get @s SCORE.cronica.STATUS.$(effect)_new
-
-                    // execute if score @s SCORE.cronica.STATUS.$(effect) matches -1.. run data modify storage cronica:temp $(effect).ID set value "$(effect)"
-                    // execute if score @s SCORE.cronica.STATUS.$(effect) matches ..-3 run data modify storage cronica:temp $(effect).ID set value "$(rev_effect)"
-
-                    // execute unless score @s SCORE.cronica.STATUS.$(effect) matches -2 run function cronica:player/status/effect/basic/calc_lib with storage cronica:temp $(effect)
-
-                    // scoreboard objectives remove SCORE.cronica.STATUS.$(effect)_new
-                    // data remove storage cronica:temp $(effect)
-                    // # =================================================================================================
-                  ],
-                  "calc_lib.mcfunction": [
-                    // # =================================================================================================
-
-                    // # エフェクト付与
-                    // effect give @s minecraft:$(effect).ID infinite $(effect).Value true
-                    // # =================================================================================================
-                  ]
-                }
-              },
-              "abnormal": {
-                "stun": {
-                },
-                "jaming": {
-                }
-              },
               "main.mcfunction": [
                 // # =================================================================================================
 
-                // # スピード管理
-                // function cronica:player/status/effect/basic/common/calc {effect: "speed", base_value: 2, rev_effect: "slowness"}
-                // # ジャンプ力管理
-                // function cronica:player/status/effect/basic/common/calc {effect: "jump_boost", base_value: 2}
-                // # 攻撃力管理
-                // function cronica:player/status/effect/basic/common/calc {effect: "strength", base_value: 0, rev_effect: "weakness"}
-                // # 防御力管理
-                // function cronica:player/status/effect/basic/common/calc {effect: "resistance", base_value: 0}
+                // # 使用終了検知
+                // execute as @s[tag=TAG.cronica.DETECT.ItemUsed,scores={SCORE.cronica.DETECT.ItemUsing=1..}] run function cronica:player/status/detection/advancements/using_item/finish
+                // tag @s add TAG.cronica.DETECT.ItemUsed
 
-                // # 体力最大値管理
-                // effect give @s minecraft:health_boost infinite 4 true
+                // # 能力呼び出し：実行時/実行中
+                // function cronica:system/common/storage/use_data_func {func:"player/status/detection/boot/item_using"}
+                // # =================================================================================================
+              ],
+              "finish.mcfunction": [
+                // # =================================================================================================
+
+                // # 能力呼び出し：実行終了
+                // function cronica:system/common/storage/use_data_func {func:"player/status/detection/boot/item_used"}
+
+                // # スコア/タグ撤去
+                // function cronica:player/status/detection/advancements/using_item/reset
+                // # =================================================================================================
+              ],
+              "reset.mcfunction":[
+                // # =================================================================================================
+
+                // # タグ管理
+                // tag @s remove TAG.cronica.DETECT.ItemUsing
+                // tag @s remove TAG.cronica.DETECT.ItemUsed
+
+                // # スコア管理
+                // scoreboard players reset @s SCORE.cronica.DETECT.ItemUsing
+                // execute unless entity @a[scores={SCORE.cronica.DETECT.ItemUsing=0..}] run scoreboard objectives remove SCORE.cronica.DETECT.ItemUsing
                 // # =================================================================================================
               ]
             },
-            "tick.mcfunction": [
+            "change_inventory": {
+              "run.mcfunction": [
+                // # =================================================================================================
+
+                // # 所持アイテム情報更新
+                // function cronica:player/status/inventory/data/save
+
+                // # 実績解除
+                // advancement revoke @s only cronica:change_inventory
+                // # =================================================================================================
+              ]
+            },
+            "revoke.mcfunction": [
               // # =================================================================================================
 
-              // # リスポーンポイント管理
-              // execute as @a[tag=TAG.cronica.GAMING,tag=!TAG.cronica.GAMING.spectate] at @s if block ~ ~ ~ minecraft:air run spawnpoint @s ~ ~ ~ ~
+              // # アイテム使用検知
+              // advancement revoke @s only cronica:using_item
 
-              // # データ記録
-              // execute as @a[tag=TAG.cronica.GAMING] run function cronica:player/status/inventory/data/save
-
-              // # 行動検知管理
-              // function cronica:player/status/detection/tick
-
-              // # エフェクト管理
-              // execute as @a[tag=TAG.cronica.GAMING] run function cronica:player/status/effect/main
+              // # インベントリ更新
+              // advancement revoke @s only cronica:change_inventory
               // # =================================================================================================
             ]
-          }
-        },
-        "world": {
-          "stage": {
-            "lobby": {
-              "teleport": {
-                "enter.mcfunction": [
-                ]
-              },
-              "position": {
-                "join_menu.mcfunction": [
-                ],
-                "game_keeper.mcfunction": [
-                ]
-              }
-            },
-            "practice_area": {
-              "teleport": {
-                "enter.mcfunction": [
-                ]
-              },
-              "position": {
-              }
-            },
-            "whale_garden": {
-              "teleport": {
-                "center.mcfunction": [
-                ]
-              },
-              "position": {
-                "shop_marker.mcfunction": [
-                ],
-                "spawn_point_marker.mcfunction": [
-                ],
-                "care_package_marker.mcfunction": [
-                ],
-                "event": {
-                  "neptune_trident_position.mcfunction": [
-                  ]
-                }
-              }
-            },
-            "crono_town": {
-            }
           },
-          "teleport": {
-            "to_lobby.mcfunction": [
-              // # =================================================================================================
-
-              // # タグ管理
-              // tag @s remove TAG.cronica.CT_ZERO
-              // tag @s remove TAG.cronica.CT_HANDICAP
-              // tag @s remove TAG.cronica.GAMING
-              // tag @s remove TAG.cronica.GAMING.spectate
-              // tag @s remove TAG.cronica.GAMING.practice
-
-              // # ゲームモード
-              // gamemode adventure @s
-              // # レベル管理
-              // xp set @s 0 levels
-              // xp set @s 0 points
-
-              // # エフェクト
-              // effect clear @s
-              // effect give @s minecraft:saturation infinite 100 true
-              // effect give @s minecraft:instant_health infinite 100 true
-              // effect give @s minecraft:resistance infinite 100 true
-              // effect give @s minecraft:night_vision infinite 0 true
-
-              // # インベントリ
-              // clear @s
-              // function cronica:player/status/inventory/kit/lobby_set
-
-              // # メインロビーへテレポート
-              // function cronica:world/stage/lobby/teleport/enter
-
-              // ## 装飾
-              // execute at @s run playsound minecraft:block.beacon.activate player @s ~ ~ ~ 10 1
-              // execute at @s run particle minecraft:entity_effect{color:[0.0,1.0,1.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
-              // execute at @s run particle minecraft:entity_effect{color:[1.0,0.0,1.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
-              // execute at @s run particle minecraft:entity_effect{color:[1.0,1.0,0.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
-              // execute at @s run particle minecraft:entity_effect{color:[0.0,1.0,0.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
-
-              // # 場所の通知
-              // title @s times 15 60 15
-              // title @s title [{"text":" "}]
-              // title @s subtitle [{"text":"-","color":"gray","bold":false},{"text":"Main Lobby","color":"gold","bold":false},{"text":"-","color":"gray","bold":false}]
-
-              // # サーバー参加時通知
-              // execute as @s[tag=TAG.cronica.SYSTEM.JoinServer] run title @s title [{"text":"<<","color":"gray","bold":false},{"text":" CRONICA ","color":"green","bold":true},{"text":">>","color":"gray","bold":false}]
-              // execute as @s[tag=TAG.cronica.SYSTEM.JoinServer] run title @s subtitle [{"text":"Presented By TicK-tag"}]
-              // execute as @s[tag=TAG.cronica.SYSTEM.JoinServer] run tag @s remove TAG.cronica.SYSTEM.JoinServer
-              // # =================================================================================================
-            ],
-            "to_practice_area.mcfunction": [
-            ],
-            "library": {
-              "tp_common.mcfunction": [
+          "predicate": {
+            "is_sneaking": {
+              "run.mcfunction": [
+              ],
+              "main.mcfunction": [
+              ],
+              "finish.mcfunction": [
+              ],
+              "reset.mcfunction": [
+              ]
+            },
+            "is_sprinting": {
+              "run.mcfunction": [
+              ],
+              "main.mcfunction": [
+              ],
+              "finish.mcfunction": [
+              ],
+              "reset.mcfunction": [
               ]
             }
           },
-          "gimmick": {
-            "care_package": {
-            },
-            "wall_climb": {
-            },
-            "shop": {
-            },
-            "panel": {
-            },
-            "tick.mcfunction": [
-            ]
-          }
-        },
-        "system": {
-          "preparation": {
-            "join_server.mcfunction": [
+          "boot": {
+            "item_using.mcfunction": [
               // # =================================================================================================
 
-              // # パーソナルナンバー登録
-              // # function cronica:system/scoreboard/personal_number/registration
-
-              // # メインロビーへテレポート
-              // # tag @s add TAG.cronica.SYSTEM.JoinServer
-              // # function cronica:world/teleport/to_lobby
+              // # 特定能力発動
+              // $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/boot/item_using with storage cronica:personal/$(UUID)/player/inventory/data Activate
               // # =================================================================================================
             ],
-            "scoreboard": {
-              "personal_number": {
-                "registration.mcfunction": [
-                  // # =================================================================================================
+            "item_used.mcfunction": [
+              // # =================================================================================================
 
-                  // # スコア管理
-                  // scoreboard objectives add SCORE.cronica.PersonalNumber dummy
-                  // scoreboard players set @s SCORE.cronica.PersonalNumber -1
-
-                  // # VIPナンバー指定
-                  // function cronica:system/preparation/scoreboard/personal_number/vip_registration
-
-                  // # ナンバー取得
-                  // execute unless score @s SCORE.cronica.PersonalNumber matches 0.. run function cronica:system/preparation/scoreboard/personal_number/main_lib
-                  // # =================================================================================================
-                ],
-                "vip_registration.mcfunction": [
-                  // # =================================================================================================
-
-                  // ## Tempus.P
-
-                  // # ととりお
-                  // execute if entity @s[name="toto_tox2"] run scoreboard players set @s SCORE.cronica.PersonalNumber 8888
-                  // # @KiKi
-                  // execute if entity @s[name="KiKi1224clover"] run scoreboard players set @s SCORE.cronica.PersonalNumber 1224
-                  // # =================================================================================================
-                ],
-                "main_lib.mcfunction": [
-                  // # =================================================================================================
-
-                  // # スコア設置
-                  // scoreboard objectives add SCORE.cronica.PersonalNumber.registration.Temp dummy
-                  // scoreboard players add @s SCORE.cronica.PersonalNumber.registration.Temp 1
-
-                  // # タグ設置
-                  // tag @s add TAG.cronica.PersonalNumber.registration.Owner
-
-                  // # 仮スコア判定
-                  // execute as @s at @s as @a[scores={SCORE.cronica.PersonalNumber=0..}] if score @s SCORE.cronica.PersonalNumber = @p[tag=TAG.cronica.PersonalNumber.registration.Owner] SCORE.cronica.PersonalNumber.registration.Temp run tag @s add TAG.cronica.PersonalNumber.registration.Skipper
-
-                  // # スコア確定
-                  // execute unless entity @a[tag=TAG.cronica.PersonalNumber.registration.Skipper] run scoreboard players operation @s SCORE.cronica.PersonalNumber = @s SCORE.cronica.PersonalNumber.registration.Temp
-                  // execute unless entity @a[tag=TAG.cronica.PersonalNumber.registration.Skipper] run scoreboard objectives remove SCORE.cronica.PersonalNumber.registration.Temp
-
-                  // # タグ管理
-                  // tag @s remove TAG.cronica.PersonalNumber.registration.Owner
-                  // tag @a[tag=TAG.cronica.PersonalNumber.registration.Skipper] remove TAG.cronica.PersonalNumber.registration.Skipper
-
-                  // # 再起処理
-                  // execute unless score @s SCORE.cronica.PersonalNumber matches 0.. run function cronica:system/preparation/scoreboard/personal_number/main_lib
-                  // # =================================================================================================
-                ]
-              }
-            }
-          },
-          "menu": {
-            "tick.mcfunction": [
+              // # 特定能力発動
+              // $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/boot/item_used with storage cronica:personal/$(UUID)/player/inventory/data Activate
+              // # =================================================================================================
             ]
           },
-          "load.mcfunction": [
-            // # =================================================================================================
-
-            // # リロード通知
-            // tellraw @a [{"text":"[","color":"dark_gray"},{"text":"INFO","color":"gray"},{"text":"] ","color":"dark_gray"},{"text":"リロードが完了しました","color":"red","bold":true}]
-            // tellraw @a [{"text":"Created By ","color":"gray"},{"text":"TicK-tag","color":"green","underlined":true}]
-            // # =================================================================================================
-          ],
           "tick.mcfunction": [
             // # =================================================================================================
 
-            // # サーバー参加時
-            // execute as @a[gamemode=survival] run function cronica:system/preparation/join_server
+            // # スニーク中検知
+            // # execute as @a[tag=TAG.cronica.GAMING] if predicate cronica:is_sneaking run function cronica:player/status/detection/predicate/is_sneaking/run
+            // # execute as @a[scores={SCORE.cronica.DETECT.Sneaking=1..}] run function cronica:player/status/detection/predicate/is_sneaking/main
 
-            // # プレイヤー管理
-            // execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/status/tick
+            // # ダッシュ中検知
+            // # execute as @a[tag=TAG.cronica.GAMING] if predicate cronica:is_sprinting run function cronica:player/status/detection/predicate/is_sprinting/run
+            // # execute as @a[scores={SCORE.cronica.DETECT.Sprinting=1..}] run function cronica:player/status/detection/predicate/is_sprinting/main
 
-            // # ワールド管理
-            // execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:world/gimmick/tick
-            // function cronica:system/menu/tick
+            // # アイテム使用検知
+            // execute as @a[scores={SCORE.cronica.DETECT.ItemUsing=2..}] run function cronica:player/status/detection/advancements/using_item/main
+            // execute as @a[scores={SCORE.cronica.DETECT.ItemUsing=1}] run scoreboard players set @s SCORE.cronica.DETECT.ItemUsing 2
+            // # =================================================================================================
+          ]
+        },
+        "inventory": {
+          "data": {
+            "save.mcfunction": [
+              // # =================================================================================================
+
+              // # UUID取得
+              // function cronica:system/common/storage/get_uuid
+
+              // # Inventoryデータ保存
+              // function cronica:player/status/inventory/data/save_lib with storage cronica:temp/uuid
+              // # =================================================================================================
+            ],
+            "save_lib.mcfunction": [
+              // # =================================================================================================
+
+              // # Reset data
+              // $data remove storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate
+              // $data remove storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand
+              // $data remove storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand
+              // $data remove storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Slot
+
+              // # Set UUID
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.UUID set value "$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)"
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.UUID set value "$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)"
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.UUID set value "$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)"
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Slot.UUID set value "$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)"
+
+              // # Offhand Item
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.MasterID set from entity @s equipment.offhand.components."minecraft:custom_data".MasterID
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.MasterType set from entity @s equipment.offhand.components."minecraft:custom_data".MasterType
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.ItemCategory set from entity @s equipment.offhand.components."minecraft:custom_data".ItemCategory
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.ItemID set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.ItemMode set from entity @s equipment.offhand.components."minecraft:custom_data".ItemMode
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.ItemStatus set from entity @s equipment.offhand.components."minecraft:custom_data".ItemStatus
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.MasterID set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.MasterID
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.MasterType set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.MasterType
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemCategory set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.ItemCategory
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemID set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.ItemID
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemMode set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.ItemMode
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemStatus set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.ItemStatus
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.Hand set value "Offhand"
+
+              // # Mainhand Item
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.MasterID set from entity @s SelectedItem.components."minecraft:custom_data".MasterID
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.MasterType set from entity @s SelectedItem.components."minecraft:custom_data".MasterType
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemCategory set from entity @s SelectedItem.components."minecraft:custom_data".ItemCategory
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemID set from entity @s SelectedItem.components."minecraft:custom_data".ItemID
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemMode set from entity @s SelectedItem.components."minecraft:custom_data".ItemMode
+              // $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemStatus set from entity @s SelectedItem.components."minecraft:custom_data".ItemStatus
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.MasterID set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.MasterID
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.MasterType set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.MasterType
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemCategory set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemCategory
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemID set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemID
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemMode set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemMode
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemStatus set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemStatus
+              // $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.Hand set value "Mainhand"
+
+              // # Save Slot
+
+
+
+              // # =================================================================================================
+            ]
+          },
+          "kit": {
+            "lobby_set.mcfunction": [
+              // # =================================================================================================
+
+              // # オペレーターアイテム
+              // execute if score @s SCORE.cronica.PersonalNumber matches 1000.. run loot replace entity @s container.7 loot lib:teleport
+              // execute if score @s SCORE.cronica.PersonalNumber matches 1000.. run loot replace entity @s container.8 loot lib:switch_gamemode
+              // # =================================================================================================
+            ],
+            "free_battle_set.mcfunction": [
+              // # =================================================================================================
+
+              // # オペレーターアイテム
+              // execute if score @s SCORE.cronica.PersonalNumber matches 1000.. run loot replace entity @s container.34 loot lib:teleport
+              // execute if score @s SCORE.cronica.PersonalNumber matches 1000.. run loot replace entity @s container.35 loot lib:switch_gamemode
+              // # =================================================================================================
+            ],
+            "match_battle_set.mcfunction": [
+            ]
+          },
+          "model": {
+            "runed.mcfunction": [
+            ]
+          }
+        },
+        "skill_library": {
+          "run_common.mcfunction": [
+            // # =================================================================================================
+
+            // ## アイテム置き換え
+            // function cronica:player/status/inventory/model/runed {MasterName: "$(MasterName)", MasterType: "$(MasterType)", ItemID: "$(ItemID)"}
+
+            // ## コンフィグ読み込み
+            // $function cronica:player/character/$(MasterName)/$(MasterType)/$(ItemID)/config
+
+            // ## スコア管理
+
+            // # アイテムモード
+            // $scoreboard objectives add SCORE.cronica.MODE.$(ItemID) dummy
+            // $scoreboard players set @s SCORE.cronica.MODE.$(ItemID) 0
+
+            // # 実行時間
+            // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).ActivateTime dummy
+            // $scoreboard players set @s SCORE.cronica.TIMER.$(ItemID).ActivateTime 0
+
+            // # クールタイム
+            // #[実行値作成]
+            // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).CoolTime dummy
+            // $scoreboard players set @s SCORE.cronica.TIMER.$(ItemID).CoolTime 0
+            // #[目標値作成]
+            // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal dummy
+            // #[目標値設定取得]
+            // $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal = #CONFIG.cronica.SKILL.$(ItemID).CoolTime SCORE.cronica.CONFIG
+            // #[目標値短縮]
+            // $scoreboard players set @s[tag=TAG.cronica.CT_ZERO] SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal 20
+            // #[積算値作成]
+            // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack dummy
+            // $scoreboard players set @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack 0
+            // #[積算目標値作成]
+            // $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Goal dummy
+            // $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Goal = @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal
+            // $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Goal /= #20 SCORE.cronica.CONFIG
+
+            // ## 後続発火
+            // $schedule function cronica:player/character/$(MasterName)/$(MasterType)/$(ItemID)/library/main 1t
+            // $schedule function cronica:player/status/skill_library/ct/main 1t {MasterName: "$(MasterName)", MasterType: "$(MasterType)", ItemID: "$(ItemID)"}
+            // # =================================================================================================
+          ],
+          "ct": {
+            "main.mcfunction":[
+            ],
+            "progress.mcfunction":[
+            ],
+            "finish.mcfunction":[
+            ],
+            "reset.mcfunction":[
+            ]
+          }
+        },
+        "effect": {
+          "basic": {
+            "speed": {
+              "no_sprint": {
+              }
+            },
+            "jump_boost": {
+              "no_jump": {
+              }
+            },
+            "common": {
+              "main.mcfunction": [
+                // # =================================================================================================
+
+                // # スコア作成
+                // $scoreboard objectives add SCORE.cronica.STATUS.$(effect) dummy
+                // $scoreboard players add @s SCORE.cronica.STATUS.$(effect) 0
+
+                // # エフェクト管理:通常時
+                // $execute if score @s SCORE.cronica.STATUS.$(effect) matches 0 unless score @s SCORE.cronica.STATUS.$(effect) matches $(base_value) run scoreboard objectives add SCORE.cronica.TIMER.$(effect).base dummy
+                // $execute if score @s SCORE.cronica.STATUS.$(effect) matches 0 unless score @s SCORE.cronica.STATUS.$(effect) matches $(base_value) run scoreboard players operation @s SCORE.cronica.TIMER.$(effect).base = @s SCORE.cronica.STATUS.$(effect)
+                // $execute if score @s SCORE.cronica.STATUS.$(effect) matches 0 unless score @s SCORE.cronica.STATUS.$(effect) matches $(base_value) run scoreboard players add @s SCORE.cronica.TIMER.$(effect).base -1
+                // $data modify storage cronica:temp $(effect).ID
+                // $execute store result storage cronica:temp $(effect).Value int 1 run scoreboard players get @s SCORE.cronica.TIMER.$(effect).base
+
+                // $execute if score @s SCORE.cronica.STATUS.$(effect) matches 0 unless score @s SCORE.cronica.STATUS.$(effect) matches $(base_value) run effect give @s minecraft:$(effect) infinite $(base_value) true
+
+                // # エフェクト管理:増減時
+                // $execute unless score @s SCORE.cronica.STATUS.$(effect) matches 0 run function cronica:player/status/effect/basic/calc {effect: $(effect), base_value: $(base_value), rev_effect: $(rev_effect)}
+
+                // # スコア撤去
+                // $execute unless entity @s[scores={SCORE.cronica.STATUS.$(effect)=..-1}] unless entity @s[scores={SCORE.cronica.STATUS.$(effect)=1..}] run scoreboard objectives remove SCORE.cronica.STATUS.$(effect)
+                // # =================================================================================================
+              ],
+              "calc.mcfunction": [
+                // # =================================================================================================
+
+                // # エフェクト管理
+                // effect clear @s minecraft:$(effect)
+                // effect clear @s minecraft:$(rev_effect)
+
+                // # スコア管理
+                // scoreboard objectives add SCORE.cronica.STATUS.$(effect)_new dummy
+                // scoreboard players operation @s SCORE.cronica.STATUS.$(effect)_new = @s SCORE.cronica.STATUS.$(effect)
+
+                // execute if score @s SCORE.cronica.STATUS.$(effect) matches -1.. run scoreboard players add @s SCORE.cronica.STATUS.$(effect)_new 1
+
+                // execute if score @s SCORE.cronica.STATUS.$(effect) matches ..-3 run scoreboard players operation @s SCORE.cronica.STATUS.$(effect)_new *= #1 SCORE.cronica.CONFIG
+                // execute if score @s SCORE.cronica.STATUS.$(effect) matches ..-3 run scoreboard players remove @s SCORE.cronica.STATUS.$(effect)_new 3
+
+                // execute store result storage cronica:temp $(effect).Value int 1 run scoreboard players get @s SCORE.cronica.STATUS.$(effect)_new
+
+                // execute if score @s SCORE.cronica.STATUS.$(effect) matches -1.. run data modify storage cronica:temp $(effect).ID set value "$(effect)"
+                // execute if score @s SCORE.cronica.STATUS.$(effect) matches ..-3 run data modify storage cronica:temp $(effect).ID set value "$(rev_effect)"
+
+                // execute unless score @s SCORE.cronica.STATUS.$(effect) matches -2 run function cronica:player/status/effect/basic/calc_lib with storage cronica:temp $(effect)
+
+                // scoreboard objectives remove SCORE.cronica.STATUS.$(effect)_new
+                // data remove storage cronica:temp $(effect)
+                // # =================================================================================================
+              ],
+              "calc_lib.mcfunction": [
+                // # =================================================================================================
+
+                // # エフェクト付与
+                // effect give @s minecraft:$(effect).ID infinite $(effect).Value true
+                // # =================================================================================================
+              ]
+            }
+          },
+          "abnormal": {
+            "stun": {
+            },
+            "jaming": {
+            }
+          },
+          "main.mcfunction": [
+            // # =================================================================================================
+
+            // # スピード管理
+            // function cronica:player/status/effect/basic/common/calc {effect: "speed", base_value: 2, rev_effect: "slowness"}
+            // # ジャンプ力管理
+            // function cronica:player/status/effect/basic/common/calc {effect: "jump_boost", base_value: 2}
+            // # 攻撃力管理
+            // function cronica:player/status/effect/basic/common/calc {effect: "strength", base_value: 0, rev_effect: "weakness"}
+            // # 防御力管理
+            // function cronica:player/status/effect/basic/common/calc {effect: "resistance", base_value: 0}
+
+            // # 体力最大値管理
+            // effect give @s minecraft:health_boost infinite 4 true
+            // # =================================================================================================
+          ]
+        },
+        "tick.mcfunction": [
+          // # =================================================================================================
+
+          // # リスポーンポイント管理
+          // execute as @a[tag=TAG.cronica.GAMING,tag=!TAG.cronica.GAMING.spectate] at @s if block ~ ~ ~ minecraft:air run spawnpoint @s ~ ~ ~ ~
+
+          // # 行動検知管理
+          // function cronica:player/status/detection/tick
+
+          // # エフェクト管理
+          // execute as @a[tag=TAG.cronica.GAMING] run function cronica:player/status/effect/main
+          // # =================================================================================================
+        ]
+      }
+    },
+    "world": {
+      "stage": {
+        "lobby": {
+          "teleport": {
+            "enter.mcfunction": [
+            ]
+          },
+          "position": {
+            "join_menu.mcfunction": [
+            ],
+            "game_keeper.mcfunction": [
+            ]
+          }
+        },
+        "practice_area": {
+          "teleport": {
+            "enter.mcfunction": [
+            ]
+          },
+          "position": {
+          }
+        },
+        "whale_garden": {
+          "teleport": {
+            "center.mcfunction": [
+            ]
+          },
+          "position": {
+            "shop_marker.mcfunction": [
+            ],
+            "spawn_point_marker.mcfunction": [
+            ],
+            "care_package_marker.mcfunction": [
+            ],
+            "event": {
+              "neptune_trident_position.mcfunction": [
+              ]
+            }
+          }
+        },
+        "crono_town": {
+        }
+      },
+      "teleport": {
+        "to_lobby.mcfunction": [
+          // # =================================================================================================
+
+          // # タグ管理
+          // tag @s remove TAG.cronica.CT_ZERO
+          // tag @s remove TAG.cronica.CT_HANDICAP
+          // tag @s remove TAG.cronica.GAMING
+          // tag @s remove TAG.cronica.GAMING.spectate
+          // tag @s remove TAG.cronica.GAMING.practice
+
+          // # ゲームモード
+          // gamemode adventure @s
+          // # レベル管理
+          // xp set @s 0 levels
+          // xp set @s 0 points
+
+          // # エフェクト
+          // effect clear @s
+          // effect give @s minecraft:saturation infinite 100 true
+          // effect give @s minecraft:instant_health infinite 100 true
+          // effect give @s minecraft:resistance infinite 100 true
+          // effect give @s minecraft:night_vision infinite 0 true
+
+          // # インベントリ
+          // clear @s
+          // function cronica:player/status/inventory/kit/lobby_set
+
+          // # メインロビーへテレポート
+          // function cronica:world/stage/lobby/teleport/enter
+
+          // ## 装飾
+          // execute at @s run playsound minecraft:block.beacon.activate player @s ~ ~ ~ 10 1
+          // execute at @s run particle minecraft:entity_effect{color:[0.0,1.0,1.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
+          // execute at @s run particle minecraft:entity_effect{color:[1.0,0.0,1.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
+          // execute at @s run particle minecraft:entity_effect{color:[1.0,1.0,0.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
+          // execute at @s run particle minecraft:entity_effect{color:[0.0,1.0,0.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
+
+          // # 場所の通知
+          // title @s times 15 60 15
+          // title @s title [{"text":" "}]
+          // title @s subtitle [{"text":"-","color":"gray","bold":false},{"text":"Main Lobby","color":"gold","bold":false},{"text":"-","color":"gray","bold":false}]
+
+          // # サーバー参加時通知
+          // execute as @s[tag=TAG.cronica.SYSTEM.JoinServer] run title @s title [{"text":"<<","color":"gray","bold":false},{"text":" CRONICA ","color":"green","bold":true},{"text":">>","color":"gray","bold":false}]
+          // execute as @s[tag=TAG.cronica.SYSTEM.JoinServer] run title @s subtitle [{"text":"Presented By TicK-tag"}]
+          // execute as @s[tag=TAG.cronica.SYSTEM.JoinServer] run tag @s remove TAG.cronica.SYSTEM.JoinServer
+          // # =================================================================================================
+        ],
+        "to_practice_area.mcfunction": [
+        ],
+        "library": {
+          "tp_common.mcfunction": [
+          ]
+        }
+      },
+      "gimmick": {
+        "care_package": {
+        },
+        "wall_climb": {
+        },
+        "shop": {
+        },
+        "panel": {
+        },
+        "tick.mcfunction": [
+        ]
+      }
+    },
+    "system": {
+      "common": {
+        "storage": {
+          "get_uuid.mcfunction": [
+            // # =================================================================================================
+
+            // # データ削除
+            // data remove storage cronica:temp/uuid uuid_1
+            // data remove storage cronica:temp/uuid uuid_2
+            // data remove storage cronica:temp/uuid uuid_3
+            // data remove storage cronica:temp/uuid uuid_4
+
+            // # UUID取得
+            // data modify storage cronica:temp/uuid uuid_1 set from entity @s UUID[0]
+            // data modify storage cronica:temp/uuid uuid_2 set from entity @s UUID[1]
+            // data modify storage cronica:temp/uuid uuid_3 set from entity @s UUID[2]
+            // data modify storage cronica:temp/uuid uuid_4 set from entity @s UUID[3]
+            // # =================================================================================================
+          ],
+          "use_data_func.mcfunction": [
+            // # =================================================================================================
+
+            // # データ取得
+            // function cronica:system/common/storage/get_uuid
+
+            // # データ結合
+            // $data modify storage cronica:temp/uuid temp_address set value $(func)
+
+            // # 指定関数実行
+            // function cronica:system/common/storage/use_data_func_lib with storage cronica:temp/uuid
+            // # =================================================================================================
+          ],
+          "use_data_func_lib.mcfunction": [
+            // # =================================================================================================
+
+            // # 指定関数実行
+            // $function cronica:$(temp_address) with storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate
             // # =================================================================================================
           ]
         }
       },
-      "loot_table": {
-        "character": {
-          "brave": {
+      "preparation": {
+        "join_server.mcfunction": [
+          // # =================================================================================================
+
+          // # パーソナルナンバー登録
+          // # function cronica:system/scoreboard/personal_number/registration
+
+          // # メインロビーへテレポート
+          // # tag @s add TAG.cronica.SYSTEM.JoinServer
+          // # function cronica:world/teleport/to_lobby
+          // # =================================================================================================
+        ],
+        "scoreboard": {
+          "personal_number": {
+            "registration.mcfunction": [
+              // # =================================================================================================
+
+              // # スコア管理
+              // scoreboard objectives add SCORE.cronica.PersonalNumber dummy
+              // scoreboard players set @s SCORE.cronica.PersonalNumber -1
+
+              // # VIPナンバー指定
+              // function cronica:system/preparation/scoreboard/personal_number/vip_registration
+
+              // # ナンバー取得
+              // execute unless score @s SCORE.cronica.PersonalNumber matches 0.. run function cronica:system/preparation/scoreboard/personal_number/main_lib
+              // # =================================================================================================
+            ],
+            "vip_registration.mcfunction": [
+              // # =================================================================================================
+
+              // ## Tempus.P
+
+              // # ととりお
+              // execute if entity @s[name="toto_tox2"] run scoreboard players set @s SCORE.cronica.PersonalNumber 8888
+              // # @KiKi
+              // execute if entity @s[name="KiKi1224clover"] run scoreboard players set @s SCORE.cronica.PersonalNumber 1224
+              // # =================================================================================================
+            ],
+            "main_lib.mcfunction": [
+              // # =================================================================================================
+
+              // # スコア設置
+              // scoreboard objectives add SCORE.cronica.PersonalNumber.registration.Temp dummy
+              // scoreboard players add @s SCORE.cronica.PersonalNumber.registration.Temp 1
+
+              // # タグ設置
+              // tag @s add TAG.cronica.PersonalNumber.registration.Owner
+
+              // # 仮スコア判定
+              // execute as @s at @s as @a[scores={SCORE.cronica.PersonalNumber=0..}] if score @s SCORE.cronica.PersonalNumber = @p[tag=TAG.cronica.PersonalNumber.registration.Owner] SCORE.cronica.PersonalNumber.registration.Temp run tag @s add TAG.cronica.PersonalNumber.registration.Skipper
+
+              // # スコア確定
+              // execute unless entity @a[tag=TAG.cronica.PersonalNumber.registration.Skipper] run scoreboard players operation @s SCORE.cronica.PersonalNumber = @s SCORE.cronica.PersonalNumber.registration.Temp
+              // execute unless entity @a[tag=TAG.cronica.PersonalNumber.registration.Skipper] run scoreboard objectives remove SCORE.cronica.PersonalNumber.registration.Temp
+
+              // # タグ管理
+              // tag @s remove TAG.cronica.PersonalNumber.registration.Owner
+              // tag @a[tag=TAG.cronica.PersonalNumber.registration.Skipper] remove TAG.cronica.PersonalNumber.registration.Skipper
+
+              // # 再起処理
+              // execute unless score @s SCORE.cronica.PersonalNumber matches 0.. run function cronica:system/preparation/scoreboard/personal_number/main_lib
+              // # =================================================================================================
+            ]
           },
-          "ikaros": {
-            "select": {
-              "flying_feather.json": {
-                "pools": [
+          "config.mcfunction": [
+            // # =================================================================================================
+
+            // # スコア管理
+            // scoreboard objectives remove SCORE.cronica.CONFIG
+            // scoreboard objectives add SCORE.cronica.CONFIG dummy
+
+            // scoreboard players set #-1 SCORE.cronica.CONFIG -1
+            // scoreboard players set #10 SCORE.cronica.CONFIG 10
+            // scoreboard players set #20 SCORE.cronica.CONFIG 20
+            // scoreboard players set #100 SCORE.cronica.CONFIG 100
+            // # =================================================================================================
+          ],
+          "reset.mcfunction": [
+            // # =================================================================================================
+
+            // # スコア撤去
+            // scoreboard objectives remove SCORE.cronica.PersonalNumber
+            // scoreboard objectives remove SCORE.cronica.CONFIG
+            // # =================================================================================================
+          ]
+        }
+      },
+      "menu": {
+        "tick.mcfunction": [
+        ]
+      },
+      "load.mcfunction": [
+        // # =================================================================================================
+
+        // # スコア管理
+        // execute unless entity @a run function cronica:system/preparation/scoreboard/reset
+        // function cronica:system/preparation/scoreboard/config
+
+        // # 実績リセット
+        // function cronica:player/status/detection/advancements/revoke
+
+        // # リロード通知
+        // tellraw @a [{"text":"[","color":"dark_gray"},{"text":"INFO","color":"gray"},{"text":"] ","color":"dark_gray"},{"text":"リロードが完了しました","color":"red","bold":true}]
+        // tellraw @a [{"text":"Created By ","color":"gray"},{"text":"TicK-tag","color":"green","underlined":true}]
+        // # =================================================================================================
+      ],
+      "tick.mcfunction": [
+        // # =================================================================================================
+
+        // # サーバー参加時
+        // execute as @a[gamemode=survival] run function cronica:system/preparation/join_server
+
+        // # プレイヤー管理
+        // execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/status/tick
+
+        // # ワールド管理
+        // # execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:world/gimmick/tick
+        // # function cronica:system/menu/tick
+        // # =================================================================================================
+      ]
+    }
+  },
+  "loot_table": {
+    "character": {
+      "brave": {
+        "unique": {
+          "material_sword.json": {
+          },
+          "battle_standby.json": {
+          },
+          "tri_strike.json": {
+          }
+        },
+        "select": {
+          "spinning_slash.json": {
+          },
+          "fairy_bottle.json": {
+          },
+          "hook_shot.json": {
+          }
+        }
+      },
+      "ikaros": {
+        "unique": {
+          "apollon_bow.json": {
+          },
+          "begin_twilight.json": {
+          },
+          "shutdown_flare.json": {
+          }
+        },
+        "select": {
+          "flying_feather.json": {
+            "pools": [
+              {
+                "rolls": 1,
+                "entries": [
                   {
-                    "rolls": 1,
-                    "entries": [
+                    "type": "minecraft:item",
+                    "name": "minecraft:diamond_horse_armor",
+                    "functions": [
                       {
-                        "type": "minecraft:item",
-                        "name": "minecraft:diamond_horse_armor",
-                        "functions": [
-                          {
-                            "function": "minecraft:set_components",
-                            "components": {
-                              "minecraft:custom_model_data": {"strings": ["default"]},
-                              "minecraft:enchantment_glint_override": true,
-                              "!minecraft:equippable": {},
-                              "!minecraft:attribute_modifiers": {},
-                              "minecraft:consumable": {
-                                "consume_seconds": 2147483647,
-                                "animation": "none"
-                              },
-                              "minecraft:item_model": "cronica:character/ikaros/select/flying_feather",
-                              "minecraft:custom_data": {
-                                "MasterName": "ikaros",
-                                "MasterType": "select",
-                                "ItemCategory": "skill",
-                                "ItemID": "flying_feather",
-                                "ItemMode": "none",
-                                "ItemStatus": "ready"
-                              },
-                              "minecraft:custom_name": {
-                                "text": "飛翔ノ翼",
-                                "color": "#ffa500",
-                                "bold": true
-                              },
-                              "minecraft:lore": [
-                                {
-                                  "text": "風をまとい大空に飛び上がる",
-                                  "color": "#ffffff"
-                                },
-                                {
-                                  "text": "その後少しの間風に乗る",
-                                  "color": "#ffffff"
-                                },
-                                "====================",
-                                {
-                                  "text": "CT : 10s",
-                                  "color": "#00ff00"
-                                },
-                                {
-                                  "text": "",
-                                  "color": "#00ff00"
-                                },
-                                "===================="
-                              ]
+                        "function": "minecraft:set_components",
+                        "components": {
+                          "minecraft:item_model": "cronica:character/ikaros/select/flying_feather",
+                          "minecraft:custom_model_data": {
+                            "strings": ["default"]
+                          },
+                          "minecraft:enchantment_glint_override": true,
+                          "minecraft:max_stack_size": 1,
+                          "!minecraft:equippable": {},
+                          "!minecraft:attribute_modifiers": {},
+                          "minecraft:consumable": {
+                            "consume_seconds": 2147483647,
+                            "animation": "none"
+                          },
+                          "minecraft:custom_data": {
+                            "MasterID": "ikaros",
+                            "MasterType": "select",
+                            "ItemCategory": "skill",
+                            "ItemID": "flying_feather",
+                            "ItemMode": "none",
+                            "ItemStatus": "ready"
+                          },
+                          "minecraft:custom_name": {
+                            "text": "飛翔ノ翼",
+                            "color": "#ffa500",
+                            "bold": true
+                          },
+                          "minecraft:lore": [
+                            {
+                              "text": "風をまとい大空に飛び上がる",
+                              "color": "#ffffff"
+                            },
+                            {
+                              "text": "その後少しの間風に乗る",
+                              "color": "#ffffff"
+                            },
+                            "====================",
+                            {
+                              "text": "CT : 10s",
+                              "color": "#00ff00"
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
                     ]
                   }
                 ]
               }
-            }
+            ]
           },
-          "dryad": {
-          },
-          "ariel": {
-          },
-          "tesla": {
-          },
-          "steam": {
-          },
-          "sleet": {
-          },
-          "yinyang": {
-          },
-          "taitan": {
-          },
-          "amarias": {
-          },
-          "livia": {
-          },
-          "shadow": {
-          },
-          "trion": {
-          },
-          "vanet": {
-          }
-        },
-        "other": {
-          "field_item": {
-            "neptune_trident.json": {
-            },
-            "back_pack.json": {
-            }
-          },
-          "shop": {
-            "shop_item":{
-              "healing_potion.json": {
-              },
-              "smoke_salmon.json": {
-              },
-              "extra_booster.json": {
-              },
-              "flag_grenade.json": {
-              }
-            },
-            "shop_weapon": {
-              "toy_sword.json": {
-              },
-              "toy_bow.json": {
-              },
-              "toy_crossbow.json": {
-              },
-              "toy_spire.json": {
-              },
-              "toy_shield.json": {
-              },
-              "arrow_bundle.json": {
-              },
-              "ammo_bundle.json": {
-              }
-            }
-          }
-        },
-        "system": {
-          "shoping_card.json": {
-          },
-          "team_marker": {
-            "null.json": { // Gray
-            },
-            "free": { // Purple
-            },
-            "iron.json": { // Red
-            },
-            "gold.json": { // Yellow
-            },
-            "diamond.json": { // Blue
-            },
-            "emerald.json": { // Green
-            }
-          }
-        }
-      },
-      "item_modifier": {
-        "character": {
-          "brave": {
-          },
-          "ikaros": {
-            "select": {
-              "flying_feather.json": {
-              }
-            }
-          },
-          "dryad": {
-          },
-          "ariel": {
-          },
-          "tesla": {
-          },
-          "steam": {
-          },
-          "sleet": {
-          },
-          "yinyang": {
-          },
-          "taitan": {
-          },
-          "amarias": {
-          },
-          "livia": {
-          },
-          "shadow": {
-          },
-          "trion": {
-          },
-          "vanet": {
-          }
-        },
-        "common": {
-          "model": {
-            "charging": {
-              "gauge_1.json": {
-              },
-              "gauge_2.json": {
-              },
-              "gauge_3.json": {
-              },
-              "gauge_4.json": {
-              },
-              "gauge_5.json": {
-              },
-              "gauge_6.json": {
-              },
-              "gauge_7.json": {
-              },
-              "gauge_8.json": {
-              },
-              "gauge_9.json": {
-              },
-              "gauge_10.json": {
-              },
-              "gauge_11.json": {
-              },
-              "gauge_12.json": {
-              },
-              "gauge_13.json": {
-              },
-              "gauge_14.json": {
-              },
-              "gauge_15.json": {
-              },
-              "gauge_16.json": {
-              },
-              "gauge_17.json": {
-              },
-              "gauge_18.json": {
-              },
-              "gauge_19.json": {
-              },
-              "gauge_20.json": {
-              }
-            }
-          },
-          "status": {
-            "charging.json": {
-            }
-          }
-        }
-      },
-      "advancement": {
-        "using_item.json": {
-          "criteria": {
-            "requirement": {
-              "trigger": "minecraft:using_item",
-              "conditions": {
-                "player": [
+          "judgment_stone.json": {
+            "pools": [
+              {
+                "rolls": 1,
+                "entries": [
                   {
-                    "condition": "minecraft:entity_properties",
-                    "entity": "this",
-                    "predicate": {}
+                    "type": "minecraft:item",
+                    "name": "minecraft:diamond_horse_armor",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_components",
+                        "components": {
+                          "minecraft:item_model": "cronica:character/ikaros/select/judgment_stone",
+                          "minecraft:custom_model_data": {
+                            "strings": ["default"]
+                          },
+                          "minecraft:enchantment_glint_override": true,
+                          "minecraft:max_stack_size": 1,
+                          "!minecraft:equippable": {},
+                          "!minecraft:attribute_modifiers": {},
+                          "minecraft:consumable": {
+                            "consume_seconds": 2147483647,
+                            "animation": "none"
+                          },
+                          "minecraft:custom_data": {
+                            "MasterID": "ikaros",
+                            "MasterType": "select",
+                            "ItemCategory": "skill",
+                            "ItemID": "judgment_stone",
+                            "ItemMode": "none",
+                            "ItemStatus": "ready"
+                          },
+                          "minecraft:custom_name": {
+                            "text": "裁キノ礫",
+                            "color": "#ffa500",
+                            "bold": true
+                          },
+                          "minecraft:lore": [
+                            {
+                              "text": "風をまとい大空に飛び上がる",
+                              "color": "#ffffff"
+                            },
+                            {
+                              "text": "その後少しの間風に乗る",
+                              "color": "#ffffff"
+                            },
+                            "====================",
+                            {
+                              "text": "CT : 10s",
+                              "color": "#00ff00"
+                            }
+                          ]
+                        }
+                      }
+                    ]
                   }
                 ]
               }
-            }
+            ]
           },
-          "rewards": {
-            "function": "cronica:system/detection/advancements/using_item/run"
-          }
-        },
-        "change_inventory.json": {
-        }
-      },
-      "predicate": {
-        "is_on_ground.json": {
-          "condition": "minecraft:entity_properties",
-          "entity": "this",
-          "predicate": {
-            "type": "minecraft:player",
-            "flags": {
-              "is_on_ground": true
-            }
-          }
-        },
-        "is_sneaking.json": {
-          "condition": "minecraft:entity_properties",
-          "entity": "this",
-          "predicate": {
-            "type": "minecraft:player",
-            "flags": {
-              "is_sneaking": true
-            }
-          }
-        },
-        "is_sprinting.json": {
-          "condition": "minecraft:entity_properties",
-          "entity": "this",
-          "predicate": {
-            "type": "minecraft:player",
-            "flags": {
-              "is_sprinting": true
-            }
+          "blazing_shield.json": {
           }
         }
       },
-      "tags":{
-        "block": {
-          "fence.json": {
+      "dryad": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "ariel": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "tesla": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "steam": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "sleet": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "yinyang": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "taitan": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "amarias": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "livia": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "shadow": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "trion": {
+        "unique": {
+        },
+        "select": {
+        }
+      },
+      "vanet": {
+        "unique": {
+        },
+        "select": {
+        }
+      }
+    },
+    "other": {
+      "field_item": {
+        "neptune_trident.json": {
+        },
+        "back_pack.json": {
+        }
+      },
+      "shop": {
+        "shop_item":{
+          "healing_potion.json": {
           },
-          "no_collision.json": {
+          "smoke_salmon.json": {
           },
-          "no_collision_light.json": {
+          "extra_booster.json": {
+          },
+          "flag_grenade.json": {
+          }
+        },
+        "shop_weapon": {
+          "toy_sword.json": {
+          },
+          "toy_bow.json": {
+          },
+          "toy_crossbow.json": {
+          },
+          "toy_spire.json": {
+          },
+          "toy_shield.json": {
+          },
+          "arrow_bundle.json": {
+          },
+          "ammo_bundle.json": {
           }
         }
       }
     },
-    "minecraft": {
-      "tags": {
-        "functions": {
-          "load": {
-            "values": [
-              "cronica:system/load"
-            ]
-          },
-          "tick": {
-            "values": [
-              "cronica:system/tick"
-            ]
-          }
+    "system": {
+      "shoping_card.json": {
+      },
+      "team_marker": {
+        "null.json": { // Gray
+        },
+        "free": { // Purple
+        },
+        "iron.json": { // Red
+        },
+        "gold.json": { // Yellow
+        },
+        "diamond.json": { // Blue
+        },
+        "emerald.json": { // Green
         }
       }
     }
   },
-  "pack.mcmeta": {
-    "pack":{
-        "pack_format":57,
-        "description":"ver 0.10.2 [by TicK-tag]"
+  "item_modifier": {
+    "character": {
+      "brave": {
+      },
+      "ikaros": {
+        "select": {
+          "flying_feather": {
+            "appended_connect_lore.json": {
+            }
+          }
+        }
+      },
+      "dryad": {
+      },
+      "ariel": {
+      },
+      "tesla": {
+      },
+      "steam": {
+      },
+      "sleet": {
+      },
+      "yinyang": {
+      },
+      "taitan": {
+      },
+      "amarias": {
+      },
+      "livia": {
+      },
+      "shadow": {
+      },
+      "trion": {
+      },
+      "vanet": {
+      }
+    },
+    "common": {
+      "model": {
+        "charging": {
+          "gauge_1.json": {
+          },
+          "gauge_2.json": {
+          },
+          "gauge_3.json": {
+          },
+          "gauge_4.json": {
+          },
+          "gauge_5.json": {
+          },
+          "gauge_6.json": {
+          },
+          "gauge_7.json": {
+          },
+          "gauge_8.json": {
+          },
+          "gauge_9.json": {
+          },
+          "gauge_10.json": {
+          },
+          "gauge_11.json": {
+          },
+          "gauge_12.json": {
+          },
+          "gauge_13.json": {
+          },
+          "gauge_14.json": {
+          },
+          "gauge_15.json": {
+          },
+          "gauge_16.json": {
+          },
+          "gauge_17.json": {
+          },
+          "gauge_18.json": {
+          },
+          "gauge_19.json": {
+          },
+          "gauge_20.json": {
+          }
+        }
+      },
+      "status": {
+        "charging.json": {
+        }
+      }
     }
   },
-  "structure.jsonc": null
+  "advancement": {
+    "using_item.json": {
+      "criteria": {
+        "requirement": {
+          "trigger": "minecraft:using_item",
+          "conditions": {
+            "player": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {}
+              }
+            ]
+          }
+        }
+      },
+      "rewards": {
+        "function": "cronica:system/detection/advancements/using_item/run"
+      }
+    },
+    "change_inventory.json": {
+      "criteria": {
+        "attack": {
+          "trigger": "minecraft:inventory_changed"
+        }
+      },
+      "rewards": {
+        "function": "cronica:player/status/detection/advancements/change_inventory/run"
+      }
+    }
+  },
+  "predicate": {
+    "is_on_ground.json": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:player",
+        "flags": {
+          "is_on_ground": true
+        }
+      }
+    },
+    "is_sneaking.json": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:player",
+        "flags": {
+          "is_sneaking": true
+        }
+      }
+    },
+    "is_sprinting.json": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:player",
+        "flags": {
+          "is_sprinting": true
+        }
+      }
+    }
+  },
+  "tags":{
+    "block": {
+      "fence.json": {
+      },
+      "no_collision.json": {
+      },
+      "no_collision_light.json": {
+      }
+    }
+  }
 }

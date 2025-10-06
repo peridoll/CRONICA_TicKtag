@@ -1,8 +1,5 @@
 # =================================================================================================
 
-# UUID取得
-function cronica:system/common/storage/get_uuid
-
-# Inventoryデータ保存
-function cronica:player/status/inventory/data/save_lib with storage cronica:temp/uuid
+# アイテム発動確認
+execute if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:player/character/ikaros/select/flying_feather/library/run
 # =================================================================================================

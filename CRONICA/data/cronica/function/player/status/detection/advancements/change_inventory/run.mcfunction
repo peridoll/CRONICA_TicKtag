@@ -1,8 +1,8 @@
 # =================================================================================================
 
-# UUID取得
-function cronica:system/common/storage/get_uuid
+# 所持アイテム情報更新
+function cronica:player/status/inventory/data/save
 
-# Inventoryデータ保存
-function cronica:player/status/inventory/data/save_lib with storage cronica:temp/uuid
+# 実績解除
+advancement revoke @s only cronica:change_inventory
 # =================================================================================================

@@ -11,9 +11,6 @@ execute as @s[tag=TAG.cronica.GAMING] run tag @s add TAG.cronica.DETECT.ItemUsin
 # アイテム使用検知関数実行
 execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:player/status/detection/advancements/using_item/main
 
-# タグけし
-tag @s remove TAG.cronica.DETECT.ItemUsed.NotCronicaItem
-
 # 実績解除
 advancement revoke @s only cronica:using_item
 # =================================================================================================
