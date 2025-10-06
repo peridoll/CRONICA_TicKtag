@@ -27,6 +27,6 @@ $execute as @s[tag=TAG.cronica.STATUS.$(id).Fluctuation] run tag @s remove TAG.c
 
 # スコア撤去
 $scoreboard objectives remove SCORE.cronica.STATUS.$(id)_new
-$execute unless entity @s[scores={SCORE.cronica.STATUS.$(id)=..-1}] unless entity @s[scores={SCORE.cronica.STATUS.$(id)=1..}] run scoreboard objectives remove SCORE.cronica.STATUS.$(id)
+$execute unless entity @a[scores={SCORE.cronica.STATUS.$(id)=..-1}] unless entity @a[scores={SCORE.cronica.STATUS.$(id)=1..}] run scoreboard objectives remove SCORE.cronica.STATUS.$(id)
 $data remove storage cronica:temp $(id)
 # =================================================================================================

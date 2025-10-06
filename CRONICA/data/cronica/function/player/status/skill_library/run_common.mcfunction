@@ -1,10 +1,10 @@
 # =================================================================================================
 
 ## アイテム置き換え
-function cronica:player/status/inventory/model/runed {MasterName: "$(MasterName)", MasterType: "$(MasterType)", ItemID: "$(ItemID)"}
+# function cronica:player/status/inventory/model/runed {MasterID: "$(MasterID)", MasterType: "$(MasterType)", ItemID: "$(ItemID)"}
 
 ## コンフィグ読み込み
-$function cronica:player/character/$(MasterName)/$(MasterType)/$(ItemID)/config
+$function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/config
 
 ## スコア管理
 
@@ -35,6 +35,6 @@ $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Go
 $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Goal /= #20 SCORE.cronica.CONFIG
 
 ## 後続発火
-$schedule function cronica:player/character/$(MasterName)/$(MasterType)/$(ItemID)/library/main 1t
-$schedule function cronica:player/status/skill_library/ct/main 1t {MasterName: "$(MasterName)", MasterType: "$(MasterType)", ItemID: "$(ItemID)"}
+$schedule function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/library/main 1t
+$schedule function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/library/ct/main 1t
 # =================================================================================================

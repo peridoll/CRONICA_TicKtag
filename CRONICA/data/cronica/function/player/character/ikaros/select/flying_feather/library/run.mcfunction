@@ -1,7 +1,7 @@
 # =================================================================================================
 
 # 共通処理
-# function cronica:player/status/skill_library/run_common {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
+function cronica:player/status/skill_library/run_common {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
 
 # ゲームモード
 tag @s[gamemode=creative] add TAG.cronica.SKILL.flying_feather.RunCreative

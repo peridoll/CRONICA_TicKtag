@@ -5,7 +5,7 @@ execute unless entity @a run function cronica:system/preparation/scoreboard/rese
 function cronica:system/preparation/scoreboard/config
 
 # 実績リセット
-function cronica:player/status/detection/advancements/revoke
+execute as @a run function cronica:player/status/detection/advancements/revoke
 
 # リロード通知
 tellraw @a [{"text":"[","color":"dark_gray"},{"text":"INFO","color":"gray"},{"text":"] ","color":"dark_gray"},{"text":"リロードが完了しました","color":"red","bold":true}]

@@ -1,7 +1,7 @@
 # =================================================================================================
 
 # タイマー増加
-scoreboard players add @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..}] SCORE.cronica.TIMER.flying_feather.ActivateTime 1
+scoreboard players add @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..}] SCORE.cronica.TIMER.flying_feather.ActivateTime 1
 
 # エフェクト管理
 effect clear @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=10}] minecraft:levitation
@@ -16,8 +16,8 @@ execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=25}] at @s
 execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=30}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/flaping
 
 # 実行終了
-execute as @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=30..}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/finish
+execute as @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=30..}] at @s run function cronica:player/character/ikaros/select/flying_feather/library/finish
 
 # ループ処理
-execute if entity @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..}] run schedule function cronica:player/character/ikaros/select/flying_feather/library/main 1t
+execute if entity @a[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..}] run schedule function cronica:player/character/ikaros/select/flying_feather/library/main 1t
 # =================================================================================================
