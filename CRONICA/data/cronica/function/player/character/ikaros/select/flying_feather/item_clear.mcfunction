@@ -1,7 +1,6 @@
 # =================================================================================================
-# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"ready"}]
-# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"ban"}]
-# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"used"}]
-# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"charging"}]
-# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run function cronica:player/character/list/ikaros/select/flying_feather/get
+clear @s minecraft:stick[minecraft:custom_data={"MasterID":"ikaros","MasterType":"select","ItemCategory":"skill","ItemID":"flying_feather","ItemMode": "none","ItemStatus":"ready"}]
+clear @s minecraft:stick[minecraft:custom_data={"MasterID":"ikaros","MasterType":"select","ItemCategory":"skill","ItemID":"flying_feather","ItemMode": "none","ItemStatus":"ban"}]
+clear @s minecraft:stick[minecraft:custom_data={"MasterID":"ikaros","MasterType":"select","ItemCategory":"skill","ItemID":"flying_feather","ItemMode": "none","ItemStatus":"used"}]
+clear @s minecraft:stick[minecraft:custom_data={"MasterID":"ikaros","MasterType":"select","ItemCategory":"skill","ItemID":"flying_feather","ItemMode": "none","ItemStatus":"charging"}]
 # =================================================================================================

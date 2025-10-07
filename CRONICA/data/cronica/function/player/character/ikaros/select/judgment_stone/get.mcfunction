@@ -1,10 +1,24 @@
 # =================================================================================================
 
-# アイテム入手
-data modify storage cronica:context ItemID.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
-execute as @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "judgment_stone"}}}]}] run tag @s add TAG.cronica.SKILL.judgment_stone.Has
-execute if data storage cronica:context ItemID.Offhand{Value: "judgment_stone"} run tag @s add TAG.cronica.SKILL.judgment_stone.Has
-execute as @s[tag=!TAG.cronica.SKILL.judgment_stone.Has] run loot give @s loot cronica:character/ikaros/select/judgment_stone
-tag @s remove TAG.cronica.SKILL.judgment_stone.Has
-data remove storage cronica:context ItemID
+##【 共通処理 】
+
+## キャラクター関連の共通処理を実行
+# MasterID   : brave        / ikaros         / etc...
+# MasterType : unique       / select         / etc...
+# ItemID     : master_sword / judgment_stone / etc...
+
+# アイテムを入手する処理を実行
+function cronica:player/status/common_lib/character_get {MasterID: "ikaros", MasterType: "select", ItemID: "judgment_stone"}
+# =================================================================================================
+
+##【 固有処理 】
+
+# 基本形態
+execute if score @s SCORE.cronica.MODE.judgment_stone matches 0 run function cronica:player/status/common_lib/modify {ItemID: "judgment_stone", Model: "common/default", Value:""}
+
+# 使用済み
+execute if score @s SCORE.cronica.MODE.judgment_stone matches -1 run function cronica:player/status/common_lib/modify {ItemID: "judgment_stone", Model: "common/used", Value:""}
+
+# 使用不可
+execute if score @s SCORE.cronica.MODE.judgment_stone matches -2 run function cronica:player/status/common_lib/modify {ItemID: "judgment_stone", Model: "common/ban", Value:""}
 # =================================================================================================

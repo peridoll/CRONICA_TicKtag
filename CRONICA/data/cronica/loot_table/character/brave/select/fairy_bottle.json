@@ -10,7 +10,7 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_model": "cronica:character/ikaros/select/judgment_stone",
+                "minecraft:item_model": "cronica:character/brave/select/fairy_bottle",
                 "minecraft:custom_model_data": {
                   "strings": ["default"]
                 },
@@ -22,30 +22,30 @@
                   "animation": "none"
                 },
                 "minecraft:custom_data": {
-                  "MasterID": "ikaros",
+                  "MasterID": "brave",
                   "MasterType": "select",
                   "ItemCategory": "skill",
-                  "ItemID": "judgment_stone",
+                  "ItemID": "fairy_bottle",
                   "ItemMode": "none",
                   "ItemStatus": "ready"
                 },
                 "minecraft:custom_name": {
-                  "text": "裁キノ礫",
-                  "color": "#ffa500",
+                  "text": "妖精入りの瓶",
+                  "color": "#00ffff",
                   "bold": true
                 },
                 "minecraft:lore": [
                   {
-                    "text": "爆裂しダメージを与える隕石を落とす",
+                    "text": "絶体絶命の時、妖精が助けに来てくれる",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "チャージ時間に応じて弾数が増える",
+                    "text": "",
                     "color": "#ffffff"
                   },
                   "====================",
                   {
-                    "text": "CT : 38s",
+                    "text": "CT : 80s",
                     "color": "#00ff00"
                   }
                 ]

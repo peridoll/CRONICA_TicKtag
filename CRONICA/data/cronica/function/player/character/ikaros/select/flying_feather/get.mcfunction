@@ -18,4 +18,7 @@ execute if score @s SCORE.cronica.MODE.flying_feather matches 0 run function cro
 
 # 使用済み
 execute if score @s SCORE.cronica.MODE.flying_feather matches -1 run function cronica:player/status/common_lib/modify {ItemID: "flying_feather", Model: "common/used", Value:""}
+
+# 使用不可
+execute if score @s SCORE.cronica.MODE.flying_feather matches -2 run function cronica:player/status/common_lib/modify {ItemID: "flying_feather", Model: "common/ban", Value:""}
 # =================================================================================================

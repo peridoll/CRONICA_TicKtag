@@ -1,11 +1,13 @@
 # =================================================================================================
 
+# 初回スタック進行
+execute as @a[scores={SCORE.cronica.TIMER.flying_feather.CoolTime=0..}] if score @s SCORE.cronica.TIMER.flying_feather.CoolTime.Stack matches 0 run function cronica:player/status/common_lib/ct/progress {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
+
 # スコア管理
 scoreboard players add @a[scores={SCORE.cronica.TIMER.flying_feather.CoolTime=0..},tag=!TAG.cronica.GAMING.Inactive] SCORE.cronica.TIMER.flying_feather.CoolTime 1
 scoreboard players add @a[scores={SCORE.cronica.TIMER.flying_feather.CoolTime=0..},tag=!TAG.cronica.GAMING.Inactive] SCORE.cronica.TIMER.flying_feather.CoolTime.Stack 1
 
 # スタック進行
-execute as @a[scores={SCORE.cronica.TIMER.flying_feather.CoolTime=0..}] if score @s SCORE.cronica.TIMER.flying_feather.CoolTime.Stack matches 0 run function cronica:player/status/common_lib/ct/progress {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
 execute as @a[scores={SCORE.cronica.TIMER.flying_feather.CoolTime=0..}] if score @s SCORE.cronica.TIMER.flying_feather.CoolTime.Stack >= @s SCORE.cronica.TIMER.flying_feather.CoolTime.Stack.Goal at @s run function cronica:player/status/common_lib/ct/progress {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
 
 # チャージ完了

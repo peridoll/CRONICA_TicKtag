@@ -10,7 +10,7 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_model": "cronica:character/ikaros/select/judgment_stone",
+                "minecraft:item_model": "cronica:character/brave/select/spinning_slash",
                 "minecraft:custom_model_data": {
                   "strings": ["default"]
                 },
@@ -22,30 +22,30 @@
                   "animation": "none"
                 },
                 "minecraft:custom_data": {
-                  "MasterID": "ikaros",
+                  "MasterID": "brave",
                   "MasterType": "select",
                   "ItemCategory": "skill",
-                  "ItemID": "judgment_stone",
+                  "ItemID": "spinning_slash",
                   "ItemMode": "none",
                   "ItemStatus": "ready"
                 },
                 "minecraft:custom_name": {
-                  "text": "裁キノ礫",
-                  "color": "#ffa500",
+                  "text": "剣技：回転斬り",
+                  "color": "#00ffff",
                   "bold": true
                 },
                 "minecraft:lore": [
                   {
-                    "text": "爆裂しダメージを与える隕石を落とす",
+                    "text": "剣を高速で回転させ、周囲の敵を攻撃する",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "チャージ時間に応じて弾数が増える",
+                    "text": "チャージ時間に応じて攻撃力が上昇する",
                     "color": "#ffffff"
                   },
                   "====================",
                   {
-                    "text": "CT : 38s",
+                    "text": "CT : 18s",
                     "color": "#00ff00"
                   }
                 ]
