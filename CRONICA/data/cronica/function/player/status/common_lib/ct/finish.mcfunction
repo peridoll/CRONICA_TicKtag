@@ -1,12 +1,12 @@
 # =================================================================================================
 
 # アイテム置き換え
-# function cronica:player/status/item_display/model/default {ItemID: "FlyingFeather"}
-# function cronica:player/status/item_display/status/ready {ItemID: "FlyingFeather"}
+$scoreboard players reset @s SCORE.cronica.MODE.$(ItemID)
+$function cronica:player/character/$(MasterID)/$(Mastertype)/$(ItemID)/get
 
 # 装飾
 playsound minecraft:entity.arrow.hit_player player @s ~ ~ ~ 0.5 2
 
 # リセット
-function cronica:player/character/ikaros/select/flying_feather/library/ct/reset
+$function cronica:player/status/common_lib/ct/reset {ItemID: "$(ItemID)"}
 # =================================================================================================

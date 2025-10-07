@@ -1,10 +1,21 @@
 # =================================================================================================
 
-# アイテム入手
-data modify storage cronica:context ItemID.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
-execute as @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "flying_feather"}}}]}] run tag @s add TAG.cronica.SKILL.FlyingFeather.Has
-execute if data storage cronica:context ItemID.Offhand{Value: "FlyingFeather"} run tag @s add TAG.cronica.SKILL.FlyingFeather.Has
-execute as @s[tag=!TAG.cronica.SKILL.FlyingFeather.Has] run loot give @s loot cronica:character/ikaros/select/flying_feather
-tag @s remove TAG.cronica.SKILL.FlyingFeather.Has
-data remove storage cronica:context ItemID
+##【 共通処理 】
+
+## キャラクター関連の共通処理を実行
+# MasterID   : brave        / ikaros         / etc...
+# MasterType : unique       / select         / etc...
+# ItemID     : master_sword / flying_feather / etc...
+
+# アイテムを入手する処理を実行
+function cronica:player/status/common_lib/character_get {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
+# =================================================================================================
+
+##【 固有処理 】
+
+# 基本形態
+execute if score @s SCORE.cronica.MODE.flying_feather matches 0 run function cronica:player/status/common_lib/modify {ItemID: "flying_feather", Model: "common/default", Value:""}
+
+# 使用済み
+execute if score @s SCORE.cronica.MODE.flying_feather matches -1 run function cronica:player/status/common_lib/modify {ItemID: "flying_feather", Model: "common/used", Value:""}
 # =================================================================================================

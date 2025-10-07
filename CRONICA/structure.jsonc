@@ -66,14 +66,23 @@
               "get.mcfunction": [
                 // # =================================================================================================
 
-                // # アイテム入手
-                // data modify storage cronica:context ItemID.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
-                // execute as @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "flying_feather"}}}]}] run tag @s add TAG.cronica.SKILL.FlyingFeather.Has
-                // execute if data storage cronica:context ItemID.Offhand{Value: "FlyingFeather"} run tag @s add TAG.cronica.SKILL.FlyingFeather.Has
-                // execute as @s[tag=!TAG.cronica.SKILL.FlyingFeather.Has] run loot give @s loot cronica:character/ikaros/select/flying_feather
-                // tag @s remove TAG.cronica.SKILL.FlyingFeather.Has
-                // data remove storage cronica:context ItemID
+                // ##【 共通処理 】
+
+                // ## キャラクター関連の共通処理を実行
+                // # MasterID   : brave        / ikaros         / etc...
+                // # MasterType : unique       / select         / etc...
+                // # ItemID     : master_sword / flying_feather / etc...
+
+                // # アイテムを入手する処理を実行
+                // function cronica:player/status/common_lib/character_get {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
                 // # =================================================================================================
+
+                // ##【 固有処理 】
+                // # モードによっての見た目の切り替えなどを行う
+
+                // # =================================================================================================
+              ],
+              "item_clear.mcfunction": [
               ],
               "boot": {
                 "item_using.mcfunction": [
@@ -88,8 +97,20 @@
                 "run.mcfunction": [
                   // # =================================================================================================
 
-                  // # 共通処理
-                  // # function cronica:player/status/skill_library/run_common {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
+                  // ##【 共通処理 】
+
+                  // ## キャラクター関連の共通処理を実行
+                  // # MasterID   : brave        / ikaros         / etc...
+                  // # MasterType : unique       / select         / etc...
+                  // # ItemID     : master_sword / flying_feather / etc...
+
+                  // # 所持アイテム置き換え、スコアボード作成、コンフィグ読み込み、メイン処理呼び出し、CT処理呼び出し などを実行
+                  // function cronica:player/status/common_lib/character_run {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
+                  // # =================================================================================================
+
+                  // ##【 固有処理 】
+
+                  // ## 起動効果
 
                   // # ゲームモード
                   // tag @s[gamemode=creative] add TAG.cronica.SKILL.flying_feather.RunCreative
@@ -103,13 +124,17 @@
                   // gamemode creative @s[tag=TAG.cronica.SKILL.flying_feather.RunCreative]
                   // tag @s[tag=TAG.cronica.SKILL.flying_feather.RunCreative] remove TAG.cronica.SKILL.flying_feather.RunCreative
 
-                  // # 装飾
+                  // ## 装飾
+
+                  // # パーティクル
                   // particle minecraft:cloud ~ ~ ~ 0.2 0.2 0.2 0.1 50 force
+
+                  // # サウンド
                   // playsound minecraft:entity.ender_dragon.flap player @a ~ ~ ~ 2 1
                   // playsound minecraft:item.trident.riptide_3 player @a ~ ~ ~ 2 1
                   // # =================================================================================================
                 ],
-                "main": [
+                "main.mcfunction": [
                   // # =================================================================================================
 
                   // # タイマー増加
@@ -134,19 +159,19 @@
                   // execute if entity @e[scores={SCORE.cronica.TIMER.flying_feather.ActivateTime=0..}] run schedule function cronica:player/character/ikaros/select/flying_feather/library/main 1t
                   // # =================================================================================================
                 ],
-                "flaping": [
+                "flaping.mcfunction": [
                   // # =================================================================================================
                 ],
-                "stop_ceiling": [
+                "stop_ceiling.mcfunction": [
                   // # =================================================================================================
                 ],
-                "stop_stun": [
+                "stop_stun.mcfunction": [
                   // # =================================================================================================
                 ],
-                "finish": [
+                "finish.mcfunction": [
                   // # =================================================================================================
                 ],
-                "reset": [
+                "reset.mcfunction": [
                   // # =================================================================================================
                 ]
               }
@@ -657,17 +682,38 @@
             ]
           }
         },
-        "skill_library": {
-          "run_common.mcfunction": [
+        "common_lib": {
+          "character_get.mcfunction": [
+            // # =================================================================================================
+
+            // ## アイテム入手
+
+            // # 全体でアイテムを持っているかを確認(オフハンドはなぜか含まれない)
+            // $execute as @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}}}]}] run tag @s add TAG.cronica.CHARACTER.$(ItemID).Has
+
+            // # オフハンドにアイテムがあるかを確認
+            // data modify storage cronica:temp ItemID.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
+            // $execute if data storage cronica:temp ItemID.Offhand{Value: "$(ItemID)"} run tag @s add TAG.cronica.CHARACTER.$(ItemID).Has
+
+            // # どこにもなかったから入手
+            // $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] run function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/item_clear
+            // $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] run loot give @s loot cronica:character/$(MasterID)/$(MasterType)/$(ItemID)
+
+            // # 片付け
+            // $tag @s remove TAG.cronica.CHARACTER.$(ItemID).Has
+            // data remove storage cronica:temp ItemID
+            // # =================================================================================================
+          ],
+          "character_run.mcfunction": [
             // # =================================================================================================
 
             // ## アイテム置き換え
-            // function cronica:player/status/inventory/model/runed {MasterName: "$(MasterName)", MasterType: "$(MasterType)", ItemID: "$(ItemID)"}
-
-            // ## コンフィグ読み込み
-            // $function cronica:player/character/$(MasterName)/$(MasterType)/$(ItemID)/config
+            // # $function cronica:player/status/inventory/model/runed {ItemID: "$(ItemID)"}
 
             // ## スコア管理
+
+            // # コンフィグ読み込み
+            // $function cronica:player/character/$(MasterID)/config
 
             // # アイテムモード
             // $scoreboard objectives add SCORE.cronica.MODE.$(ItemID) dummy
@@ -695,21 +741,13 @@
             // $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Goal = @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal
             // $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack.Goal /= #20 SCORE.cronica.CONFIG
 
-            // ## 後続発火
-            // $schedule function cronica:player/character/$(MasterName)/$(MasterType)/$(ItemID)/library/main 1t
-            // $schedule function cronica:player/status/skill_library/ct/main 1t {MasterName: "$(MasterName)", MasterType: "$(MasterType)", ItemID: "$(ItemID)"}
+            // ## メイン処理、CT処理呼び出し
+            // $schedule function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/library/main 1t
+            // $schedule function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/library/ct/main 1t
             // # =================================================================================================
           ],
-          "ct": {
-            "main.mcfunction":[
-            ],
-            "progress.mcfunction":[
-            ],
-            "finish.mcfunction":[
-            ],
-            "reset.mcfunction":[
-            ]
-          }
+          "replace.mcfunction": [
+          ]
         },
         "effect": {
           "basic": {
@@ -1415,54 +1453,59 @@
       }
     },
     "common": {
-      "model": {
-        "charging": {
-          "gauge_1.json": {
+      "charging": {
+        "gauge_0.json": [
+          {
+            "function": "minecraft:set_custom_model_data",
+            "strings": {
+              "values": [
+                "charging_0"
+              ],
+              "mode": "insert"
+            }
           },
-          "gauge_2.json": {
-          },
-          "gauge_3.json": {
-          },
-          "gauge_4.json": {
-          },
-          "gauge_5.json": {
-          },
-          "gauge_6.json": {
-          },
-          "gauge_7.json": {
-          },
-          "gauge_8.json": {
-          },
-          "gauge_9.json": {
-          },
-          "gauge_10.json": {
-          },
-          "gauge_11.json": {
-          },
-          "gauge_12.json": {
-          },
-          "gauge_13.json": {
-          },
-          "gauge_14.json": {
-          },
-          "gauge_15.json": {
-          },
-          "gauge_16.json": {
-          },
-          "gauge_17.json": {
-          },
-          "gauge_18.json": {
-          },
-          "gauge_19.json": {
-          },
-          "gauge_20.json": {
+          {
+            "function": "minecraft:set_custom_data",
+            "tag": {
+              "ItemStatus": "charging"
+            }
           }
+        ],
+        "gauge_1.json": {
         }
       },
-      "status": {
-        "charging.json": {
+      "default.json": [
+        {
+          "function": "minecraft:set_custom_model_data",
+          "strings": {
+            "values": ["default"],
+            "mode": "insert"
+          }
+        },
+        {
+          "function": "minecraft:set_custom_data",
+          "tag": {
+            "ItemStatus": "ready"
+          }
         }
-      }
+      ],
+      "runed.json": [
+        {
+          "function": "minecraft:set_custom_model_data",
+          "strings": {
+            "values": [
+              "used"
+            ],
+            "mode": "insert"
+          }
+        },
+        {
+          "function": "minecraft:set_custom_data",
+          "tag": {
+            "ItemStatus": "used"
+          }
+        }
+      ]
     }
   },
   "advancement": {
