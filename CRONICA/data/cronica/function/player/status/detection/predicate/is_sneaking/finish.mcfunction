@@ -1,5 +1,5 @@
 # =================================================================================================
 
 # スコア/タグ撤去
-function cronica:player/status/detection/advancements/using_item/reset
+function cronica:player/status/detection/predicate/is_sneaking/reset
 # =================================================================================================

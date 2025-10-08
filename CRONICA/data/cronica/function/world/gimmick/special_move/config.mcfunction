@@ -1,5 +1,5 @@
 # =================================================================================================
 
-# スコア/タグ撤去
-function cronica:player/status/detection/advancements/using_item/reset
+# フェンス乗り越え時間 (tick)
+scoreboard players set #CONFIG.cronica.GIMMICK.wall_climb.ChargeTime SCORE.cronica.CONFIG 30
 # =================================================================================================

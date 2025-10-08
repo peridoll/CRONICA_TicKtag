@@ -464,67 +464,67 @@
           "advancements": {
             "using_item": {
               "run.mcfunction": [
-                // # =================================================================================================
+// # =================================================================================================
 
-                // # スコア管理
-                // execute as @s[tag=TAG.cronica.GAMING] run scoreboard objectives add SCORE.cronica.DETECT.ItemUsing dummy
-                // execute as @s[tag=TAG.cronica.GAMING] run scoreboard players add @s SCORE.cronica.DETECT.ItemUsing 1
+// # スコア管理
+// execute as @s[tag=TAG.cronica.GAMING] run scoreboard objectives add SCORE.cronica.DETECT.ItemUsing dummy
+// execute as @s[tag=TAG.cronica.GAMING] run scoreboard players add @s SCORE.cronica.DETECT.ItemUsing 1
 
-                // # タグ管理
-                // execute as @s[tag=TAG.cronica.DETECT.ItemUsed] run tag @s remove TAG.cronica.DETECT.ItemUsed
-                // execute as @s[tag=TAG.cronica.GAMING] run tag @s add TAG.cronica.DETECT.ItemUsing
+// # タグ管理
+// execute as @s[tag=TAG.cronica.DETECT.ItemUsed] run tag @s remove TAG.cronica.DETECT.ItemUsed
+// execute as @s[tag=TAG.cronica.GAMING] run tag @s add TAG.cronica.DETECT.ItemUsing
 
-                // # アイテム使用検知関数実行
-                // execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:player/status/detection/advancements/using_item/main
+// # アイテム使用検知関数実行
+// execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:player/status/detection/advancements/using_item/main
 
-                // # 実績解除
-                // advancement revoke @s only cronica:using_item
-                // # =================================================================================================
+// # 実績解除
+// advancement revoke @s only cronica:using_item
+// # =================================================================================================
               ],
               "main.mcfunction": [
-                // # =================================================================================================
+// # =================================================================================================
 
-                // # 使用終了検知
-                // execute as @s[tag=TAG.cronica.DETECT.ItemUsed,scores={SCORE.cronica.DETECT.ItemUsing=1..}] run function cronica:player/status/detection/advancements/using_item/finish
-                // tag @s add TAG.cronica.DETECT.ItemUsed
+// # 使用終了検知
+// execute as @s[tag=TAG.cronica.DETECT.ItemUsed,scores={SCORE.cronica.DETECT.ItemUsing=1..}] run function cronica:player/status/detection/advancements/using_item/finish
+// tag @s add TAG.cronica.DETECT.ItemUsed
 
-                // # 能力呼び出し：実行時/実行中
-                // function cronica:system/common/storage/use_data_func {func:"player/status/detection/boot/item_using"}
-                // # =================================================================================================
+// # 能力呼び出し：実行時/実行中
+// function cronica:system/common/storage/use_data_func {func:"player/status/detection/boot/item_using"}
+// # =================================================================================================
               ],
               "finish.mcfunction": [
-                // # =================================================================================================
+// # =================================================================================================
 
-                // # 能力呼び出し：実行終了
-                // function cronica:system/common/storage/use_data_func {func:"player/status/detection/boot/item_used"}
-
-                // # スコア/タグ撤去
-                // function cronica:player/status/detection/advancements/using_item/reset
-                // # =================================================================================================
+// # スコア/タグ撤去
+// function cronica:player/status/detection/advancements/using_item/reset
+// # =================================================================================================
               ],
               "reset.mcfunction":[
-                // # =================================================================================================
+// # =================================================================================================
 
-                // # タグ管理
-                // tag @s remove TAG.cronica.DETECT.ItemUsing
-                // tag @s remove TAG.cronica.DETECT.ItemUsed
+// # タグ管理
+// tag @s remove TAG.cronica.DETECT.ItemUsing
+// tag @s remove TAG.cronica.DETECT.ItemUsed
 
-                // # スコア管理
-                // scoreboard players reset @s SCORE.cronica.DETECT.ItemUsing
-                // execute unless entity @a[scores={SCORE.cronica.DETECT.ItemUsing=0..}] run scoreboard objectives remove SCORE.cronica.DETECT.ItemUsing
-                // # =================================================================================================
+// # スコア管理
+// scoreboard players reset @s SCORE.cronica.DETECT.ItemUsing
+// execute unless entity @a[scores={SCORE.cronica.DETECT.ItemUsing=0..}] run scoreboard objectives remove SCORE.cronica.DETECT.ItemUsing
+// # =================================================================================================
               ]
             },
             "change_inventory": {
               "run.mcfunction": [
-                // # =================================================================================================
+// # =================================================================================================
 
-                // # 所持アイテム情報更新
-                // function cronica:player/status/inventory/data/save
+// # 所持アイテム情報更新
+// function cronica:player/status/inventory/data/save
 
-                // # 実績解除
-                // advancement revoke @s only cronica:change_inventory
-                // # =================================================================================================
+// # 能力呼び出し：実行時
+// function cronica:player/status/detection/boot/change_inventory
+
+// # 実績解除
+// advancement revoke @s only cronica:change_inventory
+// # =================================================================================================
               ]
             },
             "revoke.mcfunction": [
@@ -541,22 +541,96 @@
           "predicate": {
             "is_sneaking": {
               "run.mcfunction": [
+// # =================================================================================================
+
+// # スコア管理
+// execute as @s[tag=TAG.cronica.GAMING] run scoreboard objectives add SCORE.cronica.DETECT.IsSneaking dummy
+// execute as @s[tag=TAG.cronica.GAMING] run scoreboard players add @s SCORE.cronica.DETECT.IsSneaking 1
+
+// # タグ管理
+// execute as @s[tag=TAG.cronica.DETECT.IsSneaked] run tag @s remove TAG.cronica.DETECT.IsSneaked
+// execute as @s[tag=TAG.cronica.GAMING] run tag @s add TAG.cronica.DETECT.IsSneaking
+
+// # アイテム使用検知関数実行
+// execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.DETECT.IsSneaking matches 1 run function cronica:player/status/detection/predicate/is_sneaking/main
+// # =================================================================================================
               ],
               "main.mcfunction": [
+// # =================================================================================================
+
+// # 使用終了検知
+// execute as @s[tag=TAG.cronica.DETECT.IsSneaked,scores={SCORE.cronica.DETECT.IsSneaking=1..}] run function cronica:player/status/detection/predicate/is_sneaking/finish
+// tag @s[scores={SCORE.cronica.DETECT.IsSneaking=1..}] add TAG.cronica.DETECT.IsSneaked
+
+// # 能力呼び出し：実行時/実行中
+// function cronica:player/status/detection/boot/is_sneaking
+// # =================================================================================================
               ],
               "finish.mcfunction": [
+// # =================================================================================================
+
+// # スコア/タグ撤去
+// function cronica:player/status/detection/predicate/is_sneaking/reset
+// # =================================================================================================
               ],
               "reset.mcfunction": [
+// # =================================================================================================
+
+// # タグ管理
+// tag @s remove TAG.cronica.DETECT.IsSneaking
+// tag @s remove TAG.cronica.DETECT.IsSneaked
+
+// # スコア管理
+// scoreboard players reset @s SCORE.cronica.DETECT.IsSneaking
+// execute unless entity @a[scores={SCORE.cronica.DETECT.IsSneaking=0..}] run scoreboard objectives remove SCORE.cronica.DETECT.IsSneaking
+// # =================================================================================================
               ]
             },
             "is_sprinting": {
               "run.mcfunction": [
+// # =================================================================================================
+
+// # スコア管理
+// execute as @s[tag=TAG.cronica.GAMING] run scoreboard objectives add SCORE.cronica.DETECT.IsSprinting dummy
+// execute as @s[tag=TAG.cronica.GAMING] run scoreboard players add @s SCORE.cronica.DETECT.IsSprinting 1
+
+// # タグ管理
+// execute as @s[tag=TAG.cronica.DETECT.IsSprinted] run tag @s remove TAG.cronica.DETECT.IsSprinted
+// execute as @s[tag=TAG.cronica.GAMING] run tag @s add TAG.cronica.DETECT.IsSprinting
+
+// # アイテム使用検知関数実行
+// execute as @s[tag=TAG.cronica.GAMING] if score @s SCORE.cronica.DETECT.IsSprinting matches 1 run function cronica:player/status/detection/predicate/is_sprinting/main
+// # =================================================================================================
               ],
               "main.mcfunction": [
+// # =================================================================================================
+
+// # 使用終了検知
+// execute as @s[tag=TAG.cronica.DETECT.IsSprinted,scores={SCORE.cronica.DETECT.IsSprinting=1..}] run function cronica:player/status/detection/predicate/is_sprinting/finish
+// tag @s[scores={SCORE.cronica.DETECT.IsSprinting=1..}] add TAG.cronica.DETECT.IsSprinted
+
+// # 能力呼び出し：実行時/実行中
+// function cronica:player/status/detection/boot/is_sprinting
+// # =================================================================================================
               ],
               "finish.mcfunction": [
+// # =================================================================================================
+
+// # スコア/タグ撤去
+// function cronica:player/status/detection/predicate/is_sprinting/reset
+// # =================================================================================================
               ],
               "reset.mcfunction": [
+// # =================================================================================================
+
+// # タグ管理
+// tag @s remove TAG.cronica.DETECT.IsSprinting
+// tag @s remove TAG.cronica.DETECT.IsSprinted
+
+// # スコア管理
+// scoreboard players reset @s SCORE.cronica.DETECT.IsSprinting
+// execute unless entity @a[scores={SCORE.cronica.DETECT.IsSprinting=0..}] run scoreboard objectives remove SCORE.cronica.DETECT.IsSprinting
+// # =================================================================================================
               ]
             }
           },
@@ -568,29 +642,49 @@
               // $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/boot/item_using with storage cronica:personal/$(UUID)/player/inventory/data Activate
               // # =================================================================================================
             ],
-            "item_used.mcfunction": [
-              // # =================================================================================================
+            "is_sneaking.mcfunction": [
+// # =================================================================================================
 
-              // # 特定能力発動
-              // $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/boot/item_used with storage cronica:personal/$(UUID)/player/inventory/data Activate
-              // # =================================================================================================
+// # 特定能力発動
+// # $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/boot/is_sneaking with storage cronica:personal/$(UUID)/player/inventory/data Activate
+// # =================================================================================================
+            ],
+            "is_sprinting.mcfunction": [
+// # =================================================================================================
+
+// # 特定能力発動
+// # $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/boot/is_sprinting with storage cronica:personal/$(UUID)/player/inventory/data Activate
+// # =================================================================================================
+            ],
+            "change_inventory.mcfunction": [
+// # =================================================================================================
+
+// # 特定能力発動
+// # $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/boot/item_using with storage cronica:personal/$(UUID)/player/inventory/data Activate
+// # =================================================================================================
             ]
           },
           "tick.mcfunction": [
-            // # =================================================================================================
+// # =================================================================================================
 
-            // # スニーク中検知
-            // # execute as @a[tag=TAG.cronica.GAMING] if predicate cronica:is_sneaking run function cronica:player/status/detection/predicate/is_sneaking/run
-            // # execute as @a[scores={SCORE.cronica.DETECT.Sneaking=1..}] run function cronica:player/status/detection/predicate/is_sneaking/main
+// # スニーク中検知
+// execute as @a[tag=TAG.cronica.GAMING] if predicate cronica:is_sneaking run function cronica:player/status/detection/predicate/is_sneaking/run
+// execute as @a[scores={SCORE.cronica.DETECT.IsSneaking=1..}] run function cronica:player/status/detection/predicate/is_sneaking/main
 
-            // # ダッシュ中検知
-            // # execute as @a[tag=TAG.cronica.GAMING] if predicate cronica:is_sprinting run function cronica:player/status/detection/predicate/is_sprinting/run
-            // # execute as @a[scores={SCORE.cronica.DETECT.Sprinting=1..}] run function cronica:player/status/detection/predicate/is_sprinting/main
+// # ダッシュ中検知
+// execute as @a[tag=TAG.cronica.GAMING] if predicate cronica:is_sprinting run function cronica:player/status/detection/predicate/is_sprinting/run
+// execute as @a[scores={SCORE.cronica.DETECT.IsSprinting=1..}] run function cronica:player/status/detection/predicate/is_sprinting/main
 
-            // # アイテム使用検知
-            // execute as @a[scores={SCORE.cronica.DETECT.ItemUsing=2..}] run function cronica:player/status/detection/advancements/using_item/main
-            // execute as @a[scores={SCORE.cronica.DETECT.ItemUsing=1}] run scoreboard players set @s SCORE.cronica.DETECT.ItemUsing 2
-            // # =================================================================================================
+// # アイテム使用検知
+// execute as @a[scores={SCORE.cronica.DETECT.ItemUsing=2..}] run function cronica:player/status/detection/advancements/using_item/main
+// execute as @a[scores={SCORE.cronica.DETECT.ItemUsing=1}] run scoreboard players set @s SCORE.cronica.DETECT.ItemUsing 2
+// # =================================================================================================
+          ]
+        },
+        "selection": {
+          "data": {
+          },
+          "reset.mcfunction": [
           ]
         },
         "inventory": {
@@ -959,13 +1053,247 @@
       "gimmick": {
         "care_package": {
         },
-        "wall_climb": {
+        "action_panel": {
+          "lime_jump": {
+            "run.mcfunction": [
+// # =================================================================================================
+
+// # エフェクト付与
+// effect give @s minecraft:levitation 1 27 true
+
+// # スコア用意
+// scoreboard objectives add SCORE.cronica.TIMER.jump_panel.ActivateTime dummy
+// scoreboard players add @s SCORE.cronica.TIMER.jump_panel.ActivateTime 0
+
+// # ループ処理
+// schedule function cronica:world/gimmick/action_panel/lime_jump/main 1t
+// # =================================================================================================
+            ],
+            "main.mcfunction": [
+// # =================================================================================================
+
+// # スコア管理
+// scoreboard players add @e[scores={SCORE.cronica.TIMER.jump_panel.ActivateTime=0..}] SCORE.cronica.TIMER.jump_panel.ActivateTime 1
+
+// # 終了
+// execute as @e[scores={SCORE.cronica.TIMER.jump_panel.ActivateTime=10..}] at @s run function cronica:world/gimmick/action_panel/lime_jump/finish
+
+// # ループ処理
+// execute if entity @a[scores={SCORE.cronica.TIMER.jump_panel.ActivateTime=0..}] run schedule function cronica:world/gimmick/action_panel/lime_jump/main 1t
+// # =================================================================================================
+            ],
+            "finish.mcfunction": [
+// # =================================================================================================
+
+// # エフェクト解除
+// effect clear @s levitation
+
+// # 撤去
+// function cronica:world/gimmick/action_panel/lime_jump/reset
+// # =================================================================================================
+            ],
+            "reset.mcfunction": [
+// # =================================================================================================
+
+// # スコア管理
+// scoreboard players reset @s SCORE.cronica.TIMER.jump_panel.ActivateTime
+// execute unless entity @a[scores={SCORE.cronica.TIMER.jump_panel.ActivateTime=1..}] run scoreboard objectives remove SCORE.cronica.TIMER.jump_panel.ActivateTime
+// # =================================================================================================
+            ]
+          },
+          "orange_dash": {
+          },
+          "purple_teleport": {
+          },
+          "tick.mcfunction": [
+// # =================================================================================================
+
+// # Jump Panel:Lime
+// execute as @a[tag=TAG.cronica.GAMING] if predicate cronica:is_on_ground at @s if block ~ ~-1 ~ lime_shulker_box run function cronica:world/gimmick/action_panel/lime_jump/run
+
+// # Dash Panel:Orange
+// # execute as @a[tag=TAG.cronica.GAMING] if predicate cronica:is_on_ground if predicate cronica:is_sprinting at @s if block ~ ~-1 ~ orange_shulker_box run function cronica:world/gimmick/action_panel/orange_dash/run
+
+// # Teleport Panel:Purple
+// # execute as @a[tag=TAG.cronica.GAMING] if predicate cronica:is_on_ground at @s if block ~ ~-1 ~ purple_shulker_box run function cronica:world/gimmick/action_panel/purple_teleport/on_site
+// # =================================================================================================
+          ]
         },
-        "shop": {
-        },
-        "panel": {
+        "special_move": {
+          "bunny_hop": {
+            "run.mcfunction": [
+            ]
+          },
+          "cliff_climb": {
+            "run.mcfunction": [
+            ]
+          },
+          "first_aid": {
+            "run.mcfunction": [
+            ]
+          },
+          "just_guard": {
+            "run.mcfunction": [
+            ]
+          },
+          "sliding": {
+            "run.mcfunction": [
+            ]
+          },
+          "smart_landing": {
+            "run.mcfunction": [
+            ]
+          },
+          "wall_climb": {
+            "charge.mcfunction": [
+// # =================================================================================================
+
+// ## タグ管理
+// tag @s remove TAG.cronica.GIMMICK.wall_climb.Charged
+// tag @s remove TAG.cronica.DETECT.IsSneaking
+
+// ## スコア管理
+
+// # 実行加算値
+// scoreboard objectives add SCORE.cronica.GIMMICK.wall_climb.Charging dummy
+// scoreboard players add @s SCORE.cronica.GIMMICK.wall_climb.Charging 1
+// scoreboard objectives add SCORE.cronica.TIMER.wall_climb.ActivateTime dummy
+// scoreboard players add @s SCORE.cronica.TIMER.wall_climb.ActivateTime 1
+
+// # 初回設定
+// execute if score @s SCORE.cronica.GIMMICK.wall_climb.Charging matches 1 run function cronica:world/gimmick/special_move/wall_climb/setup
+// # =================================================================================================
+            ],
+            "main.mcfunction": [
+// # =================================================================================================
+
+// # キャンセルチェック
+// execute if entity @s[tag=TAG.cronica.GIMMICK.wall_climb.Charged] if score @s SCORE.cronica.GIMMICK.wall_climb.Charging matches 1.. run function cronica:world/gimmick/special_move/wall_climb/cancel
+// tag @s[scores={SCORE.cronica.GIMMICK.wall_climb.Charging=1..}] add TAG.cronica.GIMMICK.wall_climb.Charged
+
+// # スタック進行
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime >= @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Goal at @s run function cronica:world/gimmick/special_move/wall_climb/progress
+
+// # チャージ完了
+// execute if score @s SCORE.cronica.GIMMICK.wall_climb.Charging >= #CONFIG.cronica.GIMMICK.wall_climb.ChargeTime SCORE.cronica.CONFIG run function cronica:world/gimmick/special_move/wall_climb/complete
+// # =================================================================================================
+            ],
+            "setup.mcfunction": [
+// # =================================================================================================
+
+// # コンフィグ読み込み
+// function cronica:world/gimmick/special_move/config
+
+// # 目標値設定
+// scoreboard objectives add SCORE.cronica.TIMER.wall_climb.ActivateTime.Goal dummy
+// scoreboard players operation @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Goal = #CONFIG.cronica.GIMMICK.wall_climb.ChargeTime SCORE.cronica.CONFIG
+// scoreboard players operation @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Goal /= #10 SCORE.cronica.CONFIG
+
+// # 進行カウント設定 & 初回実行
+// scoreboard objectives add SCORE.cronica.TIMER.wall_climb.ActivateTime.Count dummy
+// function cronica:world/gimmick/special_move/wall_climb/progress
+// # =================================================================================================
+            ],
+            "progress.mcfunction": [
+// # =================================================================================================
+
+// ## スコア管理
+// scoreboard players reset @s SCORE.cronica.TIMER.wall_climb.ActivateTime
+// scoreboard players add @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count 1
+
+// ## 画面表示
+// title @s times 0 60 20
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 1 run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"|","color":"aqua","bold":true,"underlined":true},{"text":"|||||||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 2 run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"||","color":"aqua","bold":true,"underlined":true},{"text":"||||||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 3 run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"|||","color":"aqua","bold":true,"underlined":true},{"text":"|||||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 4 run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"||||","color":"aqua","bold":true,"underlined":true},{"text":"||||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 5 run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"|||||","color":"aqua","bold":true,"underlined":true},{"text":"|||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 6 run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"||||||","color":"aqua","bold":true,"underlined":true},{"text":"||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 7 run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"|||||||","color":"aqua","bold":true,"underlined":true},{"text":"|||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 8 run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"||||||||","color":"aqua","bold":true,"underlined":true},{"text":"||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 9 run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"|||||||||","color":"aqua","bold":true,"underlined":true},{"text":"|","color":"gray","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// execute if score @s SCORE.cronica.TIMER.wall_climb.ActivateTime.Count matches 10.. run title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"||||||||||","color":"aqua","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+// # =================================================================================================
+            ],
+            "complete.mcfunction": [
+// # =================================================================================================
+
+// # 画面表示
+// title @s times 0 60 20
+// title @s actionbar [{"text":"CLIMB","color":"gray","bold":false},{"text":"[","color":"blue","bold":false},{"text":"ACTIVATE","color":"aqua","bold":true,"underlined":true},{"text":"]","color":"blue","bold":false},{"text":"CLIMB","color":"gray","bold":false}]
+
+// # 衝突判定:ブロック
+// execute as @s at @s rotated ~ 0 positioned ^ ^1 ^0.1 unless block ^0.3 ^ ^ #cronica:no_collision run tag @s add TAG.cronica.GIMMICK.wall_climb.CollisionCheck
+// execute as @s at @s rotated ~ 0 positioned ^ ^1 ^0.1 unless block ^-0.3 ^ ^ #cronica:no_collision run tag @s add TAG.cronica.GIMMICK.wall_climb.CollisionCheck
+// execute as @s at @s rotated ~ 0 positioned ^ ^1 ^0.1 unless block ^ ^ ^0.3 #cronica:no_collision run tag @s add TAG.cronica.GIMMICK.wall_climb.CollisionCheck
+// execute as @s at @s rotated ~ 0 positioned ^ ^1 ^0.1 unless block ^ ^ ^-0.3 #cronica:no_collision run tag @s add TAG.cronica.GIMMICK.wall_climb.CollisionCheck
+// execute as @s at @s rotated ~ 0 positioned ^ ^1 ^0.1 unless block ^0.3 ^ ^0.3 #cronica:no_collision run tag @s add TAG.cronica.GIMMICK.wall_climb.CollisionCheck
+// execute as @s at @s rotated ~ 0 positioned ^ ^1 ^0.1 unless block ^-0.3 ^ ^0.3 #cronica:no_collision run tag @s add TAG.cronica.GIMMICK.wall_climb.CollisionCheck
+// execute as @s at @s rotated ~ 0 positioned ^ ^1 ^0.1 unless block ^0.3 ^ ^-0.3 #cronica:no_collision run tag @s add TAG.cronica.GIMMICK.wall_climb.CollisionCheck
+// execute as @s at @s rotated ~ 0 positioned ^ ^1 ^0.1 unless block ^-0.3 ^ ^-0.3 #cronica:no_collision run tag @s add TAG.cronica.GIMMICK.wall_climb.CollisionCheck
+
+// ## 装飾
+// # サウンド
+// execute as @s at @s run playsound minecraft:block.ladder.step player @a ~ ~ ~ 0.3 1
+
+// # テレポート
+// execute as @s[tag=!TAG.cronica.GIMMICK.wall_climb.CollisionCheck] at @s rotated ~ 0 run tp @s ^ ^ ^0.1
+// tag @s remove TAG.cronica.GIMMICK.wall_climb.CollisionCheck
+// # =================================================================================================
+            ],
+            "cancel.mcfunction": [
+// # =================================================================================================
+
+// # 画面表示
+// title @s actionbar ""
+
+// # 撤去
+// function cronica:world/gimmick/special_move/wall_climb/reset
+// # =================================================================================================
+            ],
+            "reset.mcfunction": [
+// # =================================================================================================
+
+// # スコア管理
+// scoreboard players reset @s SCORE.cronica.GIMMICK.wall_climb.Charging
+// execute unless entity @a[scores={SCORE.cronica.GIMMICK.wall_climb.Charging=0..}] run scoreboard objectives remove SCORE.cronica.GIMMICK.wall_climb.Charging
+// execute unless entity @a[scores={SCORE.cronica.GIMMICK.wall_climb.Charging=0..}] run scoreboard objectives remove SCORE.cronica.TIMER.wall_climb.ActivateTime
+// execute unless entity @a[scores={SCORE.cronica.GIMMICK.wall_climb.Charging=0..}] run scoreboard objectives remove SCORE.cronica.TIMER.wall_climb.ActivateTime.Goal
+// execute unless entity @a[scores={SCORE.cronica.GIMMICK.wall_climb.Charging=0..}] run scoreboard objectives remove SCORE.cronica.TIMER.wall_climb.ActivateTime.Count
+// # =================================================================================================
+            ]
+          },
+          "config.mcfunction": [
+// # =================================================================================================
+
+// # フェンス乗り越え時間 (tick)
+// scoreboard players set #CONFIG.cronica.GIMMICK.wall_climb.ChargeTime SCORE.cronica.CONFIG 30
+// # =================================================================================================
+          ],
+          "tick.mcfunction": [
+// # =================================================================================================
+
+// ## Special Move Tick Function
+
+// # Wall Climb
+// execute as @a[tag=TAG.cronica.GAMING,tag=TAG.cronica.DETECT.IsSneaking] at @s if predicate cronica:is_on_ground rotated ~ 0 if block ~ ~ ~ #cronica:fence if block ~ ~1 ~ #cronica:no_collision run function cronica:world/gimmick/special_move/wall_climb/charge
+// execute as @a[scores={SCORE.cronica.GIMMICK.wall_climb.Charging=1..}] run function cronica:world/gimmick/special_move/wall_climb/main
+// # =================================================================================================
+          ]
         },
         "tick.mcfunction": [
+// # =================================================================================================
+
+// # アクションパネル
+// function cronica:world/gimmick/action_panel/tick
+
+// # キャラクターコントロール
+// function cronica:world/gimmick/special_move/tick
+
+// # ケアパッケージ
+// # execute if entity @e[tag=TAG.cronica.MARKER.CarePackage] run schedule function cronica:stage/gimmick/carepackage/library/decolation 1t
+// # execute as @a[tag=TAG.cronica.GAMING,tag=TAG.cronica.STATUS.Sneaking] at @s unless block ~ ~-0.1 ~ air if entity @e[tag=TAG.cronica.MARKER.CarePackage,distance=..2] run function cronica:stage/gimmick/carepackage/library/charge
+// # =================================================================================================
         ]
       }
     },
@@ -1118,18 +1446,18 @@
         // # =================================================================================================
       ],
       "tick.mcfunction": [
-        // # =================================================================================================
+// # =================================================================================================
 
-        // # サーバー参加時
-        // execute as @a[gamemode=survival] run function cronica:system/preparation/join_server
+// # サーバー参加時
+// execute as @a[gamemode=survival] run function cronica:system/preparation/join_server
 
-        // # プレイヤー管理
-        // execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/status/tick
+// # プレイヤー管理
+// execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:player/status/tick
 
-        // # ワールド管理
-        // # execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:world/gimmick/tick
-        // # function cronica:system/menu/tick
-        // # =================================================================================================
+// # ワールド管理
+// execute if entity @a[tag=TAG.cronica.GAMING] run function cronica:world/gimmick/tick
+// # function cronica:system/menu/tick
+// # =================================================================================================
       ]
     }
   },

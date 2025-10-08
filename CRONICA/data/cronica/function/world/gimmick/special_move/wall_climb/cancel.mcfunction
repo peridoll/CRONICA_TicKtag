@@ -1,5 +1,8 @@
 # =================================================================================================
 
-# スコア/タグ撤去
-function cronica:player/status/detection/advancements/using_item/reset
+# 画面表示
+title @s actionbar ""
+
+# 撤去
+function cronica:world/gimmick/special_move/wall_climb/reset
 # =================================================================================================

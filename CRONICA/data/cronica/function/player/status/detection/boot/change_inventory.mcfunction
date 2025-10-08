@@ -1,5 +1,5 @@
 # =================================================================================================
 
-# スコア/タグ撤去
-function cronica:player/status/detection/advancements/using_item/reset
+# 特定能力発動
+# $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/boot/item_using with storage cronica:personal/$(UUID)/player/inventory/data Activate
 # =================================================================================================

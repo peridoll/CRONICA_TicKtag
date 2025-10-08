@@ -1,5 +1,8 @@
 # =================================================================================================
 
-# スコア/タグ撤去
-function cronica:player/status/detection/advancements/using_item/reset
+# エフェクト解除
+effect clear @s levitation
+
+# 撤去
+function cronica:world/gimmick/action_panel/lime_jump/reset
 # =================================================================================================
