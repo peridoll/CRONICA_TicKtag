@@ -10,7 +10,7 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_model": "cronica:character/brave/select/spinning_slash",
+                "minecraft:item_model": "cronica:character/brave/unique/battle_standby",
                 "minecraft:custom_model_data": {"strings": ["default"]},
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:max_stack_size": 1,
@@ -21,72 +21,67 @@
                 },
                 "minecraft:custom_data": {
                   "MasterID": "brave",
-                  "MasterType": "select",
-                  "ItemCategory": "select_skill",
-                  "ItemID": "spinning_slash",
+                  "MasterType": "unique",
+                  "ItemCategory": "unique_skill",
+                  "ItemID": "battle_standby",
                   "ItemMode": "none",
                   "ItemStatus": "ready"
                 },
                 "minecraft:custom_name": {
-                  "text": "剣技：回転斬り",
+                  "text": "戦いの準備",
                   "color": "#00ffff",
                   "bold": true
                 },
                 "minecraft:lore": [
                   {
-                    "text": "Select Skill",
-                    "color": "#00ff00",
+                    "text": "Unique Skill",
+                    "color": "#ffa500",
                     "underlined": true,
                     "bold": true
                   },
                   {
-                    "text": "剣を高速で回転させ、周囲の敵を攻撃する",
+                    "text": "勇者にだって休息が必要である",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "草刈りに便利",
+                    "text": "準備ができたら、あとは戦うだけだ",
                     "color": "#ffffff"
                   },
                   "====================",
                   {
-                    "text": "CT : 18s",
-                    "color": "#00ff00",
-                    "underlined": true
+                    "text": "CT : 48s",
+                    "color": "#00ff00"
                   },
                   {
-                    "text": "",
+                    "text": "Heal: 4 HP / Defense: +2",
                     "color": "#00ff00",
                     "underlined": true
                   },
                   "====================",
                   {
-                    "text": "その場から一定範囲内の相手にダメージを与える",
+                    "text": "使用すると、目の前に補給物資を出現させる",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "チャージ時間に応じて威力が上昇する",
+                    "text": "補給物資取得時の体力量によって効果が変化する",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "CONNECT：武器-剣 / 武器-斧",
-                    "color": "#ffffff",
+                    "text": "戦いの準備：応急処置",
+                    "color": "#ff0000",
                     "bold": true
                   },
                   {
-                    "text": "武器を持ってスニークをすると、チャージをためることができる",
+                    "text": "体力低下時、体力を少量回復する",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "その後は、武器をクリックで発動できる",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "CONNECT：ブレイブ-英雄の剣",
-                    "color": "#00ffff",
+                    "text": "戦いの準備：武具研磨",
+                    "color": "#0000ff",
                     "bold": true
                   },
                   {
-                    "text": "体力が一定以上あるときに、剣撃が衝撃波に乗って飛んでいく",
+                    "text": "通常時、一定時間防御力が上昇する",
                     "color": "#ffffff"
                   }
                 ]

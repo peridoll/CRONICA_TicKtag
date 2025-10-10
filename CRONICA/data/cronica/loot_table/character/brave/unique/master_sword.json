@@ -10,7 +10,7 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_model": "cronica:character/ikaros/select/judgment_stone",
+                "minecraft:item_model": "cronica:character/brave/unique/master_sword",
                 "minecraft:custom_model_data": {"strings": ["default"]},
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:max_stack_size": 1,
@@ -20,36 +20,36 @@
                   "animation": "none"
                 },
                 "minecraft:custom_data": {
-                  "MasterID": "ikaros",
-                  "MasterType": "select",
-                  "ItemCategory": "select_skill",
-                  "ItemID": "judgment_stone",
+                  "MasterID": "brave",
+                  "MasterType": "unique",
+                  "ItemCategory": "main_weapon",
+                  "ItemID": "master_sword",
                   "ItemMode": "none",
                   "ItemStatus": "ready"
                 },
                 "minecraft:custom_name": {
-                  "text": "裁キノ礫",
-                  "color": "#ffa500",
+                  "text": "英雄の剣",
+                    "color": "#00ffff",
                   "bold": true
                 },
                 "minecraft:lore": [
                   {
-                    "text": "Select Skill",
-                    "color": "#00ff00",
+                    "text": "Main Weapon",
+                    "color": "#ff00ff",
                     "underlined": true,
                     "bold": true
                   },
                   {
-                    "text": "星の力を込めた隕石を降らせる",
+                    "text": "伝説の勇者が持つとされる剣",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "自由を求めるものに断罪を..",
+                    "text": "あらゆる邪悪を討ち払う力を持つ",
                     "color": "#ffffff"
                   },
                   "====================",
                   {
-                    "text": "CT : 38s",
+                    "text": "Attack: 6",
                     "color": "#00ff00",
                     "underlined": true
                   },
@@ -60,24 +60,7 @@
                   },
                   "====================",
                   {
-                    "text": "爆裂しダメージを与える隕石を落とす",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "チャージ時間に応じて弾数が増える",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "CONNECT：イカロス-太陽神ノ弓<黄昏>",
-                    "color": "#ffa500",
-                    "bold": true
-                  },
-                  {
-                    "text": "武器の発射時、スニークをしているなら、このスキルを発動する",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "発動時は、最大チャージとして扱う",
+                    "text": "体力が一定以上あるとき、前方に衝撃波を放つことができる",
                     "color": "#ffffff"
                   }
                 ]

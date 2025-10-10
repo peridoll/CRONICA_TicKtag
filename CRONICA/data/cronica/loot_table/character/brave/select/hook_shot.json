@@ -5,26 +5,20 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stick",
+          "name": "minecraft:crossbow",
           "functions": [
             {
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "cronica:character/brave/select/hook_shot",
-                "minecraft:custom_model_data": {
-                  "strings": ["default"]
-                },
+                "minecraft:custom_model_data": {"strings": ["default"]},
                 "minecraft:enchantment_glint_override": true,
-                "minecraft:max_stack_size": 1,
+                "minecraft:unbreakable": {},
                 "!minecraft:attribute_modifiers": {},
-                "minecraft:consumable": {
-                  "consume_seconds": 2147483647,
-                  "animation": "none"
-                },
                 "minecraft:custom_data": {
                   "MasterID": "brave",
                   "MasterType": "select",
-                  "ItemCategory": "skill",
+                  "ItemCategory": "select_skill",
                   "ItemID": "hook_shot",
                   "ItemMode": "none",
                   "ItemStatus": "ready"
@@ -36,17 +30,47 @@
                 },
                 "minecraft:lore": [
                   {
+                    "text": "Select Skill",
+                    "color": "#00ff00",
+                    "underlined": true,
+                    "bold": true
+                  },
+                  {
                     "text": "フックショットが当たった場所に移動する",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "一部のものを引き寄せることもできる",
+                    "text": "コウモリはこれで倒す",
                     "color": "#ffffff"
                   },
                   "====================",
                   {
                     "text": "CT : 26s",
-                    "color": "#00ff00"
+                    "color": "#00ff00",
+                    "underlined": true
+                  },
+                  {
+                    "text": "",
+                    "color": "#00ff00",
+                    "underlined": true
+                  },
+                  "====================",
+                  {
+                    "text": "向いている先のブロックのもとへ移動する",
+                    "color": "#ffffff"
+                  },
+                  {
+                    "text": "補給物資など、一部のものを引き寄せることもできる",
+                    "color": "#ffffff"
+                  },
+                  {
+                    "text": "CONNECT：ブレイブ-戦いの準備",
+                    "color": "#00ffff",
+                    "bold": true
+                  },
+                  {
+                    "text": "引き寄せてきた補給物資を、即座に取得することができる",
+                    "color": "#ffffff"
                   }
                 ]
               }

@@ -10,7 +10,7 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_model": "cronica:character/brave/select/spinning_slash",
+                "minecraft:item_model": "cronica:character/brave/unique/tri_strike",
                 "minecraft:custom_model_data": {"strings": ["default"]},
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:max_stack_size": 1,
@@ -21,35 +21,35 @@
                 },
                 "minecraft:custom_data": {
                   "MasterID": "brave",
-                  "MasterType": "select",
-                  "ItemCategory": "select_skill",
-                  "ItemID": "spinning_slash",
+                  "MasterType": "unique",
+                  "ItemCategory": "extra_skill",
+                  "ItemID": "tri_strike",
                   "ItemMode": "none",
                   "ItemStatus": "ready"
                 },
                 "minecraft:custom_name": {
-                  "text": "剣技：回転斬り",
-                  "color": "#00ffff",
+                  "text": "英雄の剣",
+                  "color": "#ffa500",
                   "bold": true
                 },
                 "minecraft:lore": [
                   {
-                    "text": "Select Skill",
-                    "color": "#00ff00",
+                    "text": "Extra Skill",
+                    "color": "#800080",
                     "underlined": true,
                     "bold": true
                   },
                   {
-                    "text": "剣を高速で回転させ、周囲の敵を攻撃する",
+                    "text": "",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "草刈りに便利",
+                    "text": "",
                     "color": "#ffffff"
                   },
                   "====================",
                   {
-                    "text": "CT : 18s",
+                    "text": "Charge: 3200",
                     "color": "#00ff00",
                     "underlined": true
                   },
@@ -60,33 +60,11 @@
                   },
                   "====================",
                   {
-                    "text": "その場から一定範囲内の相手にダメージを与える",
+                    "text": "",
                     "color": "#ffffff"
                   },
                   {
-                    "text": "チャージ時間に応じて威力が上昇する",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "CONNECT：武器-剣 / 武器-斧",
-                    "color": "#ffffff",
-                    "bold": true
-                  },
-                  {
-                    "text": "武器を持ってスニークをすると、チャージをためることができる",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "その後は、武器をクリックで発動できる",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "CONNECT：ブレイブ-英雄の剣",
-                    "color": "#00ffff",
-                    "bold": true
-                  },
-                  {
-                    "text": "体力が一定以上あるときに、剣撃が衝撃波に乗って飛んでいく",
+                    "text": "",
                     "color": "#ffffff"
                   }
                 ]
