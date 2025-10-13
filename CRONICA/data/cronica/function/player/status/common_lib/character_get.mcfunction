@@ -2,6 +2,13 @@
 
 ## アイテム入手
 
+# 保存済みのアイテムIDを取得
+
+
+
+
+
+
 # 全体でアイテムを持っているかを確認(オフハンドはなぜか含まれない)
 $execute as @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}}}]}] run tag @s add TAG.cronica.CHARACTER.$(ItemID).Has
 

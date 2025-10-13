@@ -4,13 +4,11 @@
 $data remove storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate
 $data remove storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand
 $data remove storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand
-$data remove storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Slot
 
 # Set UUID
 $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.UUID set value "$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)"
 $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.UUID set value "$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)"
 $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.UUID set value "$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)"
-$data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Slot.UUID set value "$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)"
 
 # Offhand Item
 $data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Offhand.MasterID set from entity @s equipment.offhand.components."minecraft:custom_data".MasterID
@@ -41,9 +39,4 @@ $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/p
 $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemMode set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemMode
 $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.ItemStatus set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand.ItemStatus
 $execute if data storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Mainhand{ItemStatus:"ready"} run data modify storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/data Activate.Hand set value "Mainhand"
-
-# Save Slot
-
-
-
 # =================================================================================================

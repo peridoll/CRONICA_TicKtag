@@ -1,5 +1,8 @@
 # =================================================================================================
 
+## 移動不可
+effect give @s minecraft:slowness infinite 2 true
+
 ## タグ管理
 tag @s remove TAG.cronica.GIMMICK.wall_climb.Charged
 tag @s remove TAG.cronica.DETECT.IsSneaking

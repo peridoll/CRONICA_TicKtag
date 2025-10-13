@@ -1,4 +1,14 @@
 # =================================================================================================
+
+scoreboard objectives add SCORE.cronica.MODE.apollon_bow dummy
+scoreboard objectives add SCORE.cronica.MODE.apollon_arrow dummy
+
+scoreboard objectives add SCORE.cronica.MODE.begin_twilight dummy
+
+scoreboard objectives add SCORE.cronica.MODE.wind_knowledge dummy
+
+scoreboard objectives add SCORE.cronica.MODE.shutdown_flare dummy
+
 scoreboard objectives add SCORE.cronica.MODE.flying_feather dummy
 scoreboard objectives add SCORE.cronica.TIMER.flying_feather.ActivateTime dummy
 scoreboard objectives add SCORE.cronica.TIMER.flying_feather.CoolTime dummy

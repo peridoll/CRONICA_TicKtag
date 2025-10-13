@@ -1,7 +1,7 @@
 # =================================================================================================
 
 # 所持アイテム情報更新
-function cronica:player/status/inventory/data/save
+function cronica:player/status/inventory/slot/save
 
 # 能力呼び出し：実行時
 function cronica:player/status/detection/boot/change_inventory

@@ -12,5 +12,5 @@ function cronica:player/status/common_lib/character_run {MasterID: "ikaros", Mas
 # =================================================================================================
 
 ##【 固有処理 】
-
+execute as @s at @s positioned ^ ^ ^3 run summon lightning_bolt ~ ~ ~
 # =================================================================================================
