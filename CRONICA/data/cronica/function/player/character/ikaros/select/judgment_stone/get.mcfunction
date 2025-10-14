@@ -8,7 +8,7 @@
 # ItemID     : master_sword / judgment_stone / etc...
 
 # アイテムを入手する処理を実行
-function cronica:player/status/common_lib/character_get {MasterID: "ikaros", MasterType: "select", ItemID: "judgment_stone"}
+function cronica:player/status/common_lib/character_get {MasterID: "ikaros", MasterType: "select", ItemID: "judgment_stone", ItemCategory: "select_skill"}
 # =================================================================================================
 
 ##【 固有処理 】

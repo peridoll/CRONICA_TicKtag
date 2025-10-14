@@ -8,7 +8,7 @@
 # ItemID     : master_sword / flying_feather / etc...
 
 # アイテムを入手する処理を実行
-function cronica:player/status/common_lib/character_get {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
+function cronica:player/status/common_lib/character_get {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather", ItemCategory: "select_skill"}
 # =================================================================================================
 
 ##【 固有処理 】

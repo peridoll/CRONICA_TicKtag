@@ -515,17 +515,14 @@
               },
               "change_inventory": {
                 "run.mcfunction": [
-  // # =================================================================================================
+                  // # =================================================================================================
 
-  // # 所持アイテム情報更新
-  // function cronica:player/status/inventory/data/save
+                  // # 所持アイテム情報更新
+                  // function cronica:player/status/inventory/slot/save/run
 
-  // # 能力呼び出し：実行時
-  // function cronica:player/status/detection/boot/change_inventory
-
-  // # 実績解除
-  // advancement revoke @s only cronica:change_inventory
-  // # =================================================================================================
+                  // # 実績解除
+                  // advancement revoke @s only cronica:change_inventory
+                  // # =================================================================================================
                 ]
               },
               "revoke.mcfunction": [
@@ -772,31 +769,177 @@
               "match_battle_set.mcfunction": [
               ]
             },
-            "model": {
-              "runed.mcfunction": [
-              ]
+            "slot": {
+              "save": {
+                "run.mcfunction": [
+                  // # =================================================================================================
+
+                  // # UUID取得
+                  // function cronica:system/common/storage/get_uuid
+
+                  // # MainWeapon
+                  // data modify storage cronica:temp/uuid ItemCategory set value "main_weapon"
+                  // function cronica:player/status/inventory/slot/save_lib with storage cronica:temp/uuid
+                  // # SubWeapon
+                  // data modify storage cronica:temp/uuid ItemCategory set value "sub_weapon"
+                  // function cronica:player/status/inventory/slot/save_lib with storage cronica:temp/uuid
+                  // # Ammo
+                  // data modify storage cronica:temp/uuid ItemCategory set value "ammo"
+                  // function cronica:player/status/inventory/slot/save_lib with storage cronica:temp/uuid
+                  // # UniqueSkill
+                  // data modify storage cronica:temp/uuid ItemCategory set value "unique_skill"
+                  // function cronica:player/status/inventory/slot/save_lib with storage cronica:temp/uuid
+                  // # PassiveSkill
+                  // data modify storage cronica:temp/uuid ItemCategory set value "passive_skill"
+                  // function cronica:player/status/inventory/slot/save_lib with storage cronica:temp/uuid
+                  // # ExtraSkill
+                  // data modify storage cronica:temp/uuid ItemCategory set value "extra_skill"
+                  // function cronica:player/status/inventory/slot/save_lib with storage cronica:temp/uuid
+                  // # =================================================================================================
+                ],
+                "main.mcfunction": [
+                  // # =================================================================================================
+
+                  // # スコアボード生成
+                  // scoreboard objectives add SCORE.cronica.STATUS.SavingSlot dummy
+                  // scoreboard players set @s SCORE.cronica.STATUS.SavingSlot 0
+
+                  // # データ記入
+                  // data remove storage cronica:temp SavingSlot
+                  // execute store result storage cronica:temp SavingSlot.Slot int 1 run scoreboard players get @s SCORE.cronica.STATUS.SavingSlot
+                  // $data modify storage cronica:temp SavingSlot.ItemCategory set value $(ItemCategory)
+                  // $data modify storage cronica:temp SavingSlot.UUID set value $(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)
+
+                  // # スロット確認
+                  // function cronica:player/status/inventory/slot/save/main_lib with storage cronica:temp SavingSlot
+
+                  // # 対象無し
+                  // execute if score @s SCORE.cronica.STATUS.SavingSlot matches 35.. run function cronica:player/status/inventory/slot/save/finish with storage cronica:temp SavingSlot
+
+                  // # 再起処理
+                  // execute if score @s SCORE.cronica.STATUS.SavingSlot matches 0.. run scoreboard players add @s SCORE.cronica.STATUS.SavingSlot 1
+                  // execute if score @s SCORE.cronica.STATUS.SavingSlot matches 0.. run function cronica:player/status/inventory/slot/save/main
+                  // # =================================================================================================
+                ],
+                "main_lib.mcfunction": [
+                  // # =================================================================================================
+
+                  // # アイテムスロット情報保存
+                  // $execute if entity @s[nbt= {Inventory: [{components: {"minecraft:custom_data": {"ItemCategory": "$(ItemCategory)"}}, Slot: $(Slot)b}]}] run \
+                  //   data modify storage cronica:personal/$(UUID)/player/inventory/slot $(ItemCategory) set value $(Slot)
+                  // $execute if entity @s[nbt= {Inventory: [{components: {"minecraft:custom_data": {"ItemCategory": "$(ItemCategory)"}}, Slot: $(Slot)b}]}] run \
+                  //   scoreboard objectives remove SCORE.cronica.STATUS.SavingSlot
+                  // # =================================================================================================
+                ],
+                "finish.mcfunction": [
+                  // # =================================================================================================
+
+                  // # オフハンド検知
+                  // data modify storage cronica:temp SavingSlot.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemCategory
+                  // $execute if data storage cronica:temp SavingSlot{Offhand: "$(ItemCategory)"} run data modify storage cronica:personal/$(UUID)/player/inventory/slot $(ItemCategory) set value 106
+
+                  // # 状態回復
+                  // scoreboard objectives remove SCORE.cronica.STATUS.SavingSlot
+                  // data remove storage cronica:temp SavingSlot
+                  // # =================================================================================================
+                ]
+              },
+              "load": {
+                "run.mcfunction": [
+                ],
+                "load.mcfunction": [
+                  // # =================================================================================================
+
+                  // # UUID取得
+                  // function cronica:system/common/storage/get_uuid
+
+                  // # 関数実行
+                  // $data modify storage cronica:temp/uuid MasterID set value "$(MasterID)"
+                  // $data modify storage cronica:temp/uuid MasterType set value "$(MasterType)"
+                  // $data modify storage cronica:temp/uuid ItemID set value "$(ItemID)"
+                  // $data modify storage cronica:temp/uuid ItemCategory set value "$(ItemCategory)"
+                  // function cronica:player/status/inventory/slot/load/load_lib with storage cronica:temp/uuid
+                  // # =================================================================================================
+                ],
+                "load_lib.mcfunction": [
+                  // # =================================================================================================
+
+                  // # スコア取得
+                  // scoreboard objectives add SCORE.cronica.STATUS.LoadingSlot dummy
+                  // scoreboard players set @s SCORE.cronica.STATUS.LoadingSlot -1
+                  // $execute store result score @s SCORE.cronica.STATUS.LoadingSlot run data get storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/slot $(ItemCategory)
+
+                  // # データ記入
+                  // $data modify storage cronica:temp load_lib_inv.MasterID set value "$(MasterID)"
+                  // $data modify storage cronica:temp load_lib_inv.MasterType set value "$(MasterType)"
+                  // $data modify storage cronica:temp load_lib_inv.ItemID set value "$(ItemID)"
+                  // $data modify storage cronica:temp load_lib_inv.ItemCategory set from storage cronica:personal/$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)/player/inventory/slot $(ItemCategory)
+                  // execute store result storage cronica:temp load_lib_inv.LoadingSlot int 1 run scoreboard players get @s SCORE.cronica.STATUS.LoadingSlot
+
+                  // # インベントリ
+                  // execute if score @s SCORE.cronica.STATUS.LoadingSlot matches 0..35 run function cronica:player/status/inventory/slot/load/load_lib_inv with storage cronica:temp load_lib_inv
+                  // # オフハンド
+                  // $execute if score @s SCORE.cronica.STATUS.LoadingSlot matches 106 run loot replace entity @s weapon.offhand loot cronica:cronica:character/$(MasterID)/$(MasterType)/$(ItemID)
+                  // # 未記入
+                  // $execute unless score @s SCORE.cronica.STATUS.LoadingSlot matches 0.. run loot give @s loot cronica:character/$(MasterID)/$(MasterType)/$(ItemID)
+
+                  // # 撤去
+                  // scoreboard objectives remove SCORE.cronica.STATUS.LoadingSlot
+                  // # =================================================================================================
+                ],
+                "load_lib_inv.mcfunction": [
+                  // # =================================================================================================
+
+                  // # インベントリ
+                  // $execute if score @s SCORE.cronica.STATUS.LoadingSlot matches $(LoadingSlot) run loot replace entity @s container.$(LoadingSlot) loot cronica:cronica:character/$(MasterID)/$(MasterType)/$(ItemID)
+                  // # =================================================================================================
+                ]
+              }
             }
           },
           "common_lib": {
             "character_get.mcfunction": [
               // # =================================================================================================
 
-              // ## アイテム入手
+              // ## キャラクターアイテム入手
+
+              // ##【 アイテム所在確認 】(所在不明の場合、入手処理を実行)
 
               // # 全体でアイテムを持っているかを確認(オフハンドはなぜか含まれない)
               // $execute as @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID": "$(ItemID)"}}}]}] run tag @s add TAG.cronica.CHARACTER.$(ItemID).Has
-
               // # オフハンドにアイテムがあるかを確認
-              // data modify storage cronica:temp ItemID.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
-              // $execute if data storage cronica:temp ItemID.Offhand{Value: "$(ItemID)"} run tag @s add TAG.cronica.CHARACTER.$(ItemID).Has
+              // data modify storage cronica:temp character_get.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
+              // $execute if data storage cronica:temp character_get{Offhand: "$(ItemID)"} run tag @s add TAG.cronica.CHARACTER.$(ItemID).Has
 
-              // # どこにもなかったから入手
+              // ##【 所定のアイテムを入手 】
+
+              // # アイテムを削除 (検知範囲外に所持していた場合、この処理で削除を行う)
               // $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] run function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/item_clear
-              // $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] run loot give @s loot cronica:character/$(MasterID)/$(MasterType)/$(ItemID)
+              // # "MasterType" が "Unique" の場合、保存済みのアイテムIDを取得 ("Select"は複数所持可能なため現状記憶が困難)
+              // $data modify storage cronica:temp character_get.MasterType set value "$(MasterType)"
+              // $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] if data storage cronica:temp character_get{MasterType: "unique"} run function cronica:player/status/inventory/slot/load/load {MasterID: "$(MasterID)", MasterType: "$(MasterType)", ItemID: "$(ItemID)", ItemCategory: "$(ItemCategory)"}
+              // # "SelectSkill"を入手
+              // $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] if data storage cronica:temp character_get{MasterType: "select"} run loot give @s loot cronica:character/$(MasterID)/select/$(ItemID)
 
-              // # 片付け
+              // ##【 アイテムを装飾 】
+
+              // # アイテムの装飾 (入手したアイテムに対してのみ実行)
+              // $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] run function cronica:player/status/common_lib/modify {ItemID: "$(ItemID)", Model: "common/lore/item_category/$(ItemCategory)", Value:""}
+              // $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] run function cronica:player/status/common_lib/modify {ItemID: "$(ItemID)", Model: "character/$(MasterID)/$(MasterType)/$(ItemID)/description", Value:""}
+              // # $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] run function cronica:player/status/common_lib/modify_status {ItemID: "$(ItemID)", MasterID: "$(MasterID)", MasterType: "$(MasterType)", ItemCategory: "$(ItemCategory)"}
+              // $execute as @s[tag=!TAG.cronica.CHARACTER.$(ItemID).Has] run function cronica:player/status/common_lib/modify {ItemID: "$(ItemID)", Model: "character/$(MasterID)/$(MasterType)/$(ItemID)/flavor", Value:""}
+
+              // ##【 状態回復 】
+
+              // # 状態初期化
               // $tag @s remove TAG.cronica.CHARACTER.$(ItemID).Has
-              // data remove storage cronica:temp ItemID
+              // data remove storage cronica:temp character_get
+
+              // ##【 スコア管理 】
+
+              // # モード用スコア設置
+              // $scoreboard objectives add SCORE.cronica.MODE.$(ItemID) dummy
+              // $scoreboard players add @s SCORE.cronica.MODE.$(ItemID) 0
               // # =================================================================================================
             ],
             "character_run.mcfunction": [
