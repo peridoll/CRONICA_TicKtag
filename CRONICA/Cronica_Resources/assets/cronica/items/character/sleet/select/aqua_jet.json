@@ -1,0 +1,18 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "empty"
+    },
+    "cases": [
+      {
+        "when": "default",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/sleet/select/aqua_jet/default"
+        }
+      }
+    ]
+  }
+}

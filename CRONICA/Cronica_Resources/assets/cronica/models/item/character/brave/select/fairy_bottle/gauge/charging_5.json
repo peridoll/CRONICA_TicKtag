@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/brave/select/fairy_bottle/default",
+  "textures": {
+    "layer0": "cronica:item/character/brave/select/fairy_bottle/gauge/fairy_bottle_charging_5"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "empty"
+    },
+    "cases": [
+      {
+        "when": "default",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/ikaros/unique/shutdown_flare/default"
+        }
+      }
+    ]
+  }
+}

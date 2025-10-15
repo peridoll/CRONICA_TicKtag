@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cronica:item/character/sleet/select/healing_rain/healing_rain_default"
+  }
+}
