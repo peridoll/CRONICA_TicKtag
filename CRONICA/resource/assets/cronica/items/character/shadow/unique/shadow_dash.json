@@ -1,0 +1,18 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "empty"
+    },
+    "cases": [
+      {
+        "when": "default",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/assassin/unique/shadow_dash/default"
+        }
+      }
+    ]
+  }
+}

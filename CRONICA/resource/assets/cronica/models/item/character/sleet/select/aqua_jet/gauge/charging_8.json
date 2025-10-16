@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/sleet/select/aqua_jet/default",
+  "textures": {
+    "layer0": "cronica:item/character/sleet/select/aqua_jet/gauge/aqua_jet_charging_8"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "empty"
+    },
+    "cases": [
+      {
+        "when": "default",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/ikaros/unique/apollon_arrow/default"
+        }
+      },
+      {
+        "when": "ammo_1",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/ikaros/unique/apollon_arrow/ammo_1"
+        }
+      },
+      {
+        "when": "ammo_0",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/ikaros/unique/apollon_arrow/ammo_0"
+        }
+      }
+    ]
+  }
+}
