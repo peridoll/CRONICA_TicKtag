@@ -1,5 +1,8 @@
 # =================================================================================================
 
-# アイテム発動確認
-execute if score @s SCORE.cronica.DETECT.ItemUsing matches 1 run function cronica:player/character/ikaros/select/flying_feather/library/run
+##【 起動処理 】
+
+  # アイテム発動確認
+    execute if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run \
+      function cronica:player/character/ikaros/select/flying_feather/library/run
 # =================================================================================================

@@ -5,7 +5,7 @@ effect give @s minecraft:slowness infinite 2 true
 
 ## タグ管理
 tag @s remove TAG.cronica.GIMMICK.wall_climb.Charged
-tag @s remove TAG.cronica.DETECT.IsSneaking
+tag @s remove TAG.cronica.STATUS.IsSneaking
 
 ## スコア管理
 

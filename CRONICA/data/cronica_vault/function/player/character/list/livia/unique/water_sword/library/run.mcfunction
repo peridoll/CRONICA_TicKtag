@@ -1,1 +1,0 @@
-effect give @s speed 5 3 true

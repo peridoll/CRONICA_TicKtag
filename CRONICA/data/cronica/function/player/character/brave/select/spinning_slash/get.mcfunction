@@ -8,7 +8,7 @@
 # ItemID     : master_sword / spinning_slash / etc...
 
 # アイテムを入手する処理を実行
-function cronica:player/status/common_lib/character_get {MasterID: "brave", MasterType: "select", ItemID: "spinning_slash"}
+function cronica:player/status/common_lib/character_get {MasterID: "brave", MasterType: "select", ItemID: "spinning_slash", ItemCategory: "select_skill"}
 # =================================================================================================
 
 ##【 固有処理 】

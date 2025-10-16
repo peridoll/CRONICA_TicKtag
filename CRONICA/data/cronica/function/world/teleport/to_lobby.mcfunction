@@ -41,7 +41,7 @@ title @s title [{"text":" "}]
 title @s subtitle [{"text":"-","color":"gray","bold":false},{"text":"Main Lobby","color":"gold","bold":false},{"text":"-","color":"gray","bold":false}]
 
 # サーバー参加時通知
-execute as @s[tag=TAG.cronica.SYSTEM.JoinServer] run title @s title [{"text":"<<","color":"gray","bold":false},{"text":" CRONICA ","color":"green","bold":true},{"text":">>","color":"gray","bold":false}]
-execute as @s[tag=TAG.cronica.SYSTEM.JoinServer] run title @s subtitle [{"text":"Presented By TicK-tag"}]
-execute as @s[tag=TAG.cronica.SYSTEM.JoinServer] run tag @s remove TAG.cronica.SYSTEM.JoinServer
+execute as @s[tag=TAG.cronica.STATUS.JoinServer] run title @s title [{"text":"<<","color":"gray","bold":false},{"text":" CRONICA ","color":"green","bold":true},{"text":">>","color":"gray","bold":false}]
+execute as @s[tag=TAG.cronica.STATUS.JoinServer] run title @s subtitle [{"text":"Presented By TicK-tag"}]
+execute as @s[tag=TAG.cronica.STATUS.JoinServer] run tag @s remove TAG.cronica.STATUS.JoinServer
 # =================================================================================================

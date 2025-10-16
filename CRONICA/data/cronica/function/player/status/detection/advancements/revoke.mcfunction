@@ -1,8 +1,9 @@
 # =================================================================================================
 
 # アイテム使用検知
-advancement revoke @s only cronica:using_item
+  advancement revoke @s only cronica:using_item
 
 # インベントリ更新
-advancement revoke @s only cronica:change_inventory
+  advancement revoke @s only cronica:change_inventory
 # =================================================================================================
+# ver 0.10.3

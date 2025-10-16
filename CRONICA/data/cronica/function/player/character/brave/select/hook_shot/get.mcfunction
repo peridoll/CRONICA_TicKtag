@@ -8,7 +8,7 @@
 # ItemID     : master_sword / hook_shot / etc...
 
 # アイテムを入手する処理を実行
-function cronica:player/status/common_lib/character_get {MasterID: "brave", MasterType: "select", ItemID: "hook_shot"}
+function cronica:player/status/common_lib/character_get {MasterID: "brave", MasterType: "select", ItemID: "hook_shot", ItemCategory: "select_skill"}
 # =================================================================================================
 
 ##【 固有処理 】

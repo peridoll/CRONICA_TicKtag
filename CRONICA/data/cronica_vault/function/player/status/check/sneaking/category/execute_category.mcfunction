@@ -1,7 +1,0 @@
-# =================================================================================================
-
-##【 各種処理実行 】
-# 各カテゴリごとの処理へ分岐する
-execute if data storage cronica:context ItemCategory{Value:"MainWeapon"} run function cronica:player/status/check/sneaking/category/main_weapon
-execute if data storage cronica:context ItemCategory{Value:"SelectSkill"} run function cronica:player/status/check/sneaking/category/select_skill
-# =================================================================================================

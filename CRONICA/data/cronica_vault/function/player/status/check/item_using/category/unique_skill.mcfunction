@@ -1,1 +1,0 @@
-execute if data storage cronica:context ItemID{Value:"WaterSword"} if data storage cronica:context ItemStatus{Value:"ready"} if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run function cronica:player/character/list/livia/unique/water_sword/library/run

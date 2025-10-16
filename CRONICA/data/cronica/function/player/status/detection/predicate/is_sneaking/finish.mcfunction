@@ -1,5 +1,18 @@
 # =================================================================================================
-
-# スコア/タグ撤去
-function cronica:player/status/detection/predicate/is_sneaking/reset
+#
+# CRONICA - Is Sneaking Detection
+#
+# run
+# |
+# main
+# └─ finish
+#   └─ reset
+#
 # =================================================================================================
+
+##【起動処理】
+
+  # スコア/タグ撤去
+    function cronica:player/status/detection/predicate/is_sneaking/reset
+# =================================================================================================
+# ver 0.10.3

@@ -8,7 +8,7 @@
 # ItemID     : master_sword / flying_feather / etc...
 
 # アイテムを入手する処理を実行
-function cronica:player/status/common_lib/character_get {MasterID: "ikaros", MasterType: "unique", ItemID: "shutdown_flare"}
+function cronica:player/status/common_lib/character_get {MasterID: "ikaros", MasterType: "unique", ItemID: "shutdown_flare", ItemCategory: "extra_skill"}
 # =================================================================================================
 
 ##【 固有処理 】
