@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/sleet/select/water_veil/default",
-  "textures": {
-    "layer0": "cronica:item/character/sleet/select/water_veil/gauge/water_veil_charging_7"
-  }
-}
