@@ -1,6 +1,6 @@
 # =================================================================================================
 
-# 装飾
-particle minecraft:cloud ~ ~ ~ 0.2 0.2 0.2 0.1 50 force
-playsound minecraft:item.firecharge.use player @a ~ ~ ~ 0.2 1
+# アイテム発動処理
+execute if score @s SCORE.cronica.STATUS.ItemUsing matches 1 run function cronica:player/character/sleet/select/test_item/library/run
+
 # =================================================================================================

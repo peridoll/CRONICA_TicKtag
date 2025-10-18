@@ -1,7 +1,6 @@
 # =================================================================================================
-# エフェクト
-effect clear @s minecraft:levitation
 
-# スコア管理
-scoreboard players set @s SCORE.cronica.TIMER.flying_feather.ActivateTime 19
+tag @s remove TAG.cronica.preview
+scoreboard players reset @s SCORE.cronica.CALC.test_item.Angle45
+
 # =================================================================================================

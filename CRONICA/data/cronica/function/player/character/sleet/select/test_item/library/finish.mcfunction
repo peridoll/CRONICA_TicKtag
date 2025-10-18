@@ -1,8 +1,4 @@
 # =================================================================================================
-# エフェクト
-execute at @s run tp @s ~ ~ ~
-effect clear @s minecraft:levitation
 
-# スコア管理
-function cronica:player/character/ikaros/select/flying_feather/library/finish
+function cronica:player/character/sleet/select/test_item/library/reset
 # =================================================================================================

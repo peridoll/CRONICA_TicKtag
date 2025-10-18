@@ -26,7 +26,7 @@
                   "MasterID": "sleet",
                   "MasterType": "select",
                   "ItemCategory": "skill",
-                  "ItemID": "flying_feather",
+                  "ItemID": "test_item",
                   "ItemMode": "none",
                   "ItemStatus": "ready"
                 },
