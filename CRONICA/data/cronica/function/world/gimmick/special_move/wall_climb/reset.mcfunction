@@ -1,5 +1,8 @@
 # =================================================================================================
 
+# タグ管理
+tag @s remove TAG.cronica.GIMMICK.wall_climb.Charged
+
 # スコア管理
 scoreboard players reset @s SCORE.cronica.GIMMICK.wall_climb.Charging
 execute unless entity @a[scores={SCORE.cronica.GIMMICK.wall_climb.Charging=0..}] run scoreboard objectives remove SCORE.cronica.GIMMICK.wall_climb.Charging

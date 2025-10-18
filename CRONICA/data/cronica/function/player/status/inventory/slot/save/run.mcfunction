@@ -17,6 +17,10 @@
     function cronica:system/common/storage/get_uuid
     function cronica:system/common/storage/set_uuid with storage cronica:temp
 
+  # スコア設置
+    scoreboard objectives add SCORE.cronica.STATUS.SavingSlot dummy
+    scoreboard players add @s SCORE.cronica.STATUS.SavingSlot 0
+
   # すべてのスロットを探索して保存を行っていく
     function cronica:player/status/inventory/slot/save/main
 

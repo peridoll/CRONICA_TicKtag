@@ -9,10 +9,6 @@
 
 ##【 REPEAT 】
 
-  # スコア設置
-    scoreboard objectives add SCORE.cronica.STATUS.SavingSlot dummy
-    scoreboard players add @s SCORE.cronica.STATUS.SavingSlot 0
-
   # スコアをストレージに保存
     execute store result storage cronica:temp SavingSlot.Slot int 1 run scoreboard players get @s SCORE.cronica.STATUS.SavingSlot
 
@@ -20,7 +16,7 @@
     function cronica:player/status/inventory/slot/save/main_lib_check with storage cronica:temp SavingSlot
 
   # 探索終了
-    execute if score @s SCORE.cronica.STATUS.SavingSlot matches 36 run scoreboard players reset @s SCORE.cronica.STATUS.SavingSlot
+    execute if score @s SCORE.cronica.STATUS.SavingSlot matches 36.. run scoreboard players reset @s SCORE.cronica.STATUS.SavingSlot
     execute unless entity @a[scores = {SCORE.cronica.STATUS.SavingSlot = 0..}] run scoreboard objectives remove SCORE.cronica.STATUS.SavingSlot
 
   # 次のスロットへ

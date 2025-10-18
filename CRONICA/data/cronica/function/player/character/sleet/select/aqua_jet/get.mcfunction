@@ -28,5 +28,13 @@ function cronica:player/status/common_lib/inventory_load/get \
 
     # 使用不可
       execute if score @s SCORE.cronica.MODE.aqua_jet matches -2 run function cronica:player/status/common_lib/item_modify {ItemID: "aqua_jet", Model: "common/ban"}
+
+##【 REFRESH 】
+
+  ## スコア管理
+
+    # スコア撤去
+      execute if score @s SCORE.cronica.MODE.aqua_jet matches 0 run scoreboard players reset @s SCORE.cronica.MODE.aqua_jet
+      execute unless entity @a[scores = {SCORE.cronica.MODE.aqua_jet = ..-1}] unless entity @a[scores = {SCORE.cronica.MODE.aqua_jet = 0..}] run scoreboard objectives remove SCORE.cronica.MODE.aqua_jet
 # =================================================================================================
 # ver 0.10.3

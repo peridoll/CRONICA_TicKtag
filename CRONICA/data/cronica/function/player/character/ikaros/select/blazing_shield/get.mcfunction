@@ -28,5 +28,13 @@ function cronica:player/status/common_lib/inventory_load/get \
 
     # 使用不可
       execute if score @s SCORE.cronica.MODE.blazing_shield matches -2 run function cronica:player/status/common_lib/item_modify {ItemID: "blazing_shield", Model: "common/ban"}
+
+##【 REFRESH 】
+
+  ## スコア管理
+
+    # スコア撤去
+      execute if score @s SCORE.cronica.MODE.blazing_shield matches 0 run scoreboard players reset @s SCORE.cronica.MODE.blazing_shield
+      execute unless entity @a[scores = {SCORE.cronica.MODE.blazing_shield = ..-1}] unless entity @a[scores = {SCORE.cronica.MODE.blazing_shield = 0..}] run scoreboard objectives remove SCORE.cronica.MODE.blazing_shield
 # =================================================================================================
 # ver 0.10.3

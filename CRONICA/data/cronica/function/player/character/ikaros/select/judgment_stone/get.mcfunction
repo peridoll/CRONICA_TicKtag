@@ -28,5 +28,13 @@ function cronica:player/status/common_lib/inventory_load/get \
 
     # 使用不可
       execute if score @s SCORE.cronica.MODE.judgment_stone matches -2 run function cronica:player/status/common_lib/item_modify {ItemID: "judgment_stone", Model: "common/ban"}
+
+##【 REFRESH 】
+
+  ## スコア管理
+
+    # スコア撤去
+      execute if score @s SCORE.cronica.MODE.judgment_stone matches 0 run scoreboard players reset @s SCORE.cronica.MODE.judgment_stone
+      execute unless entity @a[scores = {SCORE.cronica.MODE.judgment_stone = ..-1}] unless entity @a[scores = {SCORE.cronica.MODE.judgment_stone = 0..}] run scoreboard objectives remove SCORE.cronica.MODE.judgment_stone
 # =================================================================================================
 # ver 0.10.3
