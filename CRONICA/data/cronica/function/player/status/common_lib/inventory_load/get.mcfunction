@@ -6,6 +6,23 @@
 
 ##【 IMPULSE 】
 
+  ## ストレージ取得
+
+    # ストレージ初期化
+      data modify storage cronica:temp Storage set value "GetInventory"
+
+    # UUID取得
+      function cronica:system/common/storage/get_uuid
+      function cronica:system/common/storage/set_uuid with storage cronica:temp
+
+    # データ記入
+      $data modify storage cronica:temp GetInventory.MasterID \
+        set value "$(MasterID)"
+      $data modify storage cronica:temp GetInventory.MasterType \
+        set value "$(MasterType)"
+      $data modify storage cronica:temp GetInventory.ItemID \
+        set value "$(ItemID)"
+
   ## アイテム所在確認
 
     # 全体でアイテムを持っているかを確認(オフハンドはなぜか含まれない)
@@ -22,7 +39,7 @@
 
     # アイテム入手
       $execute as @s[tag =! TAG.cronica.CHARACTER.$(ItemID).Has] run \
-        function cronica:player/status/common_lib/inventory_load/load {MasterID: "$(MasterID)", MasterType: "$(MasterType)", ItemID: "$(ItemID)", ItemCategory: "$(ItemCategory)"}
+        function cronica:player/status/common_lib/inventory_load/load with storage cronica:temp GetInventory
       $execute as @s[tag =! TAG.cronica.CHARACTER.$(ItemID).Has] run \
         loot give @s loot cronica:character/$(MasterID)/$(MasterType)/$(ItemID)
 

@@ -21,15 +21,13 @@
   # MasterID     : brave        / ikaros         / etc..
   # MasterType   : unique       / select         / etc..
   # ItemID       : master_sword / flying_feather / etc..
-  # ItemCategory : main_weapon  / select_skill   / etc..
 
   # 所持アイテム置き換え、スコアボード作成、コンフィグ読み込み、メイン処理呼び出し、CT処理呼び出し などを実行
   function cronica:player/status/common_lib/character_run \
     {\
       MasterID     : "ikaros", \
       MasterType   : "select", \
-      ItemID       : "flying_feather", \
-      ItemCategory : "select_skill" \
+      ItemID       : "flying_feather" \
     }
 # =================================================================================================
 

@@ -6,22 +6,19 @@
 # MasterID     : brave        / ikaros         / etc...
 # MasterType   : unique       / select         / etc...
 # ItemID       : master_sword / flying_feather / etc...
-# ItemCategory : main_weapon  / select_skill   / etc...
 
 # アイテムを入手する処理を実行
 function cronica:player/status/common_lib/inventory_load/get \
   { \
     MasterID     : "ikaros", \
     MasterType   : "unique", \
-    ItemID       : "apollon_bow", \
-    ItemCategory : "main_weapon" \
+    ItemID       : "apollon_bow" \
   }
 function cronica:player/status/common_lib/inventory_load/get \
   { \
     MasterID     : "ikaros", \
     MasterType   : "unique", \
-    ItemID       : "apollon_arrow", \
-    ItemCategory : "ammo" \
+    ItemID       : "apollon_arrow" \
   }
 # =================================================================================================
 

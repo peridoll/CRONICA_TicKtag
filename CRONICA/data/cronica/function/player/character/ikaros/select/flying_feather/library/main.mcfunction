@@ -15,7 +15,7 @@
 #
 # =================================================================================================
 
-##【 継続処理 】
+##【 REPEAT 】
 
   # タイマー増加
     scoreboard players add @a[scores = {SCORE.cronica.TIMER.flying_feather.ActivateTime = 0..}] SCORE.cronica.TIMER.flying_feather.ActivateTime 1
@@ -31,7 +31,7 @@
       run \
         function cronica:player/character/ikaros/select/flying_feather/library/stop_ceiling
     execute \
-        as @a[scores = {SCORE.cronica.TIMER.flying_feather.ActivateTime = 0..}, tag=TAG.cronica.STUNNING] \
+        as @a[scores = {SCORE.cronica.TIMER.flying_feather.ActivateTime = 0..}, tag = TAG.cronica.STUNNING] \
       run \
         function cronica:player/character/ikaros/select/flying_feather/library/stop_stun
 

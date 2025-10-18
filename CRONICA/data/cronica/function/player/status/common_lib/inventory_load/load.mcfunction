@@ -2,19 +2,28 @@
 
 ##【 IMPULSE 】
 
-  # ストレージ初期化
-    data modify storage cronica:temp Storage set value "GetInventory"
+  ## データ取得
 
-  # UUID取得
-    function cronica:system/common/storage/get_uuid
-    function cronica:system/common/storage/set_uuid with storage cronica:temp
+    # スロット取得
+      scoreboard objectives add SCORE.cronica.STATUS.GetInventory dummy
+      scoreboard players set @s SCORE.cronica.STATUS.GetInventory -1
+      $execute store result score @s SCORE.cronica.STATUS.GetInventory run data get storage cronica:personal/$(UUID)/inventory/slot $(ItemID)
 
-  # アイテム取得
-    function cronica:player/status/inventory/slot/load/main with storage cronica:temp GetInventory
+
+
+
+
+
+
+
+
+
+
+
 
 ##【 REFRESH 】
 
-  # ストレージ削除
-    data remove storage cronica:temp Storage
+  # スコア撤去
+    scoreboard objectives remove SCORE.cronica.STATUS.GetInventory
 # =================================================================================================
 # ver 0.10.3
