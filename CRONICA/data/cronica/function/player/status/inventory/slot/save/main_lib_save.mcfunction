@@ -1,5 +1,5 @@
 # =================================================================================================
 
 # ストレージに保存
-$data modify storage cronica:personal/$(UUID)/saving_slot $(ItemID) set value "$(Slot)"
+$data modify storage cronica:personal/$(UUID)/inventory/slot $(ItemID) set value "$(Slot)"
 # =================================================================================================

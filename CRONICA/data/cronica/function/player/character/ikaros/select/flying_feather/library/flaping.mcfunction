@@ -1,6 +1,24 @@
 # =================================================================================================
-
-# 装飾
-particle minecraft:cloud ~ ~ ~ 0.2 0.2 0.2 0.1 50 force
-playsound minecraft:item.firecharge.use player @a ~ ~ ~ 0.2 1
+#
+# CRONICA - Ikaros - Flying Feather
+#
+# run
+# |
+# main
+# └─ stop_ceiling
+# └─ stop_stun
+# └─ flaping
+# └─ finish
+#   └─ reset
+# |
+# ct
+#
 # =================================================================================================
+
+##【 起動処理 】
+
+  # 装飾
+    particle minecraft:cloud ~ ~ ~ 0.2 0.2 0.2 0.1 50 force
+    playsound minecraft:item.firecharge.use player @a ~ ~ ~ 0.2 1
+# =================================================================================================
+# ver 0.10.3

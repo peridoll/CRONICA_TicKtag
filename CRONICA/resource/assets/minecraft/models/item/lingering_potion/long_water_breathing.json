@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/lingering_potion/water_breathing_overlay",
+    "layer1": "minecraft:item/lingering_potion/long_water_breathing"
+  }
+}

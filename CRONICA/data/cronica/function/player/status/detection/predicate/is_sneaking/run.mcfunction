@@ -1,6 +1,6 @@
 # =================================================================================================
 #
-# CRONICA - Is Sneaking Detection
+# CRONICA - PREDICATE IS SNEAKING DETECTION
 #
 # run
 # |
@@ -10,14 +10,16 @@
 #
 # =================================================================================================
 
-##【起動処理】
+##【 IMPULSE 】
 
-  # スコア管理
-    scoreboard objectives add SCORE.cronica.STATUS.IsSneaking dummy
-    scoreboard players add @s SCORE.cronica.STATUS.IsSneaking 1
+  ## 状態管理
 
-  # タグ管理
-    tag @s remove TAG.cronica.STATUS.IsSneaked
-    tag @s add TAG.cronica.STATUS.IsSneaking
+    # スコア管理
+      scoreboard objectives add SCORE.cronica.STATUS.IsSneaking dummy
+      scoreboard players add @s SCORE.cronica.STATUS.IsSneaking 1
+
+    # タグ管理
+      tag @s remove TAG.cronica.STATUS.IsSneaked
+      tag @s add TAG.cronica.STATUS.IsSneaking
 # =================================================================================================
 # ver 0.10.3

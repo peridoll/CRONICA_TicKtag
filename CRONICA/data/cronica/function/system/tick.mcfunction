@@ -11,7 +11,7 @@
 ##【 継続処理 】
 
   # プレイヤー管理
-    execute if entity @a[tag = TAG.cronica.GAMING] run function cronica:player/status/tick
+    function cronica:player/status/tick
 
   # ワールド管理
     execute if entity @a[tag = TAG.cronica.GAMING] run function cronica:world/gimmick/tick

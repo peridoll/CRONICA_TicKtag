@@ -1,6 +1,6 @@
 # =================================================================================================
 #
-# CRONICA - Is Sneaking Detection
+# CRONICA - PREDICATE IS SNEAKING DETECTION
 #
 # run
 # |
@@ -10,14 +10,10 @@
 #
 # =================================================================================================
 
-##【起動処理】
+##【 REPEAT 】
 
   # 使用終了検知
-    execute as @s[tag = TAG.cronica.STATUS.IsSneaked, scores = {SCORE.cronica.STATUS.IsSneaking = 1..}] run \
-      function cronica:player/status/detection/predicate/is_sneaking/finish
-    tag @s[scores = {SCORE.cronica.STATUS.IsSneaking = 1..}] add TAG.cronica.STATUS.IsSneaked
-
-  # 能力呼び出し：実行時/実行中
-    # function cronica:player/status/detection/boot/is_sneaking
+    execute if entity @s[tag = TAG.cronica.STATUS.IsSneaked] run function cronica:player/status/detection/predicate/is_sneaking/finish
+    tag @s add TAG.cronica.STATUS.IsSneaked
 # =================================================================================================
 # ver 0.10.3
