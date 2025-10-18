@@ -24,6 +24,7 @@
     # 時間設定
     # /* ここの数字を変えると、インベントリ更新後、何秒経過で情報を修正するか設定できる (1s = 20tick) */
       scoreboard players set #CONFIG.cronica.STATUS.ChangeInventory.BOOT_TIME SCORE.cronica.CONFIG 100
+      execute if entity @s[tag = dev] run scoreboard players set #CONFIG.cronica.STATUS.ChangeInventory.BOOT_TIME SCORE.cronica.CONFIG 1
 
   ## 後続処理
 

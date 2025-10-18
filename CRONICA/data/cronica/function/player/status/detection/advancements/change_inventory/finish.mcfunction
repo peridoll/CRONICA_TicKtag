@@ -16,7 +16,7 @@
 ##【 IMPULSE 】
 
   # 所持アイテムの格納先の保存
-    function cronica:player/status/inventory/slot/save/run
+    execute if entity @s[tag = TAG.cronica.GAMING] run function cronica:player/status/inventory/slot/save/run
 
 ##【 REFRESH 】
 

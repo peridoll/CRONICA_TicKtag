@@ -1,32 +1,31 @@
 # =================================================================================================
 #
-# SavingSlot
+# CRONICA - SLOT SAVE
 #
 # run
 # └─ main
 #
-# 現在所持しているアイテムの座標を保存する
-#
 # =================================================================================================
 
-# スコア設置
-scoreboard objectives add SCORE.cronica.STATUS.SavingSlot dummy
-scoreboard players add @s SCORE.cronica.STATUS.SavingSlot 0
+##【 REPEAT 】
 
-# スコアをストレージに保存
-execute store result storage cronica:temp SavingSlot.Slot int 1 run scoreboard players get @s SCORE.cronica.STATUS.SavingSlot
+  # スコア設置
+    scoreboard objectives add SCORE.cronica.STATUS.SavingSlot dummy
+    scoreboard players add @s SCORE.cronica.STATUS.SavingSlot 0
 
-# 探索と保存
-function cronica:player/status/inventory/slot/save/main_lib_check with storage cronica:temp SavingSlot
+  # スコアをストレージに保存
+    execute store result storage cronica:temp SavingSlot.Slot int 1 run scoreboard players get @s SCORE.cronica.STATUS.SavingSlot
 
-# 探索終了
-execute if score @s SCORE.cronica.STATUS.SavingSlot matches 36 run scoreboard players reset @s SCORE.cronica.STATUS.SavingSlot
-execute unless entity @a[scores = {SCORE.cronica.STATUS.SavingSlot = 0..}] run scoreboard objectives remove SCORE.cronica.STATUS.SavingSlot
+  # 探索と保存
+    function cronica:player/status/inventory/slot/save/main_lib_check with storage cronica:temp SavingSlot
 
-# 次のスロットへ
-execute if score @s SCORE.cronica.STATUS.SavingSlot matches 0..35 run scoreboard players add @s SCORE.cronica.STATUS.SavingSlot 1
-execute if score @s SCORE.cronica.STATUS.SavingSlot matches 0..35 run function cronica:player/status/inventory/slot/save/main
+  # 探索終了
+    execute if score @s SCORE.cronica.STATUS.SavingSlot matches 36 run scoreboard players reset @s SCORE.cronica.STATUS.SavingSlot
+    execute unless entity @a[scores = {SCORE.cronica.STATUS.SavingSlot = 0..}] run scoreboard objectives remove SCORE.cronica.STATUS.SavingSlot
 
+  # 次のスロットへ
+    execute if score @s SCORE.cronica.STATUS.SavingSlot matches 0..35 run scoreboard players add @s SCORE.cronica.STATUS.SavingSlot 1
+    execute if score @s SCORE.cronica.STATUS.SavingSlot matches 0..35 run function cronica:player/status/inventory/slot/save/main
 # =================================================================================================
 
 # # オフハンド検知
@@ -72,3 +71,4 @@ execute if score @s SCORE.cronica.STATUS.SavingSlot matches 0..35 run function c
 # $execute if entity @s[nbt= {Inventory: [{components: {"minecraft:custom_data": {"ItemCategory": "$(ItemCategory)"}}, Slot: 34b}]}] run data modify storage cronica:personal/$(UUID)/inventory/slot $(ItemCategory) set value 34
 # $execute if entity @s[nbt= {Inventory: [{components: {"minecraft:custom_data": {"ItemCategory": "$(ItemCategory)"}}, Slot: 35b}]}] run data modify storage cronica:personal/$(UUID)/inventory/slot $(ItemCategory) set value 35
 # =================================================================================================
+# ver 0.10.3
