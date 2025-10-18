@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/splash_potion/turtle_master_overlay",
-    "layer1": "minecraft:item/splash_potion/strong_turtle_master"
-  }
-}
