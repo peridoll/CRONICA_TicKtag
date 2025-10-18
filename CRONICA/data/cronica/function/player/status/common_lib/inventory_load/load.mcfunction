@@ -4,26 +4,16 @@
 
   ## データ取得
 
-    # スロット取得
-      scoreboard objectives add SCORE.cronica.STATUS.GetInventory dummy
-      scoreboard players set @s SCORE.cronica.STATUS.GetInventory -1
-      $execute store result score @s SCORE.cronica.STATUS.GetInventory run data get storage cronica:personal/$(UUID)/inventory/slot $(ItemID)
+    # スロットID取得
+      $data modify storage cronica:temp GetInventory.Slot set from storage cronica:personal/$(UUID)/inventory/slot $(ItemID)
 
+  ## アイテム取得
 
+    # 通常インベントリ
+      function cronica:player/status/common_lib/inventory_load/load_lib with storage cronica:temp GetInventory
 
-
-
-
-
-
-
-
-
-
-
-##【 REFRESH 】
-
-  # スコア撤去
-    scoreboard objectives remove SCORE.cronica.STATUS.GetInventory
+    # オフハンド
+      $execute if data storage cronica:temp GetInventory{Slot: "36"} if data storage cronica:temp GetInventory{Offhand: ""} run tag @s add TAG.cronica.CHARACTER.$(ItemID).Has
+      $execute if data storage cronica:temp GetInventory{Slot: "36"} if data storage cronica:temp GetInventory{Offhand: ""} run loot replace entity @s weapon.offhand loot cronica:character/$(MasterID)/$(MasterType)/$(ItemID)
 # =================================================================================================
 # ver 0.10.3

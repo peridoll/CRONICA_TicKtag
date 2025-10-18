@@ -29,6 +29,7 @@
       $execute as @s[nbt = {Inventory: [{components: {"minecraft:custom_data": {"ItemID": "$(ItemID)"}}}]}] run tag @s add TAG.cronica.CHARACTER.$(ItemID).Has
 
     # オフハンドにアイテムがあるかを確認
+      data modify storage cronica:temp GetInventory.Offhand set value ""
       data modify storage cronica:temp GetInventory.Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
       $execute if data storage cronica:temp GetInventory{Offhand: "$(ItemID)"} run tag @s add TAG.cronica.CHARACTER.$(ItemID).Has
 
@@ -47,7 +48,7 @@
 
   # 状態初期化
     $tag @s remove TAG.cronica.CHARACTER.$(ItemID).Has
-    data remove storage cronica:temp GetInventory
+    # data remove storage cronica:temp GetInventory
 
 ##【 スコア管理 】
 
