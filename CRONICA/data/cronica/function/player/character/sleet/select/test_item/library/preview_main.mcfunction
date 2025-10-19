@@ -12,7 +12,7 @@ function cronica:player/status/common_lib/character_run {MasterID: "sleet", Mast
 # =================================================================================================
 
 #強制終了
-execute as @s[tag=TAG.cronica.preview] if score @s SCORE.cronica.TIMER.test_item.reset_request matches 100.. run function cronica:player/character/sleet/select/test_item/library/reset_request
+execute as @s[tag=TAG.cronica.preview] if score @s SCORE.cronica.TIMER.test_item.reset_request matches 100.. run function cronica:player/character/sleet/select/test_item/library/finish
 scoreboard players add @a[tag=TAG.cronica.preview] SCORE.cronica.TIMER.test_item.reset_request 1
 
 # プレビューの更新
