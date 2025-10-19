@@ -21,6 +21,9 @@ effect give @s minecraft:instant_health infinite 100 true
 effect give @s minecraft:resistance infinite 100 true
 effect give @s minecraft:night_vision infinite 0 true
 
+# リセット
+function cronica:player/status/common_lib/reset/run
+
 # インベントリ
 clear @s
 function cronica:player/status/inventory/kit/lobby_set
