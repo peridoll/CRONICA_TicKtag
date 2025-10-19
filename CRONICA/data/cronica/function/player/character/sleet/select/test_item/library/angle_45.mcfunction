@@ -1,6 +1,6 @@
 # =================================================================================================
 
-# 向き（ヨー）を45度単位で丸める
+# 向きを45度単位で丸める
 scoreboard players set @s SCORE.cronica.CALC.test_item.Angle45 0
 
 execute if entity @s[y_rotation=22.5..67.5] run scoreboard players set @s SCORE.cronica.CALC.test_item.Angle45 45
