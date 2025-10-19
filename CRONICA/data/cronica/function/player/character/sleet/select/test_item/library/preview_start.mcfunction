@@ -12,6 +12,8 @@ function cronica:player/status/common_lib/character_run {MasterID: "sleet", Mast
 # =================================================================================================
 #スコア、タグ設置
 tag @s add TAG.cronica.preview
+scoreboard objectives add SCORE.cronica.CALC.test_item.Angle45 dummy
+scoreboard objectives add SCORE.cronica.TIMER.test_item.reset_request dummy
 scoreboard players set @s SCORE.cronica.CALC.test_item.Angle45 0
 scoreboard players set @s SCORE.cronica.TIMER.test_item.reset_request 0
 
