@@ -53,6 +53,7 @@
 ##【 スコア管理 】
 
   # モード用スコア設置
+    $execute if entity @s[tag =! TAG.cronica.GAMING] run scoreboard players reset @s SCORE.cronica.MODE.$(ItemID)
     $scoreboard objectives add SCORE.cronica.MODE.$(ItemID) dummy
     $scoreboard players add @s SCORE.cronica.MODE.$(ItemID) 0
 # =================================================================================================

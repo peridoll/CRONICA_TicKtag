@@ -22,7 +22,7 @@
 
   # エフェクト管理
     effect clear @a[scores = {SCORE.cronica.TIMER.flying_feather.ActivateTime = 10}] minecraft:levitation
-    effect give @a[scores = {SCORE.cronica.TIMER.flying_feather.ActivateTime = 0..19}] minecraft:slow_falling infinite 0 true
+    effect give @a[scores = {SCORE.cronica.TIMER.flying_feather.ActivateTime = 0..19}, tag = TAG.cronica.GAMING] minecraft:slow_falling infinite 0 true
 
   # 中断
     execute \
@@ -46,6 +46,10 @@
   # 実行終了
     execute as @a[scores = {SCORE.cronica.TIMER.flying_feather.ActivateTime = 30..}] at @s run \
       function cronica:player/character/ikaros/select/flying_feather/library/finish
+
+  # リセット
+    execute as @a[scores = {SCORE.cronica.TIMER.flying_feather.ActivateTime = 0..}, tag =! TAG.cronica.GAMING] run \
+      function cronica:player/character/ikaros/select/flying_feather/library/reset
 
   # ループ処理
     execute if entity @a[scores = {SCORE.cronica.TIMER.flying_feather.ActivateTime = 0..}] run \

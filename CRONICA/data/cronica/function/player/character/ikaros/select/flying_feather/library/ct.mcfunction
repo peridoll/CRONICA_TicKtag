@@ -44,6 +44,10 @@
       run \
         function cronica:player/status/common_lib/ct/finish {MasterID: "ikaros", MasterType: "select", ItemID: "flying_feather"}
 
+  # リセット
+    execute as @a[scores = {SCORE.cronica.TIMER.flying_feather.CoolTime = 0..}, tag =! TAG.cronica.GAMING] run \
+      function cronica:player/status/common_lib/ct/reset {ItemID: "flying_feather"}
+
   # ループ処理
     execute if entity @a[scores = {SCORE.cronica.TIMER.flying_feather.CoolTime = 0..}] run \
       schedule function cronica:player/character/ikaros/select/flying_feather/library/ct 1t

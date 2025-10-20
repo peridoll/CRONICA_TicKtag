@@ -26,6 +26,9 @@
 
 ##【 REFRESH 】
 
+  # スコア削除
+    scoreboard objectives remove SCORE.cronica.STATUS.SavingSlot
+
   # ストレージ削除
     data remove storage cronica:temp SavingSlot
     data remove storage cronica:temp Storage
