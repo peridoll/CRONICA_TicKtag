@@ -14,11 +14,12 @@
     # リロード検知
       execute \
           as @a[\
-            nbt = {SelectedItem: {components: {"minecraft:custom_data": {"ItemID": "apollon_bow"}}}}, \
             tag = TAG.cronica.WEAPON.apollon_bow.Has, \
-            tag = TAG.cronica.STATUS.IsSneaking\
-        ] run \
-        function cronica:player/character/ikaros/unique/apollon_bow/library/reload
+            tag = TAG.cronica.STATUS.IsSneaking \
+          ] \
+          if predicate cronica:is_on_ground \
+        run \
+          function cronica:player/character/ikaros/unique/apollon_bow/library/reload/check
 
   ## 再起処理
 

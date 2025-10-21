@@ -36,7 +36,7 @@ function cronica:player/status/common_lib/inventory_load/get \
   ## スコア管理
 
     # スコア撤去
-      execute if score @s SCORE.cronica.MODE.test_item matches 0 run scoreboard players reset @s SCORE.cronica.MODE.test_item
-      execute unless entity @a[scores = {SCORE.cronica.MODE.test_item = ..-1}] unless entity @a[scores = {SCORE.cronica.MODE.test_item = 0..}] run scoreboard objectives remove SCORE.cronica.MODE.test_item
+      # execute if score @s SCORE.cronica.MODE.test_item matches 0 run scoreboard players reset @s SCORE.cronica.MODE.test_item
+      # execute unless entity @a[scores = {SCORE.cronica.MODE.test_item = ..-1}] unless entity @a[scores = {SCORE.cronica.MODE.test_item = 0..}] run scoreboard objectives remove SCORE.cronica.MODE.test_item
 # =================================================================================================
 # ver 0.10.3
