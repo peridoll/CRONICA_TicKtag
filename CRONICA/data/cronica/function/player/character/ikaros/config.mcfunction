@@ -52,4 +52,17 @@
       # [ CoolTime ]
       scoreboard players set #CONFIG.cronica.SKILL.blazing_shield.CoolTime SCORE.cronica.CONFIG 480
 # =================================================================================================
+
+##【 DEV STORAGE 】
+
+  ## スコア宣言
+
+    # 太陽神の弓
+      execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.apollon_bow dummy
+      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reloading dummy
+      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Goal dummy
+      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack dummy
+      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack.Count dummy
+      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack.Goal dummy
+# =================================================================================================
 # ver 0.10.4

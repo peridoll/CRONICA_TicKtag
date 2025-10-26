@@ -29,16 +29,4 @@
     # リロード処理
       execute if entity @s[tag = TAG.cronica.WEAPON.apollon_bow.Has] run function cronica:player/status/common_lib/charge/run with storage cronica:temp Reload
 # =================================================================================================
-
-##【 DEV STORAGE 】
-
-  ## スコア宣言
-
-    # リロード中スコア
-    execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reloading dummy
-    execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Goal dummy
-    execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack dummy
-    execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack.Count dummy
-    execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack.Goal dummy
-# =================================================================================================
 # ver 0.10.4
