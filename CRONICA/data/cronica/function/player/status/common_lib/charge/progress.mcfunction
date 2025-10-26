@@ -1,0 +1,26 @@
+# =================================================================================================
+
+## スコア管理
+
+  # 進行度カウントリセット＆加算
+    $scoreboard players reset @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack
+    $scoreboard players add @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count 1
+
+## 画面表示
+
+  # 表示時間設定
+    title @s times 0 60 20
+
+  # 進行度表示
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 1 run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"|","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"|||||||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 2 run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"||","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"||||||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 3 run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"|||","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"|||||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 4 run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"||||","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"||||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 5 run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"|||||","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"|||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 6 run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"||||||","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"||||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 7 run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"|||||||","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"|||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 8 run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"||||||||","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"||","color":"gray","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 9 run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"|||||||||","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"|","color":"gray","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+    $execute if score @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count matches 10.. run title @s actionbar [{"text":"$(Display)","color":"gray","bold":false},{"text":"[","color":"$(DisplayColor1)","bold":false},{"text":"||||||||||","color":"$(DisplayColor2)","bold":true,"underlined":true},{"text":"]","color":"$(DisplayColor1)","bold":false},{"text":"$(Display)","color":"gray","bold":false}]
+# =================================================================================================
+# ver 0.10.4

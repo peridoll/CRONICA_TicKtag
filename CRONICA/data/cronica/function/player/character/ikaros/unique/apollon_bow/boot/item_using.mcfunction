@@ -2,7 +2,5 @@
 
 ##【 IMPULSE 】
 
-  # スコア/タグ 撤去
-    function cronica:player/status/detection/advancements/using_item/reset
 # =================================================================================================
-# ver 0.10.3
+# ver 0.10.4

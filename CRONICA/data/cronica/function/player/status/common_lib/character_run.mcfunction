@@ -21,7 +21,6 @@
       $scoreboard objectives add SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal dummy
     #[目標値設定取得]
       $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal = #CONFIG.cronica.SKILL.$(ItemID).CoolTime SCORE.cronica.CONFIG
-      $scoreboard players operation @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal *= #20 SCORE.cronica.CONFIG
     #[目標値短縮]
       $scoreboard players set @s[tag=TAG.cronica.CT_ZERO] SCORE.cronica.TIMER.$(ItemID).CoolTime.Goal 20
     #[積算値作成]

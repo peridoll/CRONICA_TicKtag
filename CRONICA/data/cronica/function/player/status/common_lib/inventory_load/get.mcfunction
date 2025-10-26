@@ -36,7 +36,7 @@
   ## 所定のアイテムを入手
 
     # アイテムを削除 (検知範囲外に所持していた場合、この処理で削除を行う)
-      $execute as @s[tag =! TAG.cronica.CHARACTER.$(ItemID).Has] run function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/item_clear
+      # $execute as @s[tag =! TAG.cronica.CHARACTER.$(ItemID).Has] run function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/item_clear
 
     # アイテム入手
       $execute as @s[tag =! TAG.cronica.CHARACTER.$(ItemID).Has] run \
