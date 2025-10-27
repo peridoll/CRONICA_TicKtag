@@ -10,7 +10,7 @@
 #   0  : 基本形態
 #   -1 : 使用済み/弾薬切れ状態など
 #   -2 : 使用不可状態などの状態異常時
-#
+
 # =================================================================================================
 
 ##【 IMPULSE 】
@@ -18,7 +18,7 @@
   ## 準備
 
     # コンフィグ読み込み
-      function cronica:player/character/ikaros/config
+      function cronica:player/character/ikaros/unique/apollon_bow/config
 
   ## アイテム入手
 

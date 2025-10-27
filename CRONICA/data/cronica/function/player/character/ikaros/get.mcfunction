@@ -2,20 +2,20 @@
 
 ##【 IMPULSE 】
 
-  ## WEAPON
+  ## UNIQUE
 
-    # Apollon Bow
-      function cronica:player/character/ikaros/unique/apollon_bow/get
+    # Unique
+      function cronica:player/character/ikaros/unique/get
 
-  ## SKILL
+  ## SELECT
 
-    # Begin Twilight
-      function cronica:player/character/ikaros/unique/begin_twilight/get
+    # Flying Feather
+      function cronica:player/character/ikaros/select/flying_feather/get
 
-    # Wind Knowledge
-      function cronica:player/character/ikaros/unique/wind_knowledge/get
+    # Judgment Stone
+      function cronica:player/character/ikaros/select/judgment_stone/get
 
-    # Shutdown Flare
-      function cronica:player/character/ikaros/unique/shutdown_flare/get
+    # Blazing Shield
+      function cronica:player/character/ikaros/select/blazing_shield/get
 # =================================================================================================
-# ver 0.10.3
+# ver 0.10.4

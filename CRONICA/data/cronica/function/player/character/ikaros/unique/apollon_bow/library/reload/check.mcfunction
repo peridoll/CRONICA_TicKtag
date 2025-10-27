@@ -30,3 +30,5 @@
       execute if entity @s[tag = TAG.cronica.WEAPON.apollon_bow.Has] run function cronica:player/status/common_lib/charge/run with storage cronica:temp Reload
 # =================================================================================================
 # ver 0.10.4
+
+say 1

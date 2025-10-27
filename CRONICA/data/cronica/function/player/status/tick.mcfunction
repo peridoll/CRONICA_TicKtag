@@ -7,7 +7,7 @@
 
   # リスポーンポイント管理
   # /* 死亡時にその場で解放させるためのリス地固定 */
-    execute as @a[tag = TAG.cronica.GAMING, tag =! TAG.cronica.GAMING.spectate] at @s if block ~ ~ ~ minecraft:air run spawnpoint @s ~ ~ ~ ~
+    # execute as @a[tag = TAG.cronica.GAMING, tag =! TAG.cronica.GAMING.spectate] at @s if block ~ ~ ~ minecraft:air run spawnpoint @s ~ ~ ~ ~
 
   # 死亡時処理
     # function cronica:player/status/death/run

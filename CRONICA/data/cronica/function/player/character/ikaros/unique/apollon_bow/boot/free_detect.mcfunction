@@ -11,18 +11,12 @@
 
 ##【 REPEAT 】
 
-  ## 準備
-
-    # 所持確認
-      execute as @a run function cronica:player/status/common_lib/in_inventory {TagCategory: "WEAPON", ItemID: "apollon_bow"}
-
   ## 行動検知
 
-    # リロード検知
-      # [ データ準備 ]
-        function cronica:player/character/ikaros/unique/apollon_bow/library/reload/storage
+    # 所持確認 (インベントリに存在するかを確認)
+      execute as @a run function cronica:player/status/common_lib/inventory/has_check {TagCategory: "WEAPON", ItemID: "apollon_bow"}
 
-      # [ 検知処理 ]
+    # リロード検知
       execute \
           as @a[\
             tag = TAG.cronica.WEAPON.apollon_bow.Has, \
@@ -48,3 +42,5 @@
       tag @a[tag = TAG.cronica.WEAPON.apollon_bow.Has] remove TAG.cronica.WEAPON.apollon_bow.Has
 # =================================================================================================
 # ver 0.10.4
+
+say 2

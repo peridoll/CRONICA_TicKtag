@@ -5,8 +5,8 @@
   ## スコア管理
 
     # 目標値
-      $scoreboard objectives add SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)Goal dummy
-      $scoreboard players operations @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)Goal = #CONFIG.cronica.$(TagCategory).$(ItemID).$(ChargeConfig) SCORE.cronica.CONFIG
+      $scoreboard objectives add SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Goal dummy
+      $scoreboard players operations @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Goal = #CONFIG.cronica.$(TagCategory).$(ItemID).$(ChargeConfig) SCORE.cronica.CONFIG
 
     # 積算値
       $scoreboard objectives add SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeConfig).Stack dummy

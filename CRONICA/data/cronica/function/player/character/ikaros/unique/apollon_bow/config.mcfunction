@@ -12,9 +12,9 @@
 
 ##【 IMPULSE 】
 
-  ## UNIQUE
+  ## WEAPON
 
-    # ApollonBow
+    # Scoreboard
       # [ Attack ]
       scoreboard players set #CONFIG.cronica.WEAPON.apollon_bow.Attack SCORE.cronica.CONFIG 14
       # [ ReloadTime ]
@@ -50,32 +50,6 @@
     # ApollonArrow
       # [ MaxStack ]
       scoreboard players set #CONFIG.cronica.WEAPON.apollon_arrow.MaxStack SCORE.cronica.CONFIG 8
-
-    # BeginTwilight
-      # [ CoolTime ]
-      scoreboard players set #CONFIG.cronica.SKILL.begin_twilight.CoolTime SCORE.cronica.CONFIG 600
-
-    # WindKnowledge
-      # [ ActivateTime ]
-      scoreboard players set #CONFIG.cronica.SKILL.wind_knowledge.ActivateTime SCORE.cronica.CONFIG 60
-
-    # ShutdownFlare
-      # [ ChargePoint ]
-      scoreboard players set #CONFIG.cronica.SKILL.shutdown_flare.ChargePoint SCORE.cronica.CONFIG 4000
-
-  ## SELECT
-
-    # FlyingFeather
-      # [ CoolTime ]
-      scoreboard players set #CONFIG.cronica.SKILL.flying_feather.CoolTime SCORE.cronica.CONFIG 240
-
-    # JudgmentStone
-      # [ CoolTime ]
-      scoreboard players set #CONFIG.cronica.SKILL.judgment_stone.CoolTime SCORE.cronica.CONFIG 760
-
-    # BlazingShield
-      # [ CoolTime ]
-      scoreboard players set #CONFIG.cronica.SKILL.blazing_shield.CoolTime SCORE.cronica.CONFIG 480
 # =================================================================================================
 
 ##【 DEV STORAGE 】
@@ -91,24 +65,5 @@
       execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack.Goal dummy
     # ApollonArrow
       execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.apollon_arrow dummy
-    # BeginTwilight
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.begin_twilight dummy
-    # WindKnowledge
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.wind_knowledge dummy
-    # ShutdownFlare
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.shutdown_flare dummy
-
-  ## SELECT
-
-    # FlyingFeather
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.flying_feather dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.SKILL.flying_feather.CoolTime dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.SKILL.flying_feather.CoolTime.Goal dummy
-    # JudgmentStone
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.judgment_stone dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.SKILL.judgment_stone.CoolTime dummy
-    # BlazingShield
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.blazing_shield dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.SKILL.blazing_shield.CoolTime dummy
 # =================================================================================================
 # ver 0.10.4

@@ -5,7 +5,7 @@
   ## 状態管理
 
     # 移動不可付与
-      function cronica:player/status/effect/basic/calculation/set_top {ID: "Speed", Amount: -10}
+      # function cronica:player/status/effect/basic/calculation/set_top {ID: "Speed", Amount: -10}
 
   ## 後続処理呼び出し
 
