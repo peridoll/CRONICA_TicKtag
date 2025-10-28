@@ -8,7 +8,7 @@
 # ItemID     : master_sword / blazing_shield / etc...
 
 # 所持アイテム置き換え、スコアボード作成、コンフィグ読み込み、メイン処理呼び出し、CT処理呼び出し などを実行
-function cronica:player/status/common_lib/character_run {MasterID: "ikaros", MasterType: "select", ItemID: "blazing_shield"}
+function cronica:player/status/common_lib/macro/run {MasterID: "ikaros", MasterType: "select", ItemID: "blazing_shield"}
 # =================================================================================================
 
 ##【 固有処理 】

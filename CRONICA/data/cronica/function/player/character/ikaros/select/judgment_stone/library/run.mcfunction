@@ -8,7 +8,7 @@
 # ItemID     : master_sword / judgment_stone / etc...
 
 # 所持アイテム置き換え、スコアボード作成、コンフィグ読み込み、メイン処理呼び出し、CT処理呼び出し などを実行
-function cronica:player/status/common_lib/character_run {MasterID: "ikaros", MasterType: "select", ItemID: "judgment_stone"}
+function cronica:player/status/common_lib/macro/run {MasterID: "ikaros", MasterType: "select", ItemID: "judgment_stone"}
 # =================================================================================================
 
 ##【 固有処理 】

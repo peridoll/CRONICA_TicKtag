@@ -23,7 +23,7 @@
   # ItemID       : master_sword / flying_feather / etc..
 
   # 所持アイテム置き換え、スコアボード作成、コンフィグ読み込み、メイン処理呼び出し、CT処理呼び出し などを実行
-  function cronica:player/status/common_lib/character_run \
+  function cronica:player/status/common_lib/macro/run \
     {\
       MasterID     : "ikaros", \
       MasterType   : "select", \

@@ -8,7 +8,7 @@
 # ItemID     : master_sword / hook_shot / etc...
 
 # 所持アイテム置き換え、スコアボード作成、コンフィグ読み込み、メイン処理呼び出し、CT処理呼び出し などを実行
-function cronica:player/status/common_lib/character_run {MasterID: "brave", MasterType: "select", ItemID: "hook_shot"}
+function cronica:player/status/common_lib/macro/run {MasterID: "brave", MasterType: "select", ItemID: "hook_shot"}
 # =================================================================================================
 
 ##【 固有処理 】

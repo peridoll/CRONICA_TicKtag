@@ -17,7 +17,7 @@ scoreboard players remove @s SCORE.cronica.MODE.temp 100
 execute store result storage cronica:temp ct.Value int 1 run scoreboard players get @s SCORE.cronica.MODE.temp
 scoreboard objectives remove SCORE.cronica.MODE.temp
 #[置き換え実行]
-function cronica:player/status/common_lib/modify with storage cronica:temp ct
+function cronica:player/status/inventory/model/macro/item_modify with storage cronica:temp ct
 #[撤去]
 data remove storage cronica:temp ct
 

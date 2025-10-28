@@ -9,8 +9,8 @@
 
   # スコア初期化 & コンフィグ読み込み
   # /* 初回起動時、管理スコアをリセットしコンフィグを読み込む */
-    execute unless entity @a run function cronica:system/preparation/scoreboard/reset
-    function cronica:system/preparation/scoreboard/config/setup
+    execute unless entity @a run function cronica:system/common/scoreboard/config/remove
+    function cronica:system/common/scoreboard/config/setup
 
   # 実績リセット
   # /* リロード時、エラー回避のため取得済みの実績をすべて解除 */

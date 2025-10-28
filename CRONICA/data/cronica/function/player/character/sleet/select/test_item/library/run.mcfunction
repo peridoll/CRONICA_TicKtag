@@ -8,7 +8,7 @@
   # ItemID       : master_sword / flying_feather / etc..
 
   # 所持アイテム置き換え、スコアボード作成、コンフィグ読み込み、メイン処理呼び出し、CT処理呼び出し などを実行
-function cronica:player/status/common_lib/character_run {MasterID: "sleet", MasterType: "select", ItemID: "test_item"}
+function cronica:player/status/common_lib/macro/run {MasterID: "sleet", MasterType: "select", ItemID: "test_item"}
 # =================================================================================================
 
 

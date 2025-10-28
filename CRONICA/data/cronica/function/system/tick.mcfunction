@@ -6,7 +6,7 @@
 ##【 起動処理 】
 
   # サーバー参加時
-    execute as @a[gamemode = survival] run function cronica:system/preparation/join_server
+    execute as @a[gamemode = survival] run function cronica:system/join_server
 
 ##【 継続処理 】
 

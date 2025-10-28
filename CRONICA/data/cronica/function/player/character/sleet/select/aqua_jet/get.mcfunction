@@ -23,7 +23,7 @@
   ## アイテム入手
 
     # 水流弾
-      function cronica:player/status/common_lib/inventory_load/get \
+      function cronica:player/status/common_lib/macro/get \
         { \
           MasterID     : "sleet", \
           MasterType   : "select", \
@@ -32,13 +32,13 @@
   ## アイテムモデル変更
 
     # 基本形態
-      execute if score @s SCORE.cronica.MODE.aqua_jet matches 0 run function cronica:player/status/common_lib/item_modify {ItemID: "aqua_jet", Model: "common/skill/default"}
+      execute if score @s SCORE.cronica.MODE.aqua_jet matches 0 run function cronica:player/status/inventory/model/macro/item_modify {ItemID: "aqua_jet", Model: "common/skill/default"}
 
     # 使用済み
-      execute if score @s SCORE.cronica.MODE.aqua_jet matches -1 run function cronica:player/status/common_lib/item_modify {ItemID: "aqua_jet", Model: "common/skill/used"}
+      execute if score @s SCORE.cronica.MODE.aqua_jet matches -1 run function cronica:player/status/inventory/model/macro/item_modify {ItemID: "aqua_jet", Model: "common/skill/used"}
 
     # 使用不可
-      execute if score @s SCORE.cronica.MODE.aqua_jet matches -2 run function cronica:player/status/common_lib/item_modify {ItemID: "aqua_jet", Model: "common/skill/ban"}
+      execute if score @s SCORE.cronica.MODE.aqua_jet matches -2 run function cronica:player/status/inventory/model/macro/item_modify {ItemID: "aqua_jet", Model: "common/skill/ban"}
 
 ##【 REFRESH 】
 

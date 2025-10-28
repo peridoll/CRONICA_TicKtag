@@ -8,7 +8,7 @@
 # ItemID     : master_sword / fairy_bottle / etc...
 
 # 所持アイテム置き換え、スコアボード作成、コンフィグ読み込み、メイン処理呼び出し、CT処理呼び出し などを実行
-function cronica:player/status/common_lib/character_run {MasterID: "brave", MasterType: "select", ItemID: "fairy_bottle"}
+function cronica:player/status/common_lib/macro/run {MasterID: "brave", MasterType: "select", ItemID: "fairy_bottle"}
 # =================================================================================================
 
 ##【 固有処理 】

@@ -9,13 +9,8 @@
 
 ##【 IMPULSE 】
 
-  # ストレージ初期化
-    data remove storage cronica:temp SavingSlot
-    data modify storage cronica:temp Storage set value "SavingSlot"
-
-  # UUID取得
-    function cronica:system/common/storage/get_uuid
-    function cronica:system/common/storage/set_uuid with storage cronica:temp
+    # UUID取得 < SavingSlot.UUIDを取得 >
+      function cronica:system/common/storage/uuid/macro/get {StorageName: "SavingSlot"}
 
   # スコア設置
     scoreboard objectives add SCORE.cronica.STATUS.SavingSlot dummy
