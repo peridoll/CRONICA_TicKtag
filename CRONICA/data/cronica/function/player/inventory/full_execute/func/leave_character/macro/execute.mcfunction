@@ -2,10 +2,7 @@
 
 ##【 IMPULSE 】
 
-  ## 共通マクロ実行:キャラクター戦場離脱
+# $say $(ItemID)
 
-
-
-function cronica:player/inventory/full_execute/common/macro/run {function: "leave_character"}
 # =================================================================================================
 # ver 0.11.0

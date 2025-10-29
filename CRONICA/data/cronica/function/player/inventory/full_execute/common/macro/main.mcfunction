@@ -24,7 +24,7 @@
   ## 再起処理
 
     # インベントリ内のすべてのアイテムについて関数を実行するか判定
-      execute if score @s SCORE.cronica.INCENTORY.FullExecute.SlotNum matches ..35 run function cronica:player/inventory/full_execute/common/macro/main
+      execute if score @s SCORE.cronica.INCENTORY.FullExecute.SlotNum matches ..35 run function cronica:player/inventory/full_execute/common/macro/main with storage cronica:temp FullExecute
       execute if score @s SCORE.cronica.INCENTORY.FullExecute.SlotNum matches 36.. run function cronica:player/inventory/full_execute/common/macro/finish
 # =================================================================================================
 # ver 0.11.0
