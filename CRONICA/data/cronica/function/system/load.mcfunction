@@ -1,23 +1,25 @@
 # =================================================================================================
-#
-# CRONICA - LOAD
-# サーバー開始時やリロード時に実行される関数
-#
-# =================================================================================================
 
 ##【 IMPULSE 】
 
-  # スコア初期化 & コンフィグ読み込み
-  # /* 初回起動時、管理スコアをリセットしコンフィグを読み込む */
-    execute unless entity @a run function cronica:system/common/scoreboard/config/remove
-    function cronica:system/common/scoreboard/config/setup
+  ## データ管理
 
-  # 実績リセット
-  # /* リロード時、エラー回避のため取得済みの実績をすべて解除 */
-    execute as @a run function cronica:player/status/detection/advancements/revoke
+    # コンフィグ初期化
+      execute unless entity @a run function cronica:system/data/scoreboard/config/remove
+      function cronica:system/data/scoreboard/config/setup
 
-  # リロード通知
-    tellraw @a [{"text":"[","color":"dark_gray"},{"text":"INFO","color":"gray"},{"text":"] ","color":"dark_gray"},{"text":"リロードが完了しました","color":"red","bold":true}]
-    tellraw @a [{"text":"Created By ","color":"gray"},{"text":"TicK-tag","color":"green","underlined":true}]
+  ## プレイヤー管理
+
+    # 実績リセット
+      execute as @a run function cronica:player/status/detection/advancements/revoke
+
+    # 所持アイテム再付与
+
+
+  ## 装飾
+
+    # リロード通知
+      tellraw @a [{"text":"[","color":"dark_gray"},{"text":"INFO","color":"gray"},{"text":"] ","color":"dark_gray"},{"text":"リロードが完了しました","color":"red","bold":true}]
+      tellraw @a [{"text":"Created By ","color":"gray"},{"text":"TicK-tag","color":"green","underlined":true}]
 # =================================================================================================
-# ver 0.10.4
+# ver 0.11.0

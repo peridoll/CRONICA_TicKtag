@@ -1,0 +1,73 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica_dev:character/ikaros/unique/wind_knowledge",
+                "minecraft:custom_model_data": {"strings": ["default"]},
+                "minecraft:max_stack_size": 1,
+                "!minecraft:attribute_modifiers": {},
+                "minecraft:custom_data": {
+                  "MasterID": "ikaros",
+                  "MasterType": "unique",
+                  "ItemCategory": "passive_skill",
+                  "ItemID": "wind_knowledge",
+                  "ItemMode": "none",
+                  "ItemStatus": "ready"
+                },
+                "minecraft:custom_name": {
+                  "text": "風使イノ心得",
+                  "color": "#ffa500",
+                  "bold": true
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Passive Skill",
+                    "color": "#00bfff",
+                    "underlined": true,
+                    "bold": true
+                  },
+                  {
+                    "text": "風を纏う心得を得る",
+                    "color": "#ffffff"
+                  },
+                  {
+                    "text": "雲のようにどこまでも",
+                    "color": "#ffffff"
+                  },
+                  "====================",
+                  {
+                    "text": "ActivateTime: 3s",
+                    "color": "#00ff00",
+                    "underlined": true
+                  },
+                  {
+                    "text": "",
+                    "color": "#00ff00",
+                    "underlined": true
+                  },
+                  "====================",
+                  {
+                    "text": "武器やスキルを使用している間、落下速度が軽減される",
+                    "color": "#ffffff"
+                  },
+                  {
+                    "text": "効果は数秒間しか持続せず、地面に降りることで再使用可能になる",
+                    "color": "#ffffff"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

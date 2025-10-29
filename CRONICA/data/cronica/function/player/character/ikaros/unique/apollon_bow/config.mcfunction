@@ -15,7 +15,7 @@
       # [ ApollonArrow:MaxStack ]
       scoreboard players set #CONFIG.cronica.WEAPON.apollon_arrow.MaxStack SCORE.cronica.CONFIG 8
 
-    # STORAGE
+  # STORAGE
       # [ Reload ]
       data remove storage cronica:config ApollonBowReload
       data modify storage cronica:config ApollonBowReload.Storage set value "ApollonBowReload"

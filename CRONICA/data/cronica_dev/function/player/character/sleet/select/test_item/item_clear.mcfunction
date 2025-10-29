@@ -1,0 +1,7 @@
+# =================================================================================================
+# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"ready"}]
+# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"ban"}]
+# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"used"}]
+# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run clear @s minecraft:diamond_horse_armor[minecraft:custom_data={"ItemCategory":"SelectSkill","ItemID":"FlyingFeather","ItemStatus":"charging"}]
+# execute unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{"ItemID":"FlyingFeather"}}}]}] run function cronica_dev:player/character/list/ikaros/select/flying_feather/get
+# =================================================================================================

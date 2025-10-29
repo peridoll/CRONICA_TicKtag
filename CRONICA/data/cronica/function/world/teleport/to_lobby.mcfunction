@@ -1,47 +1,58 @@
 # =================================================================================================
 
-# タグ管理
-tag @s remove TAG.cronica.CT_ZERO
-tag @s remove TAG.cronica.CT_HANDICAP
-tag @s remove TAG.cronica.GAMING
-tag @s remove TAG.cronica.GAMING.spectate
-tag @s remove TAG.cronica.GAMING.practice
+##【 IMPULSE 】
 
-# ゲームモード
-gamemode adventure @s
+  ## データ管理
 
-# レベル管理
-xp set @s 0 levels
-xp set @s 0 points
+    # タグ管理
+      tag @s remove TAG.cronica.CT_ZERO
+      tag @s remove TAG.cronica.GAMING
+      tag @s remove TAG.cronica.GAMING.spectate
+      tag @s remove TAG.cronica.GAMING.practice
 
-# エフェクト
-effect clear @s
-effect give @s minecraft:saturation infinite 100 true
-effect give @s minecraft:instant_health infinite 100 true
-effect give @s minecraft:resistance infinite 100 true
-effect give @s minecraft:night_vision infinite 0 true
+  ## プレイヤー管理
 
-# インベントリ
-clear @s
-function cronica:player/status/inventory/kit/lobby_set
+    # ゲームモード
+      gamemode adventure @s
 
-# メインロビーへテレポート
-function cronica:world/stage/lobby/teleport/enter
+    # レベル管理
+      xp set @s 0 levels
+      xp set @s 0 points
 
-## 装飾
-execute at @s run playsound minecraft:block.beacon.activate player @s ~ ~ ~ 10 1
-execute at @s run particle minecraft:entity_effect{color:[0.0,1.0,1.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
-execute at @s run particle minecraft:entity_effect{color:[1.0,0.0,1.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
-execute at @s run particle minecraft:entity_effect{color:[1.0,1.0,0.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
-execute at @s run particle minecraft:entity_effect{color:[0.0,1.0,0.0,0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
+    # キャラクター関連リセット
+      # function cronica:player/inventory/full_execute/func/leave_character/run
 
-# 場所の通知
-title @s times 15 60 15
-title @s title [{"text":" "}]
-title @s subtitle [{"text":"-","color":"gray","bold":false},{"text":"Main Lobby","color":"gold","bold":false},{"text":"-","color":"gray","bold":false}]
+    # エフェクト
+      effect clear @s
+      effect give @s minecraft:saturation infinite 100 true
+      effect give @s minecraft:instant_health infinite 100 true
+      effect give @s minecraft:resistance infinite 100 true
+      effect give @s minecraft:night_vision infinite 0 true
 
-# サーバー参加時通知
-execute as @s[tag=TAG.cronica.STATUS.JoinServer] run title @s title [{"text":"<<","color":"gray","bold":false},{"text":" CRONICA ","color":"green","bold":true},{"text":">>","color":"gray","bold":false}]
-execute as @s[tag=TAG.cronica.STATUS.JoinServer] run title @s subtitle [{"text":"Presented By TicK-tag"}]
-execute as @s[tag=TAG.cronica.STATUS.JoinServer] run tag @s remove TAG.cronica.STATUS.JoinServer
+    # インベントリ
+      clear @s
+      function cronica:player/inventory/kit/lobby
+
+  ## ワールド管理
+
+    # メインロビーへテレポート
+      function cronica:world/stage/lobby/get_position/enter
+      function cronica:world/common/macro/teleport with storage cronica:temp Position
+
+  ## 装飾
+
+    # サウンド
+      execute at @s run playsound minecraft:block.beacon.activate player @s ~ ~ ~ 10 1
+
+    # パーティクル
+      execute at @s run particle minecraft:entity_effect{color: [0.0, 1.0, 1.0, 0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
+      execute at @s run particle minecraft:entity_effect{color: [1.0, 0.0, 1.0, 0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
+      execute at @s run particle minecraft:entity_effect{color: [1.0, 1.0, 0.0, 0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
+      execute at @s run particle minecraft:entity_effect{color: [0.0, 1.0, 0.0, 0.7]} ^ ^1 ^2 1 1 1 1 200 force @s
+
+    # 場所の通知
+      title @s times 15 60 15
+      title @s title [{"text":" "}]
+      title @s subtitle [{"text":"-","color":"gray","bold":false},{"text":"Main Lobby","color":"gold","bold":false},{"text":"-","color":"gray","bold":false}]
 # =================================================================================================
+# ver 0.11.0

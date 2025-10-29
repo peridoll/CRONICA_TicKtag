@@ -1,9 +1,13 @@
 # =================================================================================================
 
-# アイテム使用検知
-  advancement revoke @s only cronica:using_item
+##【 IMPULSE 】
 
-# インベントリ更新
-  advancement revoke @s only cronica:change_inventory
+  # 実績リセット
+
+    # アイテム使用検知
+      advancement revoke @s only cronica:using_item
+
+    # インベントリ更新
+      advancement revoke @s only cronica:change_inventory
 # =================================================================================================
-# ver 0.10.3
+# ver 0.11.0

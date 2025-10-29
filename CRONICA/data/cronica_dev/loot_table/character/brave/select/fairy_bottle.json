@@ -1,0 +1,83 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica_dev:character/brave/select/fairy_bottle",
+                "minecraft:custom_model_data": {"strings": ["default"]},
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:max_stack_size": 1,
+                "!minecraft:attribute_modifiers": {},
+                "minecraft:custom_data": {
+                  "MasterID": "brave",
+                  "MasterType": "select",
+                  "ItemCategory": "select_skill",
+                  "ItemID": "fairy_bottle",
+                  "ItemMode": "none",
+                  "ItemStatus": "ready"
+                },
+                "minecraft:custom_name": {
+                  "text": "妖精入りの瓶",
+                  "color": "#00ffff",
+                  "bold": true
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Select Skill",
+                    "color": "#00ff00",
+                    "underlined": true,
+                    "bold": true
+                  },
+                  {
+                    "text": "絶体絶命の時、妖精が助けに来てくれる",
+                    "color": "#ffffff"
+                  },
+                  {
+                    "text": "ガラス瓶がまだ一つしかない",
+                    "color": "#ffffff"
+                  },
+                  "====================",
+                  {
+                    "text": "CT : 80s",
+                    "color": "#00ff00",
+                    "underlined": true
+                  },
+                  {
+                    "text": "",
+                    "color": "#00ff00",
+                    "underlined": true
+                  },
+                  "====================",
+                  {
+                    "text": "体力がなくなったときに、自動で発動する",
+                    "color": "#ffffff"
+                  },
+                  {
+                    "text": "その場で生き返り、体力を少し回復する",
+                    "color": "#ffffff"
+                  },
+                  {
+                    "text": "CONNECT：ブレイブ-戦いの準備",
+                    "color": "#00ffff",
+                    "bold": true
+                  },
+                  {
+                    "text": "効果発動時、このスキルのチャージを少し早める",
+                    "color": "#ffffff"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

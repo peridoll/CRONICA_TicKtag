@@ -1,27 +1,13 @@
-# =================================================================================================
+
+# ──────────────────────────────────────────────────────────────
+# プレイヤーがアイテムを使用した際の実績検知・解除処理
 #
-# CRONICA - ADVANCEMENTS USING ITEM DETECTION
+# 【IMPULSE】
+#   - インベントリ更新時に検知処理を実行
+function cronica:player/status/detection/advancements/using_item/run
 #
-# grant
-# └─ run
-#   └─ character_boot
-#   └─ other_boot
-# |
-# main
-# └─ finish
-#   └─ reset
-#
-# =================================================================================================
-
-##【 IMPULSE 】
-
-  # アイテム使用時処理
-    function cronica:player/status/detection/advancements/using_item/run
-
-##【 REFRESH 】
-
-  # 実績剥奪
-  # /* 実績は解除すると一回限りのため、実績で行動検知をする際にはその場で実績を剥奪して再度取得できるようにする */
-    advancement revoke @s only cronica:using_item
-# =================================================================================================
-# ver 0.10.3
+# 【REFRESH】
+#   - 実績「using_item」を剥奪（リフレッシュ用）
+advancement revoke @s only cronica:using_item
+# ──────────────────────────────────────────────────────────────
+# バージョン: 0.11.0

@@ -1,21 +1,37 @@
 # =================================================================================================
 
-## CRONICA - player/status/tick.mcfunction
-# プレイヤー関連の常在処理や検知を行う関数
-
 ##【 REPEAT 】
 
-  # リスポーンポイント管理
-  # /* 死亡時にその場で解放させるためのリス地固定 */
-    # execute as @a[tag = TAG.cronica.GAMING, tag =! TAG.cronica.GAMING.spectate] at @s if block ~ ~ ~ minecraft:air run spawnpoint @s ~ ~ ~ ~
+  ## プレイヤー管理
 
-  # 死亡時処理
-    # function cronica:player/status/death/run
+    # 行動検知管理
+      function cronica:player/status/detection/tick
 
-  # 行動検知管理
-    function cronica:player/status/detection/tick
-
-  # エフェクト管理 < ゲーム中 >
-    execute as @a[tag = TAG.cronica.GAMING] run function cronica:player/status/effect/main
+    # エフェクト管理
+      execute as @a[tag = TAG.cronica.GAMING] run function cronica:player/status/effect/main
 # =================================================================================================
-# ver 0.10.3
+# ver 0.11.0
+
+
+
+
+
+# =================================================================================================
+
+## 今後各関数に割り振りたいが、とりあえずここにまとめる
+
+  # 腹減り無し TODO: 飯が食べられるように満腹じゃなく80%で維持できるように
+    effect give @a saturation infinite 1 true
+
+  # 矢の撤去 TODO: 即消しではなく、しばらく残るように
+    execute as @e[type = arrow] store result score @s SCORE.cronica.CONFIG run data get entity @s inGround
+    execute as @e[type = arrow, scores = {SCORE.cronica.CONFIG = 1}] run kill @s
+
+  # アイテム投げられん
+    execute as @e[type = minecraft:item] at @s if entity @p[gamemode = creative, distance = ..2] run kill @s
+    execute as @e[type = minecraft:item] run data merge entity @s {PickupDelay:0}
+    execute as @e[type = minecraft:item] at @s run tp @s @p
+
+  # 経験値は増えない
+    execute as @e[type = minecraft:experience_orb] run kill @s
+# =================================================================================================

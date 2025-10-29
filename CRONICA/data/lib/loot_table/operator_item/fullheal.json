@@ -1,0 +1,71 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_horse_armor",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": " "
+                }
+              ],
+              "mode": "append"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "ヘルスと空腹度を全回復する",
+                  "color": "white",
+                  "italic": false
+                }
+              ],
+              "mode": "append"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "スニーク中の使用で、無敵モードの切り替え",
+                  "color": "white",
+                  "italic": false
+                }
+              ],
+              "mode": "append"
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:max_stack_size": 1,
+                "minecraft:custom_data": {
+                  "ItemID": "Fullheal"
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 2147483647,
+                  "animation": "none"
+                },
+                "!minecraft:equippable": {},
+                "minecraft:item_model": "minecraft:apple",
+                "!minecraft:attribute_modifiers": {}
+              }
+            },
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "ヘルス全回復 / 無敵モード",
+                "color": "#FF006C",
+                "italic": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

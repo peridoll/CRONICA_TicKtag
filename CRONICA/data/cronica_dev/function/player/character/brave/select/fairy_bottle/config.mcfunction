@@ -1,0 +1,1 @@
+scoreboard objectives add SCORE.cronica_dev.MODE.fairy_bottle dummy
