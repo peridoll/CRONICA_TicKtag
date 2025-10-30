@@ -1,18 +1,10 @@
 # =================================================================================================
-#
-# CRONICA - PREDICATE IS SNEAKING DETECTION
-#
-# run
-# |
-# main
-# └─ finish
-#   └─ reset
-#
-# =================================================================================================
 
 ##【 IMPULSE 】
 
-  # スコア/タグ 撤去
-    function cronica:player/status/detection/predicate/is_sneaking/reset
+  ## データ管理
+
+    # スコア/タグ 撤去
+      function cronica:player/status/detection/predicate/is_sneaking/reset
 # =================================================================================================
-# ver 0.10.3
+# ver 0.11.0

@@ -1,6 +1,10 @@
 # =================================================================================================
 
 ##【 IMPULSE 】
-function cronica:player/inventory/full_execute/common/macro/run {function: "clear_item"}
+
+  ## データ管理
+
+    # スコア/タグ 撤去
+      function cronica:player/status/detection/predicate/is_flying/reset
 # =================================================================================================
 # ver 0.11.0

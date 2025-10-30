@@ -14,7 +14,8 @@
       execute as @a run function cronica:player/status/detection/advancements/revoke
 
     # 所持アイテム再付与
-
+      execute as @a run function cronica:player/inventory/full_execute/func/character_func/macro/run {Action:"library/leave"}
+      execute as @a run function cronica:player/inventory/full_execute/func/character_func/macro/run {Action:"get"}
 
   ## 装飾
 

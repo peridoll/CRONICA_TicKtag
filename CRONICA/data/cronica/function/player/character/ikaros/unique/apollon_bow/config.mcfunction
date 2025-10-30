@@ -15,7 +15,7 @@
       # [ ApollonArrow:MaxStack ]
       scoreboard players set #CONFIG.cronica.WEAPON.apollon_arrow.MaxStack SCORE.cronica.CONFIG 8
 
-  # STORAGE
+    # STORAGE
       # [ Reload ]
       data remove storage cronica:config ApollonBowReload
       data modify storage cronica:config ApollonBowReload.Storage set value "ApollonBowReload"
@@ -40,26 +40,4 @@
       data modify storage cronica:config ApollonBowCharge.MasterType set value "unique"
       data modify storage cronica:config ApollonBowCharge.ItemID set value "apollon_bow"
 # =================================================================================================
-
-##【 DEV STORAGE 】
-
-  ## UNIQUE
-
-    # ApollonBow
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.apollon_bow dummy
-      # [ Reload ]
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reloading dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Goal dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack.Count dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Reload.Stack.Goal dummy
-      # [ Charge ]
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Charging dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Charge.Goal dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Charge.Stack dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Charge.Stack.Count dummy
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Charge.Stack.Goal dummy
-    # ApollonArrow
-      execute unless entity @s run scoreboard objectives add SCORE.cronica.MODE.apollon_arrow dummy
-# =================================================================================================
-# ver 0.10.4
+# ver 0.11.0

@@ -2,7 +2,9 @@
 
 ##【 IMPULSE 】
 
-# $say $(ItemID)
+  ## 後続処理管理
 
+    # 関数実行
+      $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/$(Action)
 # =================================================================================================
 # ver 0.11.0

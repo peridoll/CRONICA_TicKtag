@@ -2,5 +2,9 @@
 
 ##【 IMPULSE 】
 
+  ## データ管理
 
+    # スコア/タグ 撤去
+      function cronica:player/status/detection/predicate/is_swimming/reset
 # =================================================================================================
+# ver 0.11.0

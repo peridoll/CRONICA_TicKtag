@@ -5,7 +5,7 @@
   ## 検知処理
 
     # インベントリ更新時処理
-      # function cronica:player/status/detection/advancements/change_inventory/run
+      function cronica:player/status/detection/advancements/change_inventory/run
 
 ##【 REFRESH 】
 

@@ -2,10 +2,9 @@
 
 ##【 IMPULSE 】
 
-  ## 共通マクロ実行:キャラクター戦場離脱
+  ## ストレージ管理
 
-
-
-function cronica:player/inventory/full_execute/common/macro/run {function: "leave_character"}
+    # UUID結合
+      $data modify storage cronica:temp $(StorageName).UUID set value "$(uuid_1)$(uuid_2)$(uuid_3)$(uuid_4)"
 # =================================================================================================
 # ver 0.11.0

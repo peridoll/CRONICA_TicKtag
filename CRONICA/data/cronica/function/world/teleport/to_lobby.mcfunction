@@ -20,7 +20,7 @@
       xp set @s 0 points
 
     # キャラクター関連リセット
-      function cronica:player/inventory/full_execute/func/leave_character/run
+      function cronica:player/inventory/full_execute/func/character_func/macro/run {action: "library/leave"}
 
     # エフェクト
       effect clear @s

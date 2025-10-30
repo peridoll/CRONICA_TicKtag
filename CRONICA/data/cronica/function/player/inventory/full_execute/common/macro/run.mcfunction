@@ -5,12 +5,12 @@
   ## データ関連管理
 
     # スコア作成
-      scoreboard objectives add SCORE.cronica.INCENTORY.FullExecute.SlotNum dummy
-      scoreboard players set @s SCORE.cronica.INCENTORY.FullExecute.SlotNum -1
+      $scoreboard objectives add SCORE.cronica.INCENTORY.FullExecute.$(function).SlotNum dummy
+      $scoreboard players set @s SCORE.cronica.INCENTORY.FullExecute.$(function).SlotNum -1
 
-  ## マクロ本体実行
+  ## 後続処理管理
 
-    # インベントリ内のすべてのアイテムについて関数を実行する
-      $function cronica:player/inventory/full_execute/common/macro/main {function: "$(function)"}
+    # インベントリ探索
+      $function cronica:player/inventory/full_execute/common/macro/main with storage cronica:temp FullExecute_$(Function)
 # =================================================================================================
 # ver 0.11.0

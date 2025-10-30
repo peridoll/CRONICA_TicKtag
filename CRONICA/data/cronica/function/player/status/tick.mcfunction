@@ -5,10 +5,10 @@
   ## プレイヤー管理
 
     # 行動検知管理
-      function cronica:player/status/detection/tick
+      function cronica:player/status/detection/master
 
     # エフェクト管理
-      execute as @a[tag = TAG.cronica.GAMING] run function cronica:player/status/effect/main
+      execute as @a[tag = TAG.cronica.GAMING] run function cronica:player/status/effect/master
 # =================================================================================================
 # ver 0.11.0
 
