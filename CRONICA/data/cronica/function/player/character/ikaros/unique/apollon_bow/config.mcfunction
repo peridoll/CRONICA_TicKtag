@@ -12,8 +12,8 @@
       # [ ChargeTime ]
       scoreboard players set #CONFIG.cronica.WEAPON.apollon_bow.ChargeTime SCORE.cronica.CONFIG 100
 
-      # [ ApollonArrow:MaxStack ]
-      scoreboard players set #CONFIG.cronica.WEAPON.apollon_arrow.MaxStack SCORE.cronica.CONFIG 8
+      # [ ApollonArrow:Stack ]
+      scoreboard players set #CONFIG.cronica.INVENTORY.apollon_arrow.Stack SCORE.cronica.CONFIG 12
 
     # STORAGE
       # [ Reload ]

@@ -10,7 +10,7 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_model": "cronica_dev:character/ikaros/unique/apollon_bow",
+                "minecraft:item_model": "cronica:character/ikaros/unique/apollon_bow",
                 "minecraft:custom_model_data": {"strings": ["default"]},
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:unbreakable": {},
@@ -26,52 +26,7 @@
                   "text": "太陽神ノ弓",
                   "color": "#ffa500",
                   "bold": true
-                },
-                "minecraft:lore": [
-                  {
-                    "text": "Main Weapon",
-                    "color": "#ff00ff",
-                    "underlined": true,
-                    "bold": true
-                  },
-                  {
-                    "text": "太陽神の加護を受ける弓",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "時間とともに陽光の力を蓄積させている",
-                    "color": "#ffffff"
-                  },
-                  "====================",
-                  {
-                    "text": "Attack: 14 / Reload: 2.0s",
-                    "color": "#00ff00",
-                    "underlined": true
-                  },
-                  {
-                    "text": "",
-                    "color": "#00ff00",
-                    "underlined": true
-                  },
-                  "====================",
-                  {
-                    "text": "チャージを続けると、太陽神ノ弓<黄昏> に姿が変わる",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "太陽神ノ弓<黄昏>",
-                    "color": "#ffa500",
-                    "bold": true
-                  },
-                  {
-                    "text": "放つ矢は光線になり、命中した相手に行動不能を与える",
-                    "color": "#ffffff"
-                  },
-                  {
-                    "text": "チャージ時間にかかわらず、フルチャージとして扱う",
-                    "color": "#ffffff"
-                  }
-                ]
+                }
               }
             }
           ]
@@ -79,4 +34,4 @@
       ]
     }
   ]
-}
+}

@@ -18,6 +18,8 @@
 
       $data modify storage cronica:temp FullExecute_$(Function).ID \
         set value ""
+      $data modify storage cronica:temp FullExecute_$(Function).Count \
+        set value ""
 
     # 各種コンポーネントのデータを取得
       $data modify storage cronica:temp FullExecute_$(Function).MasterID \
@@ -33,26 +35,31 @@
 
       $data modify storage cronica:temp FullExecute_$(Function).ID \
         set from entity @s Inventory[{Slot:$(SlotNum)b}].id
+      $data modify storage cronica:temp FullExecute_$(Function).Count \
+        set from entity @s Inventory[{Slot:$(SlotNum)b}].count
 
     # オフハンドのデータを取得
-      $execute if score @s SCORE.cronica.INCENTORY.FullExecute.$(function).SlotNum matches 36 run \
+      $execute if score @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum matches 36 run \
         data modify storage cronica:temp FullExecute_$(Function).MasterID \
         set from entity @s equipment.offhand.components."minecraft:custom_data".MasterID
-      $execute if score @s SCORE.cronica.INCENTORY.FullExecute.$(function).SlotNum matches 36 run \
+      $execute if score @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum matches 36 run \
         data modify storage cronica:temp FullExecute_$(Function).MasterType \
         set from entity @s equipment.offhand.components."minecraft:custom_data".MasterType
-      $execute if score @s SCORE.cronica.INCENTORY.FullExecute.$(function).SlotNum matches 36 run \
+      $execute if score @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum matches 36 run \
         data modify storage cronica:temp FullExecute_$(Function).ItemID \
         set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
-      $execute if score @s SCORE.cronica.INCENTORY.FullExecute.$(function).SlotNum matches 36 run \
+      $execute if score @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum matches 36 run \
         data modify storage cronica:temp FullExecute_$(Function).ItemMode \
         set from entity @s equipment.offhand.components."minecraft:custom_data".ItemMode
-      $execute if score @s SCORE.cronica.INCENTORY.FullExecute.$(function).SlotNum matches 36 run \
+      $execute if score @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum matches 36 run \
         data modify storage cronica:temp FullExecute_$(Function).ItemStatus \
         set from entity @s equipment.offhand.components."minecraft:custom_data".ItemStatus
 
-      $execute if score @s SCORE.cronica.INCENTORY.FullExecute.$(function).SlotNum matches 36 run \
+      $execute if score @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum matches 36 run \
         data modify storage cronica:temp FullExecute_$(Function).ID \
         set from entity @s equipment.offhand.id
+      $execute if score @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum matches 36 run \
+        data modify storage cronica:temp FullExecute_$(Function).Count \
+        set from entity @s equipment.offhand.count
 # =================================================================================================
 # ver 0.11.0

@@ -10,7 +10,7 @@
   ## アイテム入手
 
     # 太陽神の弓
-      function cronica:player/character/common/macro/get \
+      function cronica:player/character/common/get/macro/run \
         { \
           MasterID     : "ikaros", \
           MasterType   : "unique", \
@@ -18,7 +18,7 @@
         }
 
     # 太陽神の矢
-      function cronica:player/character/common/macro/get \
+      function cronica:player/character/common/get/macro/run \
         { \
           MasterID     : "ikaros", \
           MasterType   : "unique", \
@@ -29,38 +29,20 @@
 
     # 基本形態
       execute if score @s SCORE.cronica.MODE.apollon_bow matches 0 run \
-        function cronica:player/inventory/full_execute/func/model_change/macro/run {ItemID: "apollon_bow",   Model: "common/weapon/default"}
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_bow",   Model: "common/weapon/default"     }
       execute if score @s SCORE.cronica.MODE.apollon_arrow matches 0 run \
-        function cronica:player/inventory/full_execute/func/model_change/macro/run {ItemID: "apollon_arrow", Model: "common/ammo/default"  }
-
-    # 黄昏
-      execute if score @s SCORE.cronica.MODE.apollon_bow matches 1 run \
-        function cronica:player/inventory/full_execute/func/model_change/macro/run {ItemID: "apollon_bow",   Model: "character/ikaros/unique/apollon_bow/unique/twilight"  }
-      execute if score @s SCORE.cronica.MODE.apollon_bow matches 1 run \
-        function cronica:player/inventory/full_execute/func/model_change/macro/run {ItemID: "apollon_bow",   Model: "character/ikaros/unique/apollon_arrow/unique/twilight"}
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/default"}
 
     # 弾薬表示
       execute if score @s SCORE.cronica.MODE.apollon_arrow matches 1 run \
-        function cronica:player/inventory/full_execute/func/model_change/macro/run {ItemID: "apollon_arrow", Model: "common/ammo/one" }
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/one" }
       execute if score @s SCORE.cronica.MODE.apollon_arrow matches -1 run \
-        function cronica:player/inventory/full_execute/func/model_change/macro/run {ItemID: "apollon_arrow", Model: "common/ammo/zero"}
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/zero"}
 
-  ## 後続処理起動
-
-    # 行動検知処理起動
-      schedule function cronica:player/character/ikaros/unique/apollon_bow/boot/free_detect 1t
-# =================================================================================================
-
-##【 REFRESH 】
-
-  ## スコア管理
-
-    # アイテムモード初期化
-      execute if score @s SCORE.cronica.MODE.apollon_bow matches 0 run scoreboard players reset @s SCORE.cronica.MODE.apollon_bow
-      execute if score @s SCORE.cronica.MODE.apollon_arrow matches 0 run scoreboard players reset @s SCORE.cronica.MODE.apollon_arrow
-
-    # アイテムモード撤去
-      execute unless entity @a[scores = {SCORE.cronica.MODE.apollon_bow = -99..}] run scoreboard objectives remove SCORE.cronica.MODE.apollon_bow
-      execute unless entity @a[scores = {SCORE.cronica.MODE.apollon_arrow = -99..}] run scoreboard objectives remove SCORE.cronica.MODE.apollon_arrow
+    # 黄昏
+      execute if score @s SCORE.cronica.MODE.apollon_bow matches 1 run \
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_bow",   Model: "character/ikaros/unique/apollon_bow/twilight"}
+      execute if score @s SCORE.cronica.MODE.apollon_bow matches 1 run \
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "character/ikaros/unique/apollon_bow/twilight"}
 # =================================================================================================
 # ver 0.11.0

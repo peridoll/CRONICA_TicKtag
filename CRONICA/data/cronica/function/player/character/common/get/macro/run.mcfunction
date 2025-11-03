@@ -31,14 +31,24 @@
 
     # アイテム入手
       $execute as @s[tag =! TAG.cronica.INVENTORY.$(ItemID).Has] run \
-        function cronica:player/inventory/slot/loading_slot/macro/run with storage cronica:temp CommonGet
-      $execute as @s[tag =! TAG.cronica.INVENTORY.$(ItemID).Has] run \
-        loot give @s loot cronica:character/$(MasterID)/$(MasterType)/$(ItemID)
+        function cronica:player/character/common/get/macro/default_get with storage cronica:temp CommonGet
+
+  ## 後続処理起動
+
+    # 常時検知処理起動
+      function cronica:player/status/detection/free_detect/macro/free_detect_func with storage cronica:temp CommonGet
 
 ##【 REFRESH 】
 
-  # 状態初期化
-    $tag @s remove TAG.cronica.INVENTORY.$(ItemID).Has
-    data remove storage cronica:temp CommonGet
+  ## データ管理
+
+    # タグ削除
+      $tag @s remove TAG.cronica.INVENTORY.$(ItemID).Has
+
+    # スコア削除
+      $scoreboard objectives remove SCORE.cronica.INVENTORY.$(ItemID).Count
+
+    # ストレージ削除
+      data remove storage cronica:temp CommonGet
 # =================================================================================================
 # ver 0.11.0

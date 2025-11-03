@@ -5,7 +5,7 @@
   ## 後続処理管理
 
     # アイテムセーブ
-      execute as @a[tag = TAG.cronica.STATUS.ChangeInventory] run function cronica:player/inventory/full_execute/func/saving_slot/run
+      execute as @a[tag=TAG.cronica.STATUS.ChangeInventory] run function cronica:player/inventory/full_execute/func/saving_slot/run
 
 ##【 REFRESH 】
 

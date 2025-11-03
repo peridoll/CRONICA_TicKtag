@@ -10,6 +10,6 @@
   ## 後続処理
 
     # ループするメインの機構を呼び出し
-      schedule function cronica:player/status/detection/advancements/change_inventory/main 1t
+      schedule function cronica:player/status/detection/advancements/change_inventory/main 2t
 # =================================================================================================
 # ver 0.11.0
