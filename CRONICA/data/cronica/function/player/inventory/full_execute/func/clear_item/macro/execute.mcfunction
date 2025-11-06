@@ -2,26 +2,10 @@
 
 ##【 IMPULSE 】
 
-  ## インベントリ管理
+  ## 後続処理管理
 
-    # アイテム削除
+    # 関数実行
       $execute if data storage cronica:temp FullExecute_clear_item{ItemID: "$(TargetID)"} run \
-        clear @s minecraft:$(ID)[ \
-          minecraft:custom_data = { \
-            "MasterID":   "$(MasterID)", \
-            "MasterType": "$(MasterType)", \
-            "ItemID":     "$(ItemID)", \
-            "ItemMode":   "$(ItemMode)", \
-            "ItemStatus": "$(ItemStatus)" \
-          } \
-        ]
+        function cronica:player/inventory/full_execute/func/clear_item/macro/execute_lib with storage cronica:temp FullExecute_clear_item
 # =================================================================================================
 # ver 0.11.0
-
-# clear @s minecraft:diamond_horse_armor[ \
-#   minecraft:custom_data = { \
-#     "ItemCategory":"SelectSkill", \
-#     "ItemID":"FlyingFeather", \
-#     "ItemStatus":"ready" \
-#   } \
-# ]

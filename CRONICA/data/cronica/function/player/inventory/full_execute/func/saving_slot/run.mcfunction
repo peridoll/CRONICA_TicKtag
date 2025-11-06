@@ -11,7 +11,7 @@
     # UUID取得
       function cronica:system/data/storage/uuid/macro/get {StorageName: "FullExecute_saving_slot"}
 
-    # # インベントリ探索
+    # インベントリ探索
       function cronica:player/inventory/full_execute/common/macro/run with storage cronica:temp FullExecute_saving_slot
 # =================================================================================================
 # ver 0.11.0
