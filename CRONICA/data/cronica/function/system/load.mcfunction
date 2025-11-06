@@ -2,6 +2,11 @@
 
 ##【 IMPULSE 】
 
+  ## ワールドセットアップ
+
+    # ゲームルール設定
+      function cronica:system/server/gamerule
+
   ## データ管理
 
     # コンフィグ初期化

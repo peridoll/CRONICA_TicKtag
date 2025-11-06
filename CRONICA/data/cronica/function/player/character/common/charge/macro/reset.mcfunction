@@ -19,6 +19,6 @@
       $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Goal
       $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack
       $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count
-      $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count.Goal
+      $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Goal
 # =================================================================================================
 # ver 0.11.0

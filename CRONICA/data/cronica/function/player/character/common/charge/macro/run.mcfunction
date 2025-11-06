@@ -30,6 +30,6 @@
       $function cronica:player/character/common/charge/macro/activate_func with storage cronica:config $(Storage)
 
     # メイン処理実行
-      $schedule function cronica:player/character/$(MasterID)/$(MasterID)/$(ItemID)/library/$(ChargeAddress)/main 1t
+      $schedule function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/library/$(ChargeAddress)/main 1t
 # =================================================================================================
 # ver 0.11.0

@@ -5,11 +5,11 @@
   ## 共通マクロ実行:アイテム削除
 
     # データ作成
-      data remove storage cronica:temp FullExecute_item_clear
-      data modify storage cronica:temp FullExecute_item_clear.Function set value "item_clear"
-      $data modify storage cronica:temp FullExecute_item_clear.TargetID set value "$(ItemID)"
+      data remove storage cronica:temp FullExecute_clear_item
+      data modify storage cronica:temp FullExecute_clear_item.Function set value "clear_item"
+      $data modify storage cronica:temp FullExecute_clear_item.TargetID set value "$(ItemID)"
 
     # インベントリ探索
-      function cronica:player/inventory/full_execute/common/macro/run with storage cronica:temp FullExecute_item_clear
+      function cronica:player/inventory/full_execute/common/macro/run with storage cronica:temp FullExecute_clear_item
 # =================================================================================================
 # ver 0.11.0
