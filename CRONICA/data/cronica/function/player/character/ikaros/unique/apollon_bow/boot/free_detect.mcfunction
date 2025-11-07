@@ -8,17 +8,15 @@
       execute as @a run function cronica:player/inventory/slot/macro/has_check {ItemID: "apollon_bow"}
 
     # リロード検知
-      data remove storage cronica:temp ApollonArrow.ConfigStack
-      execute store result storage cronica:temp ApollonArrow.ConfigStack int 1 run \
-        scoreboard players get #CONFIG.cronica.INVENTORY.apollon_arrow.Stack SCORE.cronica.CONFIG
       execute \
           as @a[\
             tag = TAG.cronica.INVENTORY.apollon_bow.Has, \
-            tag = TAG.cronica.STATUS.IsSneaking \
+            tag = TAG.cronica.STATUS.IsSneaking, \
+            tag =! TAG.cronica.STATUS.ItemUsing \
           ] \
           if predicate cronica:is_on_ground \
         run \
-          function cronica:player/character/ikaros/unique/apollon_bow/library/reload/macro/check with storage cronica:temp ApollonArrow
+          function cronica:player/character/ikaros/unique/apollon_bow/library/reload/check
 
   ## 再起処理
 

@@ -2,6 +2,11 @@
 
 ##【 IMPULSE 】
 
+  ## スコア管理
+
+    # 発射用スコア設置
+      function cronica:player/character/ikaros/unique/apollon_bow/library/shoot/standby
+
   ## アイテム置き換え
 
     # モードチェンジ

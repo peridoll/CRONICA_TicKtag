@@ -14,11 +14,6 @@
       $tag @s remove TAG.cronica.$(TagCategory).$(ItemID).$(ChargeType)ed
 
     # スコア管理
-      $scoreboard players reset @s SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing
-      $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing
-      $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Goal
-      $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack
-      $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Count
-      $execute unless entity @a[scores = {SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing = 0..}] run scoreboard objectives remove SCORE.cronica.$(TagCategory).$(ItemID).$(ChargeType).Stack.Goal
+      $function cronica:player/character/common/macro/leave_lib with storage cronica:config $(Storage)
 # =================================================================================================
 # ver 0.11.0

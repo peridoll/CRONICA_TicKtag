@@ -26,6 +26,13 @@
           "type": "model",
           "model": "cronica:item/character/ikaros/unique/apollon_arrow/ammo_0"
         }
+      },
+      {
+        "when": "twilight",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/ikaros/unique/apollon_arrow/twilight"
+        }
       }
     ]
   }

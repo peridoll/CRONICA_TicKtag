@@ -42,5 +42,6 @@
       title @s times 15 60 15
       title @s title [{"text":" "}]
       title @s subtitle [{"text":"-","color":"gray","bold":false},{"text":"Practice Area","color":"gold","bold":false},{"text":"-","color":"gray","bold":false}]
+      title @s actionbar ""
 # =================================================================================================
 # ver 0.11.0

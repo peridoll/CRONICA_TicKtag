@@ -33,10 +33,18 @@
       $execute as @s[tag =! TAG.cronica.INVENTORY.$(ItemID).Has] run \
         function cronica:player/character/common/get/macro/default_get with storage cronica:temp CommonGet
 
+    # アイテムステータス付与
+      # TODO: 戦闘機能を作る前には実施
+
   ## 後続処理起動
 
     # 常時検知処理起動
-      function cronica:player/status/detection/free_detect/macro/free_detect_func with storage cronica:temp CommonGet
+      data modify storage cronica:temp CommonGet.Action set value "library/storage/config"
+      function cronica:player/inventory/full_execute/func/character_func/macro/execute with storage cronica:temp CommonGet
+
+    # 常時検知処理起動
+      data modify storage cronica:temp CommonGet.Action set value "boot/free_detect"
+      function cronica:player/inventory/full_execute/func/character_func/macro/execute with storage cronica:temp CommonGet
 
 ##【 REFRESH 】
 

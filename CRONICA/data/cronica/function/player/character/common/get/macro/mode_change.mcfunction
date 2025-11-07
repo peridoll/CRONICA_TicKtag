@@ -5,7 +5,7 @@
   ## モデル変更処理
 
     # インベントリ探索
-        $function cronica:player/inventory/full_execute/func/model_change/macro/run {ItemID: "$(ItemID)", Model: "$(Model)"}
+      $function cronica:player/inventory/full_execute/func/model_change/macro/run {ItemID: "$(ItemID)", Model: "$(Model)"}
 
 ##【 REFRESH 】
 

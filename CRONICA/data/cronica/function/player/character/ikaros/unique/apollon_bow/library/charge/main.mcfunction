@@ -7,13 +7,13 @@
     # 使用終了検知
       execute as @a[tag = TAG.cronica.WEAPON.apollon_bow.Charged] run \
         function cronica:player/character/common/charge/macro/cancel with storage cronica:config ApollonBowCharge
-      tag @s[scores = {SCORE.cronica.WEAPON.apollon_bow.Charging = 0..}] add TAG.cronica.WEAPON.apollon_bow.Charged
+      tag @a[scores = {SCORE.cronica.WEAPON.apollon_bow.Charging = 0..}] add TAG.cronica.WEAPON.apollon_bow.Charged
 
     # 完了処理
       execute as @a[scores = {SCORE.cronica.WEAPON.apollon_bow.Charging = 1..}] \
-          if score @s SCORE.cronica.WEAPON.apollon_bow.Charging >= @s SCORE.cronica.WEAPON.apollon_bow.Charg.Goal \
+          if score @s SCORE.cronica.WEAPON.apollon_bow.Charging = @s SCORE.cronica.WEAPON.apollon_bow.Charg.Goal \
         run \
-          function cronica:player/character/common/charge/macro/complete with storage cronica:config ApollonBowCharge
+          function cronica:player/character/ikaros/unique/apollon_bow/library/evolve
 
     # 再起処理
       execute if entity @a[tag = TAG.cronica.WEAPON.apollon_bow.Charging] run \

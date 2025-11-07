@@ -20,7 +20,6 @@
 
     # 渡された引数の関数を実行
       $function cronica:player/inventory/full_execute/func/$(Function)/macro/execute with storage cronica:temp FullExecute_$(Function)
-      # $say $(Function) executed in slot $(SlotNum)
 
   ## 再起処理
 

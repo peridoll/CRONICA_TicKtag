@@ -20,5 +20,7 @@
       gamerule commandBlockOutput false
       gamerule doImmediateRespawn true
       gamerule doWeatherCycle false
+      gamerule announceAdvancements false
+      gamerule fallDamage false
 # =================================================================================================
 # ver 0.11.0
