@@ -9,12 +9,16 @@
   {
     "function": "minecraft:set_custom_data",
     "tag": {
+      "ItemMode": "none",
       "ItemStatus": "ready"
     }
   },
   {
     "function": "minecraft:set_components",
     "components": {
+      "!minecraft:attribute_modifiers": {},
+      "minecraft:unbreakable": {},
+      "minecraft:max_stack_size": 1,
       "minecraft:enchantment_glint_override": true
     }
   }

@@ -11,21 +11,15 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "cronica:character/ikaros/unique/apollon_arrow",
-                "minecraft:custom_model_data": {"strings": ["default"]},
-                "minecraft:enchantment_glint_override": true,
-                "!minecraft:attribute_modifiers": {},
-                "minecraft:max_stack_size": 99,
-                "minecraft:custom_data": {
-                  "MasterID": "ikaros",
-                  "MasterType": "unique",
-                  "ItemID": "apollon_arrow",
-                  "ItemMode": "none",
-                  "ItemStatus": "ready"
-                },
                 "minecraft:custom_name": {
                   "text": "太陽神ノ矢",
                   "color": "#ffa500",
                   "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "ikaros",
+                  "MasterType": "unique",
+                  "ItemID": "apollon_arrow"
                 }
               }
             }

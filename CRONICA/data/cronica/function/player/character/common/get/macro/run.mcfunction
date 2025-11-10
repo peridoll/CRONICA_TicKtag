@@ -44,7 +44,7 @@
 
     # 常時検知処理起動
       data modify storage cronica:temp CommonGet.Action set value "boot/free_detect"
-      function cronica:player/inventory/full_execute/func/character_func/macro/execute with storage cronica:temp CommonGet
+      function cronica:player/inventory/full_execute/func/character_func/macro/execute_schedule with storage cronica:temp CommonGet
 
 ##【 REFRESH 】
 

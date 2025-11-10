@@ -2,21 +2,20 @@
   {
     "function": "minecraft:set_custom_model_data",
     "strings": {
-      "values": ["used"],
+      "values": ["ban"],
       "mode": "insert"
     }
   },
   {
     "function": "minecraft:set_custom_data",
     "tag": {
-      "ItemStatus": "used"
+      "ItemStatus": "ban"
     }
   },
   {
     "function": "minecraft:set_components",
     "components": {
-      "minecraft:enchantment_glint_override": false,
-      "!minecraft:consumable": {}
+      "minecraft:enchantment_glint_override": true
     }
   }
 ]

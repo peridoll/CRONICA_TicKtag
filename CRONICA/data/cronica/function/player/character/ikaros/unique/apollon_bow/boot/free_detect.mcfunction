@@ -18,6 +18,18 @@
         run \
           function cronica:player/character/ikaros/unique/apollon_bow/library/reload/check
 
+    # 発射検知
+      execute \
+          as @a[\
+            tag = TAG.cronica.INVENTORY.apollon_bow.Has \
+          ] \
+          if score @s SCORE.cronica.WEAPON.apollon_bow.Shoot matches 1.. \
+        run \
+          function cronica:player/character/ikaros/unique/apollon_bow/library/shoot/check
+      scoreboard objectives remove SCORE.cronica.WEAPON.apollon_bow.Shoot
+      execute if entity @a[tag = TAG.cronica.INVENTORY.apollon_bow.Has] run \
+        scoreboard objectives add SCORE.cronica.WEAPON.apollon_bow.Shoot minecraft.used:minecraft.bow
+
   ## 再起処理
 
     # 再起処理

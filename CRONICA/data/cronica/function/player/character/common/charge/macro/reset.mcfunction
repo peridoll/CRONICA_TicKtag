@@ -12,6 +12,7 @@
 
     # タグ管理
       $tag @s remove TAG.cronica.$(TagCategory).$(ItemID).$(ChargeType)ed
+      $tag @s remove TAG.cronica.$(TagCategory).$(ItemID).$(ChargeType)ing
 
     # スコア管理
       $function cronica:player/character/common/macro/leave_lib with storage cronica:config $(Storage)

@@ -2,9 +2,9 @@
 
 ##【 IMPULSE 】
 
-  ## 後続処理管理
+  ## データ書き換え
 
-    # 関数実行
+    # スロット更新
       $data modify storage cronica:personal/$(UUID)/inventory/saving_slot $(ItemID) set value $(SlotNum)
 # =================================================================================================
 # ver 0.11.0

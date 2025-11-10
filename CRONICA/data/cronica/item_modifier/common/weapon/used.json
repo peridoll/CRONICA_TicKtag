@@ -15,8 +15,7 @@
   {
     "function": "minecraft:set_components",
     "components": {
-      "minecraft:enchantment_glint_override": false,
-      "!minecraft:consumable": {}
+      "minecraft:enchantment_glint_override": false
     }
   }
 ]

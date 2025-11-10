@@ -5,21 +5,21 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:bow",
+          "name": "minecraft:stick",
           "functions": [
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_model": "cronica:character/ikaros/unique/apollon_bow",
+                "minecraft:item_model": "cronica:character/ikaros/unique/begin_twilight",
                 "minecraft:custom_name": {
-                  "text": "太陽神ノ弓",
+                  "text": "逢魔ノ刻",
                   "color": "#ffa500",
                   "bold": true
                 },
                 "minecraft:custom_data": {
                   "MasterID": "ikaros",
                   "MasterType": "unique",
-                  "ItemID": "apollon_bow"
+                  "ItemID": "begin_twilight"
                 }
               }
             }

@@ -14,17 +14,10 @@
         }
       },
       {
-        "when": "ammo_1",
+        "when": "used",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/ikaros/unique/apollon_arrow/ammo_1"
-        }
-      },
-      {
-        "when": "ammo_0",
-        "model": {
-          "type": "model",
-          "model": "cronica:item/character/ikaros/unique/apollon_arrow/ammo_0"
+          "model": "cronica:item/character/ikaros/unique/apollon_arrow/used"
         }
       },
       {

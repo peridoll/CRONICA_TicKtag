@@ -41,13 +41,11 @@
       execute if score @s SCORE.cronica.MODE.apollon_bow matches 0 run \
         function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_bow",   Model: "common/weapon/default"}
       execute if score @s SCORE.cronica.MODE.apollon_arrow matches 0 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/default"}
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/arrow_default"}
 
     # 弾薬表示
-      execute if score @s SCORE.cronica.MODE.apollon_arrow matches 1 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/one"}
       execute if score @s SCORE.cronica.MODE.apollon_arrow matches -1 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/zero"}
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/used"}
 
     # 黄昏
       execute if score @s SCORE.cronica.MODE.apollon_bow matches 1 run \
