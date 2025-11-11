@@ -3,7 +3,9 @@
 ##【 IMPULSE CONFIG 】
 # 一度きり実行すればよい
 
+  ## アイテムコンフィグ定義
 
-
+    # 基本スタック数
+      data modify storage cronica:config ApollonArrow.CustomData.DefaultStack set value 16
 # =================================================================================================
 # ver 0.12.0
