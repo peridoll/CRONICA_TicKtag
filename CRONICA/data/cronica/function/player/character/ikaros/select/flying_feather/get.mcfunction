@@ -1,34 +1,16 @@
 # =================================================================================================
 
-##【 IMPULSE 】
+##【 IMPULSE FREE 】
+# 通常実行、手動実行可能
 
-  ## 準備
+  ## 基本動作
 
-    # コンフィグ読み込み
-      function cronica:player/character/ikaros/select/flying_feather/config
-
-  ## アイテム入手
-
-    # 太陽神の弓
-      function cronica:player/character/common/get/macro/run \
+    # アイテム入手
+      function cronica_lib:player/character/get/macro/get \
         { \
-          MasterID     : "ikaros", \
-          MasterType   : "select", \
-          ItemID       : "flying_feather" \
+          MasterType : "select", \
+          MasterID   : "ikaros", \
+          ItemID     : "flying_feather" \
         }
-
-  ## アイテムモデル変更
-
-    # 基本形態
-      execute if score @s SCORE.cronica.MODE.flying_feather matches 0 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "flying_feather", Model: "common/default"}
-
-    # 使用済み
-      execute if score @s SCORE.cronica.MODE.flying_feather matches -1 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "flying_feather", Model: "common/used"}
-
-    # 使用不可
-      execute if score @s SCORE.cronica.MODE.flying_feather matches -2 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "flying_feather", Model: "common/ban"}
 # =================================================================================================
-# ver 0.11.0
+# ver 0.12.0

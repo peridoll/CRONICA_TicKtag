@@ -1,44 +1,30 @@
 # =================================================================================================
-# ユニークアイテムの入手とモデル切替を管理する汎用関数です。
-# 初回取得時やリセット時に呼び出してください。
-#
-# 構成：
-# 1. 準備（config読み込み）
-# 2. アイテム入手（付与処理）
-# 3. モデル変更（スコア値による見た目切替）
 
-##【 IMPULSE 】
+##【 IMPULSE FREE 】
+# 通常実行、手動実行可能
 
-  ## 準備
-    # configから各種設定値を取得
+  ## 基本動作
 
-    # コンフィグ読み込み
-      function cronica:player/character/ikaros/unique/begin_twilight/config
-
-  ## アイテム入手
-    # MasterID/Type/ItemIDで一意に管理。get/macro/runでアイテムを付与
-
-    # 太陽神の弓
-      function cronica:player/character/common/get/macro/run \
+    # アイテム入手
+      function cronica_lib:player/character/get/macro/get \
         { \
-          MasterID   : "ikaros", \
           MasterType : "unique", \
+          MasterID   : "ikaros", \
           ItemID     : "begin_twilight" \
         }
 
-  ## アイテムモデル変更
-    # MODEスコア値に応じてモデルを切り替え
+  ## 状態変化
 
     # 基本形態
       execute if score @s SCORE.cronica.MODE.begin_twilight matches 0 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "begin_twilight",   Model: "common/weapon/default"}
+        function cronica_lib:player/character/get/macro/mode_change { ItemID: "begin_twilight", Model: "common/skill/default" }
 
     # 使用済み
       execute if score @s SCORE.cronica.MODE.begin_twilight matches -1 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "begin_twilight",   Model: "common/weapon/used"}
+        function cronica_lib:player/character/get/macro/mode_change { ItemID: "begin_twilight", Model: "common/skill/used" }
 
     # 使用不可
       execute if score @s SCORE.cronica.MODE.begin_twilight matches -2 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "begin_twilight",   Model: "common/weapon/ban"}
+        function cronica_lib:player/character/get/macro/mode_change { ItemID: "begin_twilight", Model: "common/skill/ban" }
 # =================================================================================================
-# ver 0.11.1
+# ver 0.12.0
