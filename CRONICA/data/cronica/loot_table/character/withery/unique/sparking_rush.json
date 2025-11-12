@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/withery/unique/sparking_rush",
+                "minecraft:custom_name": {
+                  "text": "霹靂",
+                  "color": "yellow",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "withery",
+                  "MasterType": "unique",
+                  "ItemID": "sparking_rush"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

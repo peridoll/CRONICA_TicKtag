@@ -10,7 +10,7 @@
         "when": "default",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/assassin/unique/shadow_dagger/default"
+          "model": "cronica:item/character/shadow/unique/shadow_dagger/default"
         }
       }
     ]

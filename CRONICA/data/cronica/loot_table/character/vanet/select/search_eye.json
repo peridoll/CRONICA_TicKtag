@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/vanet/select/search_eye",
+                "minecraft:custom_name": {
+                  "text": "千里眼",
+                  "color": "light_purple",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "vanet",
+                  "MasterType": "select",
+                  "ItemID": "search_eye"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

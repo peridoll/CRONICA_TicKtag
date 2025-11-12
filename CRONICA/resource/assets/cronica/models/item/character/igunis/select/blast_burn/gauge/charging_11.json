@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/igunis/select/blast_burn/default",
+  "textures": {
+    "layer0": "cronica:item/character/igunis/select/blast_burn/gauge/blast_burn_charging_11"
+  }
+}

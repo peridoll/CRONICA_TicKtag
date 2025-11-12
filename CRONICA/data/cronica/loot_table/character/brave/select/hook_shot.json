@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/brave/select/hook_shot",
+                "minecraft:custom_name": {
+                  "text": "フックショット",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "brave",
+                  "MasterType": "select",
+                  "ItemID": "hook_shot"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/igunis/select/cross_flame",
+                "minecraft:custom_name": {
+                  "text": "白陽ノ蒼炎",
+                  "color": "red",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "igunis",
+                  "MasterType": "select",
+                  "ItemID": "cross_flame"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

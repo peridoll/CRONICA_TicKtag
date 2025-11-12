@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/brave/select/spinning_slash",
+                "minecraft:custom_name": {
+                  "text": "剣技：回転斬り",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "brave",
+                  "MasterType": "select",
+                  "ItemID": "spinning_slash"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

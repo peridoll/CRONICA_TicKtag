@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/deliverdy/select/gatling_socket",
+                "minecraft:custom_name": {
+                  "text": "六連式発射砲",
+                  "color": "light_purple",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "deliverdy",
+                  "MasterType": "select",
+                  "ItemID": "gatling_socket"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

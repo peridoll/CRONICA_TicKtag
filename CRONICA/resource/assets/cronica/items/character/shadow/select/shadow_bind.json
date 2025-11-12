@@ -10,7 +10,7 @@
         "when": "default",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/assassin/select/shadow_bind/default"
+          "model": "cronica:item/character/shadow/select/shadow_bind/default"
         }
       }
     ]

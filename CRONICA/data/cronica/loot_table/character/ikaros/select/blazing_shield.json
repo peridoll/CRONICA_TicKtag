@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/ikaros/select/blazing_shield",
+                "minecraft:custom_name": {
+                  "text": "焔熱ノ障壁",
+                  "color": "gold",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "ikaros",
+                  "MasterType": "select",
+                  "ItemID": "blazing_shield"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

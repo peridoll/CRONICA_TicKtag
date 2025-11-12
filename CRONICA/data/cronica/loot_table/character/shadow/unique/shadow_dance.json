@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/shadow/unique/shadow_dance",
+                "minecraft:custom_name": {
+                  "text": "暗影舞踊",
+                  "color": "dark_red",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "shadow",
+                  "MasterType": "unique",
+                  "ItemID": "shadow_dance"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

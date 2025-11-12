@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/ikaros/unique/wind_knowledge",
+                "minecraft:custom_name": {
+                  "text": "風乗リノ心得",
+                  "color": "gold",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "ikaros",
+                  "MasterType": "unique",
+                  "ItemID": "wind_knowledge"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

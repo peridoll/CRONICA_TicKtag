@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/withery/select/cross_thunder",
+                "minecraft:custom_name": {
+                  "text": "黒陰ノ雷鳴",
+                  "color": "yellow",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "withery",
+                  "MasterType": "select",
+                  "ItemID": "cross_thunder"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

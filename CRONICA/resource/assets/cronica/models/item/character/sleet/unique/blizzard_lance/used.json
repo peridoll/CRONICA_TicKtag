@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/sleet/unique/blizzard_lance/default",
+  "textures": {
+    "layer0": "cronica:item/character/sleet/unique/blizzard_lance/blizzard_lance_used"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cronica:item/character/withery/unique/sparking_rush/sparking_rush_default"
+  }
+}

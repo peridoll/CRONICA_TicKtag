@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/sleet/select/healing_rain",
+                "minecraft:custom_name": {
+                  "text": "慈悲の豪雨",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "sleet",
+                  "MasterType": "select",
+                  "ItemID": "healing_rain"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/sleet/select/ice_wall",
+                "minecraft:custom_name": {
+                  "text": "アイスウォール",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "sleet",
+                  "MasterType": "select",
+                  "ItemID": "ice_wall"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

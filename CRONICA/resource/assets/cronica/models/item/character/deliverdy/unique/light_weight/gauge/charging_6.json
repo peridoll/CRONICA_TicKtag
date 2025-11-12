@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/deliverdy/unique/light_weight/default",
+  "textures": {
+  "layer0": "cronica:item/character/deliverdy/unique/light_weight/light_weight_charging_6"
+  }
+}

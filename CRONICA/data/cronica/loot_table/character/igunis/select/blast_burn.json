@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/igunis/select/blast_burn",
+                "minecraft:custom_name": {
+                  "text": "火球弾",
+                  "color": "red",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "igunis",
+                  "MasterType": "select",
+                  "ItemID": "blast_burn"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

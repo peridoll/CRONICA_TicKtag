@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/brave/unique/battle_standby",
+                "minecraft:custom_name": {
+                  "text": "戦いの準備",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "brave",
+                  "MasterType": "unique",
+                  "ItemID": "battle_standby"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
