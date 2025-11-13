@@ -2,6 +2,11 @@
 
 ##【 IMPULSE 】
 
+  ## RESET
+
+    # Unique
+      function core:player/inventory/full_execute/func/clear_item/macro/run {TargetType : "MasterType", TargetID : "unique" }
+
   ## SKILL
 
     # Evol Capacitor

@@ -14,7 +14,7 @@
         function core:player/inventory/has_check/macro/has_check_lib_offhand { ItemID: "$(ItemID)" }
 
     # カーソルアイテム確認
-      $execute if entity @s[tag =! TAG.cronica.INVENTORY.$(ItemID).Has] run \
+      # $execute if entity @s[tag =! TAG.cronica.INVENTORY.$(ItemID).Has] run \
         function core:player/inventory/has_check/macro/has_check_lib_cursor { ItemID: "$(ItemID)" }
 # =================================================================================================
 # ver 0.12.0

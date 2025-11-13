@@ -20,7 +20,6 @@
         tag @s add TAG.cronica.INVENTORY.$(ItemID).Has
 
     # コピーアイテム削除
-      item replace entity @s armor.legs with air
       item replace entity @s enderchest.0 with air
 
     # ストレージ初期化
