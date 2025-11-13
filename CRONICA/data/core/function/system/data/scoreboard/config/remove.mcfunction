@@ -10,4 +10,4 @@
     # 管理スコア撤去
       scoreboard objectives remove SCORE.cronica.SYSTEM.PersonalNumber
 # =================================================================================================
-# ver 0.11.0
+# ver 0.12.0

@@ -12,13 +12,13 @@
 
 #     # 基本形態
 #       execute if score @s SCORE.cronica.MODE.apollon_bow matches 0 run \
-#         function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_bow",   Model: "common/weapon/default" }
+#         function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_bow",   Model: "core:player/weapon/default" }
 #       execute if score @s SCORE.cronica.MODE.apollon_arrow matches 0 run \
-#         function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/arrow_default" }
+#         function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "core:player/weapon/ammo/arrow_default" }
 
 #     # 使用済み
 #       execute if score @s SCORE.cronica.MODE.apollon_arrow matches -1 run \
-#         function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "common/weapon/ammo/used" }
+#         function cronica:player/character/common/get/macro/mode_change {ItemID: "apollon_arrow", Model: "core:player/weapon/ammo/used" }
 
 #     # モードチェンジ：黄昏
 #       execute if score @s SCORE.cronica.MODE.apollon_bow matches 1 run \

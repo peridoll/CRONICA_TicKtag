@@ -19,15 +19,5 @@
     # ApollonArrow : Stack
       scoreboard players set #CONFIG.cronica.INVENTORY.apollon_arrow.Stack \
       SCORE.cronica.CONFIG 16
-
-  ## STORAGE
-
-    # BasicData
-      data remove storage cronica:config ApollonBow
-      data modify storage cronica:config ApollonBow.BasicData.MasterID set value "ikaros"
-      data modify storage cronica:config ApollonBow.BasicData.MasterType set value "unique"
-      data modify storage cronica:config ApollonBow.BasicData.ItemID set value "apollon_bow"
-
-      data modify storage cronica:config ApollonBow.BasicData.Category set value "WEAPON"
 # =================================================================================================
 # ver 0.11.1

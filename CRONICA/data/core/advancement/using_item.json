@@ -14,6 +14,6 @@
     }
   },
   "rewards": {
-    "function": "cronica:player/status/detection/advancements/using_item/grant"
+    "function": "core:player/status/detection/advancements/using_item/grant"
   }
 }

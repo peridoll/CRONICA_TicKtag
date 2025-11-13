@@ -5,7 +5,7 @@
   ## スコアボード管理
 
     # パーソナルナンバー登録
-      # function core:system/data/scoreboard/personal_number/setup
+      function core:system/data/scoreboard/personal_number/setup
 
   ## プレイヤー管理
 
@@ -13,7 +13,7 @@
       tag @s remove TAG.cronica.CT_HANDICAP
 
     # メインロビーへテレポート
-      function core:world/teleport/to_lobby
+      function cronica:world/teleport/to_lobby
 
     # サーバー参加時通知
       title @s title [{"text":"<<","color":"gray","bold":false},{"text":" CRONICA ","color":"green","bold":true},{"text":">>","color":"gray","bold":false}]

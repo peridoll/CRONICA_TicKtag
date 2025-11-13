@@ -10,161 +10,161 @@
         "when": "default",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/default"
+          "model": "cronica:item/character/withery/unique/flash_step/default"
         }
       },
       {
         "when": "ban",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/ban"
+          "model": "cronica:item/character/withery/unique/flash_step/ban"
         }
       },
       {
         "when": "used",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/used"
+          "model": "cronica:item/character/withery/unique/flash_step/used"
         }
       },
       {
         "when": "charging_0",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_0"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_0"
         }
       },
       {
         "when": "charging_1",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_1"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_1"
         }
       },
       {
         "when": "charging_2",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_2"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_2"
         }
       },
       {
         "when": "charging_3",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_3"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_3"
         }
       },
       {
         "when": "charging_4",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_4"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_4"
         }
       },
       {
         "when": "charging_5",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_5"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_5"
         }
       },
       {
         "when": "charging_6",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_6"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_6"
         }
       },
       {
         "when": "charging_7",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_7"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_7"
         }
       },
       {
         "when": "charging_8",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_8"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_8"
         }
       },
       {
         "when": "charging_9",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_9"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_9"
         }
       },
       {
         "when": "charging_10",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_10"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_10"
         }
       },
       {
         "when": "charging_11",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_11"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_11"
         }
       },
       {
         "when": "charging_12",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_12"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_12"
         }
       },
       {
         "when": "charging_13",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_13"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_13"
         }
       },
       {
         "when": "charging_14",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_14"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_14"
         }
       },
       {
         "when": "charging_15",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_15"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_15"
         }
       },
       {
         "when": "charging_16",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_16"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_16"
         }
       },
       {
         "when": "charging_17",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_17"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_17"
         }
       },
       {
         "when": "charging_18",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_18"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_18"
         }
       },
       {
         "when": "charging_19",
         "model": {
           "type": "model",
-          "model": "cronica:item/character/withery/unique/volt_step/gauge/charging_19"
+          "model": "cronica:item/character/withery/unique/flash_step/gauge/charging_19"
         }
       }
     ]

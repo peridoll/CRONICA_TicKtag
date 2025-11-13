@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/deliverdy/weapon/rabbit_arrow",
+                "minecraft:custom_name": {
+                  "text": "ラビットアロー",
+                  "color": "light_purple",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "deliverdy",
+                  "MasterType": "weapon",
+                  "ItemID": "rabbit_arrow"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

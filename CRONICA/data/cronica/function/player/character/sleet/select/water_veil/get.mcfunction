@@ -12,19 +12,5 @@
           MasterID   : "sleet", \
           ItemID     : "water_veil" \
         }
-
-  ## 状態変化
-
-    # 基本形態
-      execute if score @s SCORE.cronica.MODE.water_veil matches 0 run \
-        function core:player/character/give/macro/mode_change { ItemID: "water_veil", Model: "common/skill/default" }
-
-    # 使用済み
-      execute if score @s SCORE.cronica.MODE.water_veil matches -1 run \
-        function core:player/character/give/macro/mode_change { ItemID: "water_veil", Model: "common/skill/used" }
-
-    # 使用不可
-      execute if score @s SCORE.cronica.MODE.water_veil matches -2 run \
-        function core:player/character/give/macro/mode_change { ItemID: "water_veil", Model: "common/skill/ban" }
 # =================================================================================================
 # ver 0.12.0

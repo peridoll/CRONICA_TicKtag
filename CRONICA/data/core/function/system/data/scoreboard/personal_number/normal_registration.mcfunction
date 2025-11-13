@@ -43,4 +43,4 @@
       execute unless score @s SCORE.cronica.SYSTEM.PersonalNumber matches 0.. run \
         function core:system/data/scoreboard/personal_number/normal_registration
 # =================================================================================================
-# ver 0.11.0
+# ver 0.12.0

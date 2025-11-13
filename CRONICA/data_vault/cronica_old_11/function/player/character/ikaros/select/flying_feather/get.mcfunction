@@ -11,14 +11,14 @@
 
     # 基本形態
       execute if score @s SCORE.cronica.MODE.flying_feather matches 0 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "flying_feather", Model: "common/skill/default"}
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "flying_feather", Model: "core:player/skill/default"}
 
     # 使用済み
       execute if score @s SCORE.cronica.MODE.flying_feather matches -1 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "flying_feather", Model: "common/skill/used"}
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "flying_feather", Model: "core:player/skill/used"}
 
     # 使用不可
       execute if score @s SCORE.cronica.MODE.flying_feather matches -2 run \
-        function cronica:player/character/common/get/macro/mode_change {ItemID: "flying_feather", Model: "common/skill/ban"}
+        function cronica:player/character/common/get/macro/mode_change {ItemID: "flying_feather", Model: "core:player/skill/ban"}
 # =================================================================================================
 # ver 0.11.1

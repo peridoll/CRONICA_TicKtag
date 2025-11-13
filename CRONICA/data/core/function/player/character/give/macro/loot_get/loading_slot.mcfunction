@@ -17,7 +17,7 @@
       data modify storage cronica:temp $(StorageName).Offhand set value ""
       data modify storage cronica:temp $(StorageName).Offhand set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
       $execute if data storage cronica:temp $(StorageName){Slot: 36} if data storage cronica:temp $(StorageName){Offhand: ""} run \
-        scoreboard players remove @s SCORE.cronica.INVENTORY.$(ItemID).Count 1
+        scoreboard players remove @s SCORE.cronica.INVENTORY.$(ItemID).StackCount 1
       $execute if data storage cronica:temp $(StorageName){Slot: 36} if data storage cronica:temp $(StorageName){Offhand: ""} run \
         loot replace entity @s weapon.offhand loot cronica:character/$(MasterID)/$(MasterType)/$(ItemID)
 # =================================================================================================

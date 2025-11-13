@@ -12,19 +12,5 @@
           MasterID   : "shadow", \
           ItemID     : "shadow_dash" \
         }
-
-  ## 状態変化
-
-    # 基本形態
-      execute if score @s SCORE.cronica.MODE.shadow_dash matches 0 run \
-        function core:player/character/give/macro/mode_change { ItemID: "shadow_dash", Model: "common/skill/default" }
-
-    # 使用済み
-      execute if score @s SCORE.cronica.MODE.shadow_dash matches -1 run \
-        function core:player/character/give/macro/mode_change { ItemID: "shadow_dash", Model: "common/skill/used" }
-
-    # 使用不可
-      execute if score @s SCORE.cronica.MODE.shadow_dash matches -2 run \
-        function core:player/character/give/macro/mode_change { ItemID: "shadow_dash", Model: "common/skill/ban" }
 # =================================================================================================
 # ver 0.12.0

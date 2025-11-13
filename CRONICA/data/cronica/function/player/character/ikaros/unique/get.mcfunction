@@ -5,7 +5,7 @@
   ## WEAPON
 
     # Apollon Bow
-      function cronica:player/character/ikaros/unique/apollon_bow/get
+      function cronica:player/character/ikaros/weapon/apollon_bow/get
 
   ## SKILL
 

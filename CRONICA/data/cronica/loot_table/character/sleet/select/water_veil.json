@@ -13,7 +13,7 @@
                 "minecraft:item_model": "cronica:character/sleet/select/water_veil",
                 "minecraft:custom_name": {
                   "text": "ウォーターベール",
-                  "color": "aqua",
+                  "color": "blue",
                   "bold": true
                 },
                 "minecraft:custom_data": {

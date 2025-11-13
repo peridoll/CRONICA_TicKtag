@@ -13,7 +13,7 @@
                 "minecraft:item_model": "cronica:character/sleet/unique/thermal_conversion",
                 "minecraft:custom_name": {
                   "text": "熱エネルギー変換",
-                  "color": "aqua",
+                  "color": "light_purple",
                   "bold": true
                 },
                 "minecraft:custom_data": {

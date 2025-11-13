@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:trident",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/sleet/weapon/blizzard_lance",
+                "minecraft:custom_name": {
+                  "text": "ブリザードランス",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "sleet",
+                  "MasterType": "weapon",
+                  "ItemID": "blizzard_lance"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

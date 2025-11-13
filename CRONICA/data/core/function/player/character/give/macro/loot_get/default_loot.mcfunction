@@ -14,7 +14,7 @@
 
       # コンフィグ読み込み
         $execute store result score @s SCORE.cronica.INVENTORY.$(ItemID).DefaultStack run \
-          data get storage cronica:config $(MasterID).$(ItemID).CustomData.DefaultStack
+          data get storage cronica:config $(ItemID).CustomData.DefaultStack
         $execute if score @s SCORE.cronica.INVENTORY.$(ItemID).DefaultStack matches 1.. run \
           scoreboard players operation @s SCORE.cronica.INVENTORY.$(ItemID).StackCount = @s SCORE.cronica.INVENTORY.$(ItemID).DefaultStack
 
@@ -38,7 +38,7 @@
   ## データ管理
 
     # スコア削除
-      $scoreboard players reset @s SCORE.cronica.INVENTORY.$(ItemID).StackCount
-      $scoreboard players reset @s SCORE.cronica.INVENTORY.$(ItemID).DefaultStack
+      $scoreboard objectives remove SCORE.cronica.INVENTORY.$(ItemID).StackCount
+      $scoreboard objectives remove SCORE.cronica.INVENTORY.$(ItemID).DefaultStack
 # =================================================================================================
 # ver 0.12.0

@@ -12,19 +12,5 @@
           MasterID   : "brave", \
           ItemID     : "battle_standby" \
         }
-
-  ## 状態変化
-
-    # 基本形態
-      execute if score @s SCORE.cronica.MODE.battle_standby matches 0 run \
-        function core:player/character/give/macro/mode_change { ItemID: "battle_standby", Model: "common/skill/default" }
-
-    # 使用済み
-      execute if score @s SCORE.cronica.MODE.battle_standby matches -1 run \
-        function core:player/character/give/macro/mode_change { ItemID: "battle_standby", Model: "common/skill/used" }
-
-    # 使用不可
-      execute if score @s SCORE.cronica.MODE.battle_standby matches -2 run \
-        function core:player/character/give/macro/mode_change { ItemID: "battle_standby", Model: "common/skill/ban" }
 # =================================================================================================
 # ver 0.12.0

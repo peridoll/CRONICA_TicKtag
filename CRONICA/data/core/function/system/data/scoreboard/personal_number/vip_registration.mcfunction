@@ -13,4 +13,4 @@
     execute if entity @s[name = "Hiro966"] run \
       scoreboard players set @s SCORE.cronica.SYSTEM.PersonalNumber 1360
 # =================================================================================================
-# ver 0.11.0
+# ver 0.12.0

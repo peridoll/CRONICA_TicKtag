@@ -13,7 +13,7 @@
                 "minecraft:item_model": "cronica:character/sleet/select/healing_rain",
                 "minecraft:custom_name": {
                   "text": "慈悲の豪雨",
-                  "color": "aqua",
+                  "color": "blue",
                   "bold": true
                 },
                 "minecraft:custom_data": {

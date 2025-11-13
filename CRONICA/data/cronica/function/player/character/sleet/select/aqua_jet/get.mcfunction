@@ -12,19 +12,5 @@
           MasterID   : "sleet", \
           ItemID     : "aqua_jet" \
         }
-
-  ## 状態変化
-
-    # 基本形態
-      execute if score @s SCORE.cronica.MODE.aqua_jet matches 0 run \
-        function core:player/character/give/macro/mode_change { ItemID: "aqua_jet", Model: "common/skill/default" }
-
-    # 使用済み
-      execute if score @s SCORE.cronica.MODE.aqua_jet matches -1 run \
-        function core:player/character/give/macro/mode_change { ItemID: "aqua_jet", Model: "common/skill/used" }
-
-    # 使用不可
-      execute if score @s SCORE.cronica.MODE.aqua_jet matches -2 run \
-        function core:player/character/give/macro/mode_change { ItemID: "aqua_jet", Model: "common/skill/ban" }
 # =================================================================================================
 # ver 0.12.0

@@ -12,19 +12,5 @@
           MasterID   : "ikaros", \
           ItemID     : "judgment_stone" \
         }
-
-  ## 状態変化
-
-    # 基本形態
-      execute if score @s SCORE.cronica.MODE.judgment_stone matches 0 run \
-        function core:player/character/give/macro/mode_change { ItemID: "judgment_stone", Model: "common/skill/default" }
-
-    # 使用済み
-      execute if score @s SCORE.cronica.MODE.judgment_stone matches -1 run \
-        function core:player/character/give/macro/mode_change { ItemID: "judgment_stone", Model: "common/skill/used" }
-
-    # 使用不可
-      execute if score @s SCORE.cronica.MODE.judgment_stone matches -2 run \
-        function core:player/character/give/macro/mode_change { ItemID: "judgment_stone", Model: "common/skill/ban" }
 # =================================================================================================
 # ver 0.12.0

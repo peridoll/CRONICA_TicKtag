@@ -13,7 +13,7 @@
                 "minecraft:item_model": "cronica:character/sleet/unique/over_load",
                 "minecraft:custom_name": {
                   "text": "オーバーロード",
-                  "color": "aqua",
+                  "color": "light_purple",
                   "bold": true
                 },
                 "minecraft:custom_data": {
