@@ -9,11 +9,13 @@
       data remove storage cronica:temp HasCheck
 
     # オフハンドアイテム確認
-      data modify storage cronica:temp HasCheck.ItemID set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
-      $execute if data storage cronica:temp HasCheck{ItemID: "$(ItemID)"} run \
+      data modify storage cronica:temp HasCheck.OffHandItemID set from entity @s equipment.offhand.components."minecraft:custom_data".ItemID
+      $execute if data storage cronica:temp HasCheck{OffHandItemID: "$(ItemID)"} run \
         tag @s add TAG.cronica.INVENTORY.$(ItemID).Has
 
     # ストレージ初期化
       data remove storage cronica:temp HasCheck
 # =================================================================================================
 # ver 0.12.0
+
+$execute if entity @s[tag = TAG.cronica.INVENTORY.$(ItemID).Has] run say offhand

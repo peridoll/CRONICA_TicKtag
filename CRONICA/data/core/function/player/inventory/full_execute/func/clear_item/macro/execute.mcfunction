@@ -20,6 +20,6 @@
           if data storage cronica:temp FullExecute_clear_item{$(TargetType): "$(TargetID)"} \
           if score @s SCORE.cronica.INVENTORY.FullExecute.clear_item.SlotNum matches 36 \
         run \
-        item replace entity @s player.cursor with air
+          item replace entity @s player.cursor with air
 # =================================================================================================
 # ver 0.12.0
