@@ -5,7 +5,7 @@
 
   ## データ管理
 
-    # タグけし
+    # タグ消し
       $tag @s remove TAG.cronica.INVENTORY.$(ItemID).Has
 
   ## 所持確認
@@ -14,15 +14,12 @@
       $execute as @s[nbt = {Inventory: [{components: {"minecraft:custom_data": {"ItemID": "$(ItemID)"}}}]}] run \
         tag @s add TAG.cronica.INVENTORY.$(ItemID).Has
 
-      $execute if entity @s[tag = TAG.cronica.INVENTORY.$(ItemID).Has] run say mainhand
-
     # オフハンド所持確認
-      $execute if entity @s[tag =! TAG.cronica.INVENTORY.$(ItemID).Has] run \
-        function core:player/inventory/has_check/macro/has_check_lib_offhand { ItemID: "$(ItemID)" }
+      $execute if entity @s[tag =! TAG.cronica.INVENTORY.$(ItemID).Has, tag =! TAG.cronica.INVENTORY.UsingEscapeSlot] run \
+        function core:player/inventory/has_check/macro/has_check_lib { Slot: "weapon.offhand", ItemID: "$(ItemID)" }
 
     # カーソルアイテム確認
-      $execute if entity @s[tag =! TAG.cronica.INVENTORY.$(ItemID).Has] run \
-        function core:player/inventory/has_check/macro/has_check_lib_cursor { ItemID: "$(ItemID)" }
+      $execute if entity @s[tag =! TAG.cronica.INVENTORY.$(ItemID).Has, tag =! TAG.cronica.INVENTORY.UsingEscapeSlot] run \
+        function core:player/inventory/has_check/macro/has_check_lib { Slot: "player.cursor", ItemID: "$(ItemID)" }
 # =================================================================================================
 # ver 0.12.0
-

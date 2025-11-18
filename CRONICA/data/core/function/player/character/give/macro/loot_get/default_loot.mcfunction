@@ -25,8 +25,13 @@
 
   ## アイテム入手
 
+    # 練習場でのスロットリセット
+      execute if entity @s[ tag = TAG.cronica.GAMING.practice, tag = TAG.cronica.STATUS.IsSneaking] if predicate core:is_sneaking run \
+        tag @s add TAG.cronica.INVENTORY.ResetSavingSlot
+
     # スロット登録済みアイテム入手 & 単一アイテム入手
-      $function core:player/character/give/macro/loot_get/loading_slot with storage cronica:temp $(StorageName)
+      $execute if entity @s[ tag =! TAG.cronica.INVENTORY.ResetSavingSlot ] run \
+        function core:player/character/give/macro/loot_get/loading_slot with storage cronica:temp $(StorageName)
 
     # スロット未登録アイテム入手 & 複数アイテム入手
       $execute if score @s SCORE.cronica.INVENTORY.$(ItemID).StackCount matches 1.. run \
@@ -36,6 +41,9 @@
       # TODO: アイテムステータス機能実装後に対応
 
   ## データ管理
+
+    # タグ消し
+      tag @s remove TAG.cronica.INVENTORY.ResetSavingSlot
 
     # スコア削除
       $scoreboard objectives remove SCORE.cronica.INVENTORY.$(ItemID).StackCount

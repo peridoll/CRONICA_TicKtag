@@ -7,10 +7,5 @@
     # 使用終了検知
       execute as @a[tag = TAG.cronica.STATUS.IsSprinted] run function core:player/status/detection/predicate/is_sprinting/finish
       tag @a[scores = {SCORE.cronica.STATUS.IsSprinting = 0..}] add TAG.cronica.STATUS.IsSprinted
-
-  ## 終了時管理
-
-    # 再起処理
-      execute if entity @a[scores = {SCORE.cronica.STATUS.IsSprinting = 0..}] run schedule function core:player/status/detection/predicate/is_sprinting/main 1t
 # =================================================================================================
 # ver 0.12.0

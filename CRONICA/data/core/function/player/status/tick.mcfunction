@@ -9,7 +9,10 @@
       execute as @a[gamemode = survival] run function core:player/status/join_server
 
     # 行動検知管理
-      function core:player/status/detection/master
+      execute as @a[tag = TAG.cronica.GAMING] run function core:player/status/detection/master
+
+    # ギミック管理
+      execute as @a[tag = TAG.cronica.GAMING] run function core:player/status/sp_move/master
 
     # エフェクト管理
       execute as @a[tag = TAG.cronica.GAMING] run function core:player/status/effect/master

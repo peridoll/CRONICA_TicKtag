@@ -5,7 +5,6 @@
   ## プレイヤー管理
 
     # アイテム置き換え
-      # $function core:player/inventory/full_execute/func/clear_item/macro/run { TargetType : "ItemID", TargetID : "$(ItemID)" }
       $scoreboard players reset @s SCORE.cronica.MODE.$(ItemID)
       $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/get
 

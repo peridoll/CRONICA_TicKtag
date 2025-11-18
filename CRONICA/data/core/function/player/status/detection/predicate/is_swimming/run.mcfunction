@@ -11,11 +11,5 @@
     # タグ管理
       tag @s remove TAG.cronica.STATUS.IsSwam
       tag @s add TAG.cronica.STATUS.IsSwimming
-
-  ## 後続処理管理
-
-    # メイン関数実行
-      execute unless entity @a[scores = {SCORE.cronica.STATUS.IsSwimming = 2..}] run function core:player/status/detection/predicate/is_swimming/main
-      schedule function core:player/status/detection/predicate/is_swimming/main 1t
 # =================================================================================================
 # ver 0.12.0

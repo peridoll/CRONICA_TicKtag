@@ -5,7 +5,7 @@
 
   ## アイテムコンフィグ定義
 
-    # スキル情報
+    # クールタイム
       data modify storage cronica:config flying_feather.CustomData.CoolTime set value 240
 # =================================================================================================
 # ver 0.12.0
