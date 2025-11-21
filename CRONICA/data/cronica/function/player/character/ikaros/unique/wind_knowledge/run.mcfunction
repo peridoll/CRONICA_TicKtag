@@ -13,25 +13,24 @@
   ## データ管理
 
     # スコア管理
-      scoreboard objectives add SCORE.cronica.TIMER.wind_knowledge.ActivateTime dummy
-      scoreboard players set @s SCORE.cronica.TIMER.wind_knowledge.ActivateTime 0
-      scoreboard objectives add SCORE.cronica.TIMER.wind_knowledge.Activate.Goal dummy
-      execute store result score @s SCORE.cronica.TIMER.wind_knowledge.Activate.Goal run \
+      scoreboard objectives add SCORE.cronica.SKILL.wind_knowledge.ActivateTime dummy
+      scoreboard players set @s SCORE.cronica.SKILL.wind_knowledge.ActivateTime 0
+      scoreboard objectives add SCORE.cronica.CHARACTER.wind_knowledge.Activate.Goal dummy
+      execute store result score @s SCORE.cronica.CHARACTER.wind_knowledge.Activate.Goal run \
         data get storage cronica:config wind_knowledge.CustomData.ActivateTime
 
   ## 実行処理
 
     # ゲームモード
-      tag @s[gamemode = creative] add TAG.cronica.SKILL.flying_feather.RunCreative
-      gamemode adventure @s[tag = TAG.cronica.SKILL.flying_feather.RunCreative]
+      tag @s[gamemode = creative] add TAG.cronica.SKILL.wind_knowledge.RunCreative
+      gamemode adventure @s[tag = TAG.cronica.SKILL.wind_knowledge.RunCreative]
 
     # エフェクト
       effect give @s minecraft:levitation 1 0 true
-      effect give @s minecraft:slow_falling infinite 0 true
 
     # ゲームモード
-      gamemode creative @s[tag = TAG.cronica.SKILL.flying_feather.RunCreative]
-      tag @s[tag = TAG.cronica.SKILL.flying_feather.RunCreative] remove TAG.cronica.SKILL.flying_feather.RunCreative
+      gamemode creative @s[tag = TAG.cronica.SKILL.wind_knowledge.RunCreative]
+      tag @s[tag = TAG.cronica.SKILL.wind_knowledge.RunCreative] remove TAG.cronica.SKILL.wind_knowledge.RunCreative
 
   ## 装飾
 

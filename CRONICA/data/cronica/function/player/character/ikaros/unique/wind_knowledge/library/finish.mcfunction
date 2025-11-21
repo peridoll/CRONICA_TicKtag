@@ -7,9 +7,9 @@
     # エフェクト
       effect clear @s minecraft:slow_falling
 
-  ## 後続処理呼び出し
+  ## データ管理
 
-    # スコア管理
+    # スコアリセット
       function cronica:player/character/ikaros/unique/wind_knowledge/library/reset
 # =================================================================================================
 # ver 0.12.0

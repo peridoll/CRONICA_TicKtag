@@ -5,7 +5,7 @@
   ## データ管理
 
     # スコア管理
-      scoreboard players set @s SCORE.cronica.TIMER.flying_feather.ActivateTime 19
+      scoreboard players set @s SCORE.cronica.SKILL.flying_feather.ActivateTime 19
 
   ## プレイヤー管理
 

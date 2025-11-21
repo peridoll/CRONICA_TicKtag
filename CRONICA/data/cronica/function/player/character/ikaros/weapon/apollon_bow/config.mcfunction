@@ -11,9 +11,6 @@
 
     # 太陽神ノ弓
 
-      # ItemID
-        data modify storage cronica:config apollon_bow.CustomData.ItemID set value "apollon_bow"
-
       # 進化時間
         data modify storage cronica:config apollon_bow.CustomData.evolution_Time set value 75
 
@@ -25,15 +22,14 @@
 
     # 太陽神ノ矢
 
-      # ItemID
-        data modify storage cronica:config apollon_arrow.CustomData.ItemID set value "apollon_arrow"
-
       # 基本スタック数
         data modify storage cronica:config apollon_arrow.CustomData.DefaultStack set value 16
 
   ## ストレージコンフィグ定義
 
     # リロードコンフィグ
+      data modify storage cronica:config apollon_bow.CustomData.ItemID set value "apollon_bow"
+      data modify storage cronica:config apollon_arrow.CustomData.ItemID set value "apollon_arrow"
       function core:player/character/charge/reload/macro/setup_storage_config with storage cronica:config apollon_bow.CustomData
 
     # チャージコンフィグ

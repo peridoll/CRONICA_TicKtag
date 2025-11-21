@@ -8,5 +8,9 @@
     # アイテムモード
       scoreboard objectives add SCORE.cronica.MODE.judgment_stone dummy
       function core:player/character/leave/macro/item_mode { ItemID: "judgment_stone" }
+
+    # クールタイム
+      scoreboard objectives add SCORE.cronica.CHARACTER.judgment_stone.CoolTime dummy
+      function core:player/character/activate/macro/ct/reset { ItemID : "judgment_stone" }
 # =================================================================================================
 # ver 0.12.0

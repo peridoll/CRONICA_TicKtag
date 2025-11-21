@@ -4,6 +4,9 @@
 
   ## RESET
 
+    # Weapon
+      function core:player/inventory/full_execute/func/clear_item/macro/run {TargetType : "MasterType", TargetID : "weapon" }
+
     # Unique
       function core:player/inventory/full_execute/func/clear_item/macro/run {TargetType : "MasterType", TargetID : "unique" }
 

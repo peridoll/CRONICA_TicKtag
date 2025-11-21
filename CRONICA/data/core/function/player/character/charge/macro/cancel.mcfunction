@@ -2,6 +2,13 @@
 
 ##【 IMPULSE 】
 
+  ## データ管理
+
+    # スコア管理
+      scoreboard players reset @s SCORE.cronica.SKILL.judgment_stone.Stack
+      execute unless entity @a[scores = {SCORE.cronica.SKILL.judgment_stone.Stack = 1..}] run \
+        scoreboard objectives remove SCORE.cronica.SKILL.judgment_stone.Stack
+
   ## 特定処理実行
 
     # 特定処理呼び出し

@@ -4,12 +4,12 @@
 
   ## プレイヤー管理
 
-    # エフェクト
+    # エフェクト解除
       effect clear @s minecraft:slow_falling
 
-  ## 後続処理呼び出し
+  ## 関数呼び出し
 
-    # スコア管理
+    # リセット
       function cronica:player/character/ikaros/select/flying_feather/library/reset
 # =================================================================================================
 # ver 0.12.0

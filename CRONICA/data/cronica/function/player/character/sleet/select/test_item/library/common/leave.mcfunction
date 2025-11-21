@@ -10,7 +10,7 @@
       function core:player/character/leave/macro/item_mode { ItemID: "test_item" }
 
     # クールタイム
-      scoreboard objectives add SCORE.cronica.TIMER.test_item.CoolTime dummy
+      scoreboard objectives add SCORE.cronica.CHARACTER.test_item.CoolTime dummy
       function core:player/character/activate/macro/ct/reset { ItemID : "test_item" }
 # =================================================================================================
 # ver 0.12.0

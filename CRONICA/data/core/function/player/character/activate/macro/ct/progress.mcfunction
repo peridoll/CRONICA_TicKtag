@@ -11,7 +11,7 @@
         $scoreboard players add @s SCORE.cronica.MODE.$(ItemID) 1
 
       # スタックリセット
-        $scoreboard players reset @s SCORE.cronica.TIMER.$(ItemID).CoolTime.Stack
+        $scoreboard players reset @s SCORE.cronica.CHARACTER.$(ItemID).CoolTime.Stack
 
   ## アイテム入手
 

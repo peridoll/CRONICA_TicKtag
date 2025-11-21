@@ -22,8 +22,7 @@
   ## 状態変化
 
     # 基本形態
-      execute if score @s SCORE.cronica.MODE.apollon_arrow matches 0 run \
-        function core:player/character/give/macro/mode_change { ItemID: "apollon_arrow", Model: "core:player/weapon/ammo/arrow_default" }
+      function core:player/character/give/macro/mode_change { ItemID: "apollon_arrow", Model: "core:player/weapon/ammo/arrow_default" }
 
     # 使用済み
       execute if score @s SCORE.cronica.MODE.apollon_arrow matches -1 run \

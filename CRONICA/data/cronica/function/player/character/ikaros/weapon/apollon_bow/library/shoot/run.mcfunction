@@ -2,6 +2,12 @@
 
 ##【 IMPULSE 】
 
+  ## 灼星ノ閃光
+
+    # 発射
+      execute if score @s SCORE.cronica.MODE.apollon_bow matches 1 run \
+        function cronica:player/character/ikaros/weapon/apollon_bow/library/shoot/spectrum/run
+
   ## 残段数管理
 
     # 残数なし

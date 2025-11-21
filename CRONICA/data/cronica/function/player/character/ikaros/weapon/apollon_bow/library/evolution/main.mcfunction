@@ -10,12 +10,12 @@
       tag @a[scores = {SCORE.cronica.CHARACTER.apollon_bow.evolutioning = 0..}] add TAG.cronica.CHARACTER.apollon_bow.evolutioned
 
     # 進捗完了
-      # execute unless entity @a run scoreboard objectives add SCORE.cronica.CHARACTER.apollon_bow.evolution.Stack dummy
-      # execute unless entity @a run scoreboard objectives add SCORE.cronica.CHARACTER.apollon_bow.evolution.Stack.Goal dummy
-      # execute as @a[scores = {SCORE.cronica.CHARACTER.apollon_bow.evolutioning = 1..}] \
-      #     if score @s SCORE.cronica.CHARACTER.apollon_bow.evolution.Stack = @s SCORE.cronica.CHARACTER.apollon_bow.evolution.Stack.Goal \
-      #   run \
-      #     function core:player/character/charge/macro/progress with storage cronica:config apollon_bow.CustomData.evolution
+      execute unless entity @a run scoreboard objectives add SCORE.cronica.CHARACTER.apollon_bow.evolution.Stack dummy
+      execute unless entity @a run scoreboard objectives add SCORE.cronica.CHARACTER.apollon_bow.evolution.Stack.Goal dummy
+      execute as @a[scores = {SCORE.cronica.CHARACTER.apollon_bow.evolutioning = 1..}] \
+          if score @s SCORE.cronica.CHARACTER.apollon_bow.evolution.Stack = @s SCORE.cronica.CHARACTER.apollon_bow.evolution.Stack.Goal \
+        run \
+          function core:player/character/charge/macro/progress with storage cronica:config apollon_bow.CustomData.evolution
 
     # 完了処理
       execute unless entity @a run scoreboard objectives add SCORE.cronica.CHARACTER.apollon_bow.evolutioning dummy

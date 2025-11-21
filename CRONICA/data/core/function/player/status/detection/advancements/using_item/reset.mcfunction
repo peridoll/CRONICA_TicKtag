@@ -18,6 +18,7 @@
 ##【 REFRESH 】
 
   # タグ管理
+    tag @s remove TAG.cronica.STATUS.ItemUsing.Activated
     tag @s remove TAG.cronica.STATUS.ItemUsing
     tag @s remove TAG.cronica.STATUS.ItemUsed
 

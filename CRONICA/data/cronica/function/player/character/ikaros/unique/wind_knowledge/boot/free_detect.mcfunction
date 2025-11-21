@@ -18,6 +18,7 @@
             tag = TAG.cronica.STATUS.ItemUsing \
           ] \
           if score @s SCORE.cronica.MODE.wind_knowledge matches 0 \
+          if score @s SCORE.cronica.STATUS.ItemUsing matches 3.. \
           unless predicate core:is_on_ground \
         run \
           function cronica:player/character/ikaros/unique/wind_knowledge/run

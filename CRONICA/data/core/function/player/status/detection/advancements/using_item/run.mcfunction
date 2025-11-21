@@ -6,7 +6,7 @@
 
     # スコア管理
       scoreboard objectives add SCORE.cronica.STATUS.ItemUsing dummy
-      scoreboard players add @s SCORE.cronica.STATUS.ItemUsing 1
+      scoreboard players add @s[tag =! TAG.cronica.STATUS.ItemUsing.Activated] SCORE.cronica.STATUS.ItemUsing 1
 
     # タグ管理
       tag @s remove TAG.cronica.STATUS.ItemUsed

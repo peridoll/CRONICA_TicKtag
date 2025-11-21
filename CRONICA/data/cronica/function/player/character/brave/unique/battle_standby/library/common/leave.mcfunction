@@ -8,5 +8,9 @@
     # アイテムモード
       scoreboard objectives add SCORE.cronica.MODE.battle_standby dummy
       function core:player/character/leave/macro/item_mode { ItemID: "battle_standby" }
+
+    # クールタイム
+      scoreboard objectives add SCORE.cronica.CHARACTER.battle_standby.CoolTime dummy
+      function core:player/character/activate/macro/ct/reset { ItemID : "battle_standby" }
 # =================================================================================================
 # ver 0.12.0

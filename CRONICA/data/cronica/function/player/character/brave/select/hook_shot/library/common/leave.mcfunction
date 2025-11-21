@@ -8,5 +8,9 @@
     # アイテムモード
       scoreboard objectives add SCORE.cronica.MODE.hook_shot dummy
       function core:player/character/leave/macro/item_mode { ItemID: "hook_shot" }
+
+    # クールタイム
+      scoreboard objectives add SCORE.cronica.CHARACTER.hook_shot.CoolTime dummy
+      function core:player/character/activate/macro/ct/reset { ItemID : "hook_shot" }
 # =================================================================================================
 # ver 0.12.0
