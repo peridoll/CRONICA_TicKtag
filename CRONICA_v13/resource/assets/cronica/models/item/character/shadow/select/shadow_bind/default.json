@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cronica:item/character/shadow/select/shadow_bind/shadow_bind_default"
+  }
+}

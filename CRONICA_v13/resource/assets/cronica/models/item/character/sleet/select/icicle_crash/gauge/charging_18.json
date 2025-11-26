@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/sleet/select/icicle_crash/default",
+  "textures": {
+    "layer0": "cronica:item/character/sleet/select/icicle_crash/gauge/icicle_crash_charging_18"
+  }
+}

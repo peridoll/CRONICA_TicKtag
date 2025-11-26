@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/shadow/unique/over_load/default",
+  "textures": {
+    "layer0": "cronica:item/character/shadow/unique/over_load/over_load_ban"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/brave/select/hook_shot/default",
+  "textures": {
+    "layer0": "cronica:item/character/brave/select/hook_shot/gauge/hook_shot_charging_3"
+  }
+}
