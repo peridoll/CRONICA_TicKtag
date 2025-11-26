@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/shadow/unique/thermal_conversion/default",
-  "textures": {
-    "layer0": "cronica:item/character/shadow/unique/thermal_conversion/gauge/thermal_conversion_charging_7"
-  }
-}

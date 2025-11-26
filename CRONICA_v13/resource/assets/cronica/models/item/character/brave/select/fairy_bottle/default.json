@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "cronica:item/character/brave/select/fairy_bottle/fairy_bottle_default"
-  }
-}

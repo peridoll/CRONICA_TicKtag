@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/withery/select/electro_wire/default",
-  "textures": {
-    "layer0": "cronica:item/character/withery/select/electro_wire/gauge/electro_wire_charging_6"
-  }
-}

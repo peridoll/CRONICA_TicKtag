@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-  "layer0": "cronica:item/character/deliverdy/select/warp_hole/warp_hole_default"
-  }
-}

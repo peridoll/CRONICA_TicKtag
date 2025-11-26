@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/ikaros/select/flying_feather/default",
-  "textures": {
-    "layer0": "cronica:item/character/ikaros/select/flying_feather/gauge/flying_feather_charging_16"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/shadow/select/shadow_step/default",
-  "textures": {
-    "layer0": "cronica:item/character/shadow/select/shadow_step/gauge/shadow_step_charging_2"
-  }
-}

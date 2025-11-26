@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/sleet/select/slowness_snow/default",
-  "textures": {
-    "layer0": "cronica:item/character/sleet/select/slowness_snow/gauge/slowness_snow_charging_16"
-  }
-}

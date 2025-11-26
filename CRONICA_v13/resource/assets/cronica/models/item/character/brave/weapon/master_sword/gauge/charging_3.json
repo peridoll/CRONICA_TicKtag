@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/brave/weapon/master_sword/default",
-  "textures": {
-    "layer0": "cronica:item/character/brave/weapon/master_sword/gauge/master_sword_beam_charging_3"
-  }
-}

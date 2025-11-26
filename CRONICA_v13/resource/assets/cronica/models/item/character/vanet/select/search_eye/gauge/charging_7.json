@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/vanet/select/search_eye/default",
-  "textures": {
-    "layer0": "cronica:item/character/vanet/select/search_eye/gauge/search_eye_charging_7"
-  }
-}
