@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/brave/unique/tri_strike/default",
-  "textures": {
-  "layer0": "cronica:item/character/brave/unique/tri_strike/tri_strike_charging_15"
-  }
-}

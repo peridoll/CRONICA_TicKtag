@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/shadow/unique/shadow_dance/default",
-  "textures": {
-    "layer0": "cronica:item/character/shadow/unique/shadow_dance/gauge/shadow_dance_charging_19"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/withery/unique/flash_step/default",
-  "textures": {
-    "layer0": "cronica:item/character/withery/unique/flash_step/gauge/flash_step_charging_19"
-  }
-}

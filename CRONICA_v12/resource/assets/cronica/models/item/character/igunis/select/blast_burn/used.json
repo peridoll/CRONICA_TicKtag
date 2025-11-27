@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/igunis/select/blast_burn/default",
-  "textures": {
-    "layer0": "cronica:item/character/igunis/select/blast_burn/blast_burn_used"
-  }
-}

@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "attack": {
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "rewards": {
+    "function": "cronica:system/advancements/battle/kill"
+  }
+}

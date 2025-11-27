@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/shadow/select/shadow_bind/default",
-  "textures": {
-    "layer0": "cronica:item/character/shadow/select/shadow_bind/gauge/shadow_bind_charging_19"
-  }
-}

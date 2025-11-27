@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/ikaros/weapon/apollon_bow/default",
-  "textures": {
-    "layer0": "cronica:item/character/ikaros/weapon/apollon_bow/apollon_bow_pulling_2"
-  }
-}

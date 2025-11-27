@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "attack": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {"type": "area_effect_cloud"}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "cronica:system/advancements/battle/impact/area_effect_cloud"
+  }
+}

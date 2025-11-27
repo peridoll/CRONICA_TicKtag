@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/ikaros/unique/wind_knowledge/default",
-  "textures": {
-    "layer0": "cronica:item/character/ikaros/unique/wind_knowledge/gauge/wind_knowledge_charging_6"
-  }
-}

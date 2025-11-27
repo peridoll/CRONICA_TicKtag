@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/withery/select/lightning_crash/default",
-  "textures": {
-    "layer0": "cronica:item/character/withery/select/lightning_crash/gauge/lightning_crash_charging_10"
-  }
-}

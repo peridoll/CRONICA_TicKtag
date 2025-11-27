@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "attack": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {"type": "firework_rocket"}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "cronica:system/advancements/battle/impact/firework"
+  }
+}

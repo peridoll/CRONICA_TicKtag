@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/withery/select/cross_thunder/default",
-  "textures": {
-    "layer0": "cronica:item/character/withery/select/cross_thunder/cross_thunder_used"
-  }
-}

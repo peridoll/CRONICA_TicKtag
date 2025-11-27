@@ -1,6 +1,0 @@
-{
-  "parent": "cronica:item/character/ikaros/select/blazing_shield/default",
-  "textures": {
-    "layer0": "cronica:item/character/ikaros/select/blazing_shield/gauge/blazing_shield_charging_5"
-  }
-}
