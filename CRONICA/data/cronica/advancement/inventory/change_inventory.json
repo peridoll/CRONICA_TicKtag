@@ -5,6 +5,6 @@
     }
   },
   "rewards": {
-    "function": "core:player/status/detection/advancements/change_inventory/grant"
+    "function": "cronica:player/status/detection/advancements/change_inventory/grant"
   }
 }
