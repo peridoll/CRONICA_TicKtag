@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "attack": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {"type": "splash_potion"}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "cronica:player/detection/advancement/status/attack/potion/grant"
+  }
+}

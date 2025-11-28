@@ -6,14 +6,14 @@
   ## データ関連管理
 
     # スコアボード増加
-      $scronicaboard players add @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum 1
+      $scoreboard players add @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum 1
 
     # ストレージ初期化
       $data remove storage cronica:temp FullExecute_$(Function).SlotNum
 
     # スロット番号取得
       $execute store result storage cronica:temp FullExecute_$(Function).SlotNum int 1 run \
-        scronicaboard players get @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum
+        scoreboard players get @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum
 
     # アイテムデータ取得
       $function cronica:player/inventory/full_execute/common/macro/get_item_data with storage cronica:temp FullExecute_$(Function)

@@ -1,16 +1,72 @@
 # =================================================================================================
 
 ##【 IMPULSE 】
+# 手動実行可, 単数実行
 
-  # 実績リセット
+  ## 実績リセット
 
-    # アイテム使用検知
-      advancement revoke @s only cronica:using_item
+    # インベントリ関連
 
-    # インベントリ更新
-      advancement revoke @s only cronica:change_inventory
+      # アイテム使用検知
+        advancement revoke @s only cronica:inventory/using_item
 
-      advancement revoke @s only cronica:test
+      # インベントリ更新
+        advancement revoke @s only cronica:inventory/change_inventory
 
+    # ステータス関連
+
+      # キル判定
+        advancement revoke @s only cronica:status/kill
+
+      # デス判定
+        advancement revoke @s only cronica:status/death
+
+      # 攻撃判定管理
+
+        # 残留ポーション
+          advancement revoke @s only cronica:status/attack/area_effect_cloud
+
+        # 矢
+          advancement revoke @s only cronica:status/attack/arrow
+
+        # 花火
+          advancement revoke @s only cronica:status/attack/firework
+
+        # 近接
+          advancement revoke @s only cronica:status/attack/melee
+
+        # ポーション
+          advancement revoke @s only cronica:status/attack/potion
+
+        # トライデント
+          advancement revoke @s only cronica:status/attack/trident
+
+      # ダメージ判定管理
+
+        # 残留ポーション
+          advancement revoke @s only cronica:status/damage/area_effect_cloud
+
+        # 矢
+          advancement revoke @s only cronica:status/damage/arrow
+
+        # 花火
+          advancement revoke @s only cronica:status/damage/firework
+
+        # 近接
+          advancement revoke @s only cronica:status/damage/melee
+
+        # ポーション
+          advancement revoke @s only cronica:status/damage/potion
+
+        # トライデント
+          advancement revoke @s only cronica:status/damage/trident
+
+        # 敵対モブ管理
+
+          # スケルトン
+            advancement revoke @s only cronica:status/damage/enemy/skeleton
+
+          # ドラウンド
+            advancement revoke @s only cronica:status/damage/enemy/drowned
 # =================================================================================================
-# ver 0.12.0
+# ver 0.13.0

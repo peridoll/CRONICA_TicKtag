@@ -5,6 +5,6 @@
     }
   },
   "rewards": {
-    "function": "cronica:system/advancements/battle/kill"
+    "function": "cronica:player/detection/advancement/status/kill/grant"
   }
 }

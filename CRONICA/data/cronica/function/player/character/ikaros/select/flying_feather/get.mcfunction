@@ -51,6 +51,6 @@
             ItemID     : "flying_feather" \
           } \
       }
-    function cronica:player/inventory/common/get/macro/get with storage cronica:temp BasicInfo
+    function cronica:player/inventory/get/macro/get with storage cronica:temp BasicInfo
 # =================================================================================================
 # ver 0.13.0

@@ -2,7 +2,7 @@
   {
     "function": "minecraft:set_custom_model_data",
     "strings": {
-      "values": ["used"],
+      "values": ["ban"],
       "mode": "insert"
     }
   },

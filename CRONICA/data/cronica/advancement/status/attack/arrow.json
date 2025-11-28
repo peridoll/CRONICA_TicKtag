@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "attack": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {"type": "arrow"}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "cronica:player/detection/advancement/status/attack/arrow/grant"
+  }
+}

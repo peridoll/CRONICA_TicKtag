@@ -5,6 +5,6 @@
   ## データ管理
 
     # スコア/タグ 撤去
-      function cronica:player/status/detection/predicate/is_swimming/reset
+      function cronica:player/detection/predicate/is_swimming/reset
 # =================================================================================================
-# ver 0.12.0
+# ver 0.13.0

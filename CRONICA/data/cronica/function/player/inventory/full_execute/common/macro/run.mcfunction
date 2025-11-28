@@ -6,8 +6,8 @@
   ## データ関連管理
 
     # スコア作成
-      $scronicaboard objectives add SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum dummy
-      $scronicaboard players set @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum -1
+      $scoreboard objectives add SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum dummy
+      $scoreboard players set @s SCORE.cronica.INVENTORY.FullExecute.$(Function).SlotNum -1
 
   ## 後続処理管理
 

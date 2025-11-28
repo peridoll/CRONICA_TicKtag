@@ -9,7 +9,7 @@
       tag @s remove TAG.cronica.STATUS.IsSneaked
 
     # スコア管理
-      scronicaboard players reset @s SCORE.cronica.STATUS.IsSneaking
-      execute unless entity @a[scores = {SCORE.cronica.STATUS.IsSneaking = 0..}] run scronicaboard objectives remove SCORE.cronica.STATUS.IsSneaking
+      scoreboard players reset @s SCORE.cronica.STATUS.IsSneaking
+      execute unless entity @a[scores = {SCORE.cronica.STATUS.IsSneaking = 0..}] run scoreboard objectives remove SCORE.cronica.STATUS.IsSneaking
 # =================================================================================================
-# ver 0.12.0
+# ver 0.13.0
