@@ -9,16 +9,18 @@
       effect clear @s minecraft:levitation
       effect clear @s minecraft:slow_falling
 
-  ## スコア管理
+  ## データ管理
 
-    # アイテムモード
-      scoreboard players reset @s SCORE.cronica.MODE.flying_feather
-      function cronica:player/character/ikaros/select/flying_feather/get
+    # スコア管理
 
-    # アクティベート
-      function cronica:player/character/ikaros/select/flying_feather/library/activate/reset
+      # アイテムモード
+        scoreboard players reset @s SCORE.cronica.MODE.flying_feather
+        function cronica:player/character/ikaros/select/flying_feather/get
 
-    # リキャスト
-      function cronica:player/inventory/recast/macro/reset {ItemID : "flying_feather" }
+      # アクティベート
+        function cronica:player/character/ikaros/select/flying_feather/library/activate/reset
+
+      # リキャスト
+        function cronica:player/inventory/recast/macro/reset {ItemID : "flying_feather" }
 # =================================================================================================
 # ver 0.13.0

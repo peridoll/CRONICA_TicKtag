@@ -5,7 +5,7 @@
 
   ## アイテムコンフィグ定義
 
-    # リキャストタイム
-      data modify storage cronica:config flying_feather.CustomData.RecastTime set value 240
+    # 基本スタック数
+      data modify storage cronica:config apollon_arrow.CustomData.DefaultStack set value 16
 # =================================================================================================
 # ver 0.13.0

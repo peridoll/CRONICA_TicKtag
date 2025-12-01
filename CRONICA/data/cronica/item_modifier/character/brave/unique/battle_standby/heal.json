@@ -2,14 +2,14 @@
   {
     "function": "minecraft:set_custom_model_data",
     "strings": {
-      "values": ["mode_twilight"],
+      "values": ["mode_heal"],
       "mode": "insert"
     }
   },
   {
     "function": "minecraft:set_custom_data",
     "tag": {
-      "ItemMode": "twilight"
+      "ItemMode": "heal"
     }
   }
 ]

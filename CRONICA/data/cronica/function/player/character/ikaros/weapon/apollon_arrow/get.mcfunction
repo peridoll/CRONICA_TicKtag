@@ -48,7 +48,7 @@
           { \
             MasterType : "weapon", \
             MasterID   : "ikaros", \
-            ItemID     : "apollon_bow" \
+            ItemID     : "apollon_arrow" \
           } \
       }
     function cronica:player/inventory/get/macro/get with storage cronica:temp BasicInfo
