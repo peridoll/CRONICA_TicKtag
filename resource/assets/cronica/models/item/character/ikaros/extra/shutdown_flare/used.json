@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/ikaros/extra/shutdown_flare/default",
+  "textures": {
+    "layer0": "cronica:item/character/ikaros/extra/shutdown_flare/shutdown_flare_used"
+  }
+}

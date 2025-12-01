@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/ikaros/unique/begin_twilight/default",
+  "textures": {
+    "layer0": "cronica:item/character/ikaros/unique/begin_twilight/gauge/begin_twilight_charging_2"
+  }
+}

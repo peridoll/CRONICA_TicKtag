@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/withery/extra/sparking_rush/default",
+  "textures": {
+    "layer0": "cronica:item/character/withery/extra/sparking_rush/gauge/sparking_rush_charging_8"
+  }
+}

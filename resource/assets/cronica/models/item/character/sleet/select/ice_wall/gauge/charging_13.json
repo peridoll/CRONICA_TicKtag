@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/sleet/select/ice_wall/default",
+  "textures": {
+    "layer0": "cronica:item/character/sleet/select/ice_wall/gauge/ice_wall_charging_13"
+  }
+}

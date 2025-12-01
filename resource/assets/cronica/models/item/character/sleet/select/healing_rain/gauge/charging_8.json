@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/sleet/select/healing_rain/default",
+  "textures": {
+    "layer0": "cronica:item/character/sleet/select/healing_rain/gauge/healing_rain_charging_8"
+  }
+}

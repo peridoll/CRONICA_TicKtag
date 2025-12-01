@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/ikaros/weapon/apollon_arrow/default",
+  "textures": {
+    "layer0": "cronica:item/character/ikaros/weapon/apollon_arrow/apollon_arrow_used"
+  }
+}

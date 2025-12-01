@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cronica:item/character/sleet/select/aqua_jet/aqua_jet_default"
+  }
+}

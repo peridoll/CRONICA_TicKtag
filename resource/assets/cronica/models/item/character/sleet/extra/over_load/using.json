@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/sleet/extra/over_load/default",
+  "textures": {
+    "layer0": "cronica:item/character/sleet/extra/over_load/over_load_using"
+  }
+}

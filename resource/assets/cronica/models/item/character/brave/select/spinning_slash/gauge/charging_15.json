@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/brave/select/spinning_slash/default",
+  "textures": {
+    "layer0": "cronica:item/character/brave/select/spinning_slash/gauge/spinning_slash_charging_15"
+  }
+}

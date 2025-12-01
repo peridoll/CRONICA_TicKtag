@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/deliverdy/extra/edens_retroactive/default",
+  "textures": {
+  "layer0": "cronica:item/character/deliverdy/extra/edens_retroactive/edens_retroactive_charging_5"
+  }
+}

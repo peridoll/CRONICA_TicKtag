@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/sleet/select/water_veil/default",
+  "textures": {
+    "layer0": "cronica:item/character/sleet/select/water_veil/water_veil_using"
+  }
+}

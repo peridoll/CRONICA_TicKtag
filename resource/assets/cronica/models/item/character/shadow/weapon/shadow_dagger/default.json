@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cronica:item/character/shadow/weapon/shadow_dagger/shadow_dagger_default"
+  }
+}

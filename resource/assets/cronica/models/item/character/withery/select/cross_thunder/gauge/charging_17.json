@@ -1,0 +1,6 @@
+{
+  "parent": "cronica:item/character/withery/select/cross_thunder/default",
+  "textures": {
+    "layer0": "cronica:item/character/withery/select/cross_thunder/gauge/cross_thunder_charging_17"
+  }
+}
