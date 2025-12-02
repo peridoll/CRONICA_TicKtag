@@ -12,6 +12,6 @@
     }
   },
   "rewards": {
-    "function": "cronica:player/detection/advancement/status/attack/potion/grant"
+    "function": "cronica:player/action/detect/advancement/status/attack/potion/grant"
   }
 }

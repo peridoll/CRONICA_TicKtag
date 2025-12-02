@@ -10,7 +10,8 @@
   ## 装飾
 
     # パーティクル
-      particle minecraft:cloud ~ ~ ~ 0.2 0.2 0.2 0.1 50 force
+      particle minecraft:cloud ~ ~-0.3 ~ 0.2 0.2 0.2 0.1 50 force @a[distance=3.1..]
+      particle minecraft:cloud ~ ~ ~ 0.2 0.2 0.2 0.1 25 force @a[distance=..3]
 
     # サウンド
       playsound minecraft:item.firecharge.use player @a ~ ~ ~ 0.2 1

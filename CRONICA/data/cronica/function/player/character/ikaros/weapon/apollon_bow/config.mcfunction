@@ -10,8 +10,5 @@
 
     # リロードタイム
       data modify storage cronica:config apollon_bow.CustomData.ReloadTime set value 60
-
-    # 弾薬登録
-      data modify storage cronica:config apollon_bow.CustomData.AmmoID set value "apollon_arrow"
 # =================================================================================================
 # ver 0.13.0

@@ -13,7 +13,8 @@
       # アイテムモード
         scoreboard players reset @s SCORE.cronica.MODE.apollon_bow
         function cronica:player/character/ikaros/weapon/apollon_bow/get
+
+      # リロード状態リセット
+        function cronica:player/character/ikaros/weapon/apollon_bow/library/reload/reset
 # =================================================================================================
 # ver 0.13.0
-
-execute unless entity @a run scoreboard objectives add SCORE.cronica.MODE.apollon_bow dummy

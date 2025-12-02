@@ -20,7 +20,7 @@
   ## プレイヤー管理
 
     # 実績リセット
-      execute as @a run function cronica:player/detection/advancement/revoke
+      execute as @a run function cronica:player/action/detect/advancement/revoke
 
     # 所持アイテム再付与
       execute as @a[tag = TAG.cronica.GAMING] run function cronica:player/inventory/full_execute/func/character_func/macro/run {Action:"library/leave"}

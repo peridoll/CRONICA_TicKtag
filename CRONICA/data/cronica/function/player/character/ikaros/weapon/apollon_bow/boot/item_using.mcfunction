@@ -6,7 +6,7 @@
   ## 行動検知
 
     # 使用中検知
-      # execute \
+      execute \
           if entity @s[tag = TAG.cronica.GAMING] \
           if score @s SCORE.cronica.STATUS.ItemUsing matches 1.. \
         run \

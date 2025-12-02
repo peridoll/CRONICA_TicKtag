@@ -12,6 +12,6 @@
     }
   },
   "rewards": {
-    "function": "cronica:player/detection/advancement/status/damage/area_effect_cloud/grant"
+    "function": "cronica:player/action/detect/advancement/status/damage/area_effect_cloud/grant"
   }
 }

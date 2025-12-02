@@ -5,12 +5,6 @@
 
   ## プレイヤー管理
 
-    # サーバー参加時処理
-      execute as @a[gamemode = survival] run function cronica:player/status/join_server
-
-    # ギミック管理
-      # execute as @a[tag = TAG.cronica.GAMING] run function cronica:player/status/sp_move/master
-
     # エフェクト管理
       execute as @a[tag = TAG.cronica.GAMING] run function cronica:player/status/effect/master
 # =================================================================================================
@@ -25,11 +19,11 @@
 ## 今後各関数に割り振りたいが、とりあえずここにまとめる
 
   # 腹減り無し TODO: 飯が食べられるように満腹じゃなく80%で維持できるように
-    # effect give @a saturation infinite 1 true
+    effect give @a saturation infinite 1 true
 
   # 矢の撤去 TODO: 即消しではなく、しばらく残るように
-    # execute as @e[type = arrow] store result score @s SCORE.cronica.CONFIG run data get entity @s inGround
-    # execute as @e[type = arrow, scores = {SCORE.cronica.CONFIG = 1}] run kill @s
+    execute as @e[type = arrow] store result score @s SCORE.cronica.CONFIG run data get entity @s inGround
+    execute as @e[type = arrow, scores = {SCORE.cronica.CONFIG = 1}] run kill @s
 
   # アイテム投げられん
     execute as @e[type = minecraft:item] at @s if entity @p[gamemode = creative, distance = ..2] run kill @s

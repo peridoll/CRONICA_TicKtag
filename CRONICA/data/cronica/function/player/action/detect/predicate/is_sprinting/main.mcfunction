@@ -1,0 +1,11 @@
+# =================================================================================================
+
+##【 REPEAT 】
+
+  ## 行動検知管理
+
+    # 使用終了検知
+      execute as @a[tag = TAG.cronica.STATUS.IsSprinted] run function cronica:player/action/detect/predicate/is_sprinting/finish
+      tag @a[scores = {SCORE.cronica.STATUS.IsSprinting = 0..}] add TAG.cronica.STATUS.IsSprinted
+# =================================================================================================
+# ver 0.13.0

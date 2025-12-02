@@ -12,6 +12,6 @@
     }
   },
   "rewards": {
-    "function": "cronica:player/detection/advancement/status/damage/enemy/drowned/grant"
+    "function": "cronica:player/action/detect/advancement/status/damage/enemy/drowned/grant"
   }
 }

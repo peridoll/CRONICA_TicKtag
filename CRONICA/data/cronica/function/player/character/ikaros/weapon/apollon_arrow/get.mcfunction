@@ -52,5 +52,17 @@
           } \
       }
     function cronica:player/inventory/get/macro/get with storage cronica:temp BasicInfo
+
+  # モデル変更
+
+    # 基本形態
+      function cronica:player/inventory/get/macro/mode_change { TargetType: "ItemID", TargetID: "apollon_arrow", Model: "cronica:common/weapon/ammo/arrow_default" }
+
+    # 使用済み
+      execute if score @s SCORE.cronica.MODE.apollon_arrow matches -1 run \
+        function cronica:player/inventory/get/macro/mode_change { TargetType: "ItemID", TargetID: "apollon_arrow", Model: "cronica:common/weapon/ammo/used" }
+    # モードチェンジ：黄昏
+      execute if score @s SCORE.cronica.MODE.apollon_arrow matches 1 run \
+        function cronica:player/inventory/get/macro/mode_change { TargetType: "ItemID", TargetID: "apollon_arrow", Model: "cronica:character/ikaros/weapon/apollon_bow/twilight" }
 # =================================================================================================
 # ver 0.13.0
