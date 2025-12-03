@@ -5,7 +5,10 @@
 
   ## 検知処理
 
+    # 矢ダメージ時
+      #function cronica:player/action/combat/defense
+
     # 実績剥奪
-      advancement revoke @s only cronica:status/death
+      advancement revoke @s only cronica:status/defense/arrow
 # =================================================================================================
 # ver 0.13.0

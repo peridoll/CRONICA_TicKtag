@@ -11,7 +11,12 @@
   ## ダメージ
 
     # ダメージ処理
-      execute as @s at @s run damage @e[tag = TAG.cronica.WEAPON.apollon_bow.Shoot.Spectrum.HitTarget, limit = 1] 14 minecraft:magic
+      execute as @s at @s run function cronica:player/action/combat/damage/macro/damage \
+        { \
+          "Attack": "@s", \
+          "Defense": "@e[tag = TAG.cronica.WEAPON.apollon_bow.Shoot.Spectrum.HitTarget, limit = 1]", \
+          "Amount": "14" \
+        }
 
   ## データ管理
 

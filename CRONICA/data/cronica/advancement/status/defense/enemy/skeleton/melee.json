@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "attack": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {"type": "skeleton"}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "cronica:player/action/detect/advancement/status/defense/enemy/skeleton/melee/grant"
+  }
+}

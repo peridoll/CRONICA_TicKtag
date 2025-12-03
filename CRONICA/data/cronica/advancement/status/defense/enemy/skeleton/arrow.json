@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "attack": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "source_entity": {"type": "skeleton"},
+            "direct_entity": {"type": "arrow"}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "cronica:player/action/detect/advancement/status/defense/enemy/skeleton/arrow/grant"
+  }
+}

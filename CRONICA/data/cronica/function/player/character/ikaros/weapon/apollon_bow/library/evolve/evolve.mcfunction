@@ -10,6 +10,7 @@
       scoreboard objectives add SCORE.cronica.MODE.apollon_arrow dummy
       scoreboard players set @s SCORE.cronica.MODE.apollon_arrow 1
       function cronica:player/character/ikaros/weapon/apollon_bow/get
+      function cronica:player/character/ikaros/weapon/apollon_arrow/get
 
   ## 装飾
 

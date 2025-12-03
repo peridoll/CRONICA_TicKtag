@@ -9,46 +9,32 @@
       tag @s remove TAG.cronica.STATUS.GetHeal
       tag @s remove TAG.cronica.STATUS.GetDamage
 
+    # スコア管理
+
+      # 現在の体力
+        scoreboard objectives add SCORE.cronica.STATUS.Combat.Health.Current dummy
+        execute store result score @s SCORE.cronica.STATUS.Combat.Health.Current run data get entity @s Health 1
+
 
 
   ## 体力の増減を管理
 
-    # 増加
-      execute if score @s SCORE.cronica.STATUS.Combat.Health.Current > @s SCORE.cronica.STATUS.Combat.Health.Previous run \
-        tag @s add TAG.cronica.STATUS.GetHeal
+    # 増減確認
+      scoreboard players reset @s SCORE.cronica.STATUS.Combat.Health.Change
+      execute unless score @s SCORE.cronica.STATUS.Combat.Health.Current = @s SCORE.cronica.STATUS.Combat.Health.Previous run \
+        function cronica:player/action/combat/health/fluctuation
 
-    # 減少
-      execute if score @s SCORE.cronica.STATUS.Combat.Health.Current < @s SCORE.cronica.STATUS.Combat.Health.Previous run \
-        tag @s add TAG.cronica.STATUS.GetDamage
-
-
+      execute as @s[tag = temp.test] run tellraw @a [{score:{name:"@s",objective:"SCORE.cronica.STATUS.Combat.Health.Current"}}]
 
   ## データ管理
 
     # スコア管理
 
-      # 増減値を記入
-        scoreboard objectives add SCORE.cronica.STATUS.Combat.Health.Change dummy
-        scoreboard players set @s SCORE.cronica.STATUS.Combat.Health.Change 0
-
-        # 増加
-          execute if entity @s[tag = TAG.cronica.STATUS.GetHeal] run \
-            scoreboard players operation @s SCORE.cronica.STATUS.Combat.Health.Change = @s SCORE.cronica.STATUS.Combat.Health.Current
-          execute if entity @s[tag = TAG.cronica.STATUS.GetHeal] run \
-            scoreboard players operation @s SCORE.cronica.STATUS.Combat.Health.Change -= @s SCORE.cronica.STATUS.Combat.Health.Previous
-
-        # 減少
-          execute if entity @s[tag = TAG.cronica.STATUS.GetDamage] run \
-            scoreboard players operation @s SCORE.cronica.STATUS.Combat.Health.Change = @s SCORE.cronica.STATUS.Combat.Health.Previous
-          execute if entity @s[tag = TAG.cronica.STATUS.GetDamage] run \
-            scoreboard players operation @s SCORE.cronica.STATUS.Combat.Health.Change -= @s SCORE.cronica.STATUS.Combat.Health.Current
-
-      # 現在の体力
-        scoreboard objectives add SCORE.cronica.STATUS.Combat.Health.Current health
-
       # 前回の体力
         scoreboard objectives add SCORE.cronica.STATUS.Combat.Health.Previous dummy
         scoreboard players operation @s SCORE.cronica.STATUS.Combat.Health.Previous = @s SCORE.cronica.STATUS.Combat.Health.Current
+
+
 
   ## 撤去処理予約
 

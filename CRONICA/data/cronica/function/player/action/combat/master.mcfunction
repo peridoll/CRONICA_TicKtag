@@ -6,6 +6,7 @@
   ## 戦闘管理
 
     # 体力の増減を管理
-      function cronica:player/action/combat/health/check
+      execute as @a[tag = TAG.cronica.GAMING] run function cronica:player/action/combat/health/check
+      execute as @e[tag = TAG.cronica.MOB] run function cronica:player/action/combat/health/check
 # =================================================================================================
 # ver 0.13.0

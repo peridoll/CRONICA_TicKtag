@@ -44,29 +44,27 @@
       # ダメージ判定管理
 
         # 残留ポーション
-          advancement revoke @s only cronica:status/damage/area_effect_cloud
+          advancement revoke @s only cronica:status/defense/area_effect_cloud
 
         # 矢
-          advancement revoke @s only cronica:status/damage/arrow
+          advancement revoke @s only cronica:status/defense/arrow
 
         # 花火
-          advancement revoke @s only cronica:status/damage/firework
+          advancement revoke @s only cronica:status/defense/firework
 
         # 近接
-          advancement revoke @s only cronica:status/damage/melee
+          advancement revoke @s only cronica:status/defense/melee
 
         # ポーション
-          advancement revoke @s only cronica:status/damage/potion
+          advancement revoke @s only cronica:status/defense/potion
 
         # トライデント
-          advancement revoke @s only cronica:status/damage/trident
+          advancement revoke @s only cronica:status/defense/trident
 
         # 敵対モブ管理
 
           # スケルトン
-            advancement revoke @s only cronica:status/damage/enemy/skeleton
-
-          # ドラウンド
-            advancement revoke @s only cronica:status/damage/enemy/drowned
+            advancement revoke @s only cronica:status/defense/enemy/skeleton/arrow
+            advancement revoke @s only cronica:status/defense/enemy/skeleton/melee
 # =================================================================================================
 # ver 0.13.0

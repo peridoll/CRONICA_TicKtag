@@ -1,7 +1,7 @@
 {
   "criteria": {
     "attack": {
-      "trigger": "minecraft:player_hurt_entity",
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "type": {
@@ -12,6 +12,6 @@
     }
   },
   "rewards": {
-    "function": "cronica:player/action/detect/advancement/status/attack/area_effect_cloud/grant"
+    "function": "cronica:player/action/detect/advancement/status/defense/area_effect_cloud/grant"
   }
 }

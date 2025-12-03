@@ -18,5 +18,10 @@
 
     # ステージギミック管理
       execute if entity @a[tag = TAG.cronica.GAMING] run function cronica:world/gimmick/tick
+
+  ## ゲーム管理
+
+    # 敵管理
+      execute if entity @a[tag = TAG.cronica.GAMING] run function cronica:game/enemy/master
 # =================================================================================================
 # ver 0.13.0
