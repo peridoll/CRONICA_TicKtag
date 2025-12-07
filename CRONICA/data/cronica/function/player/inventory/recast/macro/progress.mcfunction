@@ -11,7 +11,7 @@
         $scoreboard players remove @s SCORE.cronica.MODE.$(ItemID) 1
 
       # スタックリセット
-        $scoreboard players reset @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Stack
+        $scoreboard players reset @s SCORE.cronica.SKILL.$(ItemID).Recast.Stack
 
   ## アイテム入手
 

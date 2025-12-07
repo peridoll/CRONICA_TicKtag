@@ -24,30 +24,34 @@
         scoreboard players set @s SCORE.cronica.MODE.flying_feather -1
         function cronica:player/character/ikaros/select/flying_feather/get
 
-    # 実行処理
 
-      # ▼ : ゲームモード管理
-        tag @s[gamemode = creative] add TAG.cronica.SKILL.flying_feather.RunCreative
-        gamemode adventure @s[tag = TAG.cronica.SKILL.flying_feather.RunCreative]
 
-      # エフェクト付与
-        effect give @s minecraft:levitation 1 25 true
+  ## 実行処理
 
-      # ▲ : ゲームモード管理
-        gamemode creative @s[tag = TAG.cronica.SKILL.flying_feather.RunCreative]
-        tag @s[tag = TAG.cronica.SKILL.flying_feather.RunCreative] remove TAG.cronica.SKILL.flying_feather.RunCreative
+    # ▼ : ゲームモード管理
+      tag @s[gamemode = creative] add TAG.cronica.SKILL.flying_feather.RunCreative
+      gamemode adventure @s[tag = TAG.cronica.SKILL.flying_feather.RunCreative]
 
-    # コネクト
+    # エフェクト付与
+      effect give @s minecraft:levitation 1 25 true
 
-      # アイテム所持確認
-        function cronica:player/inventory/has_check/macro/has_check { TargetType: "ItemID", TargetID : "wind_knowledge" }
+    # ▲ : ゲームモード管理
+      gamemode creative @s[tag = TAG.cronica.SKILL.flying_feather.RunCreative]
+      tag @s[tag = TAG.cronica.SKILL.flying_feather.RunCreative] remove TAG.cronica.SKILL.flying_feather.RunCreative
 
-      # エフェクト付与
-        execute if entity @s[tag = TAG.cronica.INVENTORY.wind_knowledge.Has] run \
-          function cronica:player/character/ikaros/select/flying_feather/library/activate/connect/run
 
-      # タグ消し
-        tag @s remove TAG.cronica.INVENTORY.wind_knowledge.Has
+
+  ## コネクト
+
+    # アイテム所持確認
+      function cronica:player/inventory/has_check/macro/has_check { TargetType: "ItemID", TargetID : "wind_knowledge" }
+
+    # エフェクト付与
+      execute if entity @s[tag = TAG.cronica.INVENTORY.wind_knowledge.Has] run \
+        function cronica:player/character/ikaros/select/flying_feather/library/activate/connect/run
+
+    # タグ消し
+      tag @s remove TAG.cronica.INVENTORY.wind_knowledge.Has
 
 
 

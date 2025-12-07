@@ -13,27 +13,27 @@
 
       # 初回スタック進行
         $execute \
-            as @a[scores = {SCORE.cronica.CHARACTER.$(ItemID).RecastTime = 0}] \
+            as @a[scores = {SCORE.cronica.SKILL.$(ItemID).RecastTime = 0}] \
           run \
             function cronica:player/inventory/recast/macro/progress with storage cronica:temp RecastMain
 
       # クールタイム進行
-        $scoreboard players add @a[scores = {SCORE.cronica.CHARACTER.$(ItemID).RecastTime = 0..}, tag =! TAG.cronica.GAMING.Inactive] SCORE.cronica.CHARACTER.$(ItemID).RecastTime 1
-        $scoreboard players add @a[scores = {SCORE.cronica.CHARACTER.$(ItemID).RecastTime = 0..}, tag =! TAG.cronica.GAMING.Inactive] SCORE.cronica.CHARACTER.$(ItemID).Recast.Stack 1
+        $scoreboard players add @a[scores = {SCORE.cronica.SKILL.$(ItemID).RecastTime = 0..}, tag =! TAG.cronica.GAMING.Inactive] SCORE.cronica.SKILL.$(ItemID).RecastTime 1
+        $scoreboard players add @a[scores = {SCORE.cronica.SKILL.$(ItemID).RecastTime = 0..}, tag =! TAG.cronica.GAMING.Inactive] SCORE.cronica.SKILL.$(ItemID).Recast.Stack 1
 
   ## 後続処理呼び出し
 
     # スタック進行
       $execute \
-          as @a[scores = {SCORE.cronica.CHARACTER.$(ItemID).RecastTime = 0..}] \
-          if score @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Stack >= @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Stack.Goal at @s \
+          as @a[scores = {SCORE.cronica.SKILL.$(ItemID).RecastTime = 0..}] \
+          if score @s SCORE.cronica.SKILL.$(ItemID).Recast.Stack >= @s SCORE.cronica.SKILL.$(ItemID).Recast.Stack.Goal at @s \
         run \
           function cronica:player/inventory/recast/macro/progress with storage cronica:temp RecastMain
 
     # チャージ完了
       $execute \
-          as @a[scores = {SCORE.cronica.CHARACTER.$(ItemID).RecastTime = 0..}] \
-          if score @s SCORE.cronica.CHARACTER.$(ItemID).RecastTime >= @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Goal at @s \
+          as @a[scores = {SCORE.cronica.SKILL.$(ItemID).RecastTime = 0..}] \
+          if score @s SCORE.cronica.SKILL.$(ItemID).RecastTime >= @s SCORE.cronica.SKILL.$(ItemID).Recast.Goal at @s \
         run \
           function cronica:player/inventory/recast/macro/finish with storage cronica:temp RecastMain
 

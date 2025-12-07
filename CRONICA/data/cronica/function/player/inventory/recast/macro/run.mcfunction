@@ -8,34 +8,34 @@
     # スコア管理
 
       # 経過時間作成
-        $scoreboard objectives add SCORE.cronica.CHARACTER.$(ItemID).RecastTime dummy
-        $scoreboard players set @s SCORE.cronica.CHARACTER.$(ItemID).RecastTime 0
+        $scoreboard objectives add SCORE.cronica.SKILL.$(ItemID).RecastTime dummy
+        $scoreboard players set @s SCORE.cronica.SKILL.$(ItemID).RecastTime 0
 
       # 到達目標値作成
-        $scoreboard objectives add SCORE.cronica.CHARACTER.$(ItemID).Recast.Goal dummy
+        $scoreboard objectives add SCORE.cronica.SKILL.$(ItemID).Recast.Goal dummy
 
       # 到達目標値コンフィグ読み込み
-        $execute store result score @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Goal run data get storage cronica:config $(ItemID).CustomData.RecastTime
+        $execute store result score @s SCORE.cronica.SKILL.$(ItemID).Recast.Goal run data get storage cronica:config $(ItemID).CustomData.RecastTime
 
       # 到達目標値特別措置
 
         # ハンデ戦
-          $scoreboard players operation @s[tag=TAG.cronica.CT_HANDICAP] SCORE.cronica.CHARACTER.$(ItemID).Recast.Goal /= #2 SCORE.cronica.CONFIG
+          $scoreboard players operation @s[tag=TAG.cronica.CT_HANDICAP] SCORE.cronica.SKILL.$(ItemID).Recast.Goal /= #2 SCORE.cronica.CONFIG
 
         # 開発用CT無し
-          $scoreboard players set @s[tag=TAG.cronica.CT_ZERO] SCORE.cronica.CHARACTER.$(ItemID).Recast.Goal 20
+          $scoreboard players set @s[tag=TAG.cronica.CT_ZERO] SCORE.cronica.SKILL.$(ItemID).Recast.Goal 20
 
         # 未設定 / 規定値以下
-          $execute unless score @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Goal matches 20.. run scoreboard players set @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Goal 20
+          $execute unless score @s SCORE.cronica.SKILL.$(ItemID).Recast.Goal matches 20.. run scoreboard players set @s SCORE.cronica.SKILL.$(ItemID).Recast.Goal 20
 
       # 過程到達積算値作成
-        $scoreboard objectives add SCORE.cronica.CHARACTER.$(ItemID).Recast.Stack dummy
-        $scoreboard players set @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Stack 0
+        $scoreboard objectives add SCORE.cronica.SKILL.$(ItemID).Recast.Stack dummy
+        $scoreboard players set @s SCORE.cronica.SKILL.$(ItemID).Recast.Stack 0
 
       # 過程到達目標値作成
-        $scoreboard objectives add SCORE.cronica.CHARACTER.$(ItemID).Recast.Stack.Goal dummy
-        $scoreboard players operation @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Stack.Goal = @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Goal
-        $scoreboard players operation @s SCORE.cronica.CHARACTER.$(ItemID).Recast.Stack.Goal /= #20 SCORE.cronica.CONFIG
+        $scoreboard objectives add SCORE.cronica.SKILL.$(ItemID).Recast.Stack.Goal dummy
+        $scoreboard players operation @s SCORE.cronica.SKILL.$(ItemID).Recast.Stack.Goal = @s SCORE.cronica.SKILL.$(ItemID).Recast.Goal
+        $scoreboard players operation @s SCORE.cronica.SKILL.$(ItemID).Recast.Stack.Goal /= #20 SCORE.cronica.CONFIG
 
     # ストレージ管理
 
