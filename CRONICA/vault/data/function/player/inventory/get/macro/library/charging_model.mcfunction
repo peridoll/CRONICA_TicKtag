@@ -12,12 +12,14 @@
       $execute store result score @s SCORE.cronica.INVENTORY.$(ItemID).ChargeNum run scoreboard players get @s SCORE.cronica.MODE.$(ItemID)
       $scoreboard players add @s SCORE.cronica.INVENTORY.$(ItemID).ChargeNum 100
       $scoreboard players operation @s SCORE.cronica.INVENTORY.$(ItemID).ChargeNum *= #-1 SCORE.cronica.CONFIG
-      $execute store result storage cronica:temp CharacterGet.ChargeNum int 1 run scoreboard players get @s SCORE.cronica.INVENTORY.$(ItemID).ChargeNum
+      $execute store result storage cronica:temp ChargingModel.ChargeNum int 1 run scoreboard players get @s SCORE.cronica.INVENTORY.$(ItemID).ChargeNum
       $scoreboard objectives remove SCORE.cronica.INVENTORY.$(ItemID).ChargeNum
 
   ## プレイヤー管理
 
     # アイテム置き換え
-      function cronica:player/inventory/get/macro/library/charging_model_lib with storage cronica:temp CharacterGet
+      $data modify storage cronica:temp ChargingModel.ItemID set value "$(ItemID)"
+      function cronica:player/inventory/get/macro/library/charging_model_lib with storage cronica:temp ChargingModel
+      data remove storage cronica:temp ChargingModel
 # =================================================================================================
 # ver 0.13.0

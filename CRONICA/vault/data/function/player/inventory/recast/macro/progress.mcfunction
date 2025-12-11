@@ -15,7 +15,9 @@
 
   ## アイテム入手
 
-    # 入手実施
-      $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/get
+    # アイテムゲット
+      # $function cronica:player/character/$(MasterID)/$(MasterType)/$(ItemID)/get/
+    # アイテムモデル更新
+      $function cronica:player/inventory/get/macro/library/charging_model {ItemID : "$(ItemID)"}
 # =================================================================================================
 # ver 0.13.0

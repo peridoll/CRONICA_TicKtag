@@ -22,8 +22,8 @@
     effect give @a saturation infinite 1 true
 
   # 矢の撤去 TODO: 即消しではなく、しばらく残るように
-    execute as @e[type = arrow] store result score @s SCORE.cronica.CONFIG run data get entity @s inGround
-    execute as @e[type = arrow, scores = {SCORE.cronica.CONFIG = 1}] run kill @s
+    execute as @e[type = minecraft:arrow] store result score @s SCORE.cronica.CONFIG run data get entity @s inGround
+    execute as @e[type = minecraft:arrow, scores = {SCORE.cronica.CONFIG = 1}] run kill @s
 
   # アイテム投げられん
     execute as @e[type = minecraft:item] at @s if entity @p[gamemode = creative, distance = ..2] run kill @s
