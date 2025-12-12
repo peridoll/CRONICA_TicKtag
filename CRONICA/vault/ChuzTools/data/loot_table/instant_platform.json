@@ -1,0 +1,71 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_horse_armor",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": " "
+                }
+              ],
+              "mode": "append"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "表示位置にガラスを設置する。",
+                  "color": "white",
+                  "italic": false
+                }
+              ],
+              "mode": "append"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "オフハンドでの使用時は、代わりにメインハンドのブロックを設置する。",
+                  "color": "white",
+                  "italic": false
+                }
+              ],
+              "mode": "append"
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:max_stack_size": 1,
+                "minecraft:custom_data": {
+                  "ItemID": "InstantPlatform"
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 2147483647,
+                  "animation": "none"
+                },
+                "!minecraft:equippable": {},
+                "minecraft:item_model": "minecraft:glass",
+                "!minecraft:attribute_modifiers": {}
+              }
+            },
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "空中ブロック設置",
+                "color": "#FF006C",
+                "italic": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

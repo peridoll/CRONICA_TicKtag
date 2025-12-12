@@ -1,0 +1,57 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "cronica:character/ikaros/select/blazing_shield",
+                "minecraft:custom_name": {
+                  "text": "飛翔ノ翼",
+                  "color": "gold",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "ikaros",
+                  "MasterType": "select",
+                  "ItemID": "blazing_shield"
+                },
+
+                "use_cooldown": {
+                  "seconds": 1,
+                  "cooldown_group": "blazing_shield"
+                },
+                "consumable": {
+                  "consume_seconds": 0,
+                  "sound": "intentionally_empty",
+                  "has_consume_particles": false
+                },
+                "use_remainder": {
+                  "id": "minecraft:stick",
+                  "components": {
+                    "enchantments":
+                    {
+                      "cronica:detect/inventory/consume_item/remainder_item": 1
+                    },
+                    "minecraft:item_model": "cronica:character/ikaros/select/blazing_shield",
+                    "minecraft:custom_data": {
+                      "MasterID": "ikaros",
+                      "MasterType": "select",
+                      "ItemID": "blazing_shield"
+                    }
+                  }
+                }
+
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
