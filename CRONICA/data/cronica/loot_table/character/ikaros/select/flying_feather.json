@@ -21,6 +21,10 @@
                   "MasterType": "select",
                   "ItemID": "flying_feather"
                 },
+                "enchantments":
+                {
+                  "cronica:detect/inventory/default_item": 1
+                },
 
                 "use_cooldown": {
                   "seconds": 1,

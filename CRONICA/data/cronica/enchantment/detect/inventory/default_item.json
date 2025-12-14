@@ -1,0 +1,27 @@
+{
+  "description": "",
+  "supported_items":[],
+  "weight": 1,
+  "anvil_cost": 0,
+  "max_level": 1,
+  "max_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "min_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "slots": [
+  ],
+  "effects": {
+    "tick": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "cronica:system/detect/enchantment/inventory/default_item/select_hand"
+        }
+      }
+    ]
+  }
+}
