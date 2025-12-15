@@ -13,13 +13,14 @@
     "per_level_above_first": 0
   },
   "slots": [
+    "hand"
   ],
   "effects": {
     "tick": [
       {
         "effect": {
           "type": "minecraft:run_function",
-          "function": "cronica:system/detect/enchantment/inventory/default_item/select_hand"
+          "function": "cronica:player/inventory/detect/consume_item/use_remainder/check"
         }
       }
     ]

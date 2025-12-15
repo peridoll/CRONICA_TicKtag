@@ -20,7 +20,7 @@
       {
         "effect": {
           "type": "minecraft:run_function",
-          "function": "cronica:system/detect/enchantment/inventory/consume_item/use_remainder"
+          "function": "cronica:player/inventory/detect/consume_item/basic_recast/complete/check"
         }
       }
     ]
