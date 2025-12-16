@@ -31,7 +31,7 @@
   #
   # 引数：
   #   MasterType : マスタ種別 ( weapon / unique / extra / select )
-  #   MasterID   : マスタID ( brave / ikaros / ... )
+  #   MasterID   : マスタID ( brave / brave / ... )
   #   ItemID     : アイテムID ( master_sword / flying_feather / ... )
   #
   # 処理：

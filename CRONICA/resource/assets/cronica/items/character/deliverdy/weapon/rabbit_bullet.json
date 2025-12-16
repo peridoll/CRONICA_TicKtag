@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "cases": [
+      {
+        "when": "used",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/deliverdy/weapon/rabbit_bullet/used"
+        }
+      }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "cronica:item/character/deliverdy/weapon/rabbit_bullet/default"
+    }
+  }
+}

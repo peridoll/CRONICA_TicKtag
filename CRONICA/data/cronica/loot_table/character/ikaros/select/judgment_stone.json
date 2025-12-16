@@ -14,14 +14,14 @@
                   "cronica:inventory/default_loot": 1
                 },
                 "minecraft:custom_name": {
-                  "text": "焦熱ノ護盾",
+                  "text": "裁キノ礫",
                   "color": "gold",
                   "bold": true
                 },
                 "minecraft:custom_data": {
                   "MasterID": "ikaros",
                   "MasterType": "select",
-                  "ItemID": "blazing_shield",
+                  "ItemID": "judgment_stone",
                   "RecastType": "Basic",
                   "RecastTime": 1
                 }

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "cases": [
+      {
+        "when": "used",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/deliverdy/passive/light_weight/used"
+        }
+      }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "cronica:item/character/deliverdy/passive/light_weight/default"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "cases": [
+      {
+        "when": "used",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/ikaros/weapon/apollon_bow/used"
+        }
+      }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "cronica:item/character/ikaros/weapon/apollon_bow/default"
+    }
+  }
+}

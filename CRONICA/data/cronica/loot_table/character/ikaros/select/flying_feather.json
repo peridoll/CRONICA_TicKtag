@@ -13,7 +13,6 @@
                 "enchantments": {
                   "cronica:inventory/default_loot": 1
                 },
-
                 "minecraft:custom_name": {
                   "text": "飛翔ノ翼",
                   "color": "gold",
@@ -23,7 +22,6 @@
                   "MasterID": "ikaros",
                   "MasterType": "select",
                   "ItemID": "flying_feather",
-
                   "RecastType": "Basic",
                   "RecastTime": 1
                 }
