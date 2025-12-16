@@ -1,17 +1,18 @@
 # =================================================================================================
 
 ##【 DETECTION 】
+# 検知用関数
 
-  ## アイテム使用検知
+  ## アイテム消費検知
 
-    # 使用済みアイテムをもとのものへ戻す
+    # 使用済みアイテム返却
 
       # メインハンド
-        execute if items entity @s weapon.mainhand *[enchantments = {"cronica:inventory/detect/consume_item/remainder_item": 1}] run \
-          function cronica:player/inventory/detect/consume_item/use_remainder/macro/mainhand with entity @s SelectedItem.components."minecraft:custom_data"
+        execute if items entity @s weapon.mainhand *[enchantments = {"cronica:inventory/consume_item/remainder_item": 1}] run \
+          function cronica:player/inventory/detect/consume_item/use_remainder/macro/act_lib {HandTypeA: "SelectedItem", HandTypeB: "weapon.mainhand"}
 
       # オフハンド
-        execute if items entity @s weapon.offhand *[enchantments = {"cronica:inventory/detect/consume_item/remainder_item": 1}] run \
-          function cronica:player/inventory/detect/consume_item/use_remainder/macro/offhand with entity @s equipment.offhand.components."minecraft:custom_data"
+        execute if items entity @s weapon.offhand *[enchantments = {"cronica:inventory/consume_item/remainder_item": 1}] run \
+          function cronica:player/inventory/detect/consume_item/use_remainder/macro/act_lib {HandTypeA: "equipment.offhand", HandTypeB: "weapon.offhand"}
 # =================================================================================================
 # ver 0.14.0
