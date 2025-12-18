@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "cases": [
+      {
+        "when": "used",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/barricade/weapon/aegis/used"
+        }
+      }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "cronica:item/character/barricade/weapon/aegis/default"
+    }
+  }
+}

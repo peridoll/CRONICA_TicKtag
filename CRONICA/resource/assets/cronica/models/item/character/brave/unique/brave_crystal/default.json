@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cronica:item/character/brave/unique/brave_crystal/brave_crystal_default"
+  }
+}

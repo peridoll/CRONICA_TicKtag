@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "cases": [
+      {
+        "when": "used",
+        "model": {
+          "type": "model",
+          "model": "cronica:item/character/barricade/select/flash_bang/used"
+        }
+      }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "cronica:item/character/barricade/select/flash_bang/default"
+    }
+  }
+}

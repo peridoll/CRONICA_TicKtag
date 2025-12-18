@@ -1,0 +1,35 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "enchantments": {
+                  "cronica:inventory/default_loot": 1
+                },
+                "minecraft:custom_name": {
+                  "text": "穿墜",
+                  "color": "white",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "barricade",
+                  "MasterType": "unique",
+                  "ItemID": "pierce_through",
+                  "RecastType": "Basic",
+                  "RecastTime": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "enchantments": {
+                  "cronica:inventory/default_loot": 1
+                },
+                "minecraft:custom_name": {
+                  "text": "戦いの準備",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "brave",
+                  "MasterType": "passive",
+                  "ItemID": "battle_standby"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

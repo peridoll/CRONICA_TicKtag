@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cronica:item/character/barricade/extra/full_arms/full_arms_default"
+  }
+}

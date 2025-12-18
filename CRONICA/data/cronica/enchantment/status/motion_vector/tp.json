@@ -1,0 +1,60 @@
+{
+	"description": "",
+	"supported_items": [],
+	"weight": 1,
+	"max_level": 1,
+	"min_cost": {
+		"base": 0,
+		"per_level_above_first": 0
+	},
+	"max_cost": {
+		"base": 0,
+		"per_level_above_first": 0
+	},
+	"anvil_cost": 0,
+	"slots": [
+		"armor"
+	],
+	"effects": {
+		"minecraft:tick": [
+			{
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "cronica:player/status/effect/motion_vector/tp/before"
+				},
+				"requirements": {
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:entity_properties",
+						"entity": "this",
+						"predicate": {
+							"nbt": "{Tags:[\"TAG.cronica.STATUS.MotionVector.TpBefore\"]}"
+						}
+					}
+				}
+			},
+            {
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "cronica:player/status/effect/motion_vector/tp/after"
+				},
+				"requirements": {
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:entity_properties",
+						"entity": "this",
+						"predicate": {
+							"nbt": "{Tags:[\"TAG.cronica.STATUS.MotionVector.TpAfter\"]}"
+						}
+					}
+				}
+			},
+            {
+                "effect": {
+					"type": "minecraft:run_function",
+					"function": "cronica:player/status/effect/motion_vector/tp/complete"
+                }
+            }
+		]
+	}
+}

@@ -1,0 +1,33 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "enchantments": {
+                  "cronica:inventory/default_loot": 1
+                },
+                "minecraft:custom_name": {
+                  "text": "大地崩落",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "brave",
+                  "MasterType": "extra",
+                  "ItemID": "earth_quake"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

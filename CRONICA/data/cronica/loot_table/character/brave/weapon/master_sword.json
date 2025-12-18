@@ -1,0 +1,35 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "enchantments": {
+                  "cronica:inventory/default_loot": 1
+                },
+                "minecraft:custom_name": {
+                  "text": "勇者の剣",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "brave",
+                  "MasterType": "weapon",
+                  "ItemID": "master_sword",
+                  "RecastType": "Basic",
+                  "RecastTime": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

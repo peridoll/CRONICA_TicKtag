@@ -1,0 +1,35 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "enchantments": {
+                  "cronica:inventory/default_loot": 1
+                },
+                "minecraft:custom_name": {
+                  "text": "剣技：回転斬り",
+                  "color": "aqua",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "brave",
+                  "MasterType": "select",
+                  "ItemID": "spinning_slash",
+                  "RecastType": "Basic",
+                  "RecastTime": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
