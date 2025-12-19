@@ -31,11 +31,11 @@
 						"block_state": "minecraft:air"
 					},
 					"sound": "minecraft:entity.cod.ambient",
-					"immune_blocks": "#cronica:all",
+					"immune_blocks": "#p_motion:all",
 					"knockback_multiplier": {
 						"type": "minecraft:linear",
-						"base": 1.0204082,
-						"per_level_above_first": 1.0204082
+						"base": 17802.199,
+						"per_level_above_first": 17802.199
 					}
 				},
 				"requirements": {
@@ -54,7 +54,7 @@
 								"condition": "minecraft:entity_properties",
 								"entity": "this",
 								"predicate": {
-									"nbt": "{Tags:[\"v1_100\"]}"
+									"nbt": "{Tags:[\"h1_100\"]}"
 								}
 							}
 						}
@@ -75,11 +75,11 @@
 						"block_state": "minecraft:air"
 					},
 					"sound": "minecraft:entity.cod.ambient",
-					"immune_blocks": "#cronica:all",
+					"immune_blocks": "#p_motion:all",
 					"knockback_multiplier": {
 						"type": "minecraft:linear",
-						"base": -1.0204082,
-						"per_level_above_first": -1.0204082
+						"base": -17802.199,
+						"per_level_above_first": -17802.199
 					}
 				},
 				"requirements": {
@@ -98,7 +98,7 @@
 								"condition": "minecraft:entity_properties",
 								"entity": "this",
 								"predicate": {
-									"nbt": "{Tags:[\"v1_100\"]}"
+									"nbt": "{Tags:[\"h1_100\"]}"
 								}
 							}
 						}
@@ -108,7 +108,7 @@
 			{
 				"effect": {
 					"type": "minecraft:run_function",
-					"function": "cronica:player/status/effect/motion_vector/tp/complete"
+					"function": "p_motion:enchant/kill"
 				}
 			}
 		]
