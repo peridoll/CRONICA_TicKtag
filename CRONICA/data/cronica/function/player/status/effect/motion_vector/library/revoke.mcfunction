@@ -1,8 +1,6 @@
 # =================================================================================================
 
-# say flying feather activated
-
-tp @s ~ ~ ~
-function cronica:player/status/effect/motion_vector/xyz {VectorPowerX: 0, VectorPowerY: 15000, VectorPowerZ: 0}
+  # 撤去
+    kill @s
 # =================================================================================================
 # ver 0.14.0

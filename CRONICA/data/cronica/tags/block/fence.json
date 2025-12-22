@@ -63,6 +63,6 @@
     { "required": false, "id": "minecraft:green_stained_glass_pane" },
     { "required": false, "id": "minecraft:red_stained_glass_pane" },
     { "required": false, "id": "minecraft:black_stained_glass_pane" },
-    { "required": false, "id": "minecraft:chain" }
+    { "required": false, "id": "minecraft:iron_chain" }
   ]
 }

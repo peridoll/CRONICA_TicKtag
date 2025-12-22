@@ -1,0 +1,46 @@
+{
+  "description": "", "supported_items": [], "slots": ["armor"],
+  "weight": 1, "max_level": 100, "min_cost": {"base": 0, "per_level_above_first": 0}, "max_cost": {"base": 0, "per_level_above_first": 0}, "anvil_cost": 0,
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "cronica:player/status/effect/motion_vector/library/escape_bf"
+        },
+        "requirements": {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "nbt": "{Tags:[\"tp_before\"]}"
+            }
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "cronica:player/status/effect/motion_vector/library/escape_af"
+        },
+        "requirements": {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "nbt": "{Tags:[\"tp_after\"]}"
+            }
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "cronica:player/status/effect/motion_vector/library/revoke"
+        }
+      }
+    ]
+  }
+}
