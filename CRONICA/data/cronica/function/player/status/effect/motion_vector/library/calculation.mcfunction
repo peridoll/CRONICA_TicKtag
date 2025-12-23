@@ -2,9 +2,9 @@
 
 ##【 IMPULSE 】
 
-  ## 指定の力で視点方向に対象を飛ばす
+  ## 指定の力で対象を飛ばす
 
-    # 向いている方向から分解ベクトルを取得
+    # ベクトルごとの強さ計算
       $execute if score #VectorMaster_$(Vector) SCORE.cronica.STATUS.MotionVector matches ..-1 run data modify storage cronica:temp MotionVector.Signs.$(Vector) set value -1
 
       $execute if data storage cronica:temp MotionVector.Signs{$(Vector): -1} run scoreboard players operation #VectorMaster_$(Vector) SCORE.cronica.STATUS.MotionVector *= #-1 SCORE.cronica.CONFIG

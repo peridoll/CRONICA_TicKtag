@@ -5,12 +5,13 @@
   ## 指定の力で視点方向に対象を飛ばす
 
     # プレイヤー管理
-      tag @s add TAG.cronica.STATUS.MotionVector.Owner
 
-    # もう一回準備
-      # scoreboard objectives add SCORE.cronica.STATUS.MotionVector.ReActive.Power dummy
-      # $scoreboard players set @s SCORE.cronica.STATUS.MotionVector.ReActive.Power $(VectorPower)
-      # schedule function cronica:player/status/effect/motion_vector/library/looking_reactive 2t
+      # オーナータグ付け
+        tag @s add TAG.cronica.STATUS.MotionVector.Owner
+
+      # 現在のモーションをリセット
+        tp @s 0 0 0
+        tp @s ~ ~ ~
 
     # データ管理
 
@@ -31,15 +32,16 @@
       # 向いている方向から分解ベクトルを取得
         execute positioned 0.0 0.0 0.0 summon marker run function cronica:player/status/effect/motion_vector/library/get_rotation
 
-        function cronica:player/status/effect/motion_vector/library/looking_lib {Vector: "X"}
-        function cronica:player/status/effect/motion_vector/library/looking_lib {Vector: "Y"}
-        function cronica:player/status/effect/motion_vector/library/looking_lib {Vector: "Z"}
+      # ベクトルごとの強さ計算
+        function cronica:player/status/effect/motion_vector/library/calculation {Vector: "X"}
+        function cronica:player/status/effect/motion_vector/library/calculation {Vector: "Y"}
+        function cronica:player/status/effect/motion_vector/library/calculation {Vector: "Z"}
         execute if data storage cronica:temp MotionVector.Signs{Y:-1} run data modify storage cronica:temp MotionVector.Macro.SignY set value "-"
 
       # スコア撤去
         scoreboard objectives remove SCORE.cronica.STATUS.MotionVector
 
     # モーション付与
-      execute if entity @s[type = player] positioned as @s run function cronica:player/status/effect/motion_vector/library/explode with storage cronica:temp MotionVector.Macro
+      function cronica:player/status/effect/motion_vector/library/explode with storage cronica:temp MotionVector.Macro
 # =================================================================================================
 # ver 0.14.0

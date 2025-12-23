@@ -1,58 +1,52 @@
+# =================================================================================================
 
-# tag @s add TAG.cronica.STATUS.MotionVector.Owner
+##【 IMPULSE 】
 
-# execute if score $x SCORE.cronica.STATUS.MotionVector matches 1000001.. run scoreboard players set $x SCORE.cronica.STATUS.MotionVector 1000000
-# execute if score $x SCORE.cronica.STATUS.MotionVector matches ..-1000001 run scoreboard players set $x SCORE.cronica.STATUS.MotionVector -1000000
-# execute if score $y SCORE.cronica.STATUS.MotionVector matches 1000001.. run scoreboard players set $y SCORE.cronica.STATUS.MotionVector 1000000
-# execute if score $y SCORE.cronica.STATUS.MotionVector matches ..-1000001 run scoreboard players set $y SCORE.cronica.STATUS.MotionVector -1000000
-# execute if score $z SCORE.cronica.STATUS.MotionVector matches 1000001.. run scoreboard players set $z SCORE.cronica.STATUS.MotionVector 1000000
-# execute if score $z SCORE.cronica.STATUS.MotionVector matches ..-1000001 run scoreboard players set $z SCORE.cronica.STATUS.MotionVector -1000000
-# execute unless score $x SCORE.cronica.STATUS.MotionVector = $x SCORE.cronica.STATUS.MotionVector run scoreboard players set $x SCORE.cronica.STATUS.MotionVector 0
-# execute unless score $y SCORE.cronica.STATUS.MotionVector = $y SCORE.cronica.STATUS.MotionVector run scoreboard players set $y SCORE.cronica.STATUS.MotionVector 0
-# execute unless score $z SCORE.cronica.STATUS.MotionVector = $z SCORE.cronica.STATUS.MotionVector run scoreboard players set $z SCORE.cronica.STATUS.MotionVector 0
+  ## 指定の力で視点方向に対象を飛ばす
 
-# data merge storage cronica:temp {\
-#   Signs: {X: 1, Y: 1, Z: 1}, \
-#   Macro: {X1: 0, X2: 0, X3: 0, Y1: 0, Y2: 0, Y3: 0, Z1: 0, Z2: 0, Z3: 0, SignY: "+"} \
-# }
+    # プレイヤー管理
 
-# execute if score $x SCORE.cronica.STATUS.MotionVector matches ..-1 run data modify storage cronica:temp MotionVector.Signs.X set value -1
-# execute if data storage cronica:temp MotionVector.Signs{X: -1} run scoreboard players operation $x SCORE.cronica.STATUS.MotionVector *= #-1 SCORE.cronica.CONFIG
+      # オーナータグ付け
+        tag @s add TAG.cronica.STATUS.MotionVector.Owner
 
-# execute store result storage cronica:temp MotionVector.Macro.X1 int 0.0001 run scoreboard players operation #VectorMaster_X SCORE.cronica.STATUS.MotionVector = $x SCORE.cronica.STATUS.MotionVector
-# execute store result storage cronica:temp MotionVector.Macro.X2 int 0.01 run scoreboard players operation #VectorMaster_X SCORE.cronica.STATUS.MotionVector %= #10000 SCORE.cronica.CONFIG
-# execute store result storage cronica:temp MotionVector.Macro.X3 int 1 run scoreboard players operation #VectorMaster_X SCORE.cronica.STATUS.MotionVector %= #100 SCORE.cronica.CONFIG
+      # 現在のモーションをリセット
+        tp @s 0 0 0
+        tp @s ~ ~ ~
 
-# execute if data storage cronica:temp MotionVector.Signs{X: -1} run scoreboard players operation $x SCORE.cronica.STATUS.MotionVector *= #-1 SCORE.cronica.CONFIG
+    # データ管理
 
-# execute if data storage cronica:temp MotionVector.Macro{X1: 0} run data modify storage cronica:temp MotionVector.Macro.X1 set value 100
-# execute if data storage cronica:temp MotionVector.Macro{X2: 0} run data modify storage cronica:temp MotionVector.Macro.X2 set value 100
-# execute if data storage cronica:temp MotionVector.Macro{X3: 0} run data modify storage cronica:temp MotionVector.Macro.X3 set value 100
+      # ストレージを初期化
+        data remove storage cronica:temp MotionVector
+        data modify storage cronica:temp MotionVector set value { \
+          Signs: {X: 1, Y: 1, Z: 1}, \
+          Macro: {X1: 0, X2: 0, X3: 0, Y1: 0, Y2: 0, Y3: 0, Z1: 0, Z2: 0, Z3: 0, SignY: "+"} \
+        }
 
-# execute if score $y SCORE.cronica.STATUS.MotionVector matches ..-1 run data modify storage cronica:temp MotionVector.Signs.Y set value -1
-# execute if data storage cronica:temp MotionVector.Signs{Y:-1} run scoreboard players operation $y SCORE.cronica.STATUS.MotionVector *= #-1 SCORE.cronica.CONFIG
-# execute store result storage cronica:temp MotionVector.Macro.Y1 int 0.0001 run scoreboard players operation #VectorMaster_Y SCORE.cronica.STATUS.MotionVector = $y SCORE.cronica.STATUS.MotionVector
-# execute store result storage cronica:temp MotionVector.Macro.Y2 int 0.01 run scoreboard players operation #VectorMaster_Y SCORE.cronica.STATUS.MotionVector %= #10000 SCORE.cronica.CONFIG
-# execute store result storage cronica:temp MotionVector.Macro.Y3 int 1 run scoreboard players operation #VectorMaster_Y SCORE.cronica.STATUS.MotionVector %= #100 SCORE.cronica.CONFIG
-# execute if data storage cronica:temp MotionVector.Signs{Y:-1} run scoreboard players operation $y SCORE.cronica.STATUS.MotionVector *= #-1 SCORE.cronica.CONFIG
-# execute if data storage cronica:temp MotionVector.Macro{Y1:0} run data modify storage cronica:temp MotionVector.Macro.Y1 set value 100
-# execute if data storage cronica:temp MotionVector.Macro{Y2:0} run data modify storage cronica:temp MotionVector.Macro.Y2 set value 100
-# execute if data storage cronica:temp MotionVector.Macro{Y3:0} run data modify storage cronica:temp MotionVector.Macro.Y3 set value 100
+      # 指定された力の強さを取得
+        scoreboard objectives add SCORE.cronica.STATUS.MotionVector dummy
+        $scoreboard players set #VectorMaster_X SCORE.cronica.STATUS.MotionVector $(VectorPowerX)
+        $scoreboard players set #VectorMaster_Y SCORE.cronica.STATUS.MotionVector $(VectorPowerY)
+        $scoreboard players set #VectorMaster_Z SCORE.cronica.STATUS.MotionVector $(VectorPowerZ)
+        execute if score #VectorMaster_X SCORE.cronica.STATUS.MotionVector matches 1000001.. run scoreboard players set #VectorMaster_X SCORE.cronica.STATUS.MotionVector 1000000
+        execute if score #VectorMaster_X SCORE.cronica.STATUS.MotionVector matches ..-1000001 run scoreboard players set #VectorMaster_X SCORE.cronica.STATUS.MotionVector -1000000
+        execute if score #VectorMaster_Y SCORE.cronica.STATUS.MotionVector matches 1000001.. run scoreboard players set #VectorMaster_Y SCORE.cronica.STATUS.MotionVector 1000000
+        execute if score #VectorMaster_Y SCORE.cronica.STATUS.MotionVector matches ..-1000001 run scoreboard players set #VectorMaster_Y SCORE.cronica.STATUS.MotionVector -1000000
+        execute if score #VectorMaster_Z SCORE.cronica.STATUS.MotionVector matches 1000001.. run scoreboard players set #VectorMaster_Z SCORE.cronica.STATUS.MotionVector 1000000
+        execute if score #VectorMaster_Z SCORE.cronica.STATUS.MotionVector matches ..-1000001 run scoreboard players set #VectorMaster_Z SCORE.cronica.STATUS.MotionVector -1000000
+        scoreboard players add #VectorMaster_X SCORE.cronica.STATUS.MotionVector 0
+        scoreboard players add #VectorMaster_Y SCORE.cronica.STATUS.MotionVector 0
+        scoreboard players add #VectorMaster_Z SCORE.cronica.STATUS.MotionVector 0
 
-# execute if data storage cronica:temp MotionVector.Signs{Y:-1} run data modify storage cronica:temp MotionVector.Macro.SignY set value "-"
+      # ベクトルごとの強さ計算
+        function cronica:player/status/effect/motion_vector/library/calculation {Vector: "X"}
+        function cronica:player/status/effect/motion_vector/library/calculation {Vector: "Y"}
+        function cronica:player/status/effect/motion_vector/library/calculation {Vector: "Z"}
+        execute if data storage cronica:temp MotionVector.Signs{Y:-1} run data modify storage cronica:temp MotionVector.Macro.SignY set value "-"
 
-# execute if score $z SCORE.cronica.STATUS.MotionVector matches ..-1 run data modify storage cronica:temp MotionVector.Signs.Z set value -1
-# execute if data storage cronica:temp MotionVector.Signs{Z:-1} run scoreboard players operation $z SCORE.cronica.STATUS.MotionVector *= #-1 SCORE.cronica.CONFIG
-# execute store result storage cronica:temp MotionVector.Macro.Z1 int 0.0001 run scoreboard players operation #VectorMaster_Z SCORE.cronica.STATUS.MotionVector = $z SCORE.cronica.STATUS.MotionVector
-# execute store result storage cronica:temp MotionVector.Macro.Z2 int 0.01 run scoreboard players operation #VectorMaster_Z SCORE.cronica.STATUS.MotionVector %= #10000 SCORE.cronica.CONFIG
-# execute store result storage cronica:temp MotionVector.Macro.Z3 int 1 run scoreboard players operation #VectorMaster_Z SCORE.cronica.STATUS.MotionVector %= #100 SCORE.cronica.CONFIG
-# execute if data storage cronica:temp MotionVector.Signs{Z:-1} run scoreboard players operation $z SCORE.cronica.STATUS.MotionVector *= #-1 SCORE.cronica.CONFIG
-# execute if data storage cronica:temp MotionVector.Macro{Z1:0} run data modify storage cronica:temp MotionVector.Macro.Z1 set value 100
-# execute if data storage cronica:temp MotionVector.Macro{Z2:0} run data modify storage cronica:temp MotionVector.Macro.Z2 set value 100
-# execute if data storage cronica:temp MotionVector.Macro{Z3:0} run data modify storage cronica:temp MotionVector.Macro.Z3 set value 100
+      # スコア撤去
+        scoreboard objectives remove SCORE.cronica.STATUS.MotionVector
 
-# scoreboard players reset #VectorMaster_X SCORE.cronica.STATUS.MotionVector
-# scoreboard players reset #VectorMaster_Y SCORE.cronica.STATUS.MotionVector
-# scoreboard players reset #VectorMaster_Z SCORE.cronica.STATUS.MotionVector
-
-# execute if entity @s[type=player] positioned as @s run function p_motion:main/summon with storage cronica:temp MotionVector.Macro
+    # モーション付与
+      function cronica:player/status/effect/motion_vector/library/explode with storage cronica:temp MotionVector.Macro
+# =================================================================================================
+# ver 0.14.0
