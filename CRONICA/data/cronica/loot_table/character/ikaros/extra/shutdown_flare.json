@@ -1,0 +1,33 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "enchantments": {
+                  "cronica:inventory/default_loot": 1
+                },
+                "minecraft:custom_name": {
+                  "text": "撃墜ノ陽炎",
+                  "color": "gold",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "ikaros",
+                  "MasterType": "extra",
+                  "ItemID": "shutdown_flare"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

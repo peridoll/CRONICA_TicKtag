@@ -1,0 +1,35 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "enchantments": {
+                  "cronica:inventory/default_loot": 1
+                },
+                "minecraft:custom_name": {
+                  "text": "逢魔ノ刻",
+                  "color": "gold",
+                  "bold": true
+                },
+                "minecraft:custom_data": {
+                  "MasterID": "ikaros",
+                  "MasterType": "unique",
+                  "ItemID": "begin_twilight",
+                  "RecastType": "Basic",
+                  "RecastTime": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

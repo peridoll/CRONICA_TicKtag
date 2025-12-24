@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cronica:item/character/ikaros/passive/wind_knowledge/wind_knowledge_default"
+  }
+}
